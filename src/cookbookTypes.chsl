@@ -1,0 +1,57 @@
+# Cookbook struct
+struct Cookbook
+
+    # The cookbook title text
+    string(len > 0, len < 100) title
+
+    # The cookbook's recipes
+    Recipe[len > 0] recipes
+
+
+# Recipe struct
+struct Recipe
+
+    # The recipe title text
+    string(len > 0, len < 100) title
+
+    # The recipe's description markdown
+    optional Markdown description
+
+    # The recipe's igredient list
+    Ingredient[len > 0, len < 100] ingredients
+
+    # The recipe's introduction markdown
+    optional Markdown introduction
+
+    # The recipe's instructions markdown
+    Markdown instructions
+
+    # The recipe's summary markdown
+    optional Markdown summary
+
+
+# A list of markdown text
+typedef string(len > 0)[len > 0, len < 100] Markdown
+
+
+# Recipe ingredient struct
+struct Ingredient
+
+    # The ingredient name
+    string(len > 0, len < 100) name
+
+    # The ingredient unit
+    Unit unit
+
+    # The ingredient amount
+    float amount
+
+
+# Recipe ingredient unit enum
+enum Unit
+    count
+    cup
+    lb
+    oz
+    tbsp
+    tsp
