@@ -3,6 +3,7 @@
     "recipes": [
         {
             "title": "Chunky Chippers",
+            "categories": ["Cookies"],
             "ingredients": [
                 {"amount": 0.5, "unit": "cup", "name": "butter"},
                 {"amount": 0.5, "unit": "cup", "name": "chunky peanut butter"},
@@ -27,6 +28,7 @@
         },
         {
             "title": "Gorgonzola Popovers",
+            "categories": ["Appetizers"],
             "servings": {
                 "count": 24,
                 "size": {"amount": 1, "unit": "count", "name": "mini popover"}
@@ -56,6 +58,7 @@
             "description": [
                 "The big sandwich is a family favorite for casual dinners. The kids often requested it when we were going out for the evening."
             ],
+            "categories": ["Main Dishes"],
             "ingredients": [
                 {"amount": 1, "unit": "count", "name": "loaf freshly baked French bread"},
                 {"amount": 0.5, "unit": "count", "name": "head shredded iceberg lettuce"},

@@ -1,6 +1,38 @@
 /* eslint-disable quotes */
 export const cookbookTypes =
 {
+    "Category": {
+        "enum": {
+            "doc": " Recipe category enum",
+            "name": "Category",
+            "values": [
+                {
+                    "name": "Appetizers"
+                },
+                {
+                    "name": "Breads"
+                },
+                {
+                    "name": "Cookies"
+                },
+                {
+                    "name": "Deserts"
+                },
+                {
+                    "name": "Main Dishes"
+                },
+                {
+                    "name": "Salads"
+                },
+                {
+                    "name": "Soups"
+                },
+                {
+                    "name": "Miscellaneous"
+                }
+            ]
+        }
+    },
     "Cookbook": {
         "struct": {
             "doc": " Cookbook struct",
@@ -111,6 +143,20 @@ export const cookbookTypes =
                     "optional": true,
                     "type": {
                         "user": "Markdown"
+                    }
+                },
+                {
+                    "attr": {
+                        "lenGT": 0
+                    },
+                    "doc": " The recipe's categories",
+                    "name": "categories",
+                    "type": {
+                        "array": {
+                            "type": {
+                                "user": "Category"
+                            }
+                        }
                     }
                 },
                 {

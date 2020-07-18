@@ -17,6 +17,9 @@ struct Recipe
     # The recipe's description markdown
     optional Markdown description
 
+    # The recipe's categories
+    Category[len > 0] categories
+
     # The serving size and count
     optional Servings servings
 
@@ -58,6 +61,18 @@ struct Ingredient
 
     # The ingredient amount
     float(> 0) amount
+
+
+# Recipe category enum
+enum Category
+    Appetizers
+    Breads
+    Cookies
+    Deserts
+    "Main Dishes"
+    Salads
+    Soups
+    Miscellaneous
 
 
 # Recipe ingredient unit enum
