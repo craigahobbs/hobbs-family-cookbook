@@ -27,6 +27,10 @@
         },
         {
             "title": "Gorgonzola Popovers",
+            "servings": {
+                "count": 24,
+                "size": {"amount": 1, "unit": "count", "name": "mini popover"}
+            },
             "ingredients": [
                 {"amount": 2, "unit": "count", "name": "large eggs"},
                 {"amount": 1, "unit": "cup", "name": "room temperature milk"},
@@ -44,7 +48,6 @@
             ],
             "summary": [
                 "Adjust the oven rack to the highest position in oven and bake at 425 degrees for 18 to 20 minutes until puffed and golden.",
-                "Makes 24 mini popovers.",
                 "Great served as an appetizer with red wine."
             ]
         },

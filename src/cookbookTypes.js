@@ -57,6 +57,9 @@ export const cookbookTypes =
                     }
                 },
                 {
+                    "attr": {
+                        "gt": 0.0
+                    },
                     "doc": " The ingredient amount",
                     "name": "amount",
                     "type": {
@@ -111,6 +114,14 @@ export const cookbookTypes =
                     }
                 },
                 {
+                    "doc": " The serving size and count",
+                    "name": "servings",
+                    "optional": true,
+                    "type": {
+                        "user": "Servings"
+                    }
+                },
+                {
                     "attr": {
                         "lenGT": 0,
                         "lenLT": 100
@@ -152,6 +163,31 @@ export const cookbookTypes =
             "name": "Recipe"
         }
     },
+    "Servings": {
+        "struct": {
+            "doc": " Recipe serving size and count struct",
+            "members": [
+                {
+                    "attr": {
+                        "gt": 0.0
+                    },
+                    "doc": " The number of servings",
+                    "name": "count",
+                    "type": {
+                        "builtin": "int"
+                    }
+                },
+                {
+                    "doc": " The serving size",
+                    "name": "size",
+                    "type": {
+                        "user": "Ingredient"
+                    }
+                }
+            ],
+            "name": "Servings"
+        }
+    },
     "Unit": {
         "enum": {
             "doc": " Recipe ingredient unit enum",
@@ -168,6 +204,9 @@ export const cookbookTypes =
                 },
                 {
                     "name": "oz"
+                },
+                {
+                    "name": "pinch"
                 },
                 {
                     "name": "tbsp"

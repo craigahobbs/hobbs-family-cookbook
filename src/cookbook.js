@@ -195,6 +195,16 @@ export class CookbookPage {
             // Title
             {'html': 'h1', 'elem': {'text': recipe.title}},
 
+            // Serving size and count
+            'servings' in recipe
+                ? {'html': 'p', 'elem': [
+                    {'text': `Servings: ${recipe.servings.count}`},
+                    {'html': 'br'},
+                    {'text': 'Serving size: '},
+                    CookbookPage.ingredientElements(recipe.servings.size)
+                ]}
+                : null,
+
             // Description
             'description' in recipe ? recipe.description.map((markdown) => markdownElements(markdown)) : null,
 

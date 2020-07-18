@@ -17,6 +17,9 @@ struct Recipe
     # The recipe's description markdown
     optional Markdown description
 
+    # The serving size and count
+    optional Servings servings
+
     # The recipe's igredient list
     Ingredient[len > 0, len < 100] ingredients
 
@@ -34,6 +37,16 @@ struct Recipe
 typedef string(len > 0)[len > 0, len < 100] Markdown
 
 
+# Recipe serving size and count struct
+struct Servings
+
+    # The number of servings
+    int (> 0) count
+
+    # The serving size
+    Ingredient size
+
+
 # Recipe ingredient struct
 struct Ingredient
 
@@ -44,7 +57,7 @@ struct Ingredient
     Unit unit
 
     # The ingredient amount
-    float amount
+    float(> 0) amount
 
 
 # Recipe ingredient unit enum
@@ -53,5 +66,6 @@ enum Unit
     cup
     lb
     oz
+    pinch
     tbsp
     tsp
