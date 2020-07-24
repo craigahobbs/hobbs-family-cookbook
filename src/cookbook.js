@@ -216,7 +216,7 @@ export class CookbookPage {
                             {
                                 'html': 'ul',
                                 'attr': {'class': 'cookbook-ingredient-list'},
-                                'elem': content.ingredients.ingredients.map(
+                                'elem': content.ingredients.map(
                                     (ingredient) => ({'html': 'li', 'elem': CookbookPage.ingredientElements(ingredient)})
                                 )
                             }

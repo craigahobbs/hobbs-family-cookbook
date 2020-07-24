@@ -41,16 +41,6 @@ union Content
     string[len > 0, len < 1000] markdown
 
     # An ingredient list
-    IngredientList ingredients
-
-
-# Ingredient list content struct
-struct IngredientList
-
-    # The ingredient list title
-    optional string(len > 0, len < 100) title
-
-    # The ingredients
     Ingredient[len > 0, len < 100] ingredients
 
 

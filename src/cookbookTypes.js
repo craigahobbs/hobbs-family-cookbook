@@ -21,10 +21,18 @@ export const cookbookTypes =
                     }
                 },
                 {
+                    "attr": {
+                        "lenGT": 0,
+                        "lenLT": 100
+                    },
                     "doc": " An ingredient list",
                     "name": "ingredients",
                     "type": {
-                        "user": "IngredientList"
+                        "array": {
+                            "type": {
+                                "user": "Ingredient"
+                            }
+                        }
                     }
                 }
             ],
@@ -100,41 +108,6 @@ export const cookbookTypes =
                 }
             ],
             "name": "Ingredient"
-        }
-    },
-    "IngredientList": {
-        "struct": {
-            "doc": " Ingredient list content struct",
-            "members": [
-                {
-                    "attr": {
-                        "lenGT": 0,
-                        "lenLT": 100
-                    },
-                    "doc": " The ingredient list title",
-                    "name": "title",
-                    "optional": true,
-                    "type": {
-                        "builtin": "string"
-                    }
-                },
-                {
-                    "attr": {
-                        "lenGT": 0,
-                        "lenLT": 100
-                    },
-                    "doc": " The ingredients",
-                    "name": "ingredients",
-                    "type": {
-                        "array": {
-                            "type": {
-                                "user": "Ingredient"
-                            }
-                        }
-                    }
-                }
-            ],
-            "name": "IngredientList"
         }
     },
     "Recipe": {

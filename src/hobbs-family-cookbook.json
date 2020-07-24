@@ -11,23 +11,21 @@
                     ]
                 },
                 {
-                    "ingredients": {
-                        "ingredients": [
-                            {"amount": 2, "unit": "count", "name": "garlic cloves chopped"},
-                            {"amount": 0.75, "unit": "tsp", "name": "salt"},
-                            {"amount": 0.5, "unit": "tsp", "name": "Dijon mustard"},
-                            {"amount": 1.5, "unit": "tsp", "name": "Worcestershire sauce"},
-                            {"amount": 1, "unit": "count", "name": "coddled egg"},
-                            {"amount": 2, "unit": "tbsp", "name": "fresh lemon juice"},
-                            {"amount": 1, "unit": "tsp", "name": "anchovy paste"},
-                            {"amount": 2, "unit": "tbsp", "name": "shredded Parmesan cheese"},
-                            {"amount": 0.5, "unit": "cup", "name": "olive oil"},
-                            {"amount": 1, "unit": "count", "name": "large head romaine lettuce"},
-                            {"amount": 1, "unit": "cup", "name": "croutons"},
-                            {"amount": 0.33, "unit": "cup", "name": "shredded Parmesan cheese"},
-                            {"amount": 1, "unit": "tbsp", "name": "freshly ground black pepper"}
-                        ]
-                    }
+                    "ingredients": [
+                        {"amount": 2, "unit": "count", "name": "garlic cloves chopped"},
+                        {"amount": 0.75, "unit": "tsp", "name": "salt"},
+                        {"amount": 0.5, "unit": "tsp", "name": "Dijon mustard"},
+                        {"amount": 1.5, "unit": "tsp", "name": "Worcestershire sauce"},
+                        {"amount": 1, "unit": "count", "name": "coddled egg"},
+                        {"amount": 2, "unit": "tbsp", "name": "fresh lemon juice"},
+                        {"amount": 1, "unit": "tsp", "name": "anchovy paste"},
+                        {"amount": 2, "unit": "tbsp", "name": "shredded Parmesan cheese"},
+                        {"amount": 0.5, "unit": "cup", "name": "olive oil"},
+                        {"amount": 1, "unit": "count", "name": "large head romaine lettuce"},
+                        {"amount": 1, "unit": "cup", "name": "croutons"},
+                        {"amount": 0.33, "unit": "cup", "name": "shredded Parmesan cheese"},
+                        {"amount": 1, "unit": "tbsp", "name": "freshly ground black pepper"}
+                    ]
                 },
                 {
                     "markdown": [
@@ -57,21 +55,19 @@
                     ]
                 },
                 {
-                    "ingredients": {
-                        "ingredients": [
-                            {"amount": 0.5, "unit": "cup", "name": "butter"},
-                            {"amount": 0.5, "unit": "cup", "name": "chunky peanut butter"},
-                            {"amount": 2, "unit": "count", "name": "eggs"},
-                            {"amount": 1, "unit": "cup", "name": "sugar"},
-                            {"amount": 0.5, "unit": "cup", "name": "packed brown sugar"},
-                            {"amount": 1, "unit": "tsp", "name": "vanilla"},
-                            {"amount": 1, "unit": "tbsp", "name": "water"},
-                            {"amount": 2, "unit": "cup", "name": "flour"},
-                            {"amount": 1, "unit": "tsp", "name": "baking soda"},
-                            {"amount": 0.5, "unit": "tsp", "name": "salt"},
-                            {"amount": 2, "unit": "cup", "name": "chocolate chips"}
-                        ]
-                    }
+                    "ingredients": [
+                        {"amount": 0.5, "unit": "cup", "name": "butter"},
+                        {"amount": 0.5, "unit": "cup", "name": "chunky peanut butter"},
+                        {"amount": 2, "unit": "count", "name": "eggs"},
+                        {"amount": 1, "unit": "cup", "name": "sugar"},
+                        {"amount": 0.5, "unit": "cup", "name": "packed brown sugar"},
+                        {"amount": 1, "unit": "tsp", "name": "vanilla"},
+                        {"amount": 1, "unit": "tbsp", "name": "water"},
+                        {"amount": 2, "unit": "cup", "name": "flour"},
+                        {"amount": 1, "unit": "tsp", "name": "baking soda"},
+                        {"amount": 0.5, "unit": "tsp", "name": "salt"},
+                        {"amount": 2, "unit": "cup", "name": "chocolate chips"}
+                    ]
                 },
                 {
                     "markdown": [
@@ -103,18 +99,16 @@
                     ]
                 },
                 {
-                    "ingredients": {
-                        "ingredients": [
-                            {"amount": 2, "unit": "count", "name": "large eggs"},
-                            {"amount": 1, "unit": "cup", "name": "room temperature milk"},
-                            {"amount": 2, "unit": "tbsp", "name": "melted butter"},
-                            {"amount": 1, "unit": "cup", "name": "flour"},
-                            {"amount": 0.5, "unit": "tsp", "name": "salt"},
-                            {"amount": 0.125, "unit": "tsp", "name": "ground black pepper"},
-                            {"amount": 1.25, "unit": "oz", "name": "Gorgonzola cheese"},
-                            {"amount": 1, "unit": "tbsp", "name": "chopped fresh thyme"}
-                        ]
-                    }
+                    "ingredients": [
+                        {"amount": 2, "unit": "count", "name": "large eggs"},
+                        {"amount": 1, "unit": "cup", "name": "room temperature milk"},
+                        {"amount": 2, "unit": "tbsp", "name": "melted butter"},
+                        {"amount": 1, "unit": "cup", "name": "flour"},
+                        {"amount": 0.5, "unit": "tsp", "name": "salt"},
+                        {"amount": 0.125, "unit": "tsp", "name": "ground black pepper"},
+                        {"amount": 1.25, "unit": "oz", "name": "Gorgonzola cheese"},
+                        {"amount": 1, "unit": "tbsp", "name": "chopped fresh thyme"}
+                    ]
                 },
                 {
                     "markdown": [
@@ -147,19 +141,17 @@
                     ]
                 },
                 {
-                    "ingredients": {
-                        "ingredients": [
-                            {"amount": 1, "unit": "count", "name": "loaf freshly baked French bread"},
-                            {"amount": 0.5, "unit": "count", "name": "head shredded iceberg lettuce"},
-                            {"amount": 2, "unit": "count", "name": "large tomatoes, sliced thinly"},
-                            {"amount": 1, "unit": "count", "name": "medium red onion, sliced thinly"},
-                            {"amount": 0.75, "unit": "lb", "name": "thinly sliced deli ham"},
-                            {"amount": 0.75, "unit": "lb", "name": "thinly sliced deli turkey"},
-                            {"amount": 0.5, "unit": "lb", "name": "thinly sliced Swiss or Havarti cheese"},
-                            {"amount": 0.125, "unit": "cup", "name": "mayonnaise"},
-                            {"amount": 0.125, "unit": "cup", "name": "Dijon mustard"}
-                        ]
-                    }
+                    "ingredients": [
+                        {"amount": 1, "unit": "count", "name": "loaf freshly baked French bread"},
+                        {"amount": 0.5, "unit": "count", "name": "head shredded iceberg lettuce"},
+                        {"amount": 2, "unit": "count", "name": "large tomatoes, sliced thinly"},
+                        {"amount": 1, "unit": "count", "name": "medium red onion, sliced thinly"},
+                        {"amount": 0.75, "unit": "lb", "name": "thinly sliced deli ham"},
+                        {"amount": 0.75, "unit": "lb", "name": "thinly sliced deli turkey"},
+                        {"amount": 0.5, "unit": "lb", "name": "thinly sliced Swiss or Havarti cheese"},
+                        {"amount": 0.125, "unit": "cup", "name": "mayonnaise"},
+                        {"amount": 0.125, "unit": "cup", "name": "Dijon mustard"}
+                    ]
                 },
                 {
                     "markdown": [
