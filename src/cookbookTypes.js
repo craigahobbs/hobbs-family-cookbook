@@ -1,36 +1,35 @@
 /* eslint-disable quotes */
 export const cookbookTypes =
 {
-    "Category": {
-        "enum": {
-            "doc": " Recipe category enum",
-            "name": "Category",
-            "values": [
+    "Content": {
+        "struct": {
+            "doc": " Recipe content union",
+            "members": [
                 {
-                    "name": "Appetizers"
+                    "attr": {
+                        "lenGT": 0,
+                        "lenLT": 1000
+                    },
+                    "doc": "  A list of markdown lines",
+                    "name": "markdown",
+                    "type": {
+                        "array": {
+                            "type": {
+                                "builtin": "string"
+                            }
+                        }
+                    }
                 },
                 {
-                    "name": "Breads"
-                },
-                {
-                    "name": "Cookies"
-                },
-                {
-                    "name": "Deserts"
-                },
-                {
-                    "name": "Main Dishes"
-                },
-                {
-                    "name": "Salads"
-                },
-                {
-                    "name": "Soups"
-                },
-                {
-                    "name": "Miscellaneous"
+                    "doc": " An ingredient list",
+                    "name": "ingredients",
+                    "type": {
+                        "user": "IngredientList"
+                    }
                 }
-            ]
+            ],
+            "name": "Content",
+            "union": true
         }
     },
     "Cookbook": {
@@ -50,7 +49,8 @@ export const cookbookTypes =
                 },
                 {
                     "attr": {
-                        "lenGT": 0
+                        "lenGT": 0,
+                        "lenLT": 1000
                     },
                     "doc": " The cookbook's recipes",
                     "name": "recipes",
@@ -102,24 +102,39 @@ export const cookbookTypes =
             "name": "Ingredient"
         }
     },
-    "Markdown": {
-        "typedef": {
-            "attr": {
-                "lenGT": 0,
-                "lenLT": 100
-            },
-            "doc": " A list of markdown text",
-            "name": "Markdown",
-            "type": {
-                "array": {
+    "IngredientList": {
+        "struct": {
+            "doc": " Ingredient list content struct",
+            "members": [
+                {
                     "attr": {
-                        "lenGT": 0
+                        "lenGT": 0,
+                        "lenLT": 100
                     },
+                    "doc": " The ingredient list title",
+                    "name": "title",
+                    "optional": true,
                     "type": {
                         "builtin": "string"
                     }
+                },
+                {
+                    "attr": {
+                        "lenGT": 0,
+                        "lenLT": 100
+                    },
+                    "doc": " The ingredients",
+                    "name": "ingredients",
+                    "type": {
+                        "array": {
+                            "type": {
+                                "user": "Ingredient"
+                            }
+                        }
+                    }
                 }
-            }
+            ],
+            "name": "IngredientList"
         }
     },
     "Recipe": {
@@ -138,14 +153,6 @@ export const cookbookTypes =
                     }
                 },
                 {
-                    "doc": " The recipe's description markdown",
-                    "name": "description",
-                    "optional": true,
-                    "type": {
-                        "user": "Markdown"
-                    }
-                },
-                {
                     "attr": {
                         "lenGT": 0
                     },
@@ -153,8 +160,12 @@ export const cookbookTypes =
                     "name": "categories",
                     "type": {
                         "array": {
+                            "attr": {
+                                "lenGT": 0,
+                                "lenLT": 100
+                            },
                             "type": {
-                                "user": "Category"
+                                "builtin": "string"
                             }
                         }
                     }
@@ -172,37 +183,14 @@ export const cookbookTypes =
                         "lenGT": 0,
                         "lenLT": 100
                     },
-                    "doc": " The recipe's igredient list",
-                    "name": "ingredients",
+                    "doc": " The recipe content",
+                    "name": "content",
                     "type": {
                         "array": {
                             "type": {
-                                "user": "Ingredient"
+                                "user": "Content"
                             }
                         }
-                    }
-                },
-                {
-                    "doc": " The recipe's introduction markdown",
-                    "name": "introduction",
-                    "optional": true,
-                    "type": {
-                        "user": "Markdown"
-                    }
-                },
-                {
-                    "doc": " The recipe's instructions markdown",
-                    "name": "instructions",
-                    "type": {
-                        "user": "Markdown"
-                    }
-                },
-                {
-                    "doc": " The recipe's summary markdown",
-                    "name": "summary",
-                    "optional": true,
-                    "type": {
-                        "user": "Markdown"
                     }
                 }
             ],

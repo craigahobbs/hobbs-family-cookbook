@@ -4,53 +4,89 @@
         {
             "title": "Caesar Salad",
             "categories": ["Salads"],
-            "ingredients": [
-                {"amount": 2, "unit": "count", "name": "garlic cloves chopped"},
-                {"amount": 0.75, "unit": "tsp", "name": "salt"},
-                {"amount": 0.5, "unit": "tsp", "name": "Dijon mustard"},
-                {"amount": 1.5, "unit": "tsp", "name": "Worcestershire sauce"},
-                {"amount": 1, "unit": "count", "name": "coddled egg"},
-                {"amount": 2, "unit": "tbsp", "name": "fresh lemon juice"},
-                {"amount": 1, "unit": "tsp", "name": "anchovy paste"},
-                {"amount": 2, "unit": "tbsp", "name": "shredded Parmesan cheese"},
-                {"amount": 0.5, "unit": "cup", "name": "olive oil"},
-                {"amount": 1, "unit": "count", "name": "large head romaine lettuce"},
-                {"amount": 1, "unit": "cup", "name": "croutons"},
-                {"amount": 0.33, "unit": "cup", "name": "shredded Parmesan cheese"},
-                {"amount": 1, "unit": "tbsp", "name": "freshly ground black pepper"}
-            ],
-            "instructions": [
-                "In a blender combine the garlic, salt, mustard, Worcestershire, egg, lemon juice, anchovy paste, and Parmesan cheese and process until smooth and thickened.\n\nTo coddle the egg, bring 2 inches of water to boil in a small saucepan. Lower the egg (cracked open) into the water, cover and let stand for 1 minute. Cool and add egg to the blender.",
-                "Slowly blend in the olive oil.",
-                "Toss dressing with lettuce, croutons, Parmesan cheese, and pepper."
-            ],
-            "summary": [
-                "Dressing can be refrigerated up to 3 days."
+            "content": [
+                {
+                    "markdown": [
+                        "## Ingredients"
+                    ]
+                },
+                {
+                    "ingredients": {
+                        "ingredients": [
+                            {"amount": 2, "unit": "count", "name": "garlic cloves chopped"},
+                            {"amount": 0.75, "unit": "tsp", "name": "salt"},
+                            {"amount": 0.5, "unit": "tsp", "name": "Dijon mustard"},
+                            {"amount": 1.5, "unit": "tsp", "name": "Worcestershire sauce"},
+                            {"amount": 1, "unit": "count", "name": "coddled egg"},
+                            {"amount": 2, "unit": "tbsp", "name": "fresh lemon juice"},
+                            {"amount": 1, "unit": "tsp", "name": "anchovy paste"},
+                            {"amount": 2, "unit": "tbsp", "name": "shredded Parmesan cheese"},
+                            {"amount": 0.5, "unit": "cup", "name": "olive oil"},
+                            {"amount": 1, "unit": "count", "name": "large head romaine lettuce"},
+                            {"amount": 1, "unit": "cup", "name": "croutons"},
+                            {"amount": 0.33, "unit": "cup", "name": "shredded Parmesan cheese"},
+                            {"amount": 1, "unit": "tbsp", "name": "freshly ground black pepper"}
+                        ]
+                    }
+                },
+                {
+                    "markdown": [
+                        "## Instructions",
+                        "",
+                        "1. In a blender combine the garlic, salt, mustard, Worcestershire, egg, lemon juice, anchovy paste,",
+                        "   and Parmesan cheese and process until smooth and thickened.\n\nTo coddle the egg, bring 2 inches",
+                        "   of water to boil in a small saucepan. Lower the egg (cracked open) into the water, cover and let",
+                        "   stand for 1 minute. Cool and add egg to the blender.",
+                        "",
+                        "2. Slowly blend in the olive oil.",
+                        "",
+                        "3. Toss dressing with lettuce, croutons, Parmesan cheese, and pepper.",
+                        "",
+                        "Dressing can be refrigerated up to 3 days."
+                    ]
+                }
             ]
         },
         {
             "title": "Chunky Chippers",
             "categories": ["Cookies"],
-            "ingredients": [
-                {"amount": 0.5, "unit": "cup", "name": "butter"},
-                {"amount": 0.5, "unit": "cup", "name": "chunky peanut butter"},
-                {"amount": 2, "unit": "count", "name": "eggs"},
-                {"amount": 1, "unit": "cup", "name": "sugar"},
-                {"amount": 0.5, "unit": "cup", "name": "packed brown sugar"},
-                {"amount": 1, "unit": "tsp", "name": "vanilla"},
-                {"amount": 1, "unit": "tbsp", "name": "water"},
-                {"amount": 2, "unit": "cup", "name": "flour"},
-                {"amount": 1, "unit": "tsp", "name": "baking soda"},
-                {"amount": 0.5, "unit": "tsp", "name": "salt"},
-                {"amount": 2, "unit": "cup", "name": "chocolate chips"}
-            ],
-            "instructions": [
-                "Cream-together the butter, peanut butter, eggs, sugar, brown sugar, vanilla, and water.",
-                "Stir-in the flour, baking soda, and salt.",
-                "Stir-in the chocolate chips."
-            ],
-            "summary": [
-                "Drop dough by large teaspoons onto a lightly greased baking sheet. Bake at 350 degrees for 12 to 14 minutes (cookies should be light brown and slightly underdone). Remove from sheet to cool."
+            "content": [
+                {
+                    "markdown": [
+                        "## Ingredients"
+                    ]
+                },
+                {
+                    "ingredients": {
+                        "ingredients": [
+                            {"amount": 0.5, "unit": "cup", "name": "butter"},
+                            {"amount": 0.5, "unit": "cup", "name": "chunky peanut butter"},
+                            {"amount": 2, "unit": "count", "name": "eggs"},
+                            {"amount": 1, "unit": "cup", "name": "sugar"},
+                            {"amount": 0.5, "unit": "cup", "name": "packed brown sugar"},
+                            {"amount": 1, "unit": "tsp", "name": "vanilla"},
+                            {"amount": 1, "unit": "tbsp", "name": "water"},
+                            {"amount": 2, "unit": "cup", "name": "flour"},
+                            {"amount": 1, "unit": "tsp", "name": "baking soda"},
+                            {"amount": 0.5, "unit": "tsp", "name": "salt"},
+                            {"amount": 2, "unit": "cup", "name": "chocolate chips"}
+                        ]
+                    }
+                },
+                {
+                    "markdown": [
+                        "## Instructions",
+                        "",
+                        "1. Cream-together the butter, peanut butter, eggs, sugar, brown sugar, vanilla, and water.",
+                        "",
+                        "2. Stir-in the flour, baking soda, and salt.",
+                        "",
+                        "3. Stir-in the chocolate chips.",
+                        "",
+                        "Drop dough by large teaspoons onto a lightly greased baking sheet. Bake at 350 degrees for",
+                        "12 to 14 minutes (cookies should be light brown and slightly underdone). Remove from sheet to cool."
+                    ]
+                }
             ]
         },
         {
@@ -60,49 +96,86 @@
                 "count": 24,
                 "size": {"amount": 1, "unit": "count", "name": "mini popover"}
             },
-            "ingredients": [
-                {"amount": 2, "unit": "count", "name": "large eggs"},
-                {"amount": 1, "unit": "cup", "name": "room temperature milk"},
-                {"amount": 2, "unit": "tbsp", "name": "melted butter"},
-                {"amount": 1, "unit": "cup", "name": "flour"},
-                {"amount": 0.5, "unit": "tsp", "name": "salt"},
-                {"amount": 0.125, "unit": "tsp", "name": "ground black pepper"},
-                {"amount": 1.25, "unit": "oz", "name": "Gorgonzola cheese"},
-                {"amount": 1, "unit": "tbsp", "name": "chopped fresh thyme"}
-            ],
-            "instructions": [
-                "Whisk together eggs, milk, melted butter, flour, salt, pepper, and thyme and refrigerate for 2 hours.",
-                "Stir-in Gorgonzola cheese and thyme",
-                "Butter 2 mini muffin pans. Fill each cup to the top with batter."
-            ],
-            "summary": [
-                "Adjust the oven rack to the highest position in oven and bake at 425 degrees for 18 to 20 minutes until puffed and golden.",
-                "Great served as an appetizer with red wine."
+            "content": [
+                {
+                    "markdown": [
+                        "## Ingredients"
+                    ]
+                },
+                {
+                    "ingredients": {
+                        "ingredients": [
+                            {"amount": 2, "unit": "count", "name": "large eggs"},
+                            {"amount": 1, "unit": "cup", "name": "room temperature milk"},
+                            {"amount": 2, "unit": "tbsp", "name": "melted butter"},
+                            {"amount": 1, "unit": "cup", "name": "flour"},
+                            {"amount": 0.5, "unit": "tsp", "name": "salt"},
+                            {"amount": 0.125, "unit": "tsp", "name": "ground black pepper"},
+                            {"amount": 1.25, "unit": "oz", "name": "Gorgonzola cheese"},
+                            {"amount": 1, "unit": "tbsp", "name": "chopped fresh thyme"}
+                        ]
+                    }
+                },
+                {
+                    "markdown": [
+                        "## Instructions",
+                        "",
+                        "1. Whisk together eggs, milk, melted butter, flour, salt, pepper, and thyme and refrigerate for 2 hours.",
+                        "",
+                        "2. Stir-in Gorgonzola cheese and thyme",
+                        "",
+                        "3. Butter 2 mini muffin pans. Fill each cup to the top with batter.",
+                        "",
+                        "Adjust the oven rack to the highest position in oven and bake at 425 degrees for 18 to 20 minutes",
+                        "until puffed and golden.",
+                        "",
+                        "Great served as an appetizer with red wine."
+                    ]
+                }
             ]
         },
         {
             "title": "Big Sandwich",
-            "description": [
-                "The big sandwich is a family favorite for casual dinners. The kids often requested it when we were going out for the evening."
-            ],
             "categories": ["Main Dishes"],
-            "ingredients": [
-                {"amount": 1, "unit": "count", "name": "loaf freshly baked French bread"},
-                {"amount": 0.5, "unit": "count", "name": "head shredded iceberg lettuce"},
-                {"amount": 2, "unit": "count", "name": "large tomatoes, sliced thinly"},
-                {"amount": 1, "unit": "count", "name": "medium red onion, sliced thinly"},
-                {"amount": 0.75, "unit": "lb", "name": "thinly sliced deli ham"},
-                {"amount": 0.75, "unit": "lb", "name": "thinly sliced deli turkey"},
-                {"amount": 0.5, "unit": "lb", "name": "thinly sliced Swiss or Havarti cheese"},
-                {"amount": 0.125, "unit": "cup", "name": "mayonnaise"},
-                {"amount": 0.125, "unit": "cup", "name": "Dijon mustard"}
-            ],
-            "instructions": [
-                "Slice the French loaf in half lengthwise, if the loaf is really thick, scoop out some of the bread middle.",
-                "Spread both sides liberally with mayo and as much mustard as you like.",
-                "Layer the ham, turkey, and cheese on the bottom half of the loaf.",
-                "Top with the tomatoes, salt and pepper to taste, onions and shredded lettuce.",
-                "Place the top of the loaf on and wrap the whole sandwich tightly in saran wrap. Refrigerate until ready to slice."
+            "content": [
+                {
+                    "markdown": [
+                        "The big sandwich is a family favorite for casual dinners. The kids often requested it when we",
+                        "were going out for the evening.",
+                        "",
+                        "## Ingredients"
+                    ]
+                },
+                {
+                    "ingredients": {
+                        "ingredients": [
+                            {"amount": 1, "unit": "count", "name": "loaf freshly baked French bread"},
+                            {"amount": 0.5, "unit": "count", "name": "head shredded iceberg lettuce"},
+                            {"amount": 2, "unit": "count", "name": "large tomatoes, sliced thinly"},
+                            {"amount": 1, "unit": "count", "name": "medium red onion, sliced thinly"},
+                            {"amount": 0.75, "unit": "lb", "name": "thinly sliced deli ham"},
+                            {"amount": 0.75, "unit": "lb", "name": "thinly sliced deli turkey"},
+                            {"amount": 0.5, "unit": "lb", "name": "thinly sliced Swiss or Havarti cheese"},
+                            {"amount": 0.125, "unit": "cup", "name": "mayonnaise"},
+                            {"amount": 0.125, "unit": "cup", "name": "Dijon mustard"}
+                        ]
+                    }
+                },
+                {
+                    "markdown": [
+                        "## Instructions",
+                        "",
+                        "1. Slice the French loaf in half lengthwise, if the loaf is really thick, scoop out some of the bread middle.",
+                        "",
+                        "2. Spread both sides liberally with mayo and as much mustard as you like.",
+                        "",
+                        "3. Layer the ham, turkey, and cheese on the bottom half of the loaf.",
+                        "",
+                        "4. Top with the tomatoes, salt and pepper to taste, onions and shredded lettuce.",
+                        "",
+                        "5. Place the top of the loaf on and wrap the whole sandwich tightly in saran wrap. Refrigerate until ready to slice."
+                    ]
+                }
             ]
         }
     ]

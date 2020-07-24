@@ -205,26 +205,28 @@ export class CookbookPage {
                 ]}
                 : null,
 
-            // Description
-            'description' in recipe ? recipe.description.map((markdown) => markdownElements(markdown)) : null,
+            // Content
+            recipe.content.map((content) => {
+                // Ingredients list?
+                if ('ingredients' in content) {
+                    return {
+                        'html': 'p',
+                        'elem': [
+                            'title' in content.ingredients ? {'html': 'h2', 'elem': {'text': content.ingredients.title}} : null,
+                            {
+                                'html': 'ul',
+                                'attr': {'class': 'cookbook-ingredient-list'},
+                                'elem': content.ingredients.ingredients.map(
+                                    (ingredient) => ({'html': 'li', 'elem': CookbookPage.ingredientElements(ingredient)})
+                                )
+                            }
+                        ]
+                    };
+                }
 
-            // Ingredients
-            {'html': 'h2', 'elem': {'text': 'Ingredients'}},
-            {
-                'html': 'ul',
-                'attr': {'class': 'cookbook-ingredient-list'},
-                'elem': recipe.ingredients.map((ingredient) => ({'html': 'li', 'elem': CookbookPage.ingredientElements(ingredient)}))
-            },
-
-            // Instructions
-            {'html': 'h2', 'elem': {'text': 'Instructions'}},
-            'introduction' in recipe ? recipe.introduction.map((markdown) => markdownElements(markdown)) : null,
-            {
-                'html': 'ol',
-                'attr': {'class': 'cookbook-instruction-list'},
-                'elem': recipe.instructions.map((instruction) => ({'html': 'li', 'elem': markdownElements(instruction)}))
-            },
-            'summary' in recipe ? recipe.summary.map((markdown) => markdownElements(markdown)) : null
+                // Markdown
+                return markdownElements(content.markdown.join('\n'));
+            })
         ];
     }
 

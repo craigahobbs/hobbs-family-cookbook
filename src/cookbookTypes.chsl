@@ -5,7 +5,7 @@ struct Cookbook
     string(len > 0, len < 100) title
 
     # The cookbook's recipes
-    Recipe[len > 0] recipes
+    Recipe[len > 0, len < 1000] recipes
 
 
 # Recipe struct
@@ -14,30 +14,14 @@ struct Recipe
     # The recipe title text
     string(len > 0, len < 100) title
 
-    # The recipe's description markdown
-    optional Markdown description
-
     # The recipe's categories
-    Category[len > 0] categories
+    string(len > 0, len < 100)[len > 0] categories
 
     # The serving size and count
     optional Servings servings
 
-    # The recipe's igredient list
-    Ingredient[len > 0, len < 100] ingredients
-
-    # The recipe's introduction markdown
-    optional Markdown introduction
-
-    # The recipe's instructions markdown
-    Markdown instructions
-
-    # The recipe's summary markdown
-    optional Markdown summary
-
-
-# A list of markdown text
-typedef string(len > 0)[len > 0, len < 100] Markdown
+    # The recipe content
+    Content[len > 0, len < 100] content
 
 
 # Recipe serving size and count struct
@@ -48,6 +32,26 @@ struct Servings
 
     # The serving size
     Ingredient size
+
+
+# Recipe content union
+union Content
+
+    #  A list of markdown lines
+    string[len > 0, len < 1000] markdown
+
+    # An ingredient list
+    IngredientList ingredients
+
+
+# Ingredient list content struct
+struct IngredientList
+
+    # The ingredient list title
+    optional string(len > 0, len < 100) title
+
+    # The ingredients
+    Ingredient[len > 0, len < 100] ingredients
 
 
 # Recipe ingredient struct
@@ -61,18 +65,6 @@ struct Ingredient
 
     # The ingredient amount
     float(> 0) amount
-
-
-# Recipe category enum
-enum Category
-    Appetizers
-    Breads
-    Cookies
-    Deserts
-    "Main Dishes"
-    Salads
-    Soups
-    Miscellaneous
 
 
 # Recipe ingredient unit enum
