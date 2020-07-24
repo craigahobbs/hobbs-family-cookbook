@@ -2,6 +2,33 @@
     "title": "The Hobbs Family Cookbook",
     "recipes": [
         {
+            "title": "Caesar Salad",
+            "categories": ["Salads"],
+            "ingredients": [
+                {"amount": 2, "unit": "count", "name": "garlic cloves chopped"},
+                {"amount": 0.75, "unit": "tsp", "name": "salt"},
+                {"amount": 0.5, "unit": "tsp", "name": "Dijon mustard"},
+                {"amount": 1.5, "unit": "tsp", "name": "Worcestershire sauce"},
+                {"amount": 1, "unit": "count", "name": "coddled egg"},
+                {"amount": 2, "unit": "tbsp", "name": "fresh lemon juice"},
+                {"amount": 1, "unit": "tsp", "name": "anchovy paste"},
+                {"amount": 2, "unit": "tbsp", "name": "shredded Parmesan cheese"},
+                {"amount": 0.5, "unit": "cup", "name": "olive oil"},
+                {"amount": 1, "unit": "count", "name": "large head romaine lettuce"},
+                {"amount": 1, "unit": "cup", "name": "croutons"},
+                {"amount": 0.33, "unit": "cup", "name": "shredded Parmesan cheese"},
+                {"amount": 1, "unit": "tbsp", "name": "freshly ground black pepper"}
+            ],
+            "instructions": [
+                "In a blender combine the garlic, salt, mustard, Worcestershire, egg, lemon juice, anchovy paste, and Parmesan cheese and process until smooth and thickened.\n\nTo coddle the egg, bring 2 inches of water to boil in a small saucepan. Lower the egg (cracked open) into the water, cover and let stand for 1 minute. Cool and add egg to the blender.",
+                "Slowly blend in the olive oil.",
+                "Toss dressing with lettuce, croutons, Parmesan cheese, and pepper."
+            ],
+            "summary": [
+                "Dressing can be refrigerated up to 3 days."
+            ]
+        },
+        {
             "title": "Chunky Chippers",
             "categories": ["Cookies"],
             "ingredients": [
