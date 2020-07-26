@@ -1,0 +1,105 @@
+# Markdown document struct
+struct Markdown
+
+    # The markdown document's parts
+    MarkdownPart[len > 0, len < 1000] parts
+
+
+# Markdown document part struct
+union MarkdownPart
+
+    # A paragraph
+    Paragraph paragraph
+
+    # A list
+    List list
+
+    # A code block
+    CodeBlock codeBlock
+
+
+# Paragraph markdown part struct
+struct Paragraph
+
+    # The paragraph span array
+    Span[len > 0, len < 1000] spans
+
+    # The paragraph style
+    optional ParagraphStyle style
+
+
+# Paragraph style enum
+enum ParagraphStyle
+    H1
+    H2
+    H3
+    H4
+    H5
+    H6
+
+
+# Paragraph span struct
+union Span
+
+    # Text span
+    string(len > 0, len < 1000) text
+
+    # Style span
+    StyleSpan style
+
+    # Link span
+    LinkSpan link
+
+    # Image span
+    ImageSpan image
+
+
+# Style span struct
+struct StyleSpan
+
+    # The contained spans
+    Span[len > 1, len < 1000] spans
+
+    # The span's character style
+    CharacterStyle style
+
+
+# Character style enum
+enum CharacterStyle
+    Bold
+    Italic
+    Strike
+
+
+# Link span struct
+struct LinkSpan
+
+    # The contained spans
+    Span[len > 1, len < 1000] spans
+
+    # The link's URL
+    string(len > 0, len < 1000) href
+
+
+# Image span struct
+struct ImageSpan
+
+    # The image URL
+    string(len > 0, len < 1000) href
+
+
+# A list markdown part struct
+struct List
+
+    # The markdown document's parts
+    MarkdownPart[len > 0, len < 1000] parts
+
+    # If True, the list is ordered
+    optional bool ordered
+
+
+# A code block markdown part struct
+struct CodeBlock
+
+    # The code block's text lines
+    string[len > 0, len < 1000] lines

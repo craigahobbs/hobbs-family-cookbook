@@ -24,20 +24,27 @@ build/env.build:
 	docker run --rm -u `id -g`:`id -g` -v `pwd`:`pwd` -w `pwd` $(PYTHON_IMAGE) build/env/bin/pip install -U pip setuptools wheel chisel
 	touch $@
 
-src/cookbookTypes.json: src/cookbookTypes.chsl | build/env.build
-	docker run --rm -u `id -g`:`id -g` -v `pwd`:`pwd` -w `pwd` $(PYTHON_IMAGE) build/env/bin/python3 -m chisel compile $< > $@
+define COMPILE_CHSL
+src/$(strip $(1)).json: src/$(strip $(1)).chsl | build/env.build
+	docker run --rm -u `id -g`:`id -g` -v `pwd`:`pwd` -w `pwd` $$(PYTHON_IMAGE) build/env/bin/python3 -m chisel compile $$< > $$@
 
-src/cookbookTypes.js: src/cookbookTypes.json
-	echo '/* eslint-disable quotes */' > $@
-	echo 'export const cookbookTypes =' >> $@
-	cat $< >> $@
-	echo ';' >> $@
+src/$(strip $(1)).js: src/$(strip $(1)).json
+	echo '/* eslint-disable quotes */' > $$@
+	echo 'export const $(strip $(1)) =' >> $$@
+	cat $$< >> $$@
+	echo ';' >> $$@
 
-_test: src/cookbookTypes.js
+COMPILE_CHSL_JS := $$(COMPILE_CHSL_JS) src/$(strip $(1)).js
+endef
 
-_lint: src/cookbookTypes.js
+$(eval $(call COMPILE_CHSL, cookbookTypes))
+$(eval $(call COMPILE_CHSL, markdownTypes))
 
-_doc: src/cookbookTypes.js
+_test: $(COMPILE_CHSL_JS)
+
+_lint: $(COMPILE_CHSL_JS)
+
+_doc: $(COMPILE_CHSL_JS)
 
 help:
 	@echo '            [gh-pages]'
