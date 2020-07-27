@@ -34,17 +34,17 @@ src/$(strip $(1)).js: src/$(strip $(1)).json
 	cat $$< >> $$@
 	echo ';' >> $$@
 
-COMPILE_CHSL_JS := $$(COMPILE_CHSL_JS) src/$(strip $(1)).js
+CHISEL_TARGETS := $$(CHISEL_TARGETS) src/$(strip $(1)).js
 endef
 
 $(eval $(call COMPILE_CHSL, cookbookTypes))
 $(eval $(call COMPILE_CHSL, markdownTypes))
 
-_test: $(COMPILE_CHSL_JS)
+_test: $(CHISEL_TARGETS)
 
-_lint: $(COMPILE_CHSL_JS)
+_lint: $(CHISEL_TARGETS)
 
-_doc: $(COMPILE_CHSL_JS)
+_doc: $(CHISEL_TARGETS)
 
 help:
 	@echo '            [gh-pages]'

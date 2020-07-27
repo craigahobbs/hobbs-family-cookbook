@@ -114,7 +114,8 @@ function markdownPartElements(parts) {
         } else if ('list' in markdownPart) {
             const {list} = markdownPart;
             partElements.push({
-                'html': 'ordered' in list && list.ordered ? 'ol' : 'ul',
+                'html': 'start' in list ? 'ol' : 'ul',
+                'attr': 'start' in list && list.start > 1 ? {'start': `${list.start}`} : null,
                 'elem': list.items.map((item) => ({
                     'html': 'li',
                     'elem': markdownPartElements(item.parts)

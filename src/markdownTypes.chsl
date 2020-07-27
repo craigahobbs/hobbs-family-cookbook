@@ -100,8 +100,8 @@ struct ImageSpan
 # List markdown part struct
 struct List
 
-    # If True, the list is ordered
-    optional bool ordered
+    # The list is numbered and this is starting number
+    optional int(>= 0) start
 
     # The list's items
     ListItem[len > 0, len < 1000] items

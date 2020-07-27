@@ -134,11 +134,14 @@ export const markdownTypes =
             "doc": " List markdown part struct",
             "members": [
                 {
-                    "doc": " If True, the list is ordered",
-                    "name": "ordered",
+                    "attr": {
+                        "gte": 0.0
+                    },
+                    "doc": " The list is numbered and this is starting number",
+                    "name": "start",
                     "optional": true,
                     "type": {
-                        "builtin": "bool"
+                        "builtin": "int"
                     }
                 },
                 {

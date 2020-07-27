@@ -1,19 +1,22 @@
 import * as chisel from '../src/chisel.js';
 import {markdownElements, parseMarkdown} from '../src/markdown.js';
+import {markdownTypes} from '../src/markdownTypes.js';
 import test from 'ava';
 
 /* eslint-disable id-length */
 
 
 test('parseMarkdown', (t) => {
-    t.deepEqual(
-        parseMarkdown(`
+    const markdown = parseMarkdown(`
 # Title
 
 This is a sentence.
 This is another sentence.
 
-This is another paragraph.`),
+This is another paragraph.`);
+    chisel.validateType(markdownTypes, 'Markdown', markdown);
+    t.deepEqual(
+        markdown,
         {
             'parts': [
                 {
@@ -136,7 +139,7 @@ test('markdownElements', (t) => {
             },
             {
                 'list': {
-                    'ordered': true,
+                    'start': 10,
                     'items': [
                         {
                             'parts': [
@@ -207,6 +210,7 @@ test('markdownElements', (t) => {
             },
             {
                 'html': 'ul',
+                'attr': null,
                 'elem': [
                     {
                         'html': 'li',
@@ -225,6 +229,7 @@ test('markdownElements', (t) => {
             },
             {
                 'html': 'ol',
+                'attr': {'start': '10'},
                 'elem': [
                     {
                         'html': 'li',
