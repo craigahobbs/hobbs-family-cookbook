@@ -21,11 +21,11 @@ union MarkdownPart
 # Paragraph markdown part struct
 struct Paragraph
 
-    # The paragraph span array
-    Span[len > 0, len < 1000] spans
-
     # The paragraph style
     optional ParagraphStyle style
+
+    # The paragraph span array
+    Span[len > 0, len < 1000] spans
 
 
 # Paragraph style enum
@@ -57,11 +57,11 @@ union Span
 # Style span struct
 struct StyleSpan
 
-    # The contained spans
-    Span[len > 1, len < 1000] spans
-
     # The span's character style
     CharacterStyle style
+
+    # The contained spans
+    Span[len > 0, len < 1000] spans
 
 
 # Character style enum
@@ -74,18 +74,27 @@ enum CharacterStyle
 # Link span struct
 struct LinkSpan
 
-    # The contained spans
-    Span[len > 1, len < 1000] spans
-
     # The link's URL
     string(len > 0, len < 1000) href
+
+    # The image's title
+    optional string(len > 0, len < 1000) title
+
+    # The contained spans
+    Span[len > 0, len < 1000] spans
 
 
 # Image span struct
 struct ImageSpan
 
     # The image URL
-    string(len > 0, len < 1000) href
+    string(len > 0, len < 1000) src
+
+    # The image's alternate text
+    string(len > 0, len < 1000) alt
+
+    # The image's title
+    optional string(len > 0, len < 1000) title
 
 
 # A list markdown part struct

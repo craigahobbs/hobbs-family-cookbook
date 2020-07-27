@@ -51,7 +51,30 @@ export const markdownTypes =
                         "lenLT": 1000
                     },
                     "doc": " The image URL",
-                    "name": "href",
+                    "name": "src",
+                    "type": {
+                        "builtin": "string"
+                    }
+                },
+                {
+                    "attr": {
+                        "lenGT": 0,
+                        "lenLT": 1000
+                    },
+                    "doc": " The image's alternate text",
+                    "name": "alt",
+                    "type": {
+                        "builtin": "string"
+                    }
+                },
+                {
+                    "attr": {
+                        "lenGT": 0,
+                        "lenLT": 1000
+                    },
+                    "doc": " The image's title",
+                    "name": "title",
+                    "optional": true,
                     "type": {
                         "builtin": "string"
                     }
@@ -66,7 +89,30 @@ export const markdownTypes =
             "members": [
                 {
                     "attr": {
-                        "lenGT": 1,
+                        "lenGT": 0,
+                        "lenLT": 1000
+                    },
+                    "doc": " The link's URL",
+                    "name": "href",
+                    "type": {
+                        "builtin": "string"
+                    }
+                },
+                {
+                    "attr": {
+                        "lenGT": 0,
+                        "lenLT": 1000
+                    },
+                    "doc": " The image's title",
+                    "name": "title",
+                    "optional": true,
+                    "type": {
+                        "builtin": "string"
+                    }
+                },
+                {
+                    "attr": {
+                        "lenGT": 0,
                         "lenLT": 1000
                     },
                     "doc": " The contained spans",
@@ -77,17 +123,6 @@ export const markdownTypes =
                                 "user": "Span"
                             }
                         }
-                    }
-                },
-                {
-                    "attr": {
-                        "lenGT": 0,
-                        "lenLT": 1000
-                    },
-                    "doc": " The link's URL",
-                    "name": "href",
-                    "type": {
-                        "builtin": "string"
                     }
                 }
             ],
@@ -183,6 +218,14 @@ export const markdownTypes =
             "doc": " Paragraph markdown part struct",
             "members": [
                 {
+                    "doc": " The paragraph style",
+                    "name": "style",
+                    "optional": true,
+                    "type": {
+                        "user": "ParagraphStyle"
+                    }
+                },
+                {
                     "attr": {
                         "lenGT": 0,
                         "lenLT": 1000
@@ -195,14 +238,6 @@ export const markdownTypes =
                                 "user": "Span"
                             }
                         }
-                    }
-                },
-                {
-                    "doc": " The paragraph style",
-                    "name": "style",
-                    "optional": true,
-                    "type": {
-                        "user": "ParagraphStyle"
                     }
                 }
             ],
@@ -281,8 +316,15 @@ export const markdownTypes =
             "doc": " Style span struct",
             "members": [
                 {
+                    "doc": " The span's character style",
+                    "name": "style",
+                    "type": {
+                        "user": "CharacterStyle"
+                    }
+                },
+                {
                     "attr": {
-                        "lenGT": 1,
+                        "lenGT": 0,
                         "lenLT": 1000
                     },
                     "doc": " The contained spans",
@@ -293,13 +335,6 @@ export const markdownTypes =
                                 "user": "Span"
                             }
                         }
-                    }
-                },
-                {
-                    "doc": " The span's character style",
-                    "name": "style",
-                    "type": {
-                        "user": "CharacterStyle"
                     }
                 }
             ],

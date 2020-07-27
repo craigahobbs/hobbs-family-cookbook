@@ -142,6 +142,18 @@ function paragraphSpanElements(spans) {
                 'attr': {'href': link.href},
                 'elem': 'spans' in link ? paragraphSpanElements(link.spans) : null
             });
+
+        // Image span?
+        } else if ('image' in span) {
+            const {image} = span;
+            const imageElement = {
+                'html': 'img',
+                'attr': {'src': image.src, 'alt': image.alt}
+            };
+            if ('title' in image) {
+                imageElement.attr.title = image.title;
+            }
+            spanElements.push(imageElement);
         }
     }
     return spanElements;
