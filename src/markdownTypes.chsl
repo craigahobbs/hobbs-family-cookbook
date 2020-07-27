@@ -30,12 +30,12 @@ struct Paragraph
 
 # Paragraph style enum
 enum ParagraphStyle
-    H1
-    H2
-    H3
-    H4
-    H5
-    H6
+    h1
+    h2
+    h3
+    h4
+    h5
+    h6
 
 
 # Paragraph span struct
@@ -66,9 +66,9 @@ struct StyleSpan
 
 # Character style enum
 enum CharacterStyle
-    Bold
-    Italic
-    Strike
+    bold
+    italic
+    strike
 
 
 # Link span struct
@@ -97,17 +97,24 @@ struct ImageSpan
     optional string(len > 0, len < 1000) title
 
 
-# A list markdown part struct
+# List markdown part struct
 struct List
-
-    # The markdown document's parts
-    MarkdownPart[len > 0, len < 1000] parts
 
     # If True, the list is ordered
     optional bool ordered
 
+    # The list's items
+    ListItem[len > 0, len < 1000] items
 
-# A code block markdown part struct
+
+# List item struct
+struct ListItem
+
+    # The markdown document's parts
+    MarkdownPart[len > 0, len < 1000] parts
+
+
+# Code block markdown part struct
 struct CodeBlock
 
     # The code block's text lines

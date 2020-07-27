@@ -13,8 +13,7 @@ test('parseMarkdown', (t) => {
 This is a sentence.
 This is another sentence.
 
-This is another paragraph.
-`),
+This is another paragraph.`),
         {
             'parts': [
                 {
@@ -22,7 +21,7 @@ This is another paragraph.
                         'spans': [
                             {'text': 'Title'}
                         ],
-                        'style': 'H1'
+                        'style': 'h1'
                     }
                 },
                 {
@@ -50,7 +49,7 @@ test('markdownElements', (t) => {
         'parts': [
             {
                 'paragraph': {
-                    'style': 'H1',
+                    'style': 'h1',
                     'spans': [{'text': 'Title'}]
                 }
             },
@@ -60,12 +59,12 @@ test('markdownElements', (t) => {
                         {'text': 'This is a sentence. This is '},
                         {
                             'style': {
-                                'style': 'Bold',
+                                'style': 'bold',
                                 'spans': [
                                     {'text': 'bold and '},
-                                    {'style': {'style': 'Italic', 'spans': [{'text': 'bold-italic'}]}},
+                                    {'style': {'style': 'italic', 'spans': [{'text': 'bold-italic'}]}},
                                     {'text': '. This is '},
-                                    {'style': {'style': 'Strike', 'spans': [{'text': 'strikethrough'}]}},
+                                    {'style': {'style': 'strike', 'spans': [{'text': 'strikethrough'}]}},
                                     {'text': '.'}
                                 ]
                             }
@@ -81,7 +80,7 @@ test('markdownElements', (t) => {
                             'href': 'https://craigahobbs.github.io/chisel/doc/',
                             'title': 'The Chisel Type Model',
                             'spans': [
-                                {'style': {'style': 'Bold', 'spans': [{'text': 'Chisel'}]}},
+                                {'style': {'style': 'bold', 'spans': [{'text': 'Chisel'}]}},
                                 {'text': ' Type Model'}
                             ]
                         }}
@@ -97,6 +96,67 @@ test('markdownElements', (t) => {
                             'alt': 'Chisel Documentation Icon',
                             'title': 'Chisel'
                         }}
+                    ]
+                }
+            },
+            {
+                'list': {
+                    'items': [
+                        {
+                            'parts': [
+                                {
+                                    'paragraph': {
+                                        'spans': [
+                                            {'text': 'This is a paragraph.'}
+                                        ]
+                                    }
+                                },
+                                {
+                                    'paragraph': {
+                                        'spans': [
+                                            {'text': 'This is a another paragraph.'}
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            'parts': [
+                                {
+                                    'paragraph': {
+                                        'spans': [
+                                            {'text': 'This is the second list item.'}
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                'list': {
+                    'ordered': true,
+                    'items': [
+                        {
+                            'parts': [
+                                {
+                                    'paragraph': {
+                                        'spans': [
+                                            {'text': 'This is a paragraph.'}
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                'codeBlock': {
+                    'lines': [
+                        'Line 1',
+                        'Line 2'
                     ]
                 }
             }
@@ -144,6 +204,45 @@ test('markdownElements', (t) => {
                         }
                     }
                 ]
+            },
+            {
+                'html': 'ul',
+                'elem': [
+                    {
+                        'html': 'li',
+                        'elem': [
+                            {'html': 'p', 'elem': [{'text': 'This is a paragraph.'}]},
+                            {'html': 'p', 'elem': [{'text': 'This is a another paragraph.'}]}
+                        ]
+                    },
+                    {
+                        'html': 'li',
+                        'elem': [
+                            {'html': 'p', 'elem': [{'text': 'This is the second list item.'}]}
+                        ]
+                    }
+                ]
+            },
+            {
+                'html': 'ol',
+                'elem': [
+                    {
+                        'html': 'li',
+                        'elem': [
+                            {'html': 'p', 'elem': [{'text': 'This is a paragraph.'}]}
+                        ]
+                    }
+                ]
+            },
+            {
+                'html': 'pre',
+                'elem': {
+                    'html': 'code',
+                    'elem': [
+                        {'text': 'Line 1'},
+                        {'text': 'Line 2'}
+                    ]
+                }
             }
         ]
     );

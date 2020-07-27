@@ -7,20 +7,20 @@ export const markdownTypes =
             "name": "CharacterStyle",
             "values": [
                 {
-                    "name": "Bold"
+                    "name": "bold"
                 },
                 {
-                    "name": "Italic"
+                    "name": "italic"
                 },
                 {
-                    "name": "Strike"
+                    "name": "strike"
                 }
             ]
         }
     },
     "CodeBlock": {
         "struct": {
-            "doc": " A code block markdown part struct",
+            "doc": " Code block markdown part struct",
             "members": [
                 {
                     "attr": {
@@ -131,7 +131,38 @@ export const markdownTypes =
     },
     "List": {
         "struct": {
-            "doc": " A list markdown part struct",
+            "doc": " List markdown part struct",
+            "members": [
+                {
+                    "doc": " If True, the list is ordered",
+                    "name": "ordered",
+                    "optional": true,
+                    "type": {
+                        "builtin": "bool"
+                    }
+                },
+                {
+                    "attr": {
+                        "lenGT": 0,
+                        "lenLT": 1000
+                    },
+                    "doc": " The list's items",
+                    "name": "items",
+                    "type": {
+                        "array": {
+                            "type": {
+                                "user": "ListItem"
+                            }
+                        }
+                    }
+                }
+            ],
+            "name": "List"
+        }
+    },
+    "ListItem": {
+        "struct": {
+            "doc": " List item struct",
             "members": [
                 {
                     "attr": {
@@ -147,17 +178,9 @@ export const markdownTypes =
                             }
                         }
                     }
-                },
-                {
-                    "doc": " If True, the list is ordered",
-                    "name": "ordered",
-                    "optional": true,
-                    "type": {
-                        "builtin": "bool"
-                    }
                 }
             ],
-            "name": "List"
+            "name": "ListItem"
         }
     },
     "Markdown": {
@@ -250,22 +273,22 @@ export const markdownTypes =
             "name": "ParagraphStyle",
             "values": [
                 {
-                    "name": "H1"
+                    "name": "h1"
                 },
                 {
-                    "name": "H2"
+                    "name": "h2"
                 },
                 {
-                    "name": "H3"
+                    "name": "h3"
                 },
                 {
-                    "name": "H4"
+                    "name": "h4"
                 },
                 {
-                    "name": "H5"
+                    "name": "h5"
                 },
                 {
-                    "name": "H6"
+                    "name": "h6"
                 }
             ]
         }

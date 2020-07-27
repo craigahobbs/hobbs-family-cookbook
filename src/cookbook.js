@@ -2,8 +2,8 @@
 // https://github.com/craigahobbs/cookbook/blob/master/LICENSE
 
 import * as chisel from './chisel.js';
+import {markdownElements, parseMarkdown} from './markdown.js';
 import {cookbookTypes} from './cookbookTypes.js';
-import {markdownElements} from './markdown.js';
 
 
 /**
@@ -226,7 +226,7 @@ export class CookbookPage {
                 }
 
                 // Markdown
-                return markdownElements(content.markdown.join('\n'));
+                return markdownElements(parseMarkdown(content.markdown.join('\n')));
             })
         ];
     }

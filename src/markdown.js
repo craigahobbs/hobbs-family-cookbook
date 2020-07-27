@@ -13,9 +13,21 @@ import {markdownTypes} from './markdownTypes.js';
  */
 export function parseMarkdown(markdown) {
     const markdownParts = [];
+    let paragraphLines = null;
+
+    // Helper function to close a paragraph
+    const closeParagraph = () => {
+        if (paragraphLines !== null) {
+            markdownParts.push({
+                'paragraph': {
+                    'spans': paragraphSpans(paragraphLines.join(' '))
+                }
+            });
+        }
+        paragraphLines = null;
+    };
 
     // Process markdown text line by line
-    let paragraphLines = null;
     for (const markdownString of (typeof markdown === 'string' ? [markdown] : markdown)) {
         for (const line of markdownString.split('\n')) {
             const emptyLine = (/^\s*$/).test(line);
@@ -23,15 +35,7 @@ export function parseMarkdown(markdown) {
 
             // Empty line?
             if (emptyLine) {
-                // Add the paragraph markdown part model
-                if (paragraphLines !== null) {
-                    markdownParts.push({
-                        'paragraph': {
-                            'spans': paragraphSpans(paragraphLines.join(' '))
-                        }
-                    });
-                    paragraphLines = null;
-                }
+                closeParagraph();
 
             // Heading?
             } else if (matchHeading !== null) {
@@ -39,7 +43,7 @@ export function parseMarkdown(markdown) {
                 markdownParts.push({
                     'paragraph': {
                         'spans': paragraphSpans(matchHeading[2]),
-                        'style': `H${matchHeading[1].length}`
+                        'style': `h${matchHeading[1].length}`
                     }
                 });
 
@@ -53,16 +57,7 @@ export function parseMarkdown(markdown) {
             }
         }
     }
-
-    // Add the paragraph markdown part model
-    if (paragraphLines !== null) {
-        markdownParts.push({
-            'paragraph': {
-                'spans': paragraphSpans(paragraphLines.join(' '))
-            }
-        });
-        paragraphLines = null;
-    }
+    closeParagraph();
 
     return {'parts': markdownParts};
 }
@@ -84,39 +79,68 @@ function paragraphSpans(text) {
 
 
 /**
- * Generate an element model from a markdown string
+ * Generate an element model from a markdown model
  *
- * @param {string|Object} [markdown=null] - Markdown text or markdown model
- * @returns {?Object[]}
+ * @param {Object} markdown - The markdown model
+ * @returns {Object[]}
  */
-export function markdownElements(markdown = null) {
-    const elements = [];
-
+export function markdownElements(markdown) {
     // Parse the markdown
-    const markdownParsed = typeof markdown === 'string' ? parseMarkdown(markdown) : markdown;
-    chisel.validateType(markdownTypes, 'Markdown', markdownParsed);
+    const validatedMarkdown = chisel.validateType(markdownTypes, 'Markdown', markdown);
 
-    // Transform the markdown model into an element model
-    for (const markdownPart of markdownParsed.parts) {
+    // Generate an element model from the markdown model parts
+    return markdownPartElements(validatedMarkdown.parts);
+}
+
+
+/**
+ * Helper function to generate an element model from a markdown part model array
+ *
+ * @param {Object[]} parts - The markdown parts model array
+ * @returns {Object[]} The parts array element model
+ */
+function markdownPartElements(parts) {
+    const partElements = [];
+    for (const markdownPart of parts) {
         // Paragraph?
         if ('paragraph' in markdownPart) {
             const {paragraph} = markdownPart;
-            elements.push({
-                'html': 'style' in paragraph ? paragraph.style.toLowerCase() : 'p',
+            partElements.push({
+                'html': 'style' in paragraph ? paragraph.style : 'p',
                 'elem': paragraphSpanElements(paragraph.spans)
+            });
+
+        // List?
+        } else if ('list' in markdownPart) {
+            const {list} = markdownPart;
+            partElements.push({
+                'html': 'ordered' in list && list.ordered ? 'ol' : 'ul',
+                'elem': list.items.map((item) => ({
+                    'html': 'li',
+                    'elem': markdownPartElements(item.parts)
+                }))
+            });
+
+        // Code block?
+        } else if ('codeBlock' in markdownPart) {
+            const {codeBlock} = markdownPart;
+            partElements.push({
+                'html': 'pre', 'elem': {
+                    'html': 'code',
+                    'elem': codeBlock.lines.map((line) => ({'text': line}))
+                }
             });
         }
     }
 
-    // If there are no elements return null
-    return elements.length ? elements : null;
+    return partElements;
 }
 
 
 /**
  * Helper function to generate an element model from a markdown span model array
  *
- * @param {Object} spans - The markdown span model array
+ * @param {Object[]} spans - The markdown span model array
  * @returns {Object[]} The span array element model
  */
 function paragraphSpanElements(spans) {
@@ -130,7 +154,7 @@ function paragraphSpanElements(spans) {
         } else if ('style' in span) {
             const {style} = span;
             spanElements.push({
-                'html': style.style === 'Strike' ? 'del' : (style.style === 'Italic' ? 'em' : 'strong'),
+                'html': style.style === 'strike' ? 'del' : (style.style === 'italic' ? 'em' : 'strong'),
                 'elem': 'spans' in style ? paragraphSpanElements(style.spans) : null
             });
 
