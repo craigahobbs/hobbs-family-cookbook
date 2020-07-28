@@ -89,7 +89,8 @@ export function parseMarkdown(markdown) {
 
             // List?
             } else if (matchList !== null && lineIndent < codeBlockIndent) {
-                const [, textIndentString,, text] = matchList;
+                const [, listIndentString, listMark, text] = matchList;
+                const start = parseInt(listMark, 10);
 
                 // Close any open paragraph
                 closeParagraph();
@@ -99,8 +100,11 @@ export function parseMarkdown(markdown) {
                     // Add the new list part
                     const listParts = [];
                     const list = {'list': {'items': [{'parts': listParts}]}};
+                    if (!isNaN(start)) {
+                        list.list.start = start;
+                    }
                     topParts.push(list);
-                    parts.push([lineIndent, listParts, list, textIndentString.length]);
+                    parts.push([lineIndent, listParts, list, listIndentString.length]);
                 } else {
                     // New list?
                     const [curIndent, curParts, curList, curListIndent] = updateParts(lineIndent, true);
@@ -108,8 +112,11 @@ export function parseMarkdown(markdown) {
                         // Add the new list part
                         const listParts = [];
                         const list = {'list': {'items': [{'parts': listParts}]}};
+                        if (!isNaN(start)) {
+                            list.list.start = start;
+                        }
                         curParts.push(list);
-                        parts.push([curIndent, listParts, list, textIndentString.length]);
+                        parts.push([curIndent, listParts, list, listIndentString.length]);
                     } else {
                         // Push the new list item
                         const listItem = {'parts': []};

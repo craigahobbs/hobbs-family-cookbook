@@ -87,6 +87,7 @@ ul.cookbook-index-list {
     list-style: none;
     font-size: 1.2em;
     margin-top: 1.5em;
+    margin-left: 0;
 }
 ul.cookbook-index-list li {
     margin-top: 0.7em;
@@ -96,4 +97,7 @@ ul.cookbook-index-list li {
 ul.cookbook-ingredient-list {
     list-style: none;
     margin-left: 1em;
+}
+ul.cookbook-ingredient-list li {
+    margin-top: 0.5em;
 }
