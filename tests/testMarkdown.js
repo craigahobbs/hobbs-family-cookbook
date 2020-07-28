@@ -19,25 +19,49 @@ This is another paragraph.`);
         markdown,
         {
             'parts': [
+                {'paragraph': {'spans': [{'text': 'Title'}], 'style': 'h1'}},
+                {'paragraph': {'spans': [{'text': 'This is a sentence. This is another sentence.'}]}},
+                {'paragraph': {'spans': [{'text': 'This is another paragraph.'}]}}
+            ]
+        }
+    );
+});
+
+
+test('parseMarkdown, list', (t) => {
+    const markdown = parseMarkdown(`
+- item 1
+
+  item 1.2
+
+* item 2
+another
++ item 3`);
+    chisel.validateType(markdownTypes, 'Markdown', markdown);
+    t.deepEqual(
+        markdown,
+        {
+            'parts': [
                 {
-                    'paragraph': {
-                        'spans': [
-                            {'text': 'Title'}
-                        ],
-                        'style': 'h1'
-                    }
-                },
-                {
-                    'paragraph': {
-                        'spans': [
-                            {'text': 'This is a sentence. This is another sentence.'}
-                        ]
-                    }
-                },
-                {
-                    'paragraph': {
-                        'spans': [
-                            {'text': 'This is another paragraph.'}
+                    'list': {
+                        'items': [
+                            {
+                                'parts': [
+                                    {'paragraph': {'spans': [{'text': 'item 1'}]}},
+                                    {'paragraph': {'spans': [{'text': 'item 1.2'}]}}
+                                ]
+                            },
+                            {
+                                'parts': [
+                                    {'paragraph': {'spans': [{'text': 'item 2 another'}]}}
+                                ]
+                            },
+                            {
+                                'parts': [
+                                    {'paragraph': {'spans': [{'text': 'item 3'}]}
+                                    }
+                                ]
+                            }
                         ]
                     }
                 }
@@ -47,15 +71,146 @@ This is another paragraph.`);
 });
 
 
+test('parseMarkdown, list nested', (t) => {
+    const markdown = parseMarkdown(`
+- 1
+ - 2
+  - 3
+   - 4
+    - 5
+     - 6
+  - 7
+    - 8
+      - 9
+   - 10
+
+asdf
+`);
+    chisel.validateType(markdownTypes, 'Markdown', markdown);
+    t.deepEqual(
+        markdown,
+        {
+            'parts': [
+                {
+                    'list': {
+                        'items': [
+                            {
+                                'parts': [
+                                    {'paragraph': {'spans': [{'text': '1'}]}}
+                                ]
+                            },
+                            {
+                                'parts': [
+                                    {'paragraph': {'spans': [{'text': '2'}]}},
+                                    {
+                                        'list': {
+                                            'items': [
+                                                {
+                                                    'parts': [
+                                                        {'paragraph': {'spans': [{'text': '3'}]}}
+                                                    ]
+                                                },
+                                                {
+                                                    'parts': [
+                                                        {'paragraph': {'spans': [{'text': '4'}]}},
+                                                        {
+                                                            'list': {
+                                                                'items': [
+                                                                    {
+                                                                        'parts': [
+                                                                            {'paragraph': {'spans': [{'text': '5'}]}}
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        'parts': [
+                                                                            {'paragraph': {'spans': [{'text': '6'}]}}
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    'parts': [
+                                                        {'paragraph': {'spans': [{'text': '7'}]}},
+                                                        {
+                                                            'list': {
+                                                                'items': [
+                                                                    {
+                                                                        'parts': [
+                                                                            {'paragraph': {'spans': [{'text': '8'}]}},
+                                                                            {
+                                                                                'list': {
+                                                                                    'items': [
+                                                                                        {
+                                                                                            'parts': [
+                                                                                                {'paragraph': {'spans': [{'text': '9'}]}}
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    'parts': [
+                                                        {'paragraph': {'spans': [{'text': '10'}]}}
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    'paragraph': {
+                        'spans': [
+                            {'text': 'asdf'}
+                        ]
+                    }
+                }
+            ]
+        }
+    );
+});
+
+
+test('parseMarkdown, code block', (t) => {
+    const markdown = parseMarkdown(`
+This is some code:
+
+    code 1
+    code 2
+    code 3
+
+Cool, huh?`);
+    chisel.validateType(markdownTypes, 'Markdown', markdown);
+    t.deepEqual(
+        markdown,
+        {
+            'parts': [
+                {'paragraph': {'spans': [{'text': 'This is some code:'}]}},
+                {'codeBlock': {'lines': ['    code 1', '    code 2', '    code 3']}},
+                {'paragraph': {'spans': [{'text': 'Cool, huh?'}]}}
+            ]
+        }
+    );
+});
+
+
 test('markdownElements', (t) => {
     const elements = markdownElements({
         'parts': [
-            {
-                'paragraph': {
-                    'style': 'h1',
-                    'spans': [{'text': 'Title'}]
-                }
-            },
+            {'paragraph': {'style': 'h1', 'spans': [{'text': 'Title'}]}},
             {
                 'paragraph': {
                     'spans': [
@@ -107,31 +262,13 @@ test('markdownElements', (t) => {
                     'items': [
                         {
                             'parts': [
-                                {
-                                    'paragraph': {
-                                        'spans': [
-                                            {'text': 'This is a paragraph.'}
-                                        ]
-                                    }
-                                },
-                                {
-                                    'paragraph': {
-                                        'spans': [
-                                            {'text': 'This is a another paragraph.'}
-                                        ]
-                                    }
-                                }
+                                {'paragraph': {'spans': [{'text': 'This is a paragraph.'}]}},
+                                {'paragraph': {'spans': [{'text': 'This is a another paragraph.'}]}}
                             ]
                         },
                         {
                             'parts': [
-                                {
-                                    'paragraph': {
-                                        'spans': [
-                                            {'text': 'This is the second list item.'}
-                                        ]
-                                    }
-                                }
+                                {'paragraph': {'spans': [{'text': 'This is the second list item.'}]}}
                             ]
                         }
                     ]
@@ -143,13 +280,7 @@ test('markdownElements', (t) => {
                     'items': [
                         {
                             'parts': [
-                                {
-                                    'paragraph': {
-                                        'spans': [
-                                            {'text': 'This is a paragraph.'}
-                                        ]
-                                    }
-                                }
+                                {'paragraph': {'spans': [{'text': 'This is a paragraph.'}]}}
                             ]
                         }
                     ]

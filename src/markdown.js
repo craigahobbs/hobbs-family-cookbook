@@ -13,47 +13,123 @@ import {markdownTypes} from './markdownTypes.js';
  */
 export function parseMarkdown(markdown) {
     const markdownParts = [];
-    let paragraphLines = null;
+    const parts = [[0, markdownParts, null, 0]];
+    let paragraph = null;
+    let lines = [];
 
-    // Helper function to close a paragraph
+    // Helper function to close the current part
     const closeParagraph = () => {
-        if (paragraphLines !== null) {
-            markdownParts.push({
-                'paragraph': {
-                    'spans': paragraphSpans(paragraphLines.join(' '))
-                }
-            });
+        // Code block?
+        if (paragraph !== null) {
+            paragraph.codeBlock.lines = lines;
+            paragraph = null;
+            lines = [];
+        } else if (lines.length) {
+            // Paragraph
+            const [, topParts] = parts[parts.length - 1];
+            topParts.push({'paragraph': {'spans': paragraphSpans(lines.join(' '))}});
+            lines = [];
         }
-        paragraphLines = null;
+    };
+
+    // Helper function to get the correct [indent, parts, list, listIndent] tuple for the given indent
+    const updateParts = (indent, isList = false) => {
+        // Find the part with the lesser or equal indent
+        for (let ixPart = parts.length - 1; ixPart > 0; ixPart--) {
+            const [curIndent,, curList, curListIndent] = parts[ixPart];
+            const activeIndent = isList || curList === null ? curIndent : curListIndent;
+            if (indent >= activeIndent) {
+                break;
+            }
+            parts.pop();
+        }
+
+        // Compute the active indent
+        return parts[parts.length - 1];
     };
 
     // Process markdown text line by line
     for (const markdownString of (typeof markdown === 'string' ? [markdown] : markdown)) {
         for (const line of markdownString.split('\n')) {
-            const emptyLine = (/^\s*$/).test(line);
-            const matchHeading = emptyLine ? null : (/^\s{0,3}(#{1,6})\s+(.*?)\s*$/).exec(line);
+            const matchLine = (/^(\s*)(.*)$/).exec(line);
+            const lineIndent = matchLine !== null && matchLine[1] !== '' ? matchLine[1].length : 0;
+            const emptyLine = matchLine !== null && matchLine[2] === '';
+            const matchHeading = emptyLine ? null : (/^\s*(#{1,6})\s+(.*?)\s*$/).exec(line);
+            const matchList = emptyLine ? null : (/^(\s*(-|\*|\+|[0-9]\.|[1-9][0-9]+\.)\s+)(.*?)\s*$/).exec(line);
+            const [, topParts, topList, topListIndent] = parts[parts.length - 1];
+            const codeBlockIndent = topListIndent + 4;
 
             // Empty line?
             if (emptyLine) {
                 closeParagraph();
 
+            // Code block?
+            } else if (!lines.length && lineIndent >= codeBlockIndent) {
+                if (paragraph === null) {
+                    paragraph = {'codeBlock': {}};
+                    topParts.push(paragraph);
+                }
+                lines.push(line);
+
             // Heading?
-            } else if (matchHeading !== null) {
+            } else if (matchHeading !== null && lineIndent < codeBlockIndent) {
+                const [, headingString, text] = matchHeading;
+
+                // Close any open paragraph
+                closeParagraph();
+
                 // Add the heading paragraph markdown part model
-                markdownParts.push({
+                const [, curParts] = updateParts(lineIndent);
+                curParts.push({
                     'paragraph': {
-                        'spans': paragraphSpans(matchHeading[2]),
-                        'style': `h${matchHeading[1].length}`
+                        'spans': paragraphSpans(text),
+                        'style': `h${headingString.length}`
                     }
                 });
 
+            // List?
+            } else if (matchList !== null && lineIndent < codeBlockIndent) {
+                const [, textIndentString,, text] = matchList;
+
+                // Close any open paragraph
+                closeParagraph();
+
+                // New list within a list?
+                if (topList !== null && lineIndent >= topListIndent) {
+                    // Add the new list part
+                    const listParts = [];
+                    const list = {'list': {'items': [{'parts': listParts}]}};
+                    topParts.push(list);
+                    parts.push([lineIndent, listParts, list, textIndentString.length]);
+                } else {
+                    // New list?
+                    const [curIndent, curParts, curList, curListIndent] = updateParts(lineIndent, true);
+                    if (curList === null) {
+                        // Add the new list part
+                        const listParts = [];
+                        const list = {'list': {'items': [{'parts': listParts}]}};
+                        curParts.push(list);
+                        parts.push([curIndent, listParts, list, textIndentString.length]);
+                    } else {
+                        // Push the new list item
+                        const listItem = {'parts': []};
+                        curList.list.items.push(listItem);
+                        parts.pop();
+                        parts.push([curIndent, listItem.parts, curList, curListIndent]);
+                    }
+                }
+
+                // Add the text line
+                lines.push(text);
+
             // Text line
             } else {
-                // Add the paragraph line
-                if (paragraphLines === null) {
-                    paragraphLines = [];
+                if (lines.length) {
+                    lines.push(line);
+                } else {
+                    const [,,, curListIndent] = updateParts(lineIndent);
+                    lines.push(line.slice(curListIndent));
                 }
-                paragraphLines.push(line);
             }
         }
     }
