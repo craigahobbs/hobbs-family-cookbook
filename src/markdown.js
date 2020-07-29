@@ -5,6 +5,19 @@ import * as chisel from './chisel.js';
 import {markdownTypes} from './markdownTypes.js';
 
 
+// Markdown regex
+const rIndent = /^(\s*)(.*)$/;
+const rHeading = /^\s*(#{1,6})\s+(.*?)\s*$/;
+const rList = /^(\s*(-|\*|\+|[0-9]\.|[1-9][0-9]+\.)\s+)(.*?)\s*$/;
+const rSpans = new RegExp(
+    '(?<!\\\\)(!?\\[)(.*?)(?<!\\\\)\\]\\((.*?)(?:\\s*(?<!\\\\)"(.*?)(?<!\\\\)"\\s*)?(?<!\\\\)\\)|' +
+        '(?<!\\\\)(\\*\\*\\*)(.+?)(?<!\\\\)\\*\\*\\*|' +
+        '(?<!\\\\)(\\*\\*)(.+?)(?<!\\\\)\\*\\*|' +
+        '(?<!\\\\)(\\*)(.+?)(?<!\\\\)\\*',
+    'mg'
+);
+
+
 /**
  * Parse markdown text or text lines into a markdown model
  *
@@ -51,11 +64,11 @@ export function parseMarkdown(markdown) {
     // Process markdown text line by line
     for (const markdownString of (typeof markdown === 'string' ? [markdown] : markdown)) {
         for (const line of markdownString.split('\n')) {
-            const matchLine = (/^(\s*)(.*)$/).exec(line);
+            const matchLine = line.match(rIndent);
             const lineIndent = matchLine !== null && matchLine[1] !== '' ? matchLine[1].length : 0;
             const emptyLine = matchLine !== null && matchLine[2] === '';
-            const matchHeading = emptyLine ? null : (/^\s*(#{1,6})\s+(.*?)\s*$/).exec(line);
-            const matchList = emptyLine ? null : (/^(\s*(-|\*|\+|[0-9]\.|[1-9][0-9]+\.)\s+)(.*?)\s*$/).exec(line);
+            const matchHeading = emptyLine ? null : line.match(rHeading);
+            const matchList = emptyLine ? null : line.match(rList);
             const [, topParts, topList, topListIndent] = parts[parts.length - 1];
             const codeBlockIndent = topListIndent + 4;
 
@@ -69,7 +82,7 @@ export function parseMarkdown(markdown) {
                     paragraph = {'codeBlock': {}};
                     topParts.push(paragraph);
                 }
-                lines.push(line);
+                lines.push(line.slice(codeBlockIndent));
 
             // Heading?
             } else if (matchHeading !== null && lineIndent < codeBlockIndent) {
@@ -132,7 +145,12 @@ export function parseMarkdown(markdown) {
             // Text line
             } else {
                 if (lines.length) {
-                    lines.push(line);
+                    // Code block line? If so, trip the indent
+                    if (paragraph !== null) {
+                        lines.push(line.slice(codeBlockIndent));
+                    } else {
+                        lines.push(line);
+                    }
                 } else {
                     const [,,, curListIndent] = updateParts(lineIndent);
                     lines.push(line.slice(curListIndent));
@@ -153,11 +171,57 @@ export function parseMarkdown(markdown) {
  * @returns {Object[]} The markdown paragraph span array model
  */
 function paragraphSpans(text) {
-    return [
-        {
-            'text': text
+    const spans = [];
+
+    // Iterate the span matches
+    let ixSearch = 0;
+    for (const match of text.matchAll(rSpans)) {
+        const [, linkMark = null, linkText = null, linkHref = null, linkTitle = null, boldItalicMark = null, boldItalicText = null,
+            boldMark = null, boldText = null, italicMark = null, italicText = null] = match;
+
+        // Add any preceding text
+        if (ixSearch < match.index) {
+            spans.push({'text': text.slice(ixSearch, match.index)});
         }
-    ];
+
+        // Link span?
+        if (linkMark !== null && linkMark === '[') {
+            const span = {'link': {'href': linkHref, 'spans': paragraphSpans(linkText)}};
+            if (linkTitle !== null) {
+                span.link.title = linkTitle;
+            }
+            spans.push(span);
+
+        // Image span?
+        } else if (linkMark !== null && linkMark === '![') {
+            const span = {'image': {'src': linkHref, 'alt': linkText}};
+            if (linkTitle !== null) {
+                span.image.title = linkTitle;
+            }
+            spans.push(span);
+
+        // Bold-italic style-span
+        } else if (boldItalicMark === '***') {
+            spans.push({'style': {'style': 'bold', 'spans': [{'style': {'style': 'italic', 'spans': paragraphSpans(boldItalicText)}}]}});
+
+        // Bold style-span
+        } else if (boldMark === '**') {
+            spans.push({'style': {'style': 'bold', 'spans': paragraphSpans(boldText)}});
+
+        // Italic style-span
+        } else if (italicMark === '*') {
+            spans.push({'style': {'style': 'italic', 'spans': paragraphSpans(italicText)}});
+        }
+
+        ixSearch = match.index + match[0].length;
+    }
+
+    // Add any remaining text
+    if (ixSearch < text.length) {
+        spans.push({'text': text.slice(ixSearch)});
+    }
+
+    return spans;
 }
 
 
@@ -211,7 +275,7 @@ function markdownPartElements(parts) {
             partElements.push({
                 'html': 'pre', 'elem': {
                     'html': 'code',
-                    'elem': codeBlock.lines.map((line) => ({'text': line}))
+                    'elem': codeBlock.lines.map((line) => ({'text': `${line}\n`}))
                 }
             });
         }
@@ -245,11 +309,15 @@ function paragraphSpanElements(spans) {
         // Link span?
         } else if ('link' in span) {
             const {link} = span;
-            spanElements.push({
+            const linkElements = {
                 'html': 'a',
                 'attr': {'href': link.href},
                 'elem': 'spans' in link ? paragraphSpanElements(link.spans) : null
-            });
+            };
+            if ('title' in link) {
+                linkElements.attr.title = link.title;
+            }
+            spanElements.push(linkElements);
 
         // Image span?
         } else if ('image' in span) {

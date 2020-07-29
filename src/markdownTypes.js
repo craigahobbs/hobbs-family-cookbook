@@ -11,9 +11,6 @@ export const markdownTypes =
                 },
                 {
                     "name": "italic"
-                },
-                {
-                    "name": "strike"
                 }
             ]
         }
