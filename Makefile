@@ -12,7 +12,12 @@ ifeq '$(wildcard .eslintrc.js)' ''
 endif
 include .makefile
 
-NYC_ARGS := --exclude src/chisel.js
+NYC_ARGS := \
+    --exclude src/chisel.js \
+    --exclude src/cookbookTypes.js \
+    --exclude src/markdown.js \
+    --exclude src/markdownTypes.js \
+    --exclude src/typeModel.js
 
 JSDOC_ARGS := -c jsdoc.json
 
