@@ -10,10 +10,10 @@ const rIndent = /^(\s*)(.*)$/;
 const rHeading = /^\s*(#{1,6})\s+(.*?)\s*$/;
 const rList = /^(\s*(-|\*|\+|[0-9]\.|[1-9][0-9]+\.)\s+)(.*?)\s*$/;
 const rSpans = new RegExp(
-    '(?<!\\\\)(!?\\[)(.*?)(?<!\\\\)\\]\\((.*?)(?:\\s*(?<!\\\\)"(.*?)(?<!\\\\)"\\s*)?(?<!\\\\)\\)|' +
-        '(?<!\\\\)(\\*\\*\\*)(.+?)(?<!\\\\)\\*\\*\\*|' +
-        '(?<!\\\\)(\\*\\*)(.+?)(?<!\\\\)\\*\\*|' +
-        '(?<!\\\\)(\\*)(.+?)(?<!\\\\)\\*',
+    '(!?\\[)(.*?)\\]\\((.*?)(?:\\s*"(.*?)"\\s*)?\\)|' +
+        '(\\*{3})(?!\\s)(.*?[^\\s]\\**)\\*{3}|' +
+        '(\\*{2})(?!\\s)(.*?[^\\s]\\**)\\*{2}|' +
+        '(\\*)(?!\\s)(.*?[^\\s]\\**)\\*',
     'mg'
 );
 
@@ -302,8 +302,8 @@ function paragraphSpanElements(spans) {
         } else if ('style' in span) {
             const {style} = span;
             spanElements.push({
-                'html': style.style === 'strike' ? 'del' : (style.style === 'italic' ? 'em' : 'strong'),
-                'elem': 'spans' in style ? paragraphSpanElements(style.spans) : null
+                'html': style.style === 'italic' ? 'em' : 'strong',
+                'elem': paragraphSpanElements(style.spans)
             });
 
         // Link span?
@@ -312,7 +312,7 @@ function paragraphSpanElements(spans) {
             const linkElements = {
                 'html': 'a',
                 'attr': {'href': link.href},
-                'elem': 'spans' in link ? paragraphSpanElements(link.spans) : null
+                'elem': paragraphSpanElements(link.spans)
             };
             if ('title' in link) {
                 linkElements.attr.title = link.title;
