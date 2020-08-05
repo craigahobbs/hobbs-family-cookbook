@@ -1,11 +1,7 @@
 {
     "source": {
         "exclude": [
-            "src/chisel.js",
-            "src/cookbookTypes.js",
-            "src/markdown.js",
-            "src/markdownTypes.js",
-            "src/typeModel.js"
+            "src/chisel"
         ]
     }
 }

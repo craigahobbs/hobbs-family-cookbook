@@ -1,6 +1,6 @@
 ifeq '$(wildcard .makefile)' ''
     $(info Downloading base makefile...)
-    $(shell curl -s -o .makefile 'https://raw.githubusercontent.com/craigahobbs/chisel/feature/markdown/static/Makefile.base')
+    $(shell curl -s -o .makefile 'https://raw.githubusercontent.com/craigahobbs/chisel/master/static/Makefile.base')
 endif
 ifeq '$(wildcard package.json)' ''
     $(info Downloading package.json...)
@@ -12,12 +12,7 @@ ifeq '$(wildcard .eslintrc.js)' ''
 endif
 include .makefile
 
-NYC_ARGS := \
-    --exclude src/chisel.js \
-    --exclude src/cookbookTypes.js \
-    --exclude src/markdown.js \
-    --exclude src/markdownTypes.js \
-    --exclude src/typeModel.js
+NYC_ARGS := --exclude src/chisel
 
 JSDOC_ARGS := -c jsdoc.json
 

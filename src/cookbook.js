@@ -1,8 +1,8 @@
 // Licensed under the MIT License
 // https://github.com/craigahobbs/cookbook/blob/master/LICENSE
 
-import * as chisel from './chisel.js';
-import {markdownElements, parseMarkdown} from './markdown.js';
+import * as chisel from './chisel/chisel.js';
+import {markdownElements, parseMarkdown} from './chisel/markdown.js';
 import {cookbookTypes} from './cookbookTypes.js';
 
 

@@ -1,3 +1,5 @@
+/* eslint-disable quotes */
+export const markdownTypes =
 {
     "CharacterStyle": {
         "enum": {
@@ -17,6 +19,18 @@
         "struct": {
             "doc": " Code block markdown part struct",
             "members": [
+                {
+                    "attr": {
+                        "lenGT": 0,
+                        "lenLT": 100
+                    },
+                    "doc": " The code block's language",
+                    "name": "language",
+                    "optional": true,
+                    "type": {
+                        "builtin": "string"
+                    }
+                },
                 {
                     "attr": {
                         "lenGT": 0,
@@ -216,6 +230,16 @@
                     }
                 },
                 {
+                    "attr": {
+                        "nullable": true
+                    },
+                    "doc": " A horizontal rule (value is ignored)",
+                    "name": "hr",
+                    "type": {
+                        "builtin": "object"
+                    }
+                },
+                {
                     "doc": " A list",
                     "name": "list",
                     "type": {
@@ -307,6 +331,16 @@
                     }
                 },
                 {
+                    "attr": {
+                        "nullable": true
+                    },
+                    "doc": " Line break (value is ignored)",
+                    "name": "br",
+                    "type": {
+                        "builtin": "object"
+                    }
+                },
+                {
                     "doc": " Style span",
                     "name": "style",
                     "type": {
@@ -362,4 +396,4 @@
             "name": "StyleSpan"
         }
     }
-}
+};

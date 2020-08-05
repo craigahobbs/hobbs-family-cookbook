@@ -55,15 +55,10 @@ function renderElements(parent, elements) {
         // Add attributes, if any, to the newly created element
         if ('attr' in element && element.attr !== null) {
             for (const [attr, value] of Object.entries(element.attr)) {
-                // Skip null values as well as the special "_callback" attribute
-                if (attr !== '_callback' && value !== null) {
+                // Skip null values
+                if (value !== null) {
                     browserElement.setAttribute(attr, value);
                 }
-            }
-
-            // Call the element callback, if any
-            if ('_callback' in element.attr && element.attr._callback !== null) {
-                element.attr._callback(browserElement);
             }
         }
 
@@ -74,6 +69,11 @@ function renderElements(parent, elements) {
 
         // Add the child element
         parent.appendChild(browserElement);
+
+        // Call the element callback, if any
+        if ('callback' in element) {
+            element.callback(browserElement);
+        }
     }
 }
 
@@ -97,7 +97,8 @@ export function validateElements(elements) {
     } else if (elements !== null) {
         // Validation error exception helper function
         const throwValueError = (message, value) => {
-            throw new Error(`${message} ${JSON.stringify(value).slice(0, 100)} (type '${typeof value}')`);
+            const valueStr = `${JSON.stringify(value)}`;
+            throw new Error(`${message} ${valueStr.slice(0, 100)} (type '${typeof value}')`);
         };
 
         // Non-object?
@@ -107,6 +108,11 @@ export function validateElements(elements) {
 
         // Validate the element model
         validateType(elementTypes, 'Element', elements);
+
+        // Validate creation callback
+        if ('callback' in elements && typeof elements.callback !== 'function') {
+            throwValueError('Invalid element callback function', elements.callback);
+        }
 
         // Text?
         if ('text' in elements) {
@@ -122,15 +128,9 @@ export function validateElements(elements) {
         } else if ('html' in elements || 'svg' in elements) {
             // Validate attribute values
             if ('attr' in elements && elements.attr !== null) {
-                for (const [attrKey, attrValue] of Object.entries(elements.attr)) {
-                    // Validate creation callback
-                    if (attrKey === '_callback') {
-                        if (attrValue !== null && typeof attrValue !== 'function') {
-                            throwValueError('Invalid element attribute callback', attrValue);
-                        }
-
+                for (const attrValue of Object.values(elements.attr)) {
                     // Validate attribute value
-                    } else if (attrValue !== null && typeof attrValue !== 'string') {
+                    if (attrValue !== null && typeof attrValue !== 'string') {
                         throwValueError('Invalid element attribute value', attrValue);
                     }
                 }
@@ -185,6 +185,12 @@ const elementTypes = {
                     'doc': 'An element model or an array of element models',
                     'type': {'builtin': 'object'},
                     'attr': {'nullable': true},
+                    'optional': true
+                },
+                {
+                    'name': 'callback',
+                    'doc': 'The element creation callback function',
+                    'type': {'builtin': 'object'},
                     'optional': true
                 }
             ]
@@ -488,6 +494,11 @@ export function validateType(types, typeName, value, memberFqn = null) {
 }
 
 
+// Regular expressions used by validateTypeHelper
+const rDate = /^\d{4}-\d{2}-\d{2}$/;
+const rDatetime = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{3})?(?:Z|[+-]\d{2}:\d{2})$/;
+
+
 /**
  * Type-validate a value using a type model
  *
@@ -564,9 +575,7 @@ function validateTypeHelper(types, type, value, memberFqn) {
                 }
 
                 // Invalid date format?
-                const isDate = value.match(/^\d{4}-\d{2}-\d{2}$/) !== null;
-                const isDatetime = value.match(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{3})?(?:Z|[+-]\d{2}:\d{2})$/) !== null;
-                if (!(isDate || isDatetime)) {
+                if (!(rDate.test(value) || rDatetime.test(value))) {
                     throwMemberError(type, value, memberFqn);
                 }
 
@@ -763,11 +772,10 @@ function throwMemberError(type, value, memberFqn, attr = null) {
     const memberPart = memberFqn !== null ? ` for member '${memberFqn}'` : '';
     const typeName = 'builtin' in type ? type.builtin : ('array' in type ? 'array' : ('dict' in type ? 'dict' : type.user));
     const attrPart = attr !== null ? ` [${attr}]` : '';
-    const msg = `Invalid value ${JSON.stringify(value).slice(0, 100)} (type '${typeof value}')` +
-          `${memberPart}, expected type '${typeName}'${attrPart}`;
+    const valueStr = `${JSON.stringify(value)}`;
+    const msg = `Invalid value ${valueStr.slice(0, 100)} (type '${typeof value}')${memberPart}, expected type '${typeName}'${attrPart}`;
     throw new Error(msg);
 }
-
 
 /**
  * Attribute-validate a value using an attribute model
