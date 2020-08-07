@@ -19,6 +19,12 @@ const cookbookPageTypes = {
                     'type': {'builtin': 'string'},
                     'attr': {'lenGT': 0, 'lenLT': 100},
                     'optional': true
+                },
+                {
+                    'name': 'scale',
+                    'type': {'builtin': 'float'},
+                    'attr': {'gte': 0.125, 'lte': 8},
+                    'optional': true
                 }
             ]
         }
@@ -41,6 +47,7 @@ export class CookbookPage {
         this.params = null;
     }
 
+
     /**
      * Run the application
      *
@@ -62,6 +69,7 @@ export class CookbookPage {
         };
     }
 
+
     /*
      * Cleanup global state created by "run"
      *
@@ -71,16 +79,22 @@ export class CookbookPage {
         window.removeEventListener(...runResult.windowRemoveEventListener);
     }
 
+
     /**
-     * Parse the window location's hash parameters. This method sets two class members:
-     * this.params and this.config.  this.params is the decoded hash parameters object for
-     * use with creating links to the application.  this.config is object containing all known hash
-     * parameters parsed and validated.
+     * Parse the window location's hash parameters. This method sets two class members: this.params and
+     * this.config. this.params is the decoded hash parameters object for use with creating links to the
+     * application. this.config is object containing all known hash parameters parsed and validated.
      */
     updateParams() {
         this.params = null;
+        this.config = null;
         this.params = chisel.validateType(cookbookPageTypes, 'CookbookPageParams', chisel.decodeParams());
+        this.config = {
+            'scale': 1,
+            ...this.params
+        };
     }
+
 
     /**
      * The main entry point for the cookbook application. This method renders the cookbook
@@ -105,6 +119,7 @@ export class CookbookPage {
             });
     }
 
+
     /**
      * Helper function to generate the error page's element model
      *
@@ -117,6 +132,7 @@ export class CookbookPage {
             'elem': {'text': error !== null ? `Error: ${error}` : 'An unexpected error occurred.'}
         };
     }
+
 
     /**
      * Generate the cookbook page elments for use with the chisel.render function.
@@ -133,13 +149,14 @@ export class CookbookPage {
         }
 
         // Recipe page?
-        if ('title' in this.params) {
+        if ('title' in this.config) {
             return this.recipeElements(cookbook);
         }
 
         // Index page
         return this.indexElements(cookbook);
     }
+
 
     /**
      * Helper function to generate the index page's element model
@@ -169,6 +186,7 @@ export class CookbookPage {
         ];
     }
 
+
     /**
      * Helper function to generate the recipe page's element model
      *
@@ -177,10 +195,11 @@ export class CookbookPage {
      */
     recipeElements(cookbook) {
         // Find the recipe
-        const recipe = cookbook.recipes.find((recipeFind) => recipeFind.title === this.params.title);
+        const recipe = cookbook.recipes.find((recipeFind) => recipeFind.title === this.config.title);
         if (recipe === undefined) {
-            return CookbookPage.errorElements(`Unknown recipe '${this.params.title}`);
+            return CookbookPage.errorElements(`Unknown recipe '${this.config.title}`);
         }
+        const scaleAttr = cookbookPageTypes.CookbookPageParams.struct.members.find((member) => member.name === 'scale').attr;
 
         return [
             // Navigation bar
@@ -188,7 +207,7 @@ export class CookbookPage {
                 'html': 'p',
                 'elem': {
                     'html': 'a',
-                    'attr': {'href': chisel.href({...this.params, 'title': null})},
+                    'attr': {'href': chisel.href({...this.params, 'title': null, 'scale': null})},
                     'elem': {'text': 'Back to the index'}
                 }
             },
@@ -196,15 +215,29 @@ export class CookbookPage {
             // Title
             {'html': 'h1', 'elem': {'text': recipe.title}},
 
+            // Scale
+            {'html': 'p', 'elem': [
+                {'text': 'Scale:'},
+                this.config.scale !== 1 ? {'text': ` ${this.config.scale}`} : null,
+                {
+                    'html': 'a',
+                    'attr': {'href': chisel.href({...this.params, 'scale': Math.max(scaleAttr.gte, this.config.scale / 2)})},
+                    'elem': {'text': ' Halve'}
+                },
+                {
+                    'html': 'a',
+                    'attr': {'href': chisel.href({...this.params, 'scale': Math.min(scaleAttr.lte, this.config.scale * 2)})},
+                    'elem': {'text': ' Double'}
+                }
+            ]},
+
             // Serving size and count
-            'servings' in recipe
-                ? {'html': 'p', 'elem': [
-                    {'text': `Servings: ${recipe.servings.count}`},
-                    {'html': 'br'},
-                    {'text': 'Serving size: '},
-                    CookbookPage.ingredientElements(recipe.servings.size)
-                ]}
-                : null,
+            !('servings' in recipe) ? null : {'html': 'p', 'elem': [
+                {'text': `Servings: ${recipe.servings.count * this.config.scale}`},
+                {'html': 'br'},
+                {'text': 'Serving size: '},
+                {'text': ingredientText(recipe.servings.size)}
+            ]},
 
             // Content
             recipe.content.map((content) => {
@@ -218,7 +251,7 @@ export class CookbookPage {
                                 'html': 'ul',
                                 'attr': {'class': 'cookbook-ingredient-list'},
                                 'elem': content.ingredients.map(
-                                    (ingredient) => ({'html': 'li', 'elem': CookbookPage.ingredientElements(ingredient)})
+                                    (ingredient) => ({'html': 'li', 'elem': {'text': ingredientText(ingredient, this.config.scale)}})
                                 )
                             }
                         ]
@@ -230,17 +263,93 @@ export class CookbookPage {
             })
         ];
     }
+}
 
-    /**
-     * Helper function to generate an inredient's elements
-     *
-     * @param {Object} ingredient - The ingredient model
-     * @returns {Object}
-     */
-    static ingredientElements(ingredient) {
-        if (ingredient.unit === 'count') {
-            return {'text': `${ingredient.amount} ${ingredient.name}`};
-        }
-        return {'text': `${ingredient.amount} ${ingredient.unit} ${ingredient.name}`};
+
+// Ingredient bases
+const unitInfo = {
+    'count': {
+        'baseUnit': 'count',
+        'baseRatio': 1,
+        'fractions': [2, 4]
+    },
+    'cup': {
+        'baseUnit': 'tsp',
+        'baseRatio': 48,
+        'fractions': [2, 3, 4]
+    },
+    'lb': {
+        'baseUnit': 'oz',
+        'baseRatio': 16,
+        'fractions': [2, 4]
+    },
+    'oz': {
+        'baseUnit': 'oz',
+        'baseRatio': 1,
+        'fractions': [2, 4]
+    },
+    'pinch': {
+        'baseUnit': 'pinch',
+        'baseRatio': 1,
+        'fractions': [2, 4]
+    },
+    'tbsp': {
+        'baseUnit': 'tsp',
+        'baseRatio': 3,
+        'fractions': [3]
+    },
+    'tsp': {
+        'baseUnit': 'tsp',
+        'baseRatio': 1,
+        'fractions': [2, 4, 8]
     }
+};
+
+
+// Ingredient unit fuzz ratio
+const unitFuzz = 0.1;
+
+
+export function ingredientText(ingredient, scale = 1) {
+    // Compute the best unit to display the ingredient
+    const amountBase = ingredient.amount * scale * unitInfo[ingredient.unit].baseRatio;
+    let bestIngredient = {
+        'amount': ingredient.amount * scale,
+        'unit': ingredient.unit
+    };
+    for (const unit of Object.keys(unitInfo)) {
+        // Same base unit?
+        if (unitInfo[unit].baseUnit === unitInfo[ingredient.unit].baseUnit) {
+            // Match a unit fraction
+            const amountUnit = amountBase / unitInfo[unit].baseRatio;
+            const amountInteger = Math.floor(amountUnit);
+            const amountFraction = amountUnit - amountInteger;
+            for (const denominator of unitInfo[unit].fractions) {
+                for (let numerator = 0; numerator <= denominator; numerator += 1) {
+                    // Is the fraction close enough?
+                    const diff = Math.abs((numerator / denominator) - amountFraction);
+                    if (diff / amountUnit <= unitFuzz && (!('diff' in bestIngredient) || diff < bestIngredient.diff)) {
+                        bestIngredient = {
+                            'unit': unit,
+                            'amount': numerator === denominator ? amountInteger + 1 : amountInteger,
+                            'amountNumerator': numerator === denominator ? 0 : numerator,
+                            'amountDenominator': denominator,
+                            'diff': diff
+                        };
+                    }
+                }
+            }
+        }
+    }
+
+    // Create the ingredient elements
+    if (bestIngredient.unit === 'count') {
+        return `${bestIngredient.amount} ${ingredient.name}`;
+    } else if (!('amountNumerator' in bestIngredient) || bestIngredient.amountNumerator === 0) {
+        return `${bestIngredient.amount} ${bestIngredient.unit} ${ingredient.name}`;
+    } else if (bestIngredient.amount === 0) {
+        return `${bestIngredient.amountNumerator}/${bestIngredient.amountDenominator} ${bestIngredient.unit} ${ingredient.name}`;
+    }
+    return `${bestIngredient.amount} ${bestIngredient.amountNumerator}/${bestIngredient.amountDenominator} ` +
+        `${bestIngredient.unit} ${ingredient.name}`;
 }
