@@ -103,7 +103,13 @@ export class CookbookPage {
     render() {
         // Decode and validate hash parameters
         try {
+            const oldParams = this.params;
             this.updateParams();
+
+            // Skip the render if the page params haven't changed
+            if (oldParams !== null && JSON.stringify(oldParams) === JSON.stringify(this.params)) {
+                return;
+            }
         } catch ({message}) {
             chisel.render(document.body, CookbookPage.errorElements(message));
             return;
@@ -165,7 +171,17 @@ export class CookbookPage {
      * @returns {Array}
      */
     indexElements(cookbook) {
-        const sortedRecipes = cookbook.recipes.map((recipe) => [recipe.title, recipe]).sort().map(([, recipe]) => recipe);
+        // Sort and categorize recipes
+        const categories = {};
+        for (const [, recipe] of cookbook.recipes.map((recipeMap) => [recipeMap.title, recipeMap]).sort()) {
+            for (const category of recipe.categories) {
+                if (!(category in categories)) {
+                    categories[category] = [];
+                }
+                categories[category].push(recipe);
+            }
+        }
+
         return [
             // Title
             {'html': 'h1', 'elem': {'text': cookbook.title}},
@@ -174,14 +190,22 @@ export class CookbookPage {
             {
                 'html': 'ul',
                 'attr': {'class': 'cookbook-index-list'},
-                'elem': sortedRecipes.map((recipe) => ({
-                    'html': 'li',
-                    'elem': {
-                        'html': 'a',
-                        'attr': {'href': chisel.href({...this.params, 'title': recipe.title})},
-                        'elem': {'text': recipe.title}
+                'elem': Object.entries(categories).map(([category, recipes]) => [
+                    {
+                        'html': 'li',
+                        'elem': [
+                            {'html': 'h2', 'elem': {'text': category}},
+                            {'html': 'ul', 'elem': recipes.map((recipe) => ({
+                                'html': 'li',
+                                'elem': {
+                                    'html': 'a',
+                                    'attr': {'href': chisel.href({...this.params, 'title': recipe.title})},
+                                    'elem': {'text': recipe.title}
+                                }
+                            }))}
+                        ]
                     }
-                }))
+                ])
             }
         ];
     }
