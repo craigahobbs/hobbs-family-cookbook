@@ -343,13 +343,11 @@ export function ingredientText(ingredient, scale = 1) {
     }
 
     // Create the ingredient elements
-    if (bestIngredient.unit === 'count') {
-        return `${bestIngredient.amount} ${ingredient.name}`;
-    } else if (!('amountNumerator' in bestIngredient) || bestIngredient.amountNumerator === 0) {
-        return `${bestIngredient.amount} ${bestIngredient.unit} ${ingredient.name}`;
+    const unitStr = bestIngredient.unit === 'count' ? '' : ` ${bestIngredient.unit}`;
+    if (!('amountNumerator' in bestIngredient) || bestIngredient.amountNumerator === 0) {
+        return `${bestIngredient.amount}${unitStr} ${ingredient.name}`;
     } else if (bestIngredient.amount === 0) {
-        return `${bestIngredient.amountNumerator}/${bestIngredient.amountDenominator} ${bestIngredient.unit} ${ingredient.name}`;
+        return `${bestIngredient.amountNumerator}/${bestIngredient.amountDenominator}${unitStr} ${ingredient.name}`;
     }
-    return `${bestIngredient.amount} ${bestIngredient.amountNumerator}/${bestIngredient.amountDenominator} ` +
-        `${bestIngredient.unit} ${ingredient.name}`;
+    return `${bestIngredient.amount} ${bestIngredient.amountNumerator}/${bestIngredient.amountDenominator} ${unitStr} ${ingredient.name}`;
 }
