@@ -3,14 +3,18 @@ export const cookbookTypes =
 {
     "Content": {
         "struct": {
-            "doc": " Recipe content union",
+            "doc": [
+                "Recipe content union"
+            ],
             "members": [
                 {
                     "attr": {
                         "lenGT": 0,
                         "lenLT": 1000
                     },
-                    "doc": "  A list of markdown lines",
+                    "doc": [
+                        " A list of markdown lines"
+                    ],
                     "name": "markdown",
                     "type": {
                         "array": {
@@ -25,7 +29,9 @@ export const cookbookTypes =
                         "lenGT": 0,
                         "lenLT": 100
                     },
-                    "doc": " An ingredient list",
+                    "doc": [
+                        "An ingredient list"
+                    ],
                     "name": "ingredients",
                     "type": {
                         "array": {
@@ -42,14 +48,18 @@ export const cookbookTypes =
     },
     "Cookbook": {
         "struct": {
-            "doc": " Cookbook struct",
+            "doc": [
+                "Cookbook struct"
+            ],
             "members": [
                 {
                     "attr": {
                         "lenGT": 0,
                         "lenLT": 100
                     },
-                    "doc": " The cookbook title text",
+                    "doc": [
+                        "The cookbook title text"
+                    ],
                     "name": "title",
                     "type": {
                         "builtin": "string"
@@ -60,7 +70,9 @@ export const cookbookTypes =
                         "lenGT": 0,
                         "lenLT": 1000
                     },
-                    "doc": " The cookbook's recipes",
+                    "doc": [
+                        "The cookbook's recipes"
+                    ],
                     "name": "recipes",
                     "type": {
                         "array": {
@@ -76,21 +88,27 @@ export const cookbookTypes =
     },
     "Ingredient": {
         "struct": {
-            "doc": " Recipe ingredient struct",
+            "doc": [
+                "Recipe ingredient struct"
+            ],
             "members": [
                 {
                     "attr": {
                         "lenGT": 0,
                         "lenLT": 100
                     },
-                    "doc": " The ingredient name",
+                    "doc": [
+                        "The ingredient name"
+                    ],
                     "name": "name",
                     "type": {
                         "builtin": "string"
                     }
                 },
                 {
-                    "doc": " The ingredient unit",
+                    "doc": [
+                        "The ingredient unit"
+                    ],
                     "name": "unit",
                     "type": {
                         "user": "Unit"
@@ -100,7 +118,9 @@ export const cookbookTypes =
                     "attr": {
                         "gt": 0.0
                     },
-                    "doc": " The ingredient amount",
+                    "doc": [
+                        "The ingredient amount"
+                    ],
                     "name": "amount",
                     "type": {
                         "builtin": "float"
@@ -112,14 +132,18 @@ export const cookbookTypes =
     },
     "Recipe": {
         "struct": {
-            "doc": " Recipe struct",
+            "doc": [
+                "Recipe struct"
+            ],
             "members": [
                 {
                     "attr": {
                         "lenGT": 0,
                         "lenLT": 100
                     },
-                    "doc": " The recipe title text",
+                    "doc": [
+                        "The recipe title text"
+                    ],
                     "name": "title",
                     "type": {
                         "builtin": "string"
@@ -129,7 +153,9 @@ export const cookbookTypes =
                     "attr": {
                         "lenGT": 0
                     },
-                    "doc": " The recipe's categories",
+                    "doc": [
+                        "The recipe's categories"
+                    ],
                     "name": "categories",
                     "type": {
                         "array": {
@@ -144,7 +170,9 @@ export const cookbookTypes =
                     }
                 },
                 {
-                    "doc": " The serving size and count",
+                    "doc": [
+                        "The serving size and count"
+                    ],
                     "name": "servings",
                     "optional": true,
                     "type": {
@@ -156,7 +184,9 @@ export const cookbookTypes =
                         "lenGT": 0,
                         "lenLT": 100
                     },
-                    "doc": " The recipe content",
+                    "doc": [
+                        "The recipe content"
+                    ],
                     "name": "content",
                     "type": {
                         "array": {
@@ -172,20 +202,26 @@ export const cookbookTypes =
     },
     "Servings": {
         "struct": {
-            "doc": " Recipe serving size and count struct",
+            "doc": [
+                "Recipe serving size and count struct"
+            ],
             "members": [
                 {
                     "attr": {
                         "gt": 0.0
                     },
-                    "doc": " The number of servings",
+                    "doc": [
+                        "The number of servings"
+                    ],
                     "name": "count",
                     "type": {
                         "builtin": "int"
                     }
                 },
                 {
-                    "doc": " The serving size",
+                    "doc": [
+                        "The serving size"
+                    ],
                     "name": "size",
                     "type": {
                         "user": "Ingredient"
@@ -197,7 +233,9 @@ export const cookbookTypes =
     },
     "Unit": {
         "enum": {
-            "doc": " Recipe ingredient unit enum",
+            "doc": [
+                "Recipe ingredient unit enum"
+            ],
             "name": "Unit",
             "values": [
                 {
