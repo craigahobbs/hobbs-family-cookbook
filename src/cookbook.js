@@ -314,8 +314,9 @@ export function ingredientText(ingredient, scale = 1) {
     // Compute the best unit to display the ingredient
     const amountBase = ingredient.amount * scale * unitInfo[ingredient.unit].baseRatio;
     let bestIngredient = {
+        'unit': ingredient.unit,
         'amount': ingredient.amount * scale,
-        'unit': ingredient.unit
+        'amountNumerator': 0
     };
     for (const unit of Object.keys(unitInfo)) {
         // Same base unit?
@@ -328,14 +329,22 @@ export function ingredientText(ingredient, scale = 1) {
                 for (let numerator = 0; numerator <= denominator; numerator += 1) {
                     // Is the fraction close enough?
                     const diff = Math.abs((numerator / denominator) - amountFraction);
-                    if (diff / amountUnit <= unitFuzz && (!('diff' in bestIngredient) || diff < bestIngredient.diff)) {
-                        bestIngredient = {
-                            'unit': unit,
-                            'amount': numerator === denominator ? amountInteger + 1 : amountInteger,
-                            'amountNumerator': numerator === denominator ? 0 : numerator,
-                            'amountDenominator': denominator,
-                            'diff': diff
-                        };
+                    if (diff / amountUnit <= unitFuzz) {
+                        const amountFuzzed = numerator !== denominator ? amountInteger : amountInteger + 1;
+                        const amountIntegerFuzzed = numerator !== denominator ? numerator : 0;
+                        const measures = amountFuzzed + amountIntegerFuzzed;
+                        const bestMeasures = bestIngredient.amount + bestIngredient.amountNumerator;
+                        if (!('diff' in bestIngredient) || diff < bestIngredient.diff ||
+                            (diff === bestIngredient.diff &&
+                             (measures < bestMeasures || (measures === bestMeasures && amountFuzzed > bestIngredient.amount)))) {
+                            bestIngredient = {
+                                'unit': unit,
+                                'amount': amountFuzzed,
+                                'amountNumerator': amountIntegerFuzzed,
+                                'amountDenominator': denominator,
+                                'diff': diff
+                            };
+                        }
                     }
                 }
             }
