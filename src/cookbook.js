@@ -260,7 +260,7 @@ export class CookbookPage {
                 {'text': `Servings: ${recipe.servings.count * this.config.scale}`},
                 {'html': 'br'},
                 {'text': 'Serving size: '},
-                {'text': ingredientText(recipe.servings.size)}
+                {'text': ingredientText(recipe.servings.size).join(' ')}
             ]},
 
             // Content
@@ -275,7 +275,10 @@ export class CookbookPage {
                                 'html': 'ul',
                                 'attr': {'class': 'cookbook-ingredient-list'},
                                 'elem': content.ingredients.map(
-                                    (ingredient) => ({'html': 'li', 'elem': {'text': ingredientText(ingredient, this.config.scale)}})
+                                    (ingredient) => ({
+                                        'html': 'li',
+                                        'elem': {'text': ingredientText(ingredient, this.config.scale).join(' ')}
+                                    })
                                 )
                             }
                         ]
@@ -315,12 +318,12 @@ const unitInfo = {
     'pinch': {
         'baseUnit': 'pinch',
         'baseRatio': 1,
-        'fractions': []
+        'fractions': [1]
     },
     'tbsp': {
         'baseUnit': 'tsp',
         'baseRatio': 3,
-        'fractions': []
+        'fractions': [1]
     },
     'tsp': {
         'baseUnit': 'tsp',
@@ -334,6 +337,13 @@ const unitInfo = {
 const unitFuzz = 0.1;
 
 
+/**
+ * Helper function to compute an ingredient model's display text parts
+ *
+ * @param {Object} ingredient - The ingredient model
+ * @param {number} [scale=1] - The ingredient's scale ratio
+ * @returns {string[]} The ingredient amount string, unit string, and name
+ */
 export function ingredientText(ingredient, scale = 1) {
     // Compute the best unit to display the ingredient
     const amountBase = ingredient.amount * scale * unitInfo[ingredient.unit].baseRatio;
@@ -356,11 +366,16 @@ export function ingredientText(ingredient, scale = 1) {
                     if (diff / amountUnit <= unitFuzz) {
                         const amountFuzzed = numerator !== denominator ? amountInteger : amountInteger + 1;
                         const amountIntegerFuzzed = numerator !== denominator ? numerator : 0;
+                        const amountAndFraction = (amountFuzzed ? 1 : 0) + (amountIntegerFuzzed ? 1 : 0);
+                        const bestAndFraction = (bestIngredient.amount ? 1 : 0) + (bestIngredient.amountNumerator ? 1 : 0);
                         const measures = amountFuzzed + amountIntegerFuzzed;
                         const bestMeasures = bestIngredient.amount + bestIngredient.amountNumerator;
                         if (!('diff' in bestIngredient) || diff < bestIngredient.diff ||
-                            (diff === bestIngredient.diff &&
-                             (measures < bestMeasures || (measures === bestMeasures && amountFuzzed > bestIngredient.amount)))) {
+                            (diff === bestIngredient.diff && amountAndFraction < bestAndFraction ||
+                             (amountAndFraction === bestAndFraction && measures < bestMeasures ||
+                              (measures === bestMeasures && amountFuzzed < bestIngredient.amount ||
+                               (amountFuzzed === bestIngredient.amount && amountIntegerFuzzed < bestIngredient.amountNumerator))))
+                        ) {
                             bestIngredient = {
                                 'unit': unit,
                                 'amount': amountFuzzed,
@@ -376,11 +391,14 @@ export function ingredientText(ingredient, scale = 1) {
     }
 
     // Create the ingredient elements
-    const unitStr = bestIngredient.unit === 'count' ? '' : ` ${bestIngredient.unit}`;
+    let amountStr;
+    const unitStr = bestIngredient.unit === 'count' ? '' : `${bestIngredient.unit}`;
     if (!('amountNumerator' in bestIngredient) || bestIngredient.amountNumerator === 0) {
-        return `${bestIngredient.amount}${unitStr} ${ingredient.name}`;
+        amountStr = `${bestIngredient.amount}`;
     } else if (bestIngredient.amount === 0) {
-        return `${bestIngredient.amountNumerator}/${bestIngredient.amountDenominator}${unitStr} ${ingredient.name}`;
+        amountStr = `${bestIngredient.amountNumerator}/${bestIngredient.amountDenominator}`;
+    } else {
+        amountStr = `${bestIngredient.amount} ${bestIngredient.amountNumerator}/${bestIngredient.amountDenominator}`;
     }
-    return `${bestIngredient.amount} ${bestIngredient.amountNumerator}/${bestIngredient.amountDenominator} ${unitStr} ${ingredient.name}`;
+    return [amountStr, unitStr, ingredient.name];
 }
