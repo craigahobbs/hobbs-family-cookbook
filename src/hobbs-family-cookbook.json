@@ -138,6 +138,62 @@
             ]
         },
         {
+            "title": "Dilly Bread",
+            "categories": ["Breads"],
+            "author": "Helen Minkiewitz (Nonny)",
+            "content": [
+                {
+                    "markdown": [
+                        "Soften and mix together and let stand for 10 minutes:"
+                    ]
+                },
+                {
+                    "ingredients": [
+                        {"amount": 1, "unit": "tbsp", "name": "dry yeast"},
+                        {"amount": 0.25, "unit": "cup", "name": "lukewarm water"},
+                        {"amount": 2, "unit": "tbsp", "name": "sugar"}
+                    ]
+                },
+                {
+                    "markdown": [
+                        "Add and stir in:"
+                    ]
+                },
+                {
+                    "ingredients": [
+                        {"amount": 1, "unit": "cup", "name": "small curd cottage cheese, warmed"},
+                        {"amount": 2, "unit": "tbsp", "name": "yellow onion, minced"},
+                        {"amount": 1, "unit": "tbsp", "name": "butter, softened"},
+                        {"amount": 2, "unit": "tsp", "name": "dill seed"},
+                        {"amount": 1, "unit": "tsp", "name": "salt"},
+                        {"amount": 1, "unit": "count", "name": "egg, beaten"}
+                    ]
+                },
+                {
+                    "markdown": [
+                        "Mix in to form a sticky dough:"
+                    ]
+                },
+                {
+                    "ingredients": [
+                        {"amount": 2.25, "unit": "cup", "name": "flour"},
+                        {"amount": 0.25, "unit": "tsp", "name": "baking soda"}
+                    ]
+                },
+                {
+                    "markdown": [
+                        "Turn dough in a greased bowl and allow to rise until double in volume. Stir dough down, place",
+                        "in a greased loaf pan and allow to rise until double again.",
+                        "",
+                        "Bake at 350 degrees for 40 minutes until loaf sounds hollow when thumped. Remove from the oven,",
+                        "brush with butter and sprinkle with kosher salt. Cool in the pan for 15 minutes, then run a knife",
+                        "blade around the edge, and remove from the loaf pan. Cut the loaf in thick slices and serve hot with",
+                        "butter and lentil soup."
+                    ]
+                }
+            ]
+        },
+        {
             "title": "Gorgonzola Popovers",
             "categories": ["Appetizers"],
             "servings": {
