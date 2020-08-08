@@ -190,7 +190,7 @@ export class CookbookPage {
             {
                 'html': 'ul',
                 'attr': {'class': 'cookbook-index-list'},
-                'elem': Object.entries(categories).map(([category, recipes]) => [
+                'elem': Object.entries(categories).sort().map(([category, recipes]) => [
                     {
                         'html': 'li',
                         'elem': [
