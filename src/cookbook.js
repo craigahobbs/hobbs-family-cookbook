@@ -294,7 +294,7 @@ const unitInfo = {
     'count': {
         'baseUnit': 'count',
         'baseRatio': 1,
-        'fractions': [2, 4]
+        'fractions': [2, 4, 8]
     },
     'cup': {
         'baseUnit': 'tsp',
@@ -314,12 +314,12 @@ const unitInfo = {
     'pinch': {
         'baseUnit': 'pinch',
         'baseRatio': 1,
-        'fractions': [2, 4]
+        'fractions': []
     },
     'tbsp': {
         'baseUnit': 'tsp',
         'baseRatio': 3,
-        'fractions': [3]
+        'fractions': []
     },
     'tsp': {
         'baseUnit': 'tsp',
