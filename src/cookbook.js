@@ -241,8 +241,7 @@ export class CookbookPage {
 
             // Scale
             {'html': 'p', 'elem': [
-                {'text': 'Scale:'},
-                this.config.scale !== 1 ? {'text': ` ${this.config.scale}`} : null,
+                {'text': `Scale: ${this.config.scale}`},
                 {
                     'html': 'a',
                     'attr': {'href': chisel.href({...this.params, 'scale': Math.max(scaleAttr.gte, this.config.scale / 2)})},
