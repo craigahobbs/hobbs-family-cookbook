@@ -17,6 +17,9 @@ struct Recipe
     # The recipe's categories
     string(len > 0, len < 100)[len > 0] categories
 
+    # The recipe's author
+    optional string(len > 0, len < 100) author
+
     # The serving size and count
     optional Servings servings
 

@@ -170,6 +170,20 @@ export const cookbookTypes =
                     }
                 },
                 {
+                    "attr": {
+                        "lenGT": 0,
+                        "lenLT": 100
+                    },
+                    "doc": [
+                        "The recipe's author"
+                    ],
+                    "name": "author",
+                    "optional": true,
+                    "type": {
+                        "builtin": "string"
+                    }
+                },
+                {
                     "doc": [
                         "The serving size and count"
                     ],

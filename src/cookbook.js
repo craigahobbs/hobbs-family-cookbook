@@ -238,6 +238,7 @@ export class CookbookPage {
 
             // Title
             {'html': 'h1', 'elem': {'text': recipe.title}},
+            'author' in recipe ? {'html': 'p', 'elem': {'text': `Author: ${recipe.author}`}} : null,
 
             // Scale
             {'html': 'p', 'elem': [
