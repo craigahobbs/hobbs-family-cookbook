@@ -2,6 +2,48 @@
     "title": "The Hobbs Family Cookbook",
     "recipes": [
         {
+            "title": "Big Sandwich",
+            "categories": ["Main Dishes"],
+            "content": [
+                {
+                    "markdown": [
+                        "The big sandwich is a family favorite for casual dinners. The kids often requested it when we",
+                        "were going out for the evening.",
+                        "",
+                        "## Ingredients"
+                    ]
+                },
+                {
+                    "ingredients": [
+                        {"amount": 1, "unit": "count", "name": "loaf freshly baked French bread"},
+                        {"amount": 0.5, "unit": "count", "name": "head shredded iceberg lettuce"},
+                        {"amount": 2, "unit": "count", "name": "large tomatoes, sliced thinly"},
+                        {"amount": 1, "unit": "count", "name": "medium red onion, sliced thinly"},
+                        {"amount": 0.75, "unit": "lb", "name": "thinly sliced deli ham"},
+                        {"amount": 0.75, "unit": "lb", "name": "thinly sliced deli turkey"},
+                        {"amount": 0.5, "unit": "lb", "name": "thinly sliced Swiss or Havarti cheese"},
+                        {"amount": 0.125, "unit": "cup", "name": "mayonnaise"},
+                        {"amount": 0.125, "unit": "cup", "name": "Dijon mustard"}
+                    ]
+                },
+                {
+                    "markdown": [
+                        "## Instructions",
+                        "",
+                        "1. Slice the French loaf in half lengthwise, if the loaf is really thick, scoop out some of the bread middle.",
+                        "",
+                        "2. Spread both sides liberally with mayo and as much mustard as you like.",
+                        "",
+                        "3. Layer the ham, turkey, and cheese on the bottom half of the loaf.",
+                        "",
+                        "4. Top with the tomatoes, salt and pepper to taste, onions and shredded lettuce.",
+                        "",
+                        "5. Place the top of the loaf on and wrap the whole sandwich tightly in saran wrap. Refrigerate until ready to slice."
+                    ]
+                }
+            ]
+        },
+        {
             "title": "Caesar Salad",
             "categories": ["Salads"],
             "content": [
@@ -139,43 +181,74 @@
             ]
         },
         {
-            "title": "Big Sandwich",
-            "categories": ["Main Dishes"],
+            "title": "Lentil Soup",
+            "categories": ["Soups"],
             "content": [
                 {
                     "markdown": [
-                        "The big sandwich is a family favorite for casual dinners. The kids often requested it when we",
-                        "were going out for the evening.",
-                        "",
-                        "## Ingredients"
+                        "Cook the following together in a 6 qt covered soup pot for 2 1/2 hours:"
                     ]
                 },
                 {
                     "ingredients": [
-                        {"amount": 1, "unit": "count", "name": "loaf freshly baked French bread"},
-                        {"amount": 0.5, "unit": "count", "name": "head shredded iceberg lettuce"},
-                        {"amount": 2, "unit": "count", "name": "large tomatoes, sliced thinly"},
-                        {"amount": 1, "unit": "count", "name": "medium red onion, sliced thinly"},
-                        {"amount": 0.75, "unit": "lb", "name": "thinly sliced deli ham"},
-                        {"amount": 0.75, "unit": "lb", "name": "thinly sliced deli turkey"},
-                        {"amount": 0.5, "unit": "lb", "name": "thinly sliced Swiss or Havarti cheese"},
-                        {"amount": 0.125, "unit": "cup", "name": "mayonnaise"},
-                        {"amount": 0.125, "unit": "cup", "name": "Dijon mustard"}
+                        {"amount": 3, "unit": "cup", "name": "raw lentils"},
+                        {"amount": 8, "unit": "cup", "name": "beef stock"},
+                        {"amount": 1, "unit": "tsp", "name": "salt"}
                     ]
                 },
                 {
                     "markdown": [
-                        "## Instructions",
+                        "As you cook more liquid will be needed. Add water and return to a boil each time."
+                    ]
+                },
+                {
+                    "ingredients": [
+                        {"amount": 8, "unit": "count", "name": "thick-cut bacon slices, diced"},
+                        {"amount": 1, "unit": "tbsp", "name": "bacon drippings (from cooking the bacon)"}
+                    ]
+                },
+                {
+                    "markdown": [
+                        "Saute the bacon in a large skillet until crisp. Drain and set aside. Be sure to reserve",
+                        "some of the bacon drippings.",
                         "",
-                        "1. Slice the French loaf in half lengthwise, if the loaf is really thick, scoop out some of the bread middle.",
+                        "With the reserved bacon drippings in the skillet, saute the the following until",
+                        "softened (about 7 to 10 minutes)."
+                    ]
+                },
+                {
+                    "ingredients": [
+                        {"amount": 1, "unit": "tbsp", "name": "minced garlic"},
+                        {"amount": 1, "unit": "count", "name": "large yellow onion, diced"},
+                        {"amount": 3, "unit": "count", "name": "celery ribs, diced"},
+                        {"amount": 2, "unit": "count", "name": "large carrots, diced"},
+                        {"amount": 2, "unit": "count", "name": "large shallots, minced"},
+                        {"amount": 2, "unit": "count", "name": "fresh thyme sprigs"},
+                        {"amount": 1, "unit": "count", "name": "bay leaves"}
+                    ]
+                },
+                {
+                    "markdown": [
+                        "Add to the cooked lentils and simmer covered for 30 minutes more. Then add:"
+                    ]
+                },
+                {
+                    "ingredients": [
+                        {"amount": 1, "unit": "count", "name": "russet potato, peeled and diced"},
+                        {"amount": 2, "unit": "tbsp", "name": "molasses"},
+                        {"amount": 0.5, "unit": "cup", "name": "red wine"},
+                        {"amount": 1, "unit": "tbsp", "name": "worcestershire sauce"},
+                        {"amount": 1, "unit": "pinch", "name": "salt"},
+                        {"amount": 1, "unit": "pinch", "name": "black pepper, freshly ground"}
+                    ]
+                },
+                {
+                    "markdown": [
+                        "Cook covered for 30 minutes more. Add the crisped bacon and remove bay leaf and thyme sprigs.",
                         "",
-                        "2. Spread both sides liberally with mayo and as much mustard as you like.",
+                        "Store soup in a airtight container. Soup is better the second day. Freeze any leftover soup for another time.",
                         "",
-                        "3. Layer the ham, turkey, and cheese on the bottom half of the loaf.",
-                        "",
-                        "4. Top with the tomatoes, salt and pepper to taste, onions and shredded lettuce.",
-                        "",
-                        "5. Place the top of the loaf on and wrap the whole sandwich tightly in saran wrap. Refrigerate until ready to slice."
+                        "This was a favorite birthday dinner request with [Dilly Bread](#title=Dilly%20Bread)."
                     ]
                 }
             ]
