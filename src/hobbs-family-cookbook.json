@@ -308,6 +308,60 @@
             ]
         },
         {
+            "title": "Dream Bars",
+            "categories": ["Cookies"],
+            "content": [
+                {
+                    "markdown": [
+                        "Cream together:"
+                    ]
+                },
+                {
+                    "ingredients": [
+                        {"amount": 0.5, "unit": "cup", "name": "butter"},
+                        {"amount": 0.5, "unit": "cup", "name": "brown sugar, packed"}
+                    ]
+                },
+                {
+                    "markdown": [
+                        "Stir in:"
+                    ]
+                },
+                {
+                    "ingredients": [
+                        {"amount": 1, "unit": "cup", "name": "flour"}
+                    ]
+                },
+                {
+                    "markdown": [
+                        "Turn into a 9 X 13” buttered pan pat out evenly and bake at 350 degrees for 10 minutes.",
+                        "",
+                        "Mix together:"
+                    ]
+                },
+                {
+                    "ingredients": [
+                        {"amount": 2, "unit": "count", "name": "eggs, beaten"},
+                        {"amount": 1, "unit": "cup", "name": "brown sugar, packed"},
+                        {"amount": 1, "unit": "tsp", "name": "vanilla"},
+                        {"amount": 2, "unit": "tbsp", "name": "flour"},
+                        {"amount": 1, "unit": "tsp", "name": "baking powder"},
+                        {"amount": 0.5, "unit": "tsp", "name": "salt"},
+                        {"amount": 1 , "unit": "cup", "name": "flaked coconut"},
+                        {"amount": 1 , "unit": "cup", "name": "chopped pecans"}
+                    ]
+                },
+                {
+                    "markdown": [
+                        "Spread the topping on the baked crust and return to the oven for 25 minutes more.",
+                        "Remove from the oven, cool for 15 minutes and dust with powdered sugar.  Cut into desired size. (1” squares for Christmas plates)",
+                        "",
+                        "These were always one of Craig Alan’s favorite cookies, his Dad’s, too!"
+                    ]
+                }
+            ]
+        },
+        {
             "title": "Gorgonzola Popovers",
             "categories": ["Appetizers"],
             "servings": {
