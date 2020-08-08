@@ -209,6 +209,36 @@
             ]
         },
         {
+            "title": "Cheese and Sausage Rounds",
+            "categories": ["Appetizers"],
+            "author": "Nancy Thomas",
+            "content": [
+                {
+                    "markdown": [
+                        "This is an old recipe from the days when we lived in Olympia and a favorite Sunday night dinner at our house with deviled eggs, carrot",               "sticks, and dill spears.  I have tried to make this with light sausage, but the biscuits turn out like hockey pucks.",
+                        "",
+                        "## Ingredients"
+                    ]
+                },
+                {
+                    "ingredients": [
+                        {"amount": 3, "unit": "cup", "name": "Bisquick"},
+                        {"amount": 1, "unit": "lb", "name": "shredded cheddar cheese"},
+                        {"amount": 1, "unit": "lb", "name": "Jimmy Dean's sausage warmed to room temp"}
+                    ]
+                },
+                {
+                    "markdown": [
+                        "## Instructions",
+                        "",
+                        "1. Shape the dough into balls about the size of ping pong balls.",
+                        "",
+                        "2. Bake on a greased cookie sheet at 350 degrees for 25 minutes and serve warm."
+                    ]
+                }
+            ]
+        },
+        {
             "title": "Chunky Chippers",
             "categories": ["Cookies"],
             "content": [
@@ -456,6 +486,52 @@
             ]
         },
         {
+            "title": "Hot German Potato Salad",
+            "categories": ["Salads"],
+            "author": "Betty Artus",
+            "content": [
+                {
+                    "markdown": [
+                        "A lovely compliment to any meat dish and always a summer favorite.",
+                        "",
+                        "## Ingredients"
+                    ]
+                },
+                {
+                    "ingredients": [
+                        {"amount": 3, "unit": "lb", "name": "white or yellow potatoes"},
+                        {"amount": 8, "unit": "count", "name": "thick cut bacon slices cut to 1/3 inch pieces"},
+                        {"amount": 34, "unit": "cup", "name": "diced white or yellow onion"},
+                        {"amount": 2, "unit": "tsp", "name": "flour"},
+                        {"amount": 2, "unit": "tsp", "name": "sugar"},
+                        {"amount": 2, "unit": "tsp", "name": "salt"},
+                        {"amount": 1, "unit": "pinch", "name": "pepper"},
+                        {"amount": 0.75, "unit": "cup", "name": "water"},
+                        {"amount": 0.33, "unit": "cup", "name": "vinegar"}
+                    ]
+                },
+                {
+                    "markdown": [
+                        "## Instructions",
+                        "",
+                        "1. Peel the potatoes and boil in a large covered pot of salted water until tender.",
+                        "",
+                        "2. Drain and set aside to cool.  When cool, slice thinly into a serving bowl. Set aside.",
+                        "",
+                        "3. Brown the bacon in a large skillet until crisped.  Remove the crisped bacon and drain on paper towels and then add to the potatoes.",
+                        "",
+                        "4. Add the onion to the pan drippings and sauté until golden brown.",
+                        "",
+                        "5. Stir in the flour, sugar, salt, celery seed, and pepper. Cook on low heat until bubbly.",
+                        "",
+                        "6. Stir in the water and the vinegar and heat until boiling, continue to stir and cook for one minute until slightly thickened.",
+                        "",
+                        "7. Pour the hot dressing over the potatoes and bacon, mix together carefully and serve hot."
+                    ]
+                }
+            ]
+        },
+        {
             "title": "Lemon Bars",
             "categories": ["Cookies"],
             "author": "Karen Sandberg",
@@ -673,6 +749,48 @@
                         "thumped. Remove the pan from the oven, slide the blade of a knife around the outer edge, turn upside down on",
                         "serving platter* (I have a large flat tray that I line with foil). Let rolls sit upside down for a minute or",
                         "two and then carefully lift pan off, scraping any leftover topping onto the hot rolls. Best served hot."
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Sundried Tomatoes and Feta Torta",
+            "categories": ["Appetizers"],
+            "content": [
+                {
+                    "markdown": [
+                        "Just yum for every occasion. Because this torta is so festive looking, we would often have it as an appetizer during the holidays.",
+                        "It has always been a family favorite.",
+                        "",
+                        "## Ingredients"
+                    ]
+                },
+                {
+                    "ingredients": [
+                        {"amount": 0.5, "unit": "cup", "name": "pine nuts roasted in a dry skillet over medium heat"},
+                        {"amount": 6, "unit": "oz", "name": "sun-dried tomatoes packed in oil and drained"},
+                        {"amount": 1, "unit": "cup", "name": "pesto (prepared or homemade"},
+                        {"amount": 1, "unit": "count", "name": "clove garlic, chopped"},
+                        {"amount": 1, "unit": "count", "name": "small shallot, chopped"},
+                        {"amount": 0.25, "unit": "cup", "name": "butter, sliced"},
+                        {"amount": 12, "unit": "oz", "name": "feta, crumbled"},
+                        {"amount": 8, "unit": "oz", "name": "light cream cheese"},
+                        {"amount": 0.25, "unit": "tsp", "name": "tabasco"}
+                    ]
+                },
+                {
+                    "markdown": [
+                        "## Instructions",
+                        "",
+                        "1. I usually layer this into two 2-cup saran lined plastic lidded containers, but it can be made as one large torta. Sprinkle the bottom of the containers with a 1/6 of the pine nuts, 1/6 of the sundried tomatoes, 1/6 of the pesto, and 1/6 of the cheese mixture.",
+                        "",
+                        "2. Repeat two more times and end with more pine nuts.",
+                        "",
+                        "3. Close the saran over the layered mixture and snap the lids on.  Chill at lease one hour, or up to a week.",
+                        "",
+                        "4. To unmold, unwrap the saran and turn the mold upside down on a serving platter.",
+                        "",
+                        "5. Carefully remove the saran and serve with multigrain crackers or melba toasts.Drain and set aside to cool."
                     ]
                 }
             ]
