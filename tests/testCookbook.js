@@ -33,3 +33,11 @@ test('ingredientText, fraction tsp', (t) => {
         ['1/2', 'tsp', 'olive oil']
     );
 });
+
+
+test('ingredientText, whole and fraction cup', (t) => {
+    t.deepEqual(
+        ingredientText({'amount': 1.75, 'unit': 'cup', 'name': 'hot water'}),
+        ['1 3/4', 'cup', 'hot water']
+    );
+});

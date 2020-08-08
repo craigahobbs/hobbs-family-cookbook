@@ -366,15 +366,12 @@ export function ingredientText(ingredient, scale = 1) {
                     if (diff / amountUnit <= unitFuzz) {
                         const amountFuzzed = numerator !== denominator ? amountInteger : amountInteger + 1;
                         const amountIntegerFuzzed = numerator !== denominator ? numerator : 0;
-                        const amountAndFraction = (amountFuzzed ? 1 : 0) + (amountIntegerFuzzed ? 1 : 0);
-                        const bestAndFraction = (bestIngredient.amount ? 1 : 0) + (bestIngredient.amountNumerator ? 1 : 0);
                         const measures = amountFuzzed + amountIntegerFuzzed;
                         const bestMeasures = bestIngredient.amount + bestIngredient.amountNumerator;
                         if (!('diff' in bestIngredient) || diff < bestIngredient.diff ||
-                            (diff === bestIngredient.diff && amountAndFraction < bestAndFraction ||
-                             (amountAndFraction === bestAndFraction && measures < bestMeasures ||
-                              (measures === bestMeasures && amountFuzzed < bestIngredient.amount ||
-                               (amountFuzzed === bestIngredient.amount && amountIntegerFuzzed < bestIngredient.amountNumerator))))
+                            (diff === bestIngredient.diff && measures < bestMeasures ||
+                             (measures === bestMeasures && amountFuzzed < bestIngredient.amount ||
+                              (amountFuzzed === bestIngredient.amount && amountIntegerFuzzed < bestIngredient.amountNumerator)))
                         ) {
                             bestIngredient = {
                                 'unit': unit,
