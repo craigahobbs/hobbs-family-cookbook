@@ -1,0 +1,40 @@
+{
+    "title": "Chunky Chippers",
+    "categories": ["Cookies"],
+    "content": [
+        {
+            "markdown": [
+                "## Ingredients"
+            ]
+        },
+        {
+            "ingredients": [
+                {"amount": 0.5, "unit": "cup", "name": "butter"},
+                {"amount": 0.5, "unit": "cup", "name": "chunky peanut butter"},
+                {"amount": 2, "unit": "count", "name": "eggs"},
+                {"amount": 1, "unit": "cup", "name": "sugar"},
+                {"amount": 0.5, "unit": "cup", "name": "packed brown sugar"},
+                {"amount": 1, "unit": "tsp", "name": "vanilla"},
+                {"amount": 1, "unit": "tbsp", "name": "water"},
+                {"amount": 2, "unit": "cup", "name": "flour"},
+                {"amount": 1, "unit": "tsp", "name": "baking soda"},
+                {"amount": 0.5, "unit": "tsp", "name": "salt"},
+                {"amount": 2, "unit": "cup", "name": "chocolate chips"}
+            ]
+        },
+        {
+            "markdown": [
+                "## Instructions",
+                "",
+                "1. Cream-together the butter, peanut butter, eggs, sugar, brown sugar, vanilla, and water.",
+                "",
+                "2. Stir-in the flour, baking soda, and salt.",
+                "",
+                "3. Stir-in the chocolate chips.",
+                "",
+                "Drop dough by large teaspoons onto a lightly greased baking sheet. Bake at 350 degrees for",
+                "12 to 14 minutes (cookies should be light brown and slightly underdone). Remove from sheet to cool."
+            ]
+        }
+    ]
+}

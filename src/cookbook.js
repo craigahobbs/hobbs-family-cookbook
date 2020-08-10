@@ -36,6 +36,8 @@ const cookbookPageTypes = {
  * The cookbook application class.
  *
  * @property {Object} cookbookUrl - The cookbook URL
+ * @property {Object} cookbook - The cookbook model
+ * @property {Object} recipes - The cookbook's recipe models
  * @property {Object} params - The validated hash parameters object
  */
 export class CookbookPage {
@@ -44,6 +46,8 @@ export class CookbookPage {
      */
     constructor(cookbookUrl) {
         this.cookbookUrl = cookbookUrl;
+        this.cookbook = null;
+        this.recipes = null;
         this.params = null;
     }
 
@@ -115,11 +119,30 @@ export class CookbookPage {
             return;
         }
 
-        // Fetch the JSON cookbook model and render
+        // Fetch the cookbook model
         window.fetch(this.cookbookUrl).
-            then((response) => response.json()).
-            then((response) => {
-                chisel.render(document.body, this.pageElements(response));
+            then((cookbook) => cookbook.json()).
+            then((cookbook) => {
+                // Validate the cookbook model
+                chisel.validateType(cookbookTypes, 'Cookbook', cookbook);
+                this.cookbook = cookbook;
+
+                // Fetch the recipe models
+                if ('recipeURLs' in this.cookbook) {
+                    Promise.all(this.cookbook.recipeURLs.map((recipeUrl) => fetch(recipeUrl))).
+                        then((recipes) => Promise.all(recipes.map((recipe) => recipe.json()))).
+                        then((recipes) => {
+                            // Validate the recipes model
+                            chisel.validateType(cookbookTypes, 'Recipes', recipes);
+                            this.recipes = recipes;
+
+                            // Render
+                            chisel.render(document.body, this.pageElements());
+                        }).
+                        catch(({message}) => {
+                            chisel.render(document.body, CookbookPage.errorElements(message));
+                        });
+                }
             }).catch(({message}) => {
                 chisel.render(document.body, CookbookPage.errorElements(message));
             });
@@ -143,37 +166,28 @@ export class CookbookPage {
     /**
      * Generate the cookbook page elments for use with the chisel.render function.
      *
-     * @param {Object} cookbook - The cookbook model
      * @returns {Array}
      */
-    pageElements(cookbook) {
-        // Validate the cookbook model
-        try {
-            chisel.validateType(cookbookTypes, 'Cookbook', cookbook);
-        } catch (error) {
-            return CookbookPage.errorElements(error.message);
-        }
-
+    pageElements() {
         // Recipe page?
         if ('title' in this.config) {
-            return this.recipeElements(cookbook);
+            return this.recipeElements();
         }
 
         // Index page
-        return this.indexElements(cookbook);
+        return this.indexElements();
     }
 
 
     /**
      * Helper function to generate the index page's element model
      *
-     * @param {Object} cookbook - The cookbook model
      * @returns {Array}
      */
-    indexElements(cookbook) {
+    indexElements() {
         // Sort and categorize recipes
         const categories = {};
-        for (const [, recipe] of cookbook.recipes.map((recipeMap) => [recipeMap.title, recipeMap]).sort()) {
+        for (const [, recipe] of this.recipes.map((recipeMap) => [recipeMap.title, recipeMap]).sort()) {
             for (const category of recipe.categories) {
                 if (!(category in categories)) {
                     categories[category] = [];
@@ -184,7 +198,7 @@ export class CookbookPage {
 
         return [
             // Title
-            {'html': 'h1', 'elem': {'text': cookbook.title}},
+            {'html': 'h1', 'elem': {'text': this.cookbook.title}},
 
             // Sorted recipe links
             {
@@ -214,12 +228,11 @@ export class CookbookPage {
     /**
      * Helper function to generate the recipe page's element model
      *
-     * @param {Object} cookbook - The cookbook model
      * @returns {Array}
      */
-    recipeElements(cookbook) {
+    recipeElements() {
         // Find the recipe
-        const recipe = cookbook.recipes.find((recipeFind) => recipeFind.title === this.config.title);
+        const recipe = this.recipes.find((recipeFind) => recipeFind.title === this.config.title);
         if (recipe === undefined) {
             return CookbookPage.errorElements(`Unknown recipe '${this.config.title}`);
         }

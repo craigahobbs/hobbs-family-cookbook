@@ -1,0 +1,54 @@
+{
+    "title": "Caesar Salad",
+    "categories": ["Salads"],
+    "content": [
+        {
+            "markdown": [
+                "## Dressing Ingredients"
+            ]
+        },
+        {
+            "ingredients": [
+                {"amount": 2, "unit": "count", "name": "garlic cloves chopped"},
+                {"amount": 0.75, "unit": "tsp", "name": "salt"},
+                {"amount": 0.5, "unit": "tsp", "name": "Dijon mustard"},
+                {"amount": 1.5, "unit": "tsp", "name": "Worcestershire sauce"},
+                {"amount": 1, "unit": "count", "name": "coddled egg"},
+                {"amount": 2, "unit": "tbsp", "name": "fresh lemon juice"},
+                {"amount": 1, "unit": "tsp", "name": "anchovy paste"},
+                {"amount": 2, "unit": "tbsp", "name": "shredded Parmesan cheese"},
+                {"amount": 0.5, "unit": "cup", "name": "olive oil"}
+            ]
+        },
+        {
+            "markdown": [
+                "## Salad Ingredients"
+            ]
+        },
+        {
+            "ingredients": [
+                {"amount": 1, "unit": "count", "name": "large head romaine lettuce"},
+                {"amount": 1, "unit": "cup", "name": "croutons"},
+                {"amount": 0.33, "unit": "cup", "name": "shredded Parmesan cheese"},
+                {"amount": 1, "unit": "tbsp", "name": "freshly ground black pepper"}
+            ]
+        },
+        {
+            "markdown": [
+                "## Instructions",
+                "",
+                "1. In a blender, combine all of the dressing ingredients (except the olive oil) and process",
+                "   until smooth and thickened. Slowly blend in the olive oil.",
+                "",
+                "2. In a salad bowl, toss dressing with the salad ingredients.",
+                "",
+                "Dressing can be refrigerated up to 3 days.",
+                "",
+                "### How to Coddle an Egg",
+                "",
+                "To coddle an egg, bring 2 inches of water to boil in a small saucepan. Lower the egg (cracked open)",
+                "into the water, cover and let stand for 1 minute. Cool prior to adding to the blender."
+            ]
+        }
+    ]
+}

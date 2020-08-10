@@ -1,0 +1,42 @@
+{
+    "title": "Sundried Tomatoes and Feta Torta",
+    "categories": ["Appetizers"],
+    "content": [
+        {
+            "markdown": [
+                "Just yum for every occasion. Because this torta is so festive looking, we would often have it as an appetizer during the holidays.",
+                "It has always been a family favorite.",
+                "",
+                "## Ingredients"
+            ]
+        },
+        {
+            "ingredients": [
+                {"amount": 0.5, "unit": "cup", "name": "pine nuts roasted in a dry skillet over medium heat"},
+                {"amount": 6, "unit": "oz", "name": "sun-dried tomatoes packed in oil and drained"},
+                {"amount": 1, "unit": "cup", "name": "pesto (prepared or homemade"},
+                {"amount": 1, "unit": "count", "name": "clove garlic, chopped"},
+                {"amount": 1, "unit": "count", "name": "small shallot, chopped"},
+                {"amount": 0.25, "unit": "cup", "name": "butter, sliced"},
+                {"amount": 12, "unit": "oz", "name": "feta, crumbled"},
+                {"amount": 8, "unit": "oz", "name": "light cream cheese"},
+                {"amount": 0.25, "unit": "tsp", "name": "tabasco"}
+            ]
+        },
+        {
+            "markdown": [
+                "## Instructions",
+                "",
+                "1. I usually layer this into two 2-cup saran lined plastic lidded containers, but it can be made as one large torta. Sprinkle the bottom of the containers with a 1/6 of the pine nuts, 1/6 of the sundried tomatoes, 1/6 of the pesto, and 1/6 of the cheese mixture.",
+                "",
+                "2. Repeat two more times and end with more pine nuts.",
+                "",
+                "3. Close the saran over the layered mixture and snap the lids on. Chill at lease one hour, or up to a week.",
+                "",
+                "4. To unmold, unwrap the saran and turn the mold upside down on a serving platter.",
+                "",
+                "5. Carefully remove the saran and serve with multigrain crackers or melba toasts. Drain and set aside to cool."
+            ]
+        }
+    ]
+}

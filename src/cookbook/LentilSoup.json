@@ -1,0 +1,73 @@
+{
+    "title": "Lentil Soup",
+    "categories": ["Soups"],
+    "content": [
+        {
+            "markdown": [
+                "Cook the following together in a 6 qt covered soup pot for 2 1/2 hours:"
+            ]
+        },
+        {
+            "ingredients": [
+                {"amount": 3, "unit": "cup", "name": "raw lentils"},
+                {"amount": 8, "unit": "cup", "name": "beef stock"},
+                {"amount": 1, "unit": "tsp", "name": "salt"}
+            ]
+        },
+        {
+            "markdown": [
+                "As you cook more liquid will be needed. Add water and return to a boil each time."
+            ]
+        },
+        {
+            "ingredients": [
+                {"amount": 8, "unit": "count", "name": "thick-cut bacon slices, diced"},
+                {"amount": 1, "unit": "tbsp", "name": "bacon drippings (from cooking the bacon)"}
+            ]
+        },
+        {
+            "markdown": [
+                "Saute the bacon in a large skillet until crisp. Drain and set aside. Be sure to reserve",
+                "some of the bacon drippings.",
+                "",
+                "With the reserved bacon drippings in the skillet, saute the the following until",
+                "softened (about 7 to 10 minutes)."
+            ]
+        },
+        {
+            "ingredients": [
+                {"amount": 1, "unit": "tbsp", "name": "minced garlic"},
+                {"amount": 1, "unit": "count", "name": "large yellow onion, diced"},
+                {"amount": 3, "unit": "count", "name": "celery ribs, diced"},
+                {"amount": 2, "unit": "count", "name": "large carrots, diced"},
+                {"amount": 2, "unit": "count", "name": "large shallots, minced"},
+                {"amount": 2, "unit": "count", "name": "fresh thyme sprigs"},
+                {"amount": 1, "unit": "count", "name": "bay leaves"}
+            ]
+        },
+        {
+            "markdown": [
+                "Add to the cooked lentils and simmer covered for 30 minutes more. Then add:"
+            ]
+        },
+        {
+            "ingredients": [
+                {"amount": 1, "unit": "count", "name": "russet potato, peeled and diced"},
+                {"amount": 2, "unit": "tbsp", "name": "molasses"},
+                {"amount": 0.5, "unit": "cup", "name": "red wine"},
+                {"amount": 1, "unit": "tbsp", "name": "worcestershire sauce"},
+                {"amount": 1, "unit": "pinch", "name": "salt"},
+                {"amount": 1, "unit": "pinch", "name": "black pepper, freshly ground"}
+            ]
+        },
+        {
+            "markdown": [
+                "Cook covered for 30 minutes more. Add the crisped bacon and remove bay leaf and thyme sprigs.",
+                "",
+                "Store soup in a airtight container. Soup is better the second day. Freeze any leftover soup for another time.",
+                "",
+                "This was a favorite birthday dinner request with [Dilly Bread](#title=Dilly%20Bread)."
+            ]
+        }
+    ]
+}

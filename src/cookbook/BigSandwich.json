@@ -1,0 +1,42 @@
+{
+    "title": "Big Sandwich",
+    "categories": ["Main Dishes"],
+    "content": [
+        {
+            "markdown": [
+                "The big sandwich is a family favorite for casual dinners. The kids often requested it when we",
+                "were going out for the evening.",
+                "",
+                "## Ingredients"
+            ]
+        },
+        {
+            "ingredients": [
+                {"amount": 1, "unit": "count", "name": "loaf freshly baked French bread"},
+                {"amount": 0.5, "unit": "count", "name": "head shredded iceberg lettuce"},
+                {"amount": 2, "unit": "count", "name": "large tomatoes, sliced thinly"},
+                {"amount": 1, "unit": "count", "name": "medium red onion, sliced thinly"},
+                {"amount": 0.75, "unit": "lb", "name": "thinly sliced deli ham"},
+                {"amount": 0.75, "unit": "lb", "name": "thinly sliced deli turkey"},
+                {"amount": 0.5, "unit": "lb", "name": "thinly sliced Swiss or Havarti cheese"},
+                {"amount": 0.125, "unit": "cup", "name": "mayonnaise"},
+                {"amount": 0.125, "unit": "cup", "name": "Dijon mustard"}
+            ]
+        },
+        {
+            "markdown": [
+                "## Instructions",
+                "",
+                "1. Slice the French loaf in half lengthwise, if the loaf is really thick, scoop out some of the bread middle.",
+                "",
+                "2. Spread both sides liberally with mayo and as much mustard as you like.",
+                "",
+                "3. Layer the ham, turkey, and cheese on the bottom half of the loaf.",
+                "",
+                "4. Top with the tomatoes, salt and pepper to taste, onions and shredded lettuce.",
+                "",
+                "5. Place the top of the loaf on and wrap the whole sandwich tightly in saran wrap. Refrigerate until ready to slice."
+            ]
+        }
+    ]
+}

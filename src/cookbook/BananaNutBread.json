@@ -1,0 +1,60 @@
+{
+    "title": "Banana Nut Bread",
+    "categories": ["Breads"],
+    "author": "Merlin Salter",
+    "content": [
+        {
+            "markdown": [
+                "Cream together:"
+            ]
+        },
+        {
+            "ingredients": [
+                {"amount": 0.5, "unit": "cup", "name": "butter"},
+                {"amount": 1, "unit": "cup", "name": "sugar"}
+            ]
+        },
+        {
+            "markdown": [
+                "Add and beat in:"
+            ]
+        },
+        {
+            "ingredients": [
+                {"amount": 2, "unit": "count", "name": "eggs"},
+                {"amount": 4, "unit": "tbsp", "name": "sour milk"},
+                {"amount": 3, "unit": "count", "name": "ripe bananas, mashed"}
+            ]
+        },
+        {
+            "markdown": [
+                "Add and stir in:"
+            ]
+        },
+        {
+            "ingredients": [
+                {"amount": 2, "unit": "cup", "name": "flour"},
+                {"amount": 1, "unit": "tsp", "name": "baking soda"},
+                {"amount": 0.5, "unit": "cup", "name": "chopped pecans"}
+            ]
+        },
+        {
+            "markdown": [
+                "Turn the batter into a buttered glass loaf pan and bake in a 350 degree for 1 hour or until a",
+                "toothpick inserted in the center comes out clean. Cool the bread in the pan for 10 to 15 minutes,",
+                "then loosen the edges with a knife blade and turn out onto a cutting board and continue to cool or",
+                "slice and serve.",
+                "",
+                "I sometimes double the recipe and freeze the second loaf.",
+                "",
+                "To make **sour milk**, combine the following with the milk (I’m convinced that this step is what",
+                "makes this banana bread so great. Use vinegar, not lemon juice.)"
+            ]
+        },
+        {
+            "ingredients": [
+                {"amount": 2, "unit": "tsp", "name": "white vinegar"}
+            ]
+        }
+    ]
+}

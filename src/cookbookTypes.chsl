@@ -4,8 +4,8 @@ struct Cookbook
     # The cookbook title text
     string(len > 0, len < 100) title
 
-    # The cookbook's recipes
-    Recipe[len > 0, len < 1000] recipes
+    # The cookbook's recipe model URLs
+    string(len > 0, len < 1000)[len > 0, len < 1000] recipeURLs
 
 
 # Recipe struct
@@ -25,6 +25,10 @@ struct Recipe
 
     # The recipe content
     Content[len > 0, len < 100] content
+
+
+# Recipe list typedef
+typedef Recipe[len > 0, len < 1000] Recipes
 
 
 # Recipe serving size and count struct

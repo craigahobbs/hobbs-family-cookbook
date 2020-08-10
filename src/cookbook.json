@@ -1,0 +1,20 @@
+{
+    "title": "The Hobbs Family Cookbook",
+    "recipeURLs": [
+        "./cookbook/BananaNutBread.json",
+        "./cookbook/BigSandwich.json",
+        "./cookbook/BrowniePudding.json",
+        "./cookbook/CaesarSalad.json",
+        "./cookbook/CheeseAndSausageRounds.json",
+        "./cookbook/ChunkyChippers.json",
+        "./cookbook/CrescentRolls.json",
+        "./cookbook/DillyBread.json",
+        "./cookbook/DreamBars.json",
+        "./cookbook/GorgonzolaPoppers.json",
+        "./cookbook/HotGermanPotatoSalad.json",
+        "./cookbook/LemonBars.json",
+        "./cookbook/LentilSoup.json",
+        "./cookbook/MomsCinnamonRolls.json",
+        "./cookbook/SundriedTomatoesAndFetaTorta.json"
+    ]
+}

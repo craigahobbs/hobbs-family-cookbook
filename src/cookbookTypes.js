@@ -71,13 +71,17 @@ export const cookbookTypes =
                         "lenLT": 1000
                     },
                     "doc": [
-                        "The cookbook's recipes"
+                        "The cookbook's recipe model URLs"
                     ],
-                    "name": "recipes",
+                    "name": "recipeURLs",
                     "type": {
                         "array": {
+                            "attr": {
+                                "lenGT": 0,
+                                "lenLT": 1000
+                            },
                             "type": {
-                                "user": "Recipe"
+                                "builtin": "string"
                             }
                         }
                     }
@@ -212,6 +216,25 @@ export const cookbookTypes =
                 }
             ],
             "name": "Recipe"
+        }
+    },
+    "Recipes": {
+        "typedef": {
+            "attr": {
+                "lenGT": 0,
+                "lenLT": 1000
+            },
+            "doc": [
+                "Recipe list typedef"
+            ],
+            "name": "Recipes",
+            "type": {
+                "array": {
+                    "type": {
+                        "user": "Recipe"
+                    }
+                }
+            }
         }
     },
     "Servings": {

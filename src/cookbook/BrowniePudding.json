@@ -1,0 +1,51 @@
+{
+    "title": "Brownie Pudding",
+    "categories": ["Desserts"],
+    "content": [
+        {
+            "markdown": [
+                "Stir together by hand:"
+            ]
+        },
+        {
+            "ingredients": [
+                {"amount": 1, "unit": "cup", "name": "flour"},
+                {"amount": 2, "unit": "tsp", "name": "baking powder"},
+                {"amount": 0.75, "unit": "cup", "name": "sugar"},
+                {"amount": 0.25, "unit": "tsp", "name": "salt"},
+                {"amount": 2, "unit": "tbsp", "name": "cocoa"},
+                {"amount": 2, "unit": "tbsp", "name": "shortening or butter, melted"},
+                {"amount": 0.5, "unit": "cup", "name": "milk"}
+            ]
+        },
+        {
+            "markdown": [
+                "Spread batter in a  9 X 9” baking pan.",
+                "",
+                "Mix together and sprinkle over the batter:"
+            ]
+        },
+        {
+            "ingredients": [
+                {"amount": 1, "unit": "cup", "name": "brown sugar packed"},
+                {"amount": 0.25, "unit": "cup", "name": "cocoa"}
+            ]
+        },
+        {
+            "markdown": [
+                "Pour the hot water over all and bake in a 350 degree oven for 45 minutes."
+            ]
+        },
+        {
+            "ingredients": [
+                {"amount": 1.75, "unit": "cup", "name": "hot water"}
+            ]
+        },
+        {
+            "markdown": [
+                "During baking crispy cake rises to the top, and a rich chocolate sauce forms on the bottom.",
+                "Spoon into dessert bowls and serve warm with freshly whipped cream."
+            ]
+        }
+    ]
+}
