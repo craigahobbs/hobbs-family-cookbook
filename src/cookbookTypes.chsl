@@ -45,7 +45,7 @@ struct Servings
 union Content
 
     #  A list of markdown lines
-    string[len > 0, len < 1000] markdown
+    Markdown markdown
 
     # An ingredient list
     Ingredient[len > 0, len < 100] ingredients

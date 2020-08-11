@@ -119,33 +119,37 @@ export class CookbookPage {
             return;
         }
 
-        // Fetch the cookbook model
-        window.fetch(this.cookbookUrl).
-            then((cookbook) => cookbook.json()).
-            then((cookbook) => {
-                // Validate the cookbook model
-                chisel.validateType(cookbookTypes, 'Cookbook', cookbook);
-                this.cookbook = cookbook;
+        // Recipes already loaded? If so, render...
+        if (this.recipes !== null) {
+            chisel.render(document.body, this.pageElements());
+        } else {
+            // Fetch the cookbook model
+            window.fetch(this.cookbookUrl).
+                then((cookbook) => cookbook.json()).
+                then((cookbook) => {
+                    // Validate the cookbook model
+                    this.cookbook = chisel.validateType(cookbookTypes, 'Cookbook', cookbook);
 
-                // Fetch the recipe models
-                if ('recipeURLs' in this.cookbook) {
-                    Promise.all(this.cookbook.recipeURLs.map((recipeUrl) => fetch(recipeUrl))).
-                        then((recipes) => Promise.all(recipes.map((recipe) => recipe.json()))).
-                        then((recipes) => {
-                            // Validate the recipes model
-                            chisel.validateType(cookbookTypes, 'Recipes', recipes);
-                            this.recipes = recipes;
+                    // Fetch the recipe models
+                    if ('recipeURLs' in this.cookbook) {
+                        Promise.all(this.cookbook.recipeURLs.map((recipeUrl) => window.fetch(recipeUrl))).
+                            then((responses) => Promise.all(responses.map((recipe) => recipe.text()))).
+                            then((recipes) => {
+                                // Validate the recipes model
+                                const recipeModels = recipes.map((recipe) => parseRecipeMarkdown(recipe));
+                                this.recipes = chisel.validateType(cookbookTypes, 'Recipes', recipeModels);
 
-                            // Render
-                            chisel.render(document.body, this.pageElements());
-                        }).
-                        catch(({message}) => {
-                            chisel.render(document.body, CookbookPage.errorElements(message));
-                        });
-                }
-            }).catch(({message}) => {
-                chisel.render(document.body, CookbookPage.errorElements(message));
-            });
+                                // Render
+                                chisel.render(document.body, this.pageElements());
+                            }).
+                            catch(({message}) => {
+                                chisel.render(document.body, CookbookPage.errorElements(message));
+                            });
+                    }
+                }).catch(({message}) => {
+                    chisel.render(document.body, CookbookPage.errorElements(message));
+                });
+        }
     }
 
 
@@ -299,7 +303,7 @@ export class CookbookPage {
                 }
 
                 // Markdown
-                return markdownElements(parseMarkdown(content.markdown.join('\n')));
+                return markdownElements(content.markdown);
             })
         ];
     }
@@ -310,20 +314,25 @@ export class CookbookPage {
 const unitInfo = {
     'count': {
         'baseUnit': 'count',
+        'display': '',
         'baseRatio': 1,
         'fractions': [2, 4, 8]
     },
     'cup': {
+        'alternates': ['C', 'Cup', 'Cups', 'cups'],
+        'display': 'C',
         'baseUnit': 'tsp',
         'baseRatio': 48,
         'fractions': [2, 3, 4]
     },
     'lb': {
+        'alternates': ['Lb', 'Lbs', 'Pounds', 'lbs', 'pounds'],
         'baseUnit': 'oz',
         'baseRatio': 16,
         'fractions': [2, 4]
     },
     'oz': {
+        'alternates': ['Oz', 'Ounces', 'ounces'],
         'baseUnit': 'oz',
         'baseRatio': 1,
         'fractions': [2, 4]
@@ -334,11 +343,13 @@ const unitInfo = {
         'fractions': [1]
     },
     'tbsp': {
+        'alternates': ['Tbsp', 'Tablespoons', 'tablespoons'],
         'baseUnit': 'tsp',
         'baseRatio': 3,
         'fractions': [1]
     },
     'tsp': {
+        'alternates': ['Tsp', 'Teaspoons', 'teaspoons'],
         'baseUnit': 'tsp',
         'baseRatio': 1,
         'fractions': [2, 4, 8]
@@ -402,7 +413,7 @@ export function ingredientText(ingredient, scale = 1) {
 
     // Create the ingredient elements
     let amountStr;
-    const unitStr = bestIngredient.unit === 'count' ? '' : `${bestIngredient.unit}`;
+    const unitStr = 'display' in unitInfo[bestIngredient.unit] ? unitInfo[bestIngredient.unit].display : bestIngredient.unit;
     if (!('amountNumerator' in bestIngredient) || bestIngredient.amountNumerator === 0) {
         amountStr = `${bestIngredient.amount}`;
     } else if (bestIngredient.amount === 0) {
@@ -411,4 +422,95 @@ export function ingredientText(ingredient, scale = 1) {
         amountStr = `${bestIngredient.amount} ${bestIngredient.amountNumerator}/${bestIngredient.amountDenominator}`;
     }
     return [amountStr, unitStr, ingredient.name];
+}
+
+
+// Recipe markdown code block regular expressions
+const rRecipeMarkdownInfo = /^\s*(?<key>[Tt]itle|[Cc]ategories|[Aa]uthor)\s*:\s*(?<value>.*?)\s*$/;
+const rRecipeMarkdownCategories = /\s*,\s*/;
+const alternateUnits = Object.entries(unitInfo).reduce((units, [unit, info]) => {
+    if ('alternates' in info) {
+        for (const alternate of info.alternates) {
+            units[alternate] = unit;
+        }
+    }
+    return units;
+}, []);
+const rRecipeMarkdownIngredients = new RegExp(
+    '^(?:\\s*(?<whole>[1-9][0-9]*))?(?:\\s*(?<numer>[1-9][0-9]*)\\s*/\\s*(?<denom>[1-9][0-9]*))?' +
+        `(?:\\s*(?<unit>${Object.keys(unitInfo).join('|')}|${Object.keys(alternateUnits).join('|')}))?` +
+        '\\s*(?!/)(?<name>.+?)\\s*$'
+);
+
+
+/**
+ * Parse recipe markdown text to a recipe model
+ *
+ * @param {string|string[]} markdown - Markdown text or text lines
+ * @returns {Object} The recipe model
+ */
+export function parseRecipeMarkdown(markdown) {
+    // Parse the markdown
+    const markdownModel = parseMarkdown(markdown);
+
+    // Convert the markdown to a recipe model
+    const recipe = {'categories': [], 'content': []};
+    for (const part of markdownModel.parts) {
+        const codeBlockLanguage = 'codeBlock' in part && 'language' in part.codeBlock ? part.codeBlock.language : null;
+        if (codeBlockLanguage === 'recipe-info') {
+            for (const line of part.codeBlock.lines) {
+                const match = line.match(rRecipeMarkdownInfo);
+                const key = match !== null && match.groups.key.toLowerCase();
+                if (key === 'title') {
+                    recipe.title = match.groups.value;
+                } else if (key === 'author') {
+                    recipe.author = match.groups.value;
+                } else {
+                    recipe.categories.push(...match.groups.value.split(rRecipeMarkdownCategories));
+                }
+            }
+        } else if (codeBlockLanguage === 'recipe-ingredients') {
+            for (const line of part.codeBlock.lines) {
+                const match = line.match(rRecipeMarkdownIngredients);
+                const whole = match !== null && typeof match.groups.whole !== 'undefined' ? parseInt(match.groups.whole, 10) : 0;
+                const numer = match !== null && typeof match.groups.numer !== 'undefined' ? parseInt(match.groups.numer, 10) : 0;
+                const denom = match !== null && typeof match.groups.denom !== 'undefined' ? parseInt(match.groups.denom, 10) : 1;
+                const unit = match !== null && typeof match.groups.unit !== 'undefined' ? match.groups.unit : null;
+                const name = match !== null ? match.groups.name : null;
+                if ((whole !== 0 || numer !== 0) && name !== null) {
+                    // Add the ingredients part
+                    if (recipe.content.length === 0 || !('ingredients' in recipe.content[recipe.content.length - 1])) {
+                        recipe.content.push({'ingredients': []});
+                    }
+                    recipe.content[recipe.content.length - 1].ingredients.push({
+                        'amount': whole + numer / denom,
+                        'unit': unit !== null ? (unit in alternateUnits ? alternateUnits[unit] : unit) : 'count',
+                        'name': name
+                    });
+                } else {
+                    // No ingredient match - add the markdown part
+                    if (recipe.content.length === 0 || !('markdown' in recipe.content[recipe.content.length - 1])) {
+                        recipe.content.push({'markdown': {'parts': []}});
+                    }
+                    recipe.content[recipe.content.length - 1].markdown.parts.push({'paragraph': {'spans': [{'text': line}]}});
+                }
+            }
+        } else {
+            // Add the markdown part
+            if (recipe.content.length === 0 || !('markdown' in recipe.content[recipe.content.length - 1])) {
+                recipe.content.push({'markdown': {'parts': []}});
+            }
+            recipe.content[recipe.content.length - 1].markdown.parts.push(part);
+        }
+    }
+
+    // Fill-in missing info
+    if (!('title' in recipe)) {
+        recipe.title = 'Untitled Recipe';
+    }
+    if (recipe.categories.length === 0) {
+        recipe.categories.push('Uncategorized');
+    }
+
+    return recipe;
 }
