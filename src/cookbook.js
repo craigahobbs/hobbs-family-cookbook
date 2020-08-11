@@ -310,7 +310,7 @@ export class CookbookPage {
 }
 
 
-// Ingredient bases
+// Ingredient unit info map
 const unitInfo = {
     'count': {
         'baseUnit': 'count',
@@ -356,6 +356,15 @@ const unitInfo = {
     }
 };
 
+// Alternate ingredient unit map
+const alternateUnits = Object.entries(unitInfo).reduce((units, [unit, info]) => {
+    if ('alternates' in info) {
+        for (const alternate of info.alternates) {
+            units[alternate] = unit;
+        }
+    }
+    return units;
+}, []);
 
 // Ingredient unit fuzz ratio
 const unitFuzz = 0.1;
@@ -428,14 +437,7 @@ export function ingredientText(ingredient, scale = 1) {
 // Recipe markdown code block regular expressions
 const rRecipeMarkdownInfo = /^\s*(?<key>[Tt]itle|[Cc]ategories|[Aa]uthor)\s*:\s*(?<value>.*?)\s*$/;
 const rRecipeMarkdownCategories = /\s*,\s*/;
-const alternateUnits = Object.entries(unitInfo).reduce((units, [unit, info]) => {
-    if ('alternates' in info) {
-        for (const alternate of info.alternates) {
-            units[alternate] = unit;
-        }
-    }
-    return units;
-}, []);
+const rRecipeMarkdownBlank = /^\s*$/;
 const rRecipeMarkdownIngredients = new RegExp(
     '^(?:\\s*(?<whole>[1-9][0-9]*))?(?:\\s*(?<numer>[1-9][0-9]*)\\s*/\\s*(?<denom>[1-9][0-9]*))?' +
         `(?:\\s*(?<unit>${Object.keys(unitInfo).join('|')}|${Object.keys(alternateUnits).join('|')}))?` +
@@ -471,6 +473,12 @@ export function parseRecipeMarkdown(markdown) {
             }
         } else if (codeBlockLanguage === 'recipe-ingredients') {
             for (const line of part.codeBlock.lines) {
+                // Ignore blank lines
+                if (rRecipeMarkdownBlank.test(line)) {
+                    continue;
+                }
+
+                // Parse the ingredient line
                 const match = line.match(rRecipeMarkdownIngredients);
                 const whole = match !== null && typeof match.groups.whole !== 'undefined' ? parseInt(match.groups.whole, 10) : 0;
                 const numer = match !== null && typeof match.groups.numer !== 'undefined' ? parseInt(match.groups.numer, 10) : 0;
