@@ -4,36 +4,38 @@
     "content": [
         {
             "markdown": [
-                "## Ingredients"
-            ]
-        },
-        {
-            "ingredients": [
-                {"amount": 0.5, "unit": "cup", "name": "butter"},
-                {"amount": 0.5, "unit": "cup", "name": "chunky peanut butter"},
-                {"amount": 2, "unit": "count", "name": "eggs"},
-                {"amount": 1, "unit": "cup", "name": "sugar"},
-                {"amount": 0.5, "unit": "cup", "name": "packed brown sugar"},
-                {"amount": 1, "unit": "tsp", "name": "vanilla"},
-                {"amount": 1, "unit": "tbsp", "name": "water"},
-                {"amount": 2, "unit": "cup", "name": "flour"},
-                {"amount": 1, "unit": "tsp", "name": "baking soda"},
-                {"amount": 0.5, "unit": "tsp", "name": "salt"},
-                {"amount": 2, "unit": "cup", "name": "chocolate chips"}
-            ]
-        },
-        {
-            "markdown": [
-                "## Instructions",
+                "CHUNKY CHIPPERS",
                 "",
-                "1. Cream-together the butter, peanut butter, eggs, sugar, brown sugar, vanilla, and water.",
+                "Cream together:",
                 "",
-                "2. Stir-in the flour, baking soda, and salt.",
+                "1/2 C butter",
                 "",
-                "3. Stir-in the chocolate chips.",
+                "1/2 C chunky peanut butter",
                 "",
-                "Drop dough by large teaspoons onto a lightly greased baking sheet. Bake at 350 degrees for",
-                "12 to 14 minutes (cookies should be light brown and slightly underdone). Remove from sheet to cool."
+                "2 eggs",
+                "",
+                "1 C sugar",
+                "",
+                "1/2 C  brown sugar packed",
+                "",
+                "1 tsp vanilla",
+                "",
+                "1 Tbsp water",
+                "",
+                "Add and stir in:",
+                "",
+                "2 C flour",
+                "",
+                "1 tsp baking soda",
+                "",
+                "1/2 tsp salt",
+                "",
+                "Stir in:",
+                "",
+                "2 C chocolate chips",
+                "",
+                "Drop dough by large teaspoons onto a lightly greased baking sheet.  Bake at 350 degrees for 12 to 14",
+                "minutes (cookies should be light brown and slightly underdone.  Remove from sheet to cool."
             ]
         }
     ]

@@ -1,48 +1,35 @@
 {
     "title": "Lemon Bars",
     "categories": ["Cookies"],
-    "author": "Karen Sandberg",
     "content": [
         {
             "markdown": [
-                "Cream together:"
-            ]
-        },
-        {
-            "ingredients": [
-                {"amount": 0.75, "unit": "cup", "name": "butter, softened"},
-                {"amount": 0.33, "unit": "cup", "name": "powdered sugar"}
-            ]
-        },
-        {
-            "markdown": [
-                "Stir in:"
-            ]
-        },
-        {
-            "ingredients": [
-                {"amount": 1.5, "unit": "cup", "name": "flour"}
-            ]
-        },
-        {
-            "markdown": [
-                "Pat mixture into a greased 9 X 13” baking pan. Bake at 350 degrees for 15 minutes.",
+                "LEMON BARS  Recipe from Karen Sandberg",
                 "",
-                "Combine:"
-            ]
-        },
-        {
-            "ingredients": [
-                {"amount": 3, "unit": "count", "name": "eggs"},
-                {"amount": 4, "unit": "tbsp", "name": "flour"},
-                {"amount": 1.5, "unit": "cup", "name": "sugar"},
-                {"amount": 0.5, "unit": "cup", "name": "lemon juice"}
-            ]
-        },
-        {
-            "markdown": [
-                "Pour mixture over the hot crust and return to the oven for 15 more minutes.",
-                "Cool and dust with powdered sugar. Cut in squares and serve."
+                "Cream together:",
+                "",
+                "3/4 C Butter",
+                "",
+                "1/3 C powdered sugar",
+                "",
+                "Stir in:",
+                "",
+                "1 1/2 C flour",
+                "",
+                "Pat mixture into a greased 9 X 13\" baking pan.  Bake at 350 degrees for 15 minutes.",
+                "",
+                "Combine:",
+                "",
+                "3 whole eggs",
+                "",
+                "4 Tbsp flour",
+                "",
+                "1 1/2 C sugar",
+                "",
+                "1/2 C lemon juice",
+                "",
+                "Pour mixture over the hot crust and return to the oven for 15 more minutes.  Cool and dust with",
+                "powdered sugar.  Cut in squares and serve."
             ]
         }
     ]
