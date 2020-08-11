@@ -3,10 +3,11 @@ Title: Mexican Dip
 Categories: Appetizers
 ~~~
 
-MEXICAN DIP  (also known as Barbie's Secret Dip)
+(also known as Barbie's Secret Dip)
 
 Stir together:
 
+~~~ recipe-ingredients
 3 large diced ripe tomatoes
 
 1 small can chopped black olives
@@ -20,6 +21,7 @@ Stir together:
 2 Tbsp read wine vinegar
 
 1 tsp (or to taste) Lawry's seasoned salt
+~~~
 
 Refrigerate until ready for use.  Serve with fresh tortilla chips.
 

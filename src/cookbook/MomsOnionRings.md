@@ -3,10 +3,9 @@ Title: Mom's Onion Rings
 Categories: Appetizers
 ~~~
 
-MOM'S ONION RINGS
-
 Prepare batter by whisking together:
 
+~~~ recipe-ingredients
 1/2 C flour
 
 1/2 C cornstarch
@@ -18,6 +17,7 @@ Prepare batter by whisking together:
 2 egg whites
 
 1 C water
+~~~
 
 Batter will be thin.
 
@@ -25,24 +25,31 @@ Slice two to three large sweet onions (white onions are also good) 1/4" to 1/3" 
 the batter* and deep fry in canola oil (approximately 5 C) at 375 degrees.  Remove rings when golden
 brown and crispy and drain on paper towels.
 
-Serve warm with Colonial Dressing  or Tartar Sauce recipes follow:
+Serve warm with Colonial Dressing  or Tartar Sauce.
 
-Colonial Dressing
+\* For thicker coating dust the onion rings lightly in flour before dipping in the batter.
 
+
+## Colonial Dressing
+
+~~~ recipe-ingredients
 1/2 C Mayo
 
-1 - 2 Tbsp ketchup
+1 Tbsp ketchup
 
 1 clove crushed garlic
 
-1  tsp champagne vinegar
+1 tsp champagne vinegar
+~~~
 
-salt and freshly ground pepper to taste
+Salt and freshly ground pepper to taste.
 
 Whisk together and serve.
 
-Tartar Sauce
 
+## Tartar Sauce
+
+~~~ recipe-ingredients
 1/2 C Mayo
 
 1 Tbsp minced white onion
@@ -52,9 +59,8 @@ Tartar Sauce
 1 tsp Worcestershire
 
 1 tsp fresh lemon juice
+~~~
 
-salt and freshly ground pepper to taste
+Salt and freshly ground pepper to taste.
 
 Whisk together and serve.
-
-*For thicker coating dust the onion rings lightly in flour before dipping in the batter.

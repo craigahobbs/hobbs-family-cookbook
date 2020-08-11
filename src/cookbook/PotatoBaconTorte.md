@@ -3,28 +3,42 @@ Title: Potato Bacon Torte
 Categories: Appetizers
 ~~~
 
-POTATO BACON TORTE
-
 Saute until crisp and drain:
 
+~~~ recipe-ingredients
 10 oz lean thick sliced bacon
+~~~
 
 Set the drained bacon aside and refrigerate until ready to use.
 
 Grate and refrigerate until ready to use:
 
+~~~ recipe-ingredients
 8 oz Gruyere cheese
+~~~
 
 Peel and soak in cold water:
 
+~~~ recipe-ingredients
 3 medium or two large baking potatoes
+~~~
 
-Bring 1 C heavy cream to almost a simmer with 3 sprigs of fresh thyme.  Let cool for 5 minutes.
+Bring heavy cream to almost a simmer with the fresh thyme.  Let cool for 5 minutes.
+
+~~~ recipe-ingredients
+1 C heavy cream
+3 sprigs of fresh thyme
+~~~
 
 Assemble the pie using a 9" glass pie pan.  Roll one disc of the pastry out on a lightly floured
 board and fit (do not stretch) into the pie pan and trim the dough 1/2" over the edge of the pan.
-Sprinkle the bottom of the pie crust with 2 Tbsp grated parmesan cheese. Drain the potatoes on a
+
+Sprinkle the bottom of the pie crust with the grated parmesan cheese. Drain the potatoes on a
 paper towel and slice into 1/8" rounds.
+
+~~~ recipe-ingredients
+2 Tbsp grated parmesan cheese
+~~~
 
 Layer 1/3 of the sliced potato over the bottom of the crust, sprinkle with a pinch of kosher salt
 and several grinds of black pepper.  Next, strew 1/3 of the crisped bacon over the potatoes and

@@ -1,17 +1,18 @@
 ~~~ recipe-info
 Title: Cheese and Sausage Rounds
 Categories: Appetizers
+Author: Nancy Thomas
 ~~~
-
-CHEESE AND SAUSAGE ROUNDS   Recipe from Nancy Thomas
 
 Combine and mix together with hands:
 
+~~~ recipe-ingredients
 3 C Bisquick
 
 1 lb shredded cheddar cheese
 
 1 lb Jimmy Deans hot sausage warmed to room temperature
+~~~
 
 Shape the dough into balls about the size of ping pong balls.  Bake on a greased cookie sheet at 350
 degrees for 25 minutes and serve warm.

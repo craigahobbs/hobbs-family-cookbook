@@ -3,10 +3,9 @@ Title: Rhinelander Swiss Cheese Fondue
 Categories: Appetizers
 ~~~
 
-RHINELANDER SWISS CHEESE FONDUE
-
 Combine the following ingredients in a small sauce pan and stir until melted:
 
+~~~ recipe-ingredients
 12 oz processed swiss cheese
 
 1/8 tsp garlic powder
@@ -14,10 +13,9 @@ Combine the following ingredients in a small sauce pan and stir until melted:
 1/2 C dry white wine
 
 1/8 C hot water
+~~~
 
-dash of MSG if desired
-
-ground white pepper to taste
+Add a dash of MSG if desired. Ground white pepper to taste.
 
 Serve in a heated fondue pot or small casserole dish with sliced dark Russian bread and crisp bread
 sticks.

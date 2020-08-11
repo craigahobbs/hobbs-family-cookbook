@@ -3,18 +3,19 @@ Title: Sun-dried Tomato and Feta Torta
 Categories: Appetizers
 ~~~
 
-SUN-DRIED TOMATO AND FETA TORTA
-
 Prepare and set aside:
 
+~~~ recipe-ingredients
 1/2 C pine nuts toasted in a dry skillet over medium heat
 
 6 oz  chopped sundried tomatoes packed in oil and drained
 
 1 C pesto (prepared or homemade)
+~~~
 
 Add the following to a cuisinart bowl and process until smooth:
 
+~~~ recipe-ingredients
 1 clove chopped garlic
 
 1 small chopped shallot
@@ -26,6 +27,7 @@ Add the following to a cuisinart bowl and process until smooth:
 8 oz light cream cheese
 
 1/4 tsp tabasco sauce
+~~~
 
 I usually layer this into two 2 C saran lined plastic lidded containers, but it can be made as one
 large torta.
