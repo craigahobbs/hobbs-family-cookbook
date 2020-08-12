@@ -135,16 +135,12 @@ test('parseRecipeMarkdown, servings', (t) => {
         parseRecipeMarkdown(`
 ~~~ recipe-info
 Servings: 10
-ServingSize: 1 waffle
 ~~~
 `),
         {
             'categories': ['Uncategorized'],
             'parts': [],
-            'servings': {
-                'count': 10,
-                'size': {'amount': 1, 'name': 'waffle', 'unit': 'count'}
-            },
+            'servings': 10,
             'title': 'Untitled Recipe'
         }
     );

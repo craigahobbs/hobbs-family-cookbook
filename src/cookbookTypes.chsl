@@ -20,8 +20,8 @@ struct Recipe
     # The recipe's author
     optional string(len > 0, len < 100) author
 
-    # The serving size and count
-    optional Servings servings
+    # The number of servings
+    optional int (> 0) servings
 
     # The recipe markdown parts
     RecipePart[len > 0, len < 100] parts
@@ -29,16 +29,6 @@ struct Recipe
 
 # Recipe list typedef
 typedef Recipe[len > 0, len < 1000] Recipes
-
-
-# Recipe serving size and count struct
-struct Servings
-
-    # The number of servings
-    int (> 0) count
-
-    # The serving size
-    Ingredient size
 
 
 # Recipe markdown part union

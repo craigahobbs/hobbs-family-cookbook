@@ -460,7 +460,7 @@ export const cookbookTypes =
     "Recipe": {
         "struct": {
             "doc": [
-                "Recipe model"
+                "Recipe model struct"
             ],
             "members": [
                 {
@@ -511,13 +511,16 @@ export const cookbookTypes =
                     }
                 },
                 {
+                    "attr": {
+                        "gt": 0.0
+                    },
                     "doc": [
-                        "The serving size and count"
+                        "The number of servings"
                     ],
                     "name": "servings",
                     "optional": true,
                     "type": {
-                        "user": "Servings"
+                        "builtin": "int"
                     }
                 },
                 {
@@ -595,37 +598,6 @@ export const cookbookTypes =
                     }
                 }
             }
-        }
-    },
-    "Servings": {
-        "struct": {
-            "doc": [
-                "Recipe serving size and count struct"
-            ],
-            "members": [
-                {
-                    "attr": {
-                        "gt": 0.0
-                    },
-                    "doc": [
-                        "The number of servings"
-                    ],
-                    "name": "count",
-                    "type": {
-                        "builtin": "int"
-                    }
-                },
-                {
-                    "doc": [
-                        "The serving size"
-                    ],
-                    "name": "size",
-                    "type": {
-                        "user": "Ingredient"
-                    }
-                }
-            ],
-            "name": "Servings"
         }
     },
     "Span": {

@@ -2,7 +2,6 @@
 Title: Whole Wheat Waffles
 Categories: Breads
 Servings: 8
-ServingSize: 1 waffle
 ~~~
 
 Combine:

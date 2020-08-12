@@ -2,13 +2,12 @@
 Title: Toscas
 Categories: Cookies
 Servings: 30
-ServingSize: 1 tart
 ~~~
 
 Using  a Cuisinart cream together:
 
 ~~~ recipe-ingredients
-12 Tbsp butter
+13 Tbsp butter
 
 1/2 C sugar
 ~~~

@@ -2,7 +2,6 @@
 Title: Gorgonzola Popovers
 Categories: Appetizers
 Servings: 24
-ServingSize: 1 mini popover
 ~~~
 
 Whisk together and refrigerate 2 hours:

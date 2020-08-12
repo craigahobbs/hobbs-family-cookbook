@@ -273,12 +273,7 @@ export class CookbookPage {
             ]},
 
             // Serving size and count
-            !('servings' in recipe) ? null : {'html': 'p', 'elem': [
-                {'text': `Servings: ${recipe.servings.count * this.config.scale}`},
-                {'html': 'br'},
-                {'text': 'Serving size: '},
-                {'text': ingredientText(recipe.servings.size).join(' ')}
-            ]},
+            'servings' in recipe ? {'html': 'p', 'elem': {'text': `Servings: ${recipe.servings * this.config.scale}`}} : null,
 
             // Recipe markdown parts
             recipe.parts.map((parts) => {
@@ -326,13 +321,13 @@ const unitInfo = {
         'fractions': [2, 3, 4]
     },
     'lb': {
-        'alternates': ['Lb', 'Lbs', 'Pounds', 'lbs', 'pounds'],
+        'alternates': ['Lb', 'Lbs', 'Pound', 'Pounds', 'lbs', 'pound', 'pounds'],
         'baseUnit': 'oz',
         'baseRatio': 16,
         'fractions': [2, 4]
     },
     'oz': {
-        'alternates': ['Oz', 'Ounces', 'ounces'],
+        'alternates': ['Oz', 'Ounce', 'Ounces', 'ounce', 'ounces'],
         'baseUnit': 'oz',
         'baseRatio': 1,
         'fractions': [2, 4]
@@ -343,13 +338,13 @@ const unitInfo = {
         'fractions': [1]
     },
     'tbsp': {
-        'alternates': ['Tbsp', 'Tablespoons', 'tablespoons'],
+        'alternates': ['Tbsp', 'Tablespoon', 'Tablespoons', 'tablespoon', 'tablespoons'],
         'baseUnit': 'tsp',
         'baseRatio': 3,
         'fractions': [1]
     },
     'tsp': {
-        'alternates': ['Tsp', 'Teaspoons', 'teaspoons'],
+        'alternates': ['Tsp', 'Teaspoon', 'Teaspoons', 'teaspoon', 'teaspoons'],
         'baseUnit': 'tsp',
         'baseRatio': 1,
         'fractions': [2, 4, 8]
@@ -434,13 +429,13 @@ export function ingredientText(ingredient, scale = 1) {
 
 
 // Recipe markdown code block regular expressions
-const rRecipeMarkdownInfo = /^\s*(?<key>[Tt]itle|[Cc]ategories|[Aa]uthor|[Ss]ervings|[Ss]erving[Ss]ize)\s*:\s*(?<value>.*?)\s*$/;
+const rRecipeMarkdownInfo = /^\s*(?<key>[Tt]itle|[Cc]ategories|[Aa]uthor|[Ss]ervings)\s*:\s*(?<value>.*?)\s*$/;
 const rRecipeMarkdownCategories = /\s*,\s*/;
 const rRecipeMarkdownBlank = /^\s*$/;
 const rRecipeMarkdownIngredients = new RegExp(
     '^(?:\\s*(?<whole>[1-9][0-9]*))?(?:\\s*(?<numer>[1-9][0-9]*)\\s*/\\s*(?<denom>[1-9][0-9]*))?' +
         `(?:\\s*(?<unit>${Object.keys(unitInfo).join('|')}|${Object.keys(alternateUnits).join('|')}))?` +
-        '\\s*(?!/)(?<name>.+?)\\s*$'
+        '\\s+(?!/)(?<name>.+?)\\s*$'
 );
 
 
@@ -456,8 +451,6 @@ export function parseRecipeMarkdown(markdown) {
 
     // Convert the markdown to a recipe model
     const recipe = {'categories': [], 'parts': []};
-    let servings = null;
-    let servingSize = null;
     for (const part of markdownModel.parts) {
         const codeBlockLanguage = 'codeBlock' in part && 'language' in part.codeBlock ? part.codeBlock.language : null;
         if (codeBlockLanguage === 'recipe-info') {
@@ -471,21 +464,10 @@ export function parseRecipeMarkdown(markdown) {
                     recipe.author = value;
                 } else if (key === 'categories') {
                     recipe.categories.push(...value.split(rRecipeMarkdownCategories));
-                } else if (key === 'servings' || key === 'servingsize') {
-                    if (key === 'servings') {
-                        servings = value;
-                    }
-                    if (key === 'servingsize') {
-                        servingSize = value;
-                    }
-
-                    // Do we have a servings / serving-size pair?
-                    if (servings !== null && servingSize !== null) {
-                        const servingsNumber = parseFloat(servings);
-                        const servingsIngredient = parseIngredient(servingSize);
-                        if (!isNaN(servingsNumber) && servingsIngredient !== null) {
-                            recipe.servings = {'count': servingsNumber, 'size': servingsIngredient};
-                        }
+                } else if (key === 'servings') {
+                    const servingsNumber = parseFloat(value);
+                    if (!isNaN(servingsNumber)) {
+                        recipe.servings = servingsNumber;
                     }
                 }
             }
