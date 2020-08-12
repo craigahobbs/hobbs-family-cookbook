@@ -1,12 +1,12 @@
 ~~~ recipe-info
 Title: Butter Almond Cookies
 Categories: Cookies
+Author: Karen Sandberg
 ~~~
-
-BUTTER ALMOND COOKIES  from Karen Sandberg
 
 Cream together:
 
+~~~ recipe-ingredients
 1 C butter
 
 1/2 C sugar
@@ -18,6 +18,7 @@ Add and mix in:
 3/4 C slivered blanched almonds
 
 1 tsp vanilla
+~~~
 
 Roll the dough into large walnut sized balls and chill for 20 minutes.  Remove dough from frig and
 place on and ungreased cookie sheet spaced 2" apart.  Using your thumb and index fingers, pinch

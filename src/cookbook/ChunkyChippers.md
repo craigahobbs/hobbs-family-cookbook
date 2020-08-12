@@ -3,10 +3,11 @@ Title: Chunky Chippers
 Categories: Cookies
 ~~~
 
-CHUNKY CHIPPERS
+![Chocolate Chip and Ginger Snap](cookbook/ChunkyChippers.jpg)
 
 Cream together:
 
+~~~ recipe-ingredients
 1/2 C butter
 
 1/2 C chunky peanut butter
@@ -20,9 +21,11 @@ Cream together:
 1 tsp vanilla
 
 1 Tbsp water
+~~~
 
 Add and stir in:
 
+~~~ recipe-ingredients
 2 C flour
 
 1 tsp baking soda
@@ -32,6 +35,7 @@ Add and stir in:
 Stir in:
 
 2 C chocolate chips
+~~~
 
 Drop dough by large teaspoons onto a lightly greased baking sheet.  Bake at 350 degrees for 12 to 14
 minutes (cookies should be light brown and slightly underdone.  Remove from sheet to cool.

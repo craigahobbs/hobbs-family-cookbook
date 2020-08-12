@@ -1,14 +1,14 @@
 ~~~ recipe-info
 Title: Bourbon Balls
 Categories: Cookies
+Author: Wendy Newton
 ~~~
-
-BOURBON BALLS   Recipe from Wendy Newton
 
 With a Cuisinart, process vanilla wafers to form crumbs.
 
 Combine:
 
+~~~ recipe-ingredients
 2 C vanilla wafer crumbs
 
 2 C finely chopped pecans
@@ -20,6 +20,7 @@ Combine:
 1/2 C bourbon
 
 3 Tbsp light corn syrup
+~~~
 
 Mix to form a stiff dough.  Form the dough into 1" balls and roll in powdered sugar.  Refrigerate
 and store in airtight container (at Xmas I store these in the garage) until ready to use.  These

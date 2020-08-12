@@ -1,24 +1,29 @@
 ~~~ recipe-info
 Title: Shortbread
 Categories: Cookies
+Author: Kimble Hobbs
 ~~~
-
-SHORTBREAD   Recipe from Kimble Hobbs
 
 In a large mixing bowl, soften by massaging and working with your hands and fingers until no hard
 lumps remain:
 
+~~~ recipe-ingredients
 1 lb cold butter (4 sticks)
+~~~
 
 Add and mix in with a spoon until totally incorporated:
 
+~~~ recipe-ingredients
 1 C sugar
+~~~
 
 Add and mix with a spoon or hands if needed:
 
+~~~ recipe-ingredients
 4 C flour
 
 1/2 tsp salt
+~~~
 
 Form the dough into a ball.  Press the dough onto a baking sheet so it is about 1/2" thick, and cut
 into 1 1/4" X 3" pieces.  Pierce each piece with a fork.  Place shortbread into a preheated 425
