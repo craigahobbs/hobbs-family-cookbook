@@ -57,43 +57,6 @@ export const cookbookTypes =
             "name": "CodeBlock"
         }
     },
-    "Content": {
-        "struct": {
-            "doc": [
-                "Recipe content union"
-            ],
-            "members": [
-                {
-                    "doc": [
-                        " A list of markdown lines"
-                    ],
-                    "name": "markdown",
-                    "type": {
-                        "user": "Markdown"
-                    }
-                },
-                {
-                    "attr": {
-                        "lenGT": 0,
-                        "lenLT": 100
-                    },
-                    "doc": [
-                        "An ingredient list"
-                    ],
-                    "name": "ingredients",
-                    "type": {
-                        "array": {
-                            "type": {
-                                "user": "Ingredient"
-                            }
-                        }
-                    }
-                }
-            ],
-            "name": "Content",
-            "union": true
-        }
-    },
     "Cookbook": {
         "struct": {
             "doc": [
@@ -497,7 +460,7 @@ export const cookbookTypes =
     "Recipe": {
         "struct": {
             "doc": [
-                "Recipe struct"
+                "Recipe model"
             ],
             "members": [
                 {
@@ -563,19 +526,56 @@ export const cookbookTypes =
                         "lenLT": 100
                     },
                     "doc": [
-                        "The recipe content"
+                        "The recipe markdown parts"
                     ],
-                    "name": "content",
+                    "name": "parts",
                     "type": {
                         "array": {
                             "type": {
-                                "user": "Content"
+                                "user": "RecipePart"
                             }
                         }
                     }
                 }
             ],
             "name": "Recipe"
+        }
+    },
+    "RecipePart": {
+        "struct": {
+            "doc": [
+                "Recipe markdown part union"
+            ],
+            "members": [
+                {
+                    "doc": [
+                        " A list of markdown lines"
+                    ],
+                    "name": "markdown",
+                    "type": {
+                        "user": "Markdown"
+                    }
+                },
+                {
+                    "attr": {
+                        "lenGT": 0,
+                        "lenLT": 100
+                    },
+                    "doc": [
+                        "An ingredient list"
+                    ],
+                    "name": "ingredients",
+                    "type": {
+                        "array": {
+                            "type": {
+                                "user": "Ingredient"
+                            }
+                        }
+                    }
+                }
+            ],
+            "name": "RecipePart",
+            "union": true
         }
     },
     "Recipes": {

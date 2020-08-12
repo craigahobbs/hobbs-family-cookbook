@@ -8,7 +8,7 @@ struct Cookbook
     string(len > 0, len < 1000)[len > 0, len < 1000] recipeURLs
 
 
-# Recipe struct
+# Recipe model struct
 struct Recipe
 
     # The recipe title text
@@ -23,8 +23,8 @@ struct Recipe
     # The serving size and count
     optional Servings servings
 
-    # The recipe content
-    Content[len > 0, len < 100] content
+    # The recipe markdown parts
+    RecipePart[len > 0, len < 100] parts
 
 
 # Recipe list typedef
@@ -41,8 +41,8 @@ struct Servings
     Ingredient size
 
 
-# Recipe content union
-union Content
+# Recipe markdown part union
+union RecipePart
 
     #  A list of markdown lines
     Markdown markdown

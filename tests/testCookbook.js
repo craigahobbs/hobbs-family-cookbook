@@ -71,7 +71,7 @@ Mix together:
         {
             'author': 'The Author',
             'categories': ['Stuff'],
-            'content': [
+            'parts': [
                 {
                     'markdown': {
                         'parts': [
@@ -102,7 +102,7 @@ Mix together:
 `),
         {
             'categories': ['Uncategorized'],
-            'content': [
+            'parts': [
                 {
                     'markdown': {
                         'parts': [
@@ -123,7 +123,7 @@ test('parseRecipeMarkdown, empty', (t) => {
         parseRecipeMarkdown(''),
         {
             'categories': ['Uncategorized'],
-            'content': [],
+            'parts': [],
             'title': 'Untitled Recipe'
         }
     );
@@ -140,7 +140,7 @@ ServingSize: 1 waffle
 `),
         {
             'categories': ['Uncategorized'],
-            'content': [],
+            'parts': [],
             'servings': {
                 'count': 10,
                 'size': {'amount': 1, 'name': 'waffle', 'unit': 'count'}

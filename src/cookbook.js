@@ -280,18 +280,18 @@ export class CookbookPage {
                 {'text': ingredientText(recipe.servings.size).join(' ')}
             ]},
 
-            // Content
-            recipe.content.map((content) => {
+            // Recipe markdown parts
+            recipe.parts.map((parts) => {
                 // Ingredients list?
-                if ('ingredients' in content) {
+                if ('ingredients' in parts) {
                     return {
                         'html': 'p',
                         'elem': [
-                            'title' in content.ingredients ? {'html': 'h2', 'elem': {'text': content.ingredients.title}} : null,
+                            'title' in parts.ingredients ? {'html': 'h2', 'elem': {'text': parts.ingredients.title}} : null,
                             {
                                 'html': 'ul',
                                 'attr': {'class': 'cookbook-ingredient-list'},
-                                'elem': content.ingredients.map(
+                                'elem': parts.ingredients.map(
                                     (ingredient) => ({
                                         'html': 'li',
                                         'elem': {'text': ingredientText(ingredient, this.config.scale).join(' ')}
@@ -303,7 +303,7 @@ export class CookbookPage {
                 }
 
                 // Markdown
-                return markdownElements(content.markdown);
+                return markdownElements(parts.markdown);
             })
         ];
     }
@@ -455,7 +455,7 @@ export function parseRecipeMarkdown(markdown) {
     const markdownModel = parseMarkdown(markdown);
 
     // Convert the markdown to a recipe model
-    const recipe = {'categories': [], 'content': []};
+    const recipe = {'categories': [], 'parts': []};
     let servings = null;
     let servingSize = null;
     for (const part of markdownModel.parts) {
@@ -500,24 +500,24 @@ export function parseRecipeMarkdown(markdown) {
                 const ingredient = parseIngredient(line);
                 if (ingredient !== null) {
                     // Add the ingredients part
-                    if (recipe.content.length === 0 || !('ingredients' in recipe.content[recipe.content.length - 1])) {
-                        recipe.content.push({'ingredients': []});
+                    if (recipe.parts.length === 0 || !('ingredients' in recipe.parts[recipe.parts.length - 1])) {
+                        recipe.parts.push({'ingredients': []});
                     }
-                    recipe.content[recipe.content.length - 1].ingredients.push(ingredient);
+                    recipe.parts[recipe.parts.length - 1].ingredients.push(ingredient);
                 } else {
                     // No ingredient match - add the markdown part
-                    if (recipe.content.length === 0 || !('markdown' in recipe.content[recipe.content.length - 1])) {
-                        recipe.content.push({'markdown': {'parts': []}});
+                    if (recipe.parts.length === 0 || !('markdown' in recipe.parts[recipe.parts.length - 1])) {
+                        recipe.parts.push({'markdown': {'parts': []}});
                     }
-                    recipe.content[recipe.content.length - 1].markdown.parts.push({'paragraph': {'spans': [{'text': line}]}});
+                    recipe.parts[recipe.parts.length - 1].markdown.parts.push({'paragraph': {'spans': [{'text': line}]}});
                 }
             }
         } else {
             // Add the markdown part
-            if (recipe.content.length === 0 || !('markdown' in recipe.content[recipe.content.length - 1])) {
-                recipe.content.push({'markdown': {'parts': []}});
+            if (recipe.parts.length === 0 || !('markdown' in recipe.parts[recipe.parts.length - 1])) {
+                recipe.parts.push({'markdown': {'parts': []}});
             }
-            recipe.content[recipe.content.length - 1].markdown.parts.push(part);
+            recipe.parts[recipe.parts.length - 1].markdown.parts.push(part);
         }
     }
 
