@@ -1,12 +1,13 @@
 ~~~ recipe-info
 Title: Whole Wheat Waffles
 Categories: Breads
+Servings: 8
+ServingSize: 1 waffle
 ~~~
-
-WHOLE WHEAT WAFFLES
 
 Combine:
 
+~~~ recipe-ingredients
 1 C flour
 
 1 C whole wheat flour
@@ -18,18 +19,19 @@ Combine:
 1 tsp salt
 
 3 Tbsp sugar
+~~~
 
 Whisk together in a large measuring cup:
 
+~~~ recipe-ingredients
 2 C of buttermilk (at room temperature)
 
 3 eggs
 
 2 Tbsp melted butter
+~~~
 
 Whisk the wet ingredients into the dry until combined, then allow to rest for 5 minutes.
 
 Ladle batter into hot, oiled waffle iron, and cook til done (on my waffle iron that is usually about
 4 1/2 to 5 minutes).  Serve hot.
-
-Recipe makes about 8 to 9 single waffles.

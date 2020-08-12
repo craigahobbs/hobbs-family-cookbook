@@ -30,7 +30,7 @@ Serve warm with Colonial Dressing  or Tartar Sauce.
 \* For thicker coating dust the onion rings lightly in flour before dipping in the batter.
 
 
-## Colonial Dressing
+### Colonial Dressing
 
 ~~~ recipe-ingredients
 1/2 C Mayo
@@ -47,7 +47,7 @@ Salt and freshly ground pepper to taste.
 Whisk together and serve.
 
 
-## Tartar Sauce
+### Tartar Sauce
 
 ~~~ recipe-ingredients
 1/2 C Mayo

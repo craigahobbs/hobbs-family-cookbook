@@ -3,13 +3,12 @@ Title: Popovers
 Categories: Breads
 ~~~
 
-POPOVERS
-
 Oil two Chicago@ metallic nonstick popover pans.  Cut 2 Tbsp butter into cubes and place one dot in
 each of eight popover cups.
 
 Blend together until the mixture is the consistency of thick cream:
 
+~~~ recipe-ingredients
 1 1/4 C flour
 
 1/4 tsp salt
@@ -19,6 +18,7 @@ Blend together until the mixture is the consistency of thick cream:
 1 1/4 C milk at room temperature
 
 2 Tbsp melted butter
+~~~
 
 Heat the oven to 400 degrees.  When oven is up to temp, heat the prepared pans until butter is
 melted.  Remove the pans and divide the batter evenly into eight cups.  Bake the popovers for 20

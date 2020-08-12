@@ -1,14 +1,14 @@
 ~~~ recipe-info
 Title: Butter Dips
 Categories: Breads
+Author: Pearl Salter
 ~~~
-
-BUTTER  DIPS    Recipe from Pearl Salter
 
 Heat oven to 450 degrees.
 
 Stir together by hand to form a moist dough:
 
+~~~ recipe-ingredients
 1 1/4 C flour
 
 2 tsp sugar
@@ -18,6 +18,7 @@ Stir together by hand to form a moist dough:
 1 tsp salt
 
 2/3 C milk
+~~~
 
 Melt 1/4 C butter in a 9 X 9" pan (do not brown).  Remove the butter quickly from the oven.  Roll
 the dough out on a well floured board and knead lightly.  Roll out into a  8" square, then cut in

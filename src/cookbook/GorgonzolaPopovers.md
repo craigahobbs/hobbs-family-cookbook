@@ -1,6 +1,8 @@
 ~~~ recipe-info
 Title: Gorgonzola Popovers
 Categories: Appetizers
+Servings: 24
+ServingSize: 1 mini popover
 ~~~
 
 Whisk together and refrigerate 2 hours:
@@ -28,7 +30,6 @@ Add:
 ~~~
 
 Butter 2 mini muffin pans.   Fill each cup to the top with batter.  Bake at 425* degrees for 18 to
-20 minutes until puffed and golden.  Makes 24 mini popovers.  Great served as an appetizer with red
-wine.
+20 minutes until puffed and golden.  Great served as an appetizer with red wine.
 
 \* adjust oven rack to the highest position in oven

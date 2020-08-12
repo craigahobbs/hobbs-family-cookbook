@@ -43,6 +43,14 @@ test('ingredientText, whole and fraction cup', (t) => {
 });
 
 
+test('ingredientText, 2/3 cup doubled', (t) => {
+    t.deepEqual(
+        ingredientText({'amount': 2 / 3, 'unit': 'cup', 'name': 'water'}, 2),
+        ['1 1/3', 'C', 'water']
+    );
+});
+
+
 test('parseRecipeMarkdown', (t) => {
     t.deepEqual(
         parseRecipeMarkdown(`
@@ -116,6 +124,27 @@ test('parseRecipeMarkdown, empty', (t) => {
         {
             'categories': ['Uncategorized'],
             'content': [],
+            'title': 'Untitled Recipe'
+        }
+    );
+});
+
+
+test('parseRecipeMarkdown, servings', (t) => {
+    t.deepEqual(
+        parseRecipeMarkdown(`
+~~~ recipe-info
+Servings: 10
+ServingSize: 1 waffle
+~~~
+`),
+        {
+            'categories': ['Uncategorized'],
+            'content': [],
+            'servings': {
+                'count': 10,
+                'size': {'amount': 1, 'name': 'waffle', 'unit': 'count'}
+            },
             'title': 'Untitled Recipe'
         }
     );

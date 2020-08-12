@@ -1,20 +1,22 @@
 ~~~ recipe-info
 Title: Dilly Bread
 Categories: Breads
+Author: Helen Minkiewitz (Nonny)
 ~~~
-
-DILLY BREAD Recipe from Helen Minkiewitz (Nonny)
 
 Soften and mix together and let stand for 10 minutes:
 
+~~~ recipe-ingredients
 1 pkg dry yeast (1 Tbsp)
 
 1/4 C lukewarm water
 
 2 Tbsp  sugar
+~~~
 
 Add and stir in:
 
+~~~ recipe-ingredients
 1 C warmed small curd cottage cheese (whole fat cottage cheese is best)
 
 2 Tbsp minced yellow onion (or 1 Tbsp dehydrated onion)
@@ -26,12 +28,15 @@ Add and stir in:
 1 tsp salt
 
 1 beaten egg
+~~~
 
 Mix in to form a sticky dough:
 
+~~~ recipe-ingredients
 2 1/4 C flour
 
 1/4 tsp baking soda
+~~~
 
 Turn dough into a greased bowl and allow to rise until double in volume.  Stir dough down, place in
 a greased loaf pan and allow to rise until double again.  Bake at 350 degrees for 40 minutes until
