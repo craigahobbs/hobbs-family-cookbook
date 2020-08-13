@@ -3,8 +3,8 @@ Title: Mom's Cinnamon Rolls
 Categories: Breads
 ~~~
 
-[Large Batch](#scale=1&title=Mom's%20Cinnamon%20Rolls) (10 1/2 " X 14 1/2 " pan)  
-[Small Batch](#scale=0.5&title=Mom's%20Cinnamon%20Rolls) (9 1/2 X 13" pan)
+[Large Batch](#scale=1&recipe=MomsCinnamonRolls) (10 1/2 " X 14 1/2 " pan)  
+[Small Batch](#scale=0.5&recipe=MomsCinnamonRolls) (9 1/2 X 13" pan)
 
 Dissolve yeast in a  large mixing bowl and let proof for 10 minutes:
 

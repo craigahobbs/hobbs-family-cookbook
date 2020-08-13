@@ -4,7 +4,7 @@ Categories: Desserts
 Servings: 12
 ~~~
 
-Use the recipe for [Cream Roll](#scale=1.5&title=Cream%20Cake%20Roll), except increase by 1/2 and bake as directed in an 18' X 13" sheet
+Use the recipe for [Cream Roll](#scale=1.5&recipe=CreamCakeRoll), except increase by 1/2 and bake as directed in an 18' X 13" sheet
 pan.  Cool cake in the pan.  Lift the cake out with the foil liner and slice in 4 pieces across the
 short side.   Can be done 1 day ahead.  Do not cover cake.
 

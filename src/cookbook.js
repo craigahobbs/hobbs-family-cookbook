@@ -15,13 +15,15 @@ const cookbookPageTypes = {
             'name': 'CookbookPageParams',
             'members': [
                 {
-                    'name': 'title',
+                    'name': 'recipe',
+                    'doc': 'The recipe identifier',
                     'type': {'builtin': 'string'},
                     'attr': {'lenGT': 0, 'lenLT': 100},
                     'optional': true
                 },
                 {
                     'name': 'scale',
+                    'doc': 'The recipe scale (default is 1)',
                     'type': {'builtin': 'float'},
                     'attr': {'gte': 0.125, 'lte': 8},
                     'optional': true
@@ -137,21 +139,22 @@ export class CookbookPage {
                     this.cookbook = chisel.validateType(cookbookTypes, 'Cookbook', cookbook);
 
                     // Fetch the recipe models
-                    if ('recipeURLs' in this.cookbook) {
-                        Promise.all(this.cookbook.recipeURLs.map((recipeUrl) => window.fetch(recipeUrl))).
-                            then((responses) => Promise.all(responses.map((recipe) => recipe.text()))).
-                            then((recipes) => {
-                                // Validate the recipes model
-                                const recipeModels = recipes.map((recipe) => parseRecipeMarkdown(recipe));
-                                this.recipes = chisel.validateType(cookbookTypes, 'Recipes', recipeModels);
+                    Promise.all(this.cookbook.recipeURLs.map((recipeUrl) => window.fetch(recipeUrl))).
+                        then((responses) => Promise.all(responses.map((response) => response.text()))).
+                        then((recipeMarkdowns) => {
+                            // Validate the recipes model
+                            this.recipes = {};
+                            for (let ixRecipe = 0; ixRecipe < recipeMarkdowns.length; ixRecipe++) {
+                                const matchRecipeId = this.cookbook.recipeURLs[ixRecipe].match(/(?<recipeId>\w+)(?:\.\w+)*$/);
+                                this.recipes[matchRecipeId.groups.recipeId] = parseRecipeMarkdown(recipeMarkdowns[ixRecipe]);
+                            }
 
-                                // Render
-                                chisel.render(document.body, this.pageElements());
-                            }).
-                            catch(({message}) => {
-                                chisel.render(document.body, CookbookPage.errorElements(message));
-                            });
-                    }
+                            // Render
+                            chisel.render(document.body, this.pageElements());
+                        }).
+                        catch(({message}) => {
+                            chisel.render(document.body, CookbookPage.errorElements(message));
+                        });
                 }).catch(({message}) => {
                     chisel.render(document.body, CookbookPage.errorElements(message));
                 });
@@ -180,7 +183,7 @@ export class CookbookPage {
      */
     pageElements() {
         // Recipe page?
-        if ('title' in this.config) {
+        if ('recipe' in this.config) {
             return this.recipeElements();
         }
 
@@ -197,12 +200,13 @@ export class CookbookPage {
     indexElements() {
         // Sort and categorize recipes
         const categories = {};
-        for (const [, recipe] of this.recipes.map((recipeMap) => [recipeMap.title, recipeMap]).sort()) {
+        const sortedRecipes = Object.entries(this.recipes).map(([recipeId, recipe]) => [recipe.title, recipeId, recipe]).sort();
+        for (const [, recipeId, recipe] of sortedRecipes) {
             for (const category of recipe.categories) {
                 if (!(category in categories)) {
                     categories[category] = [];
                 }
-                categories[category].push(recipe);
+                categories[category].push([recipeId, recipe]);
             }
         }
 
@@ -214,16 +218,16 @@ export class CookbookPage {
             {
                 'html': 'ul',
                 'attr': {'class': 'cookbook-index-list'},
-                'elem': Object.entries(categories).sort().map(([category, recipes]) => [
+                'elem': Object.entries(categories).sort().map(([category, recipeIdTuples]) => [
                     {
                         'html': 'li',
                         'elem': [
                             {'html': 'h2', 'elem': {'text': category}},
-                            {'html': 'ul', 'elem': recipes.map((recipe) => ({
+                            {'html': 'ul', 'elem': recipeIdTuples.map(([recipeId, recipe]) => ({
                                 'html': 'li',
                                 'elem': {
                                     'html': 'a',
-                                    'attr': {'href': chisel.href({...this.params, 'title': recipe.title})},
+                                    'attr': {'href': chisel.href({...this.params, 'recipe': recipeId})},
                                     'elem': {'text': recipe.title}
                                 }
                             }))}
@@ -242,10 +246,10 @@ export class CookbookPage {
      */
     recipeElements() {
         // Find the recipe
-        const recipe = this.recipes.find((recipeFind) => recipeFind.title === this.config.title);
-        if (recipe === undefined) {
-            return CookbookPage.errorElements(`Unknown recipe '${this.config.title}`);
+        if (!(this.config.recipe in this.recipes)) {
+            return CookbookPage.errorElements(`Unknown recipe '${this.config.recipe}`);
         }
+        const recipe = this.recipes[this.config.recipe];
         const scaleAttr = cookbookPageTypes.CookbookPageParams.struct.members.find((member) => member.name === 'scale').attr;
 
         return [
@@ -254,7 +258,7 @@ export class CookbookPage {
                 'html': 'p',
                 'elem': {
                     'html': 'a',
-                    'attr': {'href': chisel.href({...this.params, 'title': null, 'scale': null})},
+                    'attr': {'href': chisel.href({...this.params, 'recipe': null, 'scale': null})},
                     'elem': {'text': 'Back to the index'}
                 }
             },
@@ -288,7 +292,6 @@ export class CookbookPage {
                     return {
                         'html': 'p',
                         'elem': [
-                            'title' in parts.ingredients ? {'html': 'h2', 'elem': {'text': parts.ingredients.title}} : null,
                             {
                                 'html': 'ul',
                                 'attr': {'class': 'cookbook-ingredient-list'},
