@@ -116,8 +116,13 @@ export class CookbookPage {
             }
         } catch ({message}) {
             chisel.render(document.body, CookbookPage.errorElements(message));
+            window.scrollTo(0, 0);
             return;
         }
+
+        // Clear the page
+        chisel.render(document.body);
+        window.scrollTo(0, 0);
 
         // Recipes already loaded? If so, render...
         if (this.recipes !== null) {
