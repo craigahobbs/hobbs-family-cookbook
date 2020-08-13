@@ -101,7 +101,6 @@ Mix together:
 2 tbsp that
 `),
         {
-            'categories': ['Uncategorized'],
             'parts': [
                 {
                     'markdown': {
@@ -122,7 +121,6 @@ test('parseRecipeMarkdown, empty', (t) => {
     t.deepEqual(
         parseRecipeMarkdown(''),
         {
-            'categories': ['Uncategorized'],
             'parts': [],
             'title': 'Untitled Recipe'
         }
@@ -138,7 +136,6 @@ Servings: 10
 ~~~
 `),
         {
-            'categories': ['Uncategorized'],
             'parts': [],
             'servings': 10,
             'title': 'Untitled Recipe'

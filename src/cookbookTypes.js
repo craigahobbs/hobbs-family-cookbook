@@ -484,6 +484,7 @@ export const cookbookTypes =
                         "The recipe's categories"
                     ],
                     "name": "categories",
+                    "optional": true,
                     "type": {
                         "array": {
                             "attr": {

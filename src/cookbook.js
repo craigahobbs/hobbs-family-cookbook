@@ -199,20 +199,42 @@ export class CookbookPage {
      */
     indexElements() {
         // Sort and categorize recipes
+        const extras = [];
         const categories = {};
         const sortedRecipes = Object.entries(this.recipes).map(([recipeId, recipe]) => [recipe.title, recipeId, recipe]).sort();
         for (const [, recipeId, recipe] of sortedRecipes) {
-            for (const category of recipe.categories) {
-                if (!(category in categories)) {
-                    categories[category] = [];
+            if ('categories' in recipe) {
+                for (const category of recipe.categories) {
+                    if (!(category in categories)) {
+                        categories[category] = [];
+                    }
+                    categories[category].push([recipeId, recipe]);
                 }
-                categories[category].push([recipeId, recipe]);
+            } else {
+                extras.push([recipeId, recipe]);
             }
         }
 
         return [
             // Title
             {'html': 'h1', 'elem': {'text': this.cookbook.title}},
+
+            // Extras
+            {
+                'html': 'ul',
+                'attr': {'class': 'cookbook-index-list'},
+                'elem': {
+                    'html': 'li',
+                    'elem': {'html': 'ul', 'elem': extras.map(([recipeId, recipe]) => ({
+                        'html': 'li',
+                        'elem': {
+                            'html': 'a',
+                            'attr': {'href': chisel.href({...this.params, 'recipe': recipeId})},
+                            'elem': {'text': recipe.title}
+                        }
+                    }))}
+                }
+            },
 
             // Sorted recipe links
             {
@@ -250,6 +272,7 @@ export class CookbookPage {
             return CookbookPage.errorElements(`Unknown recipe '${this.config.recipe}`);
         }
         const recipe = this.recipes[this.config.recipe];
+        const isExtra = !('categories' in recipe);
         const scaleAttr = cookbookPageTypes.CookbookPageParams.struct.members.find((member) => member.name === 'scale').attr;
 
         return [
@@ -268,7 +291,7 @@ export class CookbookPage {
             'author' in recipe ? {'html': 'p', 'elem': {'text': `Author: ${recipe.author}`}} : null,
 
             // Scale
-            {'html': 'p', 'elem': [
+            isExtra ? null : {'html': 'p', 'elem': [
                 {'text': `Scale: ${this.config.scale}`},
                 {
                     'html': 'a',
@@ -283,7 +306,7 @@ export class CookbookPage {
             ]},
 
             // Serving size and count
-            'servings' in recipe ? {'html': 'p', 'elem': {'text': `Servings: ${recipe.servings * this.config.scale}`}} : null,
+            isExtra || !('servings' in recipe) ? null : {'html': 'p', 'elem': {'text': `Servings: ${recipe.servings * this.config.scale}`}},
 
             // Recipe markdown parts
             recipe.parts.map((parts) => {
@@ -459,7 +482,7 @@ export function parseRecipeMarkdown(markdown) {
     const markdownModel = parseMarkdown(markdown);
 
     // Convert the markdown to a recipe model
-    const recipe = {'categories': [], 'parts': []};
+    const recipe = {'parts': []};
     for (const part of markdownModel.parts) {
         const codeBlockLanguage = 'codeBlock' in part && 'language' in part.codeBlock ? part.codeBlock.language : null;
         if (codeBlockLanguage === 'recipe-info') {
@@ -472,7 +495,7 @@ export function parseRecipeMarkdown(markdown) {
                 } else if (key === 'author') {
                     recipe.author = value;
                 } else if (key === 'categories') {
-                    recipe.categories.push(...value.split(rRecipeMarkdownCategories));
+                    recipe.categories = value.split(rRecipeMarkdownCategories);
                 } else if (key === 'servings') {
                     const servingsNumber = parseFloat(value);
                     if (!isNaN(servingsNumber)) {
@@ -515,9 +538,6 @@ export function parseRecipeMarkdown(markdown) {
     // Fill-in missing info
     if (!('title' in recipe)) {
         recipe.title = 'Untitled Recipe';
-    }
-    if (recipe.categories.length === 0) {
-        recipe.categories.push('Uncategorized');
     }
 
     return recipe;
