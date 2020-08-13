@@ -1,12 +1,12 @@
 ~~~ recipe-info
 Title: Orange Julius
 Categories: Miscellaneous
+Author: Teresa Ball
 ~~~
-
-ORANGE JULIUS   Recipe from Teresa Ball
 
 Place all ingredients in a blender, cover and blend until smooth.
 
+~~~ recipe-ingredients
 6 oz orange juice concentrate
 
 1 C milk
@@ -17,6 +17,7 @@ Place all ingredients in a blender, cover and blend until smooth.
 
 1/2 tsp vanilla extract
 
-10 to 16 ice cubes
+12 ice cubes
+~~~
 
 Serve immediately.

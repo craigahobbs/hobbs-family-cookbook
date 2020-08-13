@@ -3,8 +3,7 @@ Title: Homemade Play Dough
 Categories: Miscellaneous
 ~~~
 
-HOMEMADE PLAY DOUGH
-
+~~~ recipe-ingredients
 1/2 C table salt
 
 1 C flour
@@ -12,10 +11,15 @@ HOMEMADE PLAY DOUGH
 1 tsp alum
 
 1 Tbsp canola oil
+~~~
 
-Stir together and add 1 C boiling water and knead until smooth.*
+Stir together and add the boiling water and knead until smooth.\*
 
-*Add food coloring to the water before adding to the dry ingredients.  The more coloring added, the
+~~~ recipe-ingredients
+1 C boiling water
+~~~
+
+\* Add food coloring to the water before adding to the dry ingredients.  The more coloring added, the
 more vibrant the color.
 
 Dough can be stored in airtight containers and used for weeks.  Sometimes I added a few more drops

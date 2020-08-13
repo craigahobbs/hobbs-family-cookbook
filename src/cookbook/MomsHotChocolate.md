@@ -3,21 +3,23 @@ Title: Moms Hot Chocolate
 Categories: Miscellaneous
 ~~~
 
-MOM'S HOT CHOCOLATE
-
 In a large saucepan whisk together:
 
+~~~ recipe-ingredients
 1/4 C cocoa powder
 
 1/2 C sugar
 
 1/4 tsp salt
+~~~
 
 Add and heat, whisking, on a medium burner until piping hot:
 
+~~~ recipe-ingredients
 4 C fresh milk
 
 1 12 oz can evaporated milk
+~~~
 
 Adjust sweetness to your taste by adding more fresh milk or sugar.
 

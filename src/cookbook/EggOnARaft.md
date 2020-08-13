@@ -3,9 +3,11 @@ Title: Egg On A Raft
 Categories: Miscellaneous
 ~~~
 
-EGG ON A RAFT
+~~~ recipe-ingredients
+1 egg
 
-Use one slice of bread and 1 egg per serving.
+1 slice of bread
+~~~
 
 Place the bread on a cutting board and use a cookie or biscuit cutter to cut a hole in the center of
 the bread.  Lightly butter both sides of the "raft" and "sail" which you cut out.

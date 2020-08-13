@@ -49,6 +49,7 @@ export class CookbookPage {
         this.cookbook = null;
         this.recipes = null;
         this.params = null;
+        this.config = null;
     }
 
 

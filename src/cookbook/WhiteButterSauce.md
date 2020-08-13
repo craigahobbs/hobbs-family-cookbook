@@ -3,8 +3,9 @@ Title: White Butter Sauce
 Categories: Miscellaneous
 ~~~
 
-WHITE BUTTER SAUCE  - The only sauce to serve with baked salmon
+The only sauce to serve with baked salmon.
 
+~~~ recipe-ingredients
 1/4 C white wine (champagne) vinegar
 
 2 Tbsp fresh lemon juice
@@ -15,7 +16,8 @@ WHITE BUTTER SAUCE  - The only sauce to serve with baked salmon
 
 1/2 tsp salt
 
-2 to 3 sticks of butter
+1 C butter
+~~~
 
 Add the first 5 ingredients to a heavy saucepan and bring to a boil.  Cook until reduced to 1 1/2
 Tbsp.  Remove from the heat and whisk in two pats of butter.  Return the pan to low heat and
