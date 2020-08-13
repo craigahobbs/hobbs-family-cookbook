@@ -1,36 +1,45 @@
 ~~~ recipe-info
 Title: Quiche
 Categories: Main Dishes
+Author: Diana Riley
 ~~~
 
-QUICHE  Recipe from Diana Riley
-
-Bake a 9" pie crust* at 475 for 7 to 9 minutes.  Cool.
+Bake a 9" [pie crust](#title=Pie%20Crust) at 475 for 7 to 9 minutes.  Cool.
 
 Brown and drain:
 
+~~~ recipe-ingredients
 1/2 lb diced bacon
+~~~
 
-Saute"
+Saute:
 
+~~~ recipe-ingredients
 1/4 C yellow onion in olive oil
+~~~
 
-Place the crisped bacon and sauteed onion in the bottom of the cooked pie shell.  Sprinkle with 1 C
-grated swiss cheese.  Whisk together:
+Place the crisped bwacon and sauteed onion in the bottom of the cooked pie shell.  Sprinkle with the
+grated swiss cheese.
 
+~~~ recipe-ingredients
+1 C grated swiss cheese
+~~~
+
+Whisk together:
+
+~~~ recipe-ingredients
 5 eggs plus one egg yolk
 
 2 1/2 C half and half
 
-dash of nutmeg
+1 pinch of nutmeg
 
 1/2 tsp salt
 
-2 dashes cayenne
+2 pinch cayenne
 
-dash of white pepper
+1 pinch white pepper
+~~~
 
 Carefully pour the custard mixture into the pie shell.  Bake at 375 degrees for 30 - 35 minutes
 until set.  Cool at least 5 minutes before cutting.
-
-*Pie crust recipe is in dessert section

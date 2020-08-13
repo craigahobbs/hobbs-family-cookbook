@@ -3,16 +3,14 @@ Title: Beef Fondue
 Categories: Main Dishes
 ~~~
 
-BEEF FONDUE
-
 When we were younger, fondues were all the rage and they became one of the Hobbs' family's
 favorite celebration meals.
 
-1 to 1 1/2 lbs lean beef sirloin or  tenderloin cut into 1 inch chunks
+~~~ recipe-ingredients
+1 lb lean beef sirloin or tenderloin cut into 1 inch chunks
 
-1 lb white mushrooms cleaned and cut in half to make about 1 inch chunks or whole if
-
-   mushrooms are small
+1 lb white mushrooms cleaned and cut in half to make about 1 inch chunks or whole if mushrooms are small
+~~~
 
 Fill a metal (mine is stainless) fondue pot about 1/2 way with corn or canola oil.   Light the sterno
 to heat the pot just before everyone is seated to eat.  We always give everyone two fondue forks so

@@ -3,8 +3,9 @@ Title: Big Sandwich
 Categories: Main Dishes
 ~~~
 
-BIG SANDWICH    A Hobbs family favorite
+A Hobbs family favorite
 
+~~~ recipe-ingredients
 1 loaf of freshly baked French bread
 
 1/2 head of shredded iceberg lettuce
@@ -19,9 +20,10 @@ BIG SANDWICH    A Hobbs family favorite
 
 1/2 lb swiss or havarti cheese
 
-Mayo
+1/4 C mayonnaise
 
-Dijon mustard
+2 tbsp Dijon mustard
+~~~
 
 Slice the French loaf in half lengthwise, if the loaf is really thick, scoop out some of the bread
 middle.  Spread both sides liberally with mayo and as much mustard as you like.  Layer the ham,

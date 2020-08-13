@@ -3,9 +3,10 @@ Title: Pork And Sesame
 Categories: Main Dishes
 ~~~
 
-PORK AND SESAME
-
 Whisk together:
+
+~~~ recipe-ingredients
+2 pork tenderloins, trimmed
 
 1 C ketchup
 
@@ -16,8 +17,9 @@ Whisk together:
 3 to 4 cloves minced garlic
 
 1/2 tsp dried ginger powder
+~~~
 
-Marinate 2 trimmed pork tenderloins in the above for 20 to 30 minutes.  Prepare a cookie sheet or
+Marinate the pork tenderloins in the above for 20 to 30 minutes.  Prepare a cookie sheet or
 roasting pan by lining it with foil and place a baking rack sprayed with non stick cooking spray on
 it.  Place the pork tenderloins on the rack 3" apart and bake at 325 degrees for 45 minutes.
 After 45 minutes baste the top of the loins with the marinade and continue to bake for another 20 to

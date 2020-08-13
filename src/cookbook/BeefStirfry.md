@@ -3,10 +3,9 @@ Title: Beef Stirfry
 Categories: Main Dishes
 ~~~
 
-BEEF STIRFRY
-
 Mix together marinade:
 
+~~~ recipe-ingredients
 2 cloves crushed garlic
 
 2 Tbsp soy sauce
@@ -17,15 +16,22 @@ Mix together marinade:
 
 3/4 tsp ground, dry ginger
 
-Slice 8 oz lean, trimmed beef sirloin thinly.  Add beef and allow to marinade and let sit for at
+8 oz lean, trimmed beef sirloin, sliced thinly
+~~~
+
+Add the beef and allow to marinade and let sit for at
 least 1/2 hour or up to 2 hours.
 
-Cook 1 c white rice per package directions.
+Cook the white rice per package directions.
+
+~~~ recipe-ingredients
+1 c white rice
+~~~
 
 Prepare the vegetables as follows:
 
-1 large stalk broccoli, washed and cut into small flowerets (the stalk can be peeled and sliced unto
-1/4" pieces)
+~~~ recipe-ingredients
+1 large stalk broccoli, cut into small florets (stalk can be peeled and sliced into 1/4" pieces)
 
 1/2 sweet red pepper, julienned
 
@@ -34,13 +40,19 @@ Prepare the vegetables as follows:
 1 small onion, julienned
 
 2 cloves garlic, thinly sliced crosswise
+~~~
 
-Drain (discard marinade) and stirfry beef strips in a large skillet with 1 Tbsp vegetable oil until
+Drain (discard marinade) and stirfry beef strips in a large skillet with the vegetable oil until
 browned.  Set aside.  Stirfry vegetables until tender crisp.  Add back the beef and one can drained
 water chestnuts.
 
+~~~ recipe-ingredients
+1 Tbsp vegetable oil
+~~~
+
 Mix to together sauce as follows and add to the pan.  Stir and cook just until sauce thickens.
 
+~~~ recipe-ingredients
 1 Tbsp oyster sauce
 
 3/4 C beef stock
@@ -50,5 +62,6 @@ Mix to together sauce as follows and add to the pan.  Stir and cook just until s
 1 Tbsp soy sauce
 
 1/4 tsp ground dry ginger
+~~~
 
 Serve over hot, cooked rice with toasted sesame seeds.

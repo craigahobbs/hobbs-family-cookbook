@@ -3,12 +3,13 @@ Title: Stir Fried Beef With Bean Threads
 Categories: Main Dishes
 ~~~
 
-STIR FRIED BEEF WITH BEAN THREADS
-
+~~~ recipe-ingredients
 2 1/2 lbs flank steak sliced thinly across the grain
+~~~
 
-Marinade
+### Marinade
 
+~~~ recipe-ingredients
 1/2 cup soy sauce
 
 1/2 cup dry sherry
@@ -16,11 +17,13 @@ Marinade
 1/2 tsp MSG (optional)
 
 2 tsps sugar
+~~~
 
 Add the beef slices and marinate in the refrigerator for 30 minutes or up to two hours.
 
-Vegetables
+### Vegetables
 
+~~~ recipe-ingredients
 1 1/4 lb bok choy sliced
 
 2 red bell peppers deveined and sliced
@@ -35,7 +38,8 @@ Vegetables
 
 6 oz package bean thread noodles (cellophane noodles)
 
-1 qt peanut oil
+4 cup peanut oil
+~~~
 
 Heat the oil to 400 degrees in a wok for deep frying pan.  Cook noodles in two batches in the oil
 (turn noodles to cook both sides) until the noodles are puffed.  Set aside and drain.  This step is

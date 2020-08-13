@@ -3,13 +3,20 @@ Title: Sadie And Colins Favorite Egg Sandwich
 Categories: Main Dishes
 ~~~
 
-SADIE AND COLIN'S FAVORITE EGG SANDWICH
+### Ingredients
+~~~ recipe-ingredients
+2 eggs
 
-Heat a skillet with a little oil or butter to medium.   Crack an egg (or two) in the skillet and
+2 slices whole wheat bread
+
+2 tbsp mayonnaise
+~~~
+
+Heat a skillet with a little oil or butter to medium.   Crack the eggs in the skillet and
 break the yolk.  Salt and pepper to taste.  When egg is set, fry the other side.
 
 Prepare the whole wheat bread with mayo on both sides, crusts cut off for Sadie, then place the hot
 egg on the bread, cut in half and serve while the egg is still warm.
 
 I've taken care of Teresa's kids for lots and lots of days and this is always the lunch request
-- sometimes they want seconds.  Nobody can make an egg sandwich quite like Grandma!
+\- sometimes they want seconds.  Nobody can make an egg sandwich quite like Grandma!

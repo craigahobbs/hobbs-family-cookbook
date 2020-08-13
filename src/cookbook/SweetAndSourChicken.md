@@ -3,25 +3,38 @@ Title: Sweet And Sour Chicken
 Categories: Main Dishes
 ~~~
 
-SWEET AND SOUR CHICKEN
-
 Mix together:
 
+~~~ recipe-ingredients
 2 Tbsp dry sherry
 
 2 Tbsp soy sauce
 
 3 Tbsp cornstarch
+~~~
 
 Add and marinate for  1/2 hour:
 
+~~~ recipe-ingredients
 4 boneless, skinless chicken breasts, cut into 1" chunks
+~~~
 
-Cook one 1 C white rice per package directions.
+Cook the white rice per package directions.
 
-In a large skillet, stir fry chicken in 1 to 2 Tbsp vegetable oil until crispy.  Remove chicken and
+~~~ recipe-ingredients
+1 C white rice
+~~~
+
+In a large skillet, stir fry chicken in 1 to 2 Tbsp vegetable oil until crispy.
+
+~~~ recipe-ingredients
+1 Tbsp vegetable oil
+~~~
+
+Remove chicken and
 set aside.  Drain all but 1 Tbsp oil and stir fry (peppers and onion in large dice):
 
+~~~ recipe-ingredients
 1 sweet red pepper
 
 1 green pepper
@@ -29,10 +42,12 @@ set aside.  Drain all but 1 Tbsp oil and stir fry (peppers and onion in large di
 1 onion
 
 1 large carrot slice 1/4" diagonally
+~~~
 
 When vegetables are tender crisp, add back the crispy chicken and the sauce as follows.  Mix
 together:
 
+~~~ recipe-ingredients
 1/4 C red wine vinegar
 
 1 clove garlic pressed
@@ -51,6 +66,7 @@ together:
 
 1/2 C brown sugar
 
-juice from 1 small can pineapple tidbits (in their own juice)
+1 juice from small can pineapple tidbits (in their own juice)
+~~~
 
 Stir and cook until thickened.  Add pineapple.  Serve over cooked rice with toasted sesame seeds.

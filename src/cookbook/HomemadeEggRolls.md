@@ -3,16 +3,17 @@ Title: Homemade Egg Rolls
 Categories: Main Dishes
 ~~~
 
-HOMEMADE EGG ROLLS
-
 Using a large skillet saute and stir:
 
-1/2 lb lean ground pork (2 medium diced pork chops processed in the Cuisinart
+~~~ recipe-ingredients
+1/2 lb lean ground pork
 
 2 Tbsp vegetable oil
+~~~
 
 Add and continue to saute until vegetables are just limp:
 
+~~~ recipe-ingredients
 1 grated carrot
 
 1 small julienned yellow onion
@@ -21,7 +22,14 @@ Add and continue to saute until vegetables are just limp:
 
 1/2  head shredded napa cabbage
 
-Stir in 1 Tbsp soy sauce, 1/2 tsp ground ginger, and 1 tsp sesame oil.  Place about 2 Tbsp meat and
+1 Tbsp soy sauce
+
+1/2 tsp ground ginger
+
+1 tsp sesame oil
+~~~
+
+Stir in soy sauce, ground ginger, and sesame oil.  Place about 2 Tbsp meat and
 vegetable mixture diagonally across an eggroll wrapper, fold one side over, moisten other three
 corners, fold ends up and seal, then roll (not too tightly) to make a "log" shape.  Turn rolls
 seam side down on a cookie sheet lined with paper towels.  Continue until all the wrappers and
@@ -32,15 +40,17 @@ time until golden brown and crispy on all sides.  Drain on paper towels and keep
 in 200 degree oven until all rolls have been fried.  Serve warm with red sauce or tempura dipping
 sauce.
 
-Red Sauce
+### Red Sauce
 
 Stir together:
 
+~~~ recipe-ingredients
 1/2 to 2/3 C ketchup
 
 1 Tbsp soy sauce
+~~~
 
-2 to 4 drops tobasco sauce
+Add 2 to 4 drops tobasco sauce to taste.
 
 Serve with a dollop of hot Chinese mustard,  (use Sun Luck dry Chinese mustard powder reconstituted
 with just enough water to make it the consistency of prepared mustard), and toasted sesame seeds.

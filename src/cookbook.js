@@ -319,7 +319,7 @@ const unitInfo = {
         'fractions': [2, 4, 8]
     },
     'cup': {
-        'alternates': ['C', 'Cup', 'Cups', 'cups'],
+        'alternates': ['C', 'Cup', 'Cups', 'c', 'cups'],
         'display': 'C',
         'baseUnit': 'tsp',
         'baseRatio': 48,

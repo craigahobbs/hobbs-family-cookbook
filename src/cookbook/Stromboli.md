@@ -3,8 +3,7 @@ Title: Stromboli
 Categories: Main Dishes
 ~~~
 
-STROMBOLI
-
+~~~ recipe-ingredients
 2 1 lb loaves frozen bread dough
 
 2 Tbsp Dijon mustard
@@ -18,9 +17,11 @@ STROMBOLI
 8 oz thinly sliced mozzarella cheese
 
 8 oz Italian sausage, crumbled, cooked, and drained
+~~~
 
-Topping
+### Topping
 
+~~~ recipe-ingredients
 1/4 C melted butter
 
 1/4 C parmesan cheese
@@ -28,8 +29,9 @@ Topping
 1 tsp dried oregano, crushed
 
 1/2 tsp garlic powder
+~~~
 
-Thaw two 1 lb loaves of frozen bread dough.  On a lightly floured board, roll each into a 16" X
+Thaw the frozen bread dough.  On a lightly floured board, roll each into a 16" X
 10" rectangle.  Spread the center 1/3 of each rectangle with 1 Tbsp Dijon mustard.
 
 Layer each loaf with 1/2 of each ingredient in the order listed, ending by sprinkling the cooked

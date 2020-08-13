@@ -3,12 +3,19 @@ Title: Homemade Beef Tacos
 Categories: Main Dishes
 ~~~
 
-HOMEMADE BEEF TACOS
+~~~ recipe-ingredients
+3 lbs lean beef chuck, cut into 1" chunks
+1 Tbsp olive oil
+1 1/2 C water
+1 package taco seasoning mix
+1 Tbsp butter, softened
+1 Tbsp flour
+~~~
 
-Using a 4.5 qt dutch oven, sear 3 lbs of lean 1" chunks of  beef chuck (which has been salted and
-peppered) in 1 to 2 Tbsp olive oil.  When the meat is browned, add 1 1/2 C water, cover and cook on
-low heat until the meat is very tender (1 1/2 to 2 hours).  When the meat is tender add 1 package
-taco seasoning mix and 1 Tbsp soft butter mixed with 1 Tbsp flour.  Cook 15 to 20 minutes until
+Using a 4.5 qt dutch oven, sear beef chunks (which have been salted and
+peppered) in the olive oil.  When the meat is browned, add the water, cover and cook on
+low heat until the meat is very tender (1 1/2 to 2 hours).  When the meat is tender add the package of
+taco seasoning mix and butter mixed with the flour.  Cook 15 to 20 minutes until
 thickened and savory.  At any point during the cooking process add additional liquid if mixture
 seems dry.
 
@@ -18,19 +25,20 @@ fold over.  Continue until all the desired tortillas are cooked.
 
 Prepare the toppings as follows:
 
-2 to 3 C shredded  iceberg or romaine lettuce
+~~~ recipe-ingredients
+2 C shredded  iceberg or romaine lettuce
 
-2 to 3 C shredded medium cheddar cheese
+2 C shredded medium cheddar cheese
 
-2 to 3 diced fresh tomatoes
+2 diced fresh tomatoes
+~~~
 
-sliced ripe olives
+Other topping ideas:
 
-prepared salsa
-
-light sour cream
-
-diced avocado or guacamole
+- sliced ripe olives
+- prepared salsa
+- light sour cream
+- diced avocado or guacamole
 
 Let each person prepare their own taco to order.
 
