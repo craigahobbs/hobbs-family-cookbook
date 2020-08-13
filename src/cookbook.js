@@ -344,7 +344,7 @@ const unitInfo = {
         'fractions': [1]
     },
     'tbsp': {
-        'alternates': ['Tbsp', 'Tablespoon', 'Tablespoons', 'tablespoon', 'tablespoons'],
+        'alternates': ['T', 'Tbsp', 'Tablespoon', 'Tablespoons', 'tablespoon', 'tablespoons'],
         'baseUnit': 'tsp',
         'baseRatio': 3,
         'fractions': [1]

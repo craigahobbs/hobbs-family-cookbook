@@ -1,17 +1,21 @@
 ~~~ recipe-info
-Title: Cucina
+Title: Cucina! Cucina! Chopped Chicken Salad
 Categories: Salads & Sides
 ~~~
 
-CUCINA! CUCINA! CHOPPED CHICKEN SALAD
-
-Cook 2 to 3 skin on, bone in, chicken breasts either by poaching or baking.  Cool chicken and cut
+Cook the chicken breasts either by poaching or baking.  Cool chicken and cut
 into 3/4 " pieces.  Set aside, or refrigerate until ready to use.
 
-Dressing
+~~~ recipe-ingredients
+2 skin on, bone in, chicken breasts
+~~~
+
+
+### Dressing
 
 Whisk together, or make in a blender.  Refrigerate until ready to use:
 
+~~~ recipe-ingredients
 1 egg yolk
 
 1 Tbsp water
@@ -22,7 +26,7 @@ Whisk together, or make in a blender.  Refrigerate until ready to use:
 
 1/2 tsp salt
 
-! tsp pepper
+1 tsp pepper
 
 1/2 tsp dry mustard
 
@@ -35,9 +39,11 @@ Whisk together, or make in a blender.  Refrigerate until ready to use:
 2 Tbsp lemon juice
 
 1 C olive oil
+~~~
 
 Place in a large mixing bowl and toss:
 
+~~~ recipe-ingredients
 1/2 large head of iceberg lettuce chopped
 
 1/2 romaine lettuce cleaned and chopped
@@ -55,6 +61,7 @@ Place in a large mixing bowl and toss:
 8 oz dry salami diced 1/4"
 
 4 oz chopped drained chick peas (garbanzo beans)
+~~~
 
 Add the diced, cooked chicken and toss.  Add the dressing just before serving.  Since this is a
 large salad, I sometimes save half the salad undressed for the next day and add the dressing when

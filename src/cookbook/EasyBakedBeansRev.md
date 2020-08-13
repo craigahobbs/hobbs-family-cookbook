@@ -1,12 +1,12 @@
 ~~~ recipe-info
 Title: Easy Baked Beans Rev
 Categories: Salads & Sides
+Author: Shannon Childs
 ~~~
 
-EASY BAKED BEANS    Recipe from Shannon Childs
+Combine in a buttered deep 9" X 13" baking pan\*:
 
-Combine in a buttered deep 9" X 13" baking pan*:
-
+~~~ recipe-ingredients
 2 cups diced sweet onions
 
 2 31 oz cans of B & M baked beans
@@ -24,9 +24,10 @@ Combine in a buttered deep 9" X 13" baking pan*:
 1 tsp salt
 
 1/2 tsp pepper
+~~~
 
 Bake at 350 degrees for one hour uncovered.
 
 These baked beans are really yummy, easy, and a great picnic side dish.
 
-* If you don't have a deep baking pan, just use the next larger size.
+\* If you don't have a deep baking pan, just use the next larger size.

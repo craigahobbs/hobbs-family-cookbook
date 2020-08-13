@@ -1,13 +1,13 @@
 ~~~ recipe-info
 Title: Canlis Special Salad
 Categories: Salads & Sides
+Servings: 8
 ~~~
-
-CANLIS SPECIAL SALAD
 
 Combine in a blender:
 
-Juice of two fresh lemons (4 T )
+~~~ recipe-ingredients
+4 tbsp fresh lemon juice
 
 5 oz olive oil
 
@@ -22,12 +22,14 @@ Juice of two fresh lemons (4 T )
 1 tsp salt
 
 1/2 pepper
+~~~
 
 Combine in a large salad bowl:
 
-2 heads or four hearts of chopped cleaned romaine lettuce
+~~~ recipe-ingredients
+2 heads chopped cleaned romaine lettuce
 
-2 large large chopped tomatoes
+2 large chopped tomatoes
 
 1/4 C sliced green onions
 
@@ -36,8 +38,8 @@ Combine in a large salad bowl:
 1/2 C freshly grated Romano cheese (I sometimes add 1/4 C of parmesan, too)
 
 1 C croutons
+~~~
 
 Toss with the dressing and serve.
 
-If making ahead, I separately bag everything, then combine them when ready to toss.  This is a huge
-salad that easily serves 6 to eight people.
+If making ahead, I separately bag everything, then combine them when ready to toss.

@@ -1,15 +1,15 @@
 ~~~ recipe-info
 Title: Hot German Potato Salad
 Categories: Salads & Sides
+Author: Betty Artus
 ~~~
 
-HOT GERMAN POTATO SALAD   Recipe from Betty Artus
-
+~~~ recipe-ingredients
 3 lbs of white or yellow potatoes
 
-6 to 8 slices of thick sliced bacon cut in 1/3" piece
+6 slices of thick sliced bacon cut in 1/3" piece
 
-34 cup diced white or yellow onion
+3 cup diced white or yellow onion
 
 2 Tbsp flour
 
@@ -19,11 +19,12 @@ HOT GERMAN POTATO SALAD   Recipe from Betty Artus
 
 1/2 tsp celery seed
 
-dash of pepper
+1 pinch of pepper
 
 3/4 cup water
 
 1/3 cup cider vinegar
+~~~
 
 Peel the potatoes and boil in a large covered pot of salted water until tender.  Drain and set aside
 to cool.  When cool, slice thinly into a serving bowl.  Set aside.  Brown the bacon in a large
