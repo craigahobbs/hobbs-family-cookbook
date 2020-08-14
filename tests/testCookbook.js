@@ -128,6 +128,27 @@ test('parseRecipeMarkdown, empty', (t) => {
 });
 
 
+test('parseRecipeMarkdown, float ingredient amount', (t) => {
+    t.deepEqual(
+        parseRecipeMarkdown(`
+~~~ recipe-ingredients
+1.5 C water
+~~~
+`),
+        {
+            'parts': [
+                {
+                    'ingredients': [
+                        {'amount': 1.5, 'name': 'water', 'unit': 'cup'}
+                    ]
+                }
+            ],
+            'title': 'Untitled Recipe'
+        }
+    );
+});
+
+
 test('parseRecipeMarkdown, servings', (t) => {
     t.deepEqual(
         parseRecipeMarkdown(`

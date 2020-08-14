@@ -488,7 +488,7 @@ const rRecipeMarkdownInfo = /^\s*(?<key>[Tt]itle|[Cc]ategories|[Aa]uthor|[Ss]erv
 const rRecipeMarkdownCategories = /\s*,\s*/;
 const rRecipeMarkdownBlank = /^\s*$/;
 const rRecipeMarkdownIngredients = new RegExp(
-    '^(?:\\s*(?<whole>[1-9][0-9]*))?(?:\\s*(?<numer>[1-9][0-9]*)\\s*/\\s*(?<denom>[1-9][0-9]*))?' +
+    '^(?:\\s*(?<whole>[1-9][0-9]*(?:\\.[0-9]*)?))?(?:\\s*(?<numer>[1-9][0-9]*)\\s*/\\s*(?<denom>[1-9][0-9]*))?' +
         `(?:\\s*(?<unit>${Object.keys(unitInfo).join('|')}|${Object.keys(alternateUnits).join('|')}))?` +
         '\\s+(?!/)(?<name>.+?)\\s*$'
 );
@@ -575,7 +575,7 @@ export function parseRecipeMarkdown(markdown) {
  */
 function parseIngredient(line) {
     const match = line.match(rRecipeMarkdownIngredients);
-    const whole = match !== null && typeof match.groups.whole !== 'undefined' ? parseInt(match.groups.whole, 10) : 0;
+    const whole = match !== null && typeof match.groups.whole !== 'undefined' ? parseFloat(match.groups.whole, 10) : 0;
     const numer = match !== null && typeof match.groups.numer !== 'undefined' ? parseInt(match.groups.numer, 10) : 0;
     const denom = match !== null && typeof match.groups.denom !== 'undefined' ? parseInt(match.groups.denom, 10) : 1;
     const unit = match !== null && typeof match.groups.unit !== 'undefined' ? match.groups.unit : null;
