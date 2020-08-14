@@ -21,11 +21,11 @@ Prepare batter by whisking together:
 
 Batter will be thin.
 
-Slice two to three large sweet onions (white onions are also good) 1/4" to 1/3" thick.  Dip in
-the batter* and deep fry in canola oil (approximately 5 C) at 375 degrees.  Remove rings when golden
+Slice two to three large sweet onions (white onions are also good) 1/4" to 1/3" thick. Dip in the
+batter* and deep fry in canola oil (approximately 5 C) at 375 degrees. Remove rings when golden
 brown and crispy and drain on paper towels.
 
-Serve warm with Colonial Dressing  or Tartar Sauce.
+Serve warm with Colonial Dressing or Tartar Sauce.
 
 \* For thicker coating dust the onion rings lightly in flour before dipping in the batter.
 

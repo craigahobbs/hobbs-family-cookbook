@@ -41,4 +41,4 @@ Cook and stir until mixture is thickened and bubbles. Add:
 
 Salt and freshly ground pepper to taste.
 
-Stir and cook to melt cheese and soup is warmed through.  Serve hot with homemade croutons.
+Stir and cook to melt cheese and soup is warmed through. Serve hot with homemade croutons.

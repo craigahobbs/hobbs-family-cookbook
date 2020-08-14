@@ -26,10 +26,10 @@ A Hobbs family favorite
 ~~~
 
 Slice the French loaf in half lengthwise, if the loaf is really thick, scoop out some of the bread
-middle.  Spread both sides liberally with mayo and as much mustard as you like.  Layer the ham,
-turkey, and cheese on the bottom half of the loaf.  Top with the tomatoes, salt and pepper to taste,
-onions and shredded lettuce.  Place the top of the loaf on and wrap the whole sandwich tightly in
-saran wrap.  Refrigerate until ready to slice.
+middle. Spread both sides liberally with mayo and as much mustard as you like. Layer the ham,
+turkey, and cheese on the bottom half of the loaf. Top with the tomatoes, salt and pepper to taste,
+onions and shredded lettuce. Place the top of the loaf on and wrap the whole sandwich tightly in
+saran wrap. Refrigerate until ready to slice.
 
-The big sandwich, ala the Seinfeld show, became a favorite in our family for casual dinners.  The
+The big sandwich, ala the Seinfeld show, became a favorite in our family for casual dinners. The
 kids often requested it when Craig and I were going out for the evening.

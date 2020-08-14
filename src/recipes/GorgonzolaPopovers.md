@@ -28,7 +28,7 @@ Add:
 1 Tbsp chopped fresh thyme
 ~~~
 
-Butter 2 mini muffin pans.   Fill each cup to the top with batter.  Bake at 425* degrees for 18 to
-20 minutes until puffed and golden.  Great served as an appetizer with red wine.
+Butter 2 mini muffin pans. Fill each cup to the top with batter. Bake at 425* degrees for 18 to 20
+minutes until puffed and golden. Great served as an appetizer with red wine.
 
 \* adjust oven rack to the highest position in oven

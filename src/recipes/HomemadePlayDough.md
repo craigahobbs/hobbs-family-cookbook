@@ -19,8 +19,8 @@ Stir together and add the boiling water and knead until smooth.\*
 1 C boiling water
 ~~~
 
-\* Add food coloring to the water before adding to the dry ingredients.  The more coloring added, the
+\* Add food coloring to the water before adding to the dry ingredients. The more coloring added, the
 more vibrant the color.
 
-Dough can be stored in airtight containers and used for weeks.  Sometimes I added a few more drops
-of water and rekneaded to freshen the dough.
+Dough can be stored in airtight containers and used for weeks. Sometimes I added a few more drops of
+water and rekneaded to freshen the dough.

@@ -5,7 +5,7 @@ Categories: Main Dishes
 
 How could I leave this one out!
 
-Brown in a large skillet in olive oil:  (skillet should have a lid)
+Brown in a large skillet in olive oil: (skillet should have a lid)
 
 ~~~ recipe-ingredients
 1 Tbsp olive oil

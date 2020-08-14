@@ -3,7 +3,7 @@ Title: Chunky Chippers
 Categories: Cookies
 ~~~
 
-![Chocolate Chip and Ginger Snap](recipes/ChunkyChippers.jpg "Chocolate Chip and Ginger Snap")
+![Ginger Snap and Chocolate Chip](recipes/ChunkyChippers.jpg "Ginger Snap and Chocolate Chip")
 
 Cream together:
 
@@ -37,5 +37,5 @@ Stir in:
 2 C chocolate chips
 ~~~
 
-Drop dough by large teaspoons onto a lightly greased baking sheet.  Bake at 350 degrees for 12 to 14
-minutes (cookies should be light brown and slightly underdone.  Remove from sheet to cool.
+Drop dough by large teaspoons onto a lightly greased baking sheet. Bake at 350 degrees for 12 to 14
+minutes (cookies should be light brown and slightly underdone. Remove from sheet to cool.

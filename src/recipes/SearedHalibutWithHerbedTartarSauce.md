@@ -24,13 +24,13 @@ Freshly ground pepper to taste.
 Cover and refrigerate until ready to use.
 
 ~~~ recipe-ingredients
-4  8 oz skinless halibut fillets
+4 8 oz skinless halibut fillets
 ~~~
 
-Clean and pat dry the halibut fillets, sprinkle with salt and pepper, and dust with
-flour.  Heat 1 to 2 Tbsp olive oil in a large saute pan and sear the prepared fillets until golden
-brown on both sides, lower the heat and continue to cook until the fish flakes when tested with a
-fork and the center of the fillet is opaque.  Serve the fish with the sauce.
+Clean and pat dry the halibut fillets, sprinkle with salt and pepper, and dust with flour. Heat 1 to
+2 Tbsp olive oil in a large saute pan and sear the prepared fillets until golden brown on both
+sides, lower the heat and continue to cook until the fish flakes when tested with a fork and the
+center of the fillet is opaque. Serve the fish with the sauce.
 
-This is one of the best fish recipes I have ever had.  It is so simple and quick, yet everyone asks
-for the recipe.  I like to serve this with fresh asparagus and roasted red potatoes.
+This is one of the best fish recipes I have ever had. It is so simple and quick, yet everyone asks
+for the recipe. I like to serve this with fresh asparagus and roasted red potatoes.

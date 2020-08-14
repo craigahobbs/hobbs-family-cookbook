@@ -38,8 +38,8 @@ Add and stir in:
 1 small can sliced black olives drained
 ~~~
 
-Refrigerate up to two hours.  When ready to serve, pit, peel, and slice lengthwise the large ripe
-avocados.  Fan 1/2 of each sliced avocado on a salad plate, scoop 1/6 shrimp mixture over and serve.
+Refrigerate up to two hours. When ready to serve, pit, peel, and slice lengthwise the large ripe
+avocados. Fan 1/2 of each sliced avocado on a salad plate, scoop 1/6 shrimp mixture over and serve.
 
 ~~~ recipe-ingredients
 3 large ripe avocados

@@ -41,7 +41,7 @@ Mix together:
 
 Spread the topping on the baked crust and return to the oven for 25 minutes more.
 
-Remove from the oven, cool for 15 minutes and dust with powdered sugar.  Cut into desired size.
-(1" squares for Christmas plates)
+Remove from the oven, cool for 15 minutes and dust with powdered sugar. Cut into desired size. (1"
+squares for Christmas plates)
 
 These were always one of Craig Alan's favorite cookies, his Dad's, too!

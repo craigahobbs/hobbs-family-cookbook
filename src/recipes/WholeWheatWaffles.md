@@ -33,4 +33,4 @@ Whisk together in a large measuring cup:
 Whisk the wet ingredients into the dry until combined, then allow to rest for 5 minutes.
 
 Ladle batter into hot, oiled waffle iron, and cook til done (on my waffle iron that is usually about
-4 1/2 to 5 minutes).  Serve hot.
+4 1/2 to 5 minutes). Serve hot.

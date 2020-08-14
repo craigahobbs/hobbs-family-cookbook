@@ -4,7 +4,7 @@ Categories: Main Dishes
 ~~~
 
 One day ahead (this is a very important step as it prevents the rice from sticking during the frying
-process), cook the white rice in the chicken broth.  Refrigerate, covered, overnight.
+process), cook the white rice in the chicken broth. Refrigerate, covered, overnight.
 
 ~~~ recipe-ingredients
 1 C of white rice
@@ -12,8 +12,8 @@ process), cook the white rice in the chicken broth.  Refrigerate, covered, overn
 2 C chicken broth
 ~~~
 
-Saute, stirring, in the vegetable oil and 1 tsp sesame oil, in a large non stick
-skillet, until tender crisp:
+Saute, stirring, in the vegetable oil and 1 tsp sesame oil, in a large non stick skillet, until
+tender crisp:
 
 ~~~ recipe-ingredients
 2 Tbsp vegetable oil

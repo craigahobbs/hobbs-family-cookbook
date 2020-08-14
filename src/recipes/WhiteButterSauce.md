@@ -19,8 +19,8 @@ The only sauce to serve with baked salmon.
 1 C butter
 ~~~
 
-Add the first 5 ingredients to a heavy saucepan and bring to a boil.  Cook until reduced to 1 1/2
-Tbsp.  Remove from the heat and whisk in two pats of butter.  Return the pan to low heat and
-continue to whisk in pats of butter (each time waiting until the previous pats have been
-incorporated into the sauce) until the sauce become thick and ivory colored.  Remove from the heat,
-correct seasoning, and serve over baked salmon.  Absolutely delicious and very decadent.
+Add the first 5 ingredients to a heavy saucepan and bring to a boil. Cook until reduced to 1 1/2
+Tbsp. Remove from the heat and whisk in two pats of butter. Return the pan to low heat and continue
+to whisk in pats of butter (each time waiting until the previous pats have been incorporated into
+the sauce) until the sauce become thick and ivory colored. Remove from the heat, correct seasoning,
+and serve over baked salmon. Absolutely delicious and very decadent.

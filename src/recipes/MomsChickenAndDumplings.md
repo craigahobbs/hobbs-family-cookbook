@@ -11,10 +11,10 @@ Categories: Main Dishes
 4 C water
 ~~~
 
-Salt and pepper the chicken breasts.  Sear the chicken in the olive
-oil in a 6 qt dutch oven.  When chicken is browned, add the water and and simmer, covered, until
-chicken is tender.  Remove the chicken and allow to cool.  When chicken is cool, remove the skin and
-bones and shred into 1 1/2" pieces.  Refrigerate the chicken until ready to add back.
+Salt and pepper the chicken breasts. Sear the chicken in the olive oil in a 6 qt dutch oven. When
+chicken is browned, add the water and and simmer, covered, until chicken is tender. Remove the
+chicken and allow to cool. When chicken is cool, remove the skin and bones and shred into 1 1/2"
+pieces. Refrigerate the chicken until ready to add back.
 
 Dice:
 
@@ -30,11 +30,11 @@ Dice:
 2 cloves garlic minced
 ~~~
 
-Saute cut vegetables in a large skillet in olive oil just until vegetables are softened. Add
-one peeled cubed potato to the chicken cooking liquid along with the sauted vegetables and the
-additional chicken broth and the bay leaf.  Simmer covered until all the vegetables are tender,
-about 20 minutes.  Correct the seasoning with salt and pepper and remove the bay leaf.  Thicken with
-the butter mixed with the flour.  Bring back to a boil to thicken before adding the dumpling dough.
+Saute cut vegetables in a large skillet in olive oil just until vegetables are softened. Add one
+peeled cubed potato to the chicken cooking liquid along with the sauted vegetables and the
+additional chicken broth and the bay leaf. Simmer covered until all the vegetables are tender, about
+20 minutes. Correct the seasoning with salt and pepper and remove the bay leaf. Thicken with the
+butter mixed with the flour. Bring back to a boil to thicken before adding the dumpling dough.
 
 ~~~ recipe-ingredients
 1 Tbsp olive oil
@@ -49,6 +49,7 @@ the butter mixed with the flour.  Bring back to a boil to thicken before adding 
 
 2 Tbsp flour
 ~~~
+
 
 ### Dumplings
 
@@ -68,9 +69,9 @@ Mix together:
 
 Cut in the shortening. Stir in the milk.
 
-Drop the dough in spoonfuls onto the boiling chicken and vegetable mixture.  Cook uncovered on
-medium heat for 10 minutes.  Lower the heat, add the frozen peas, and cover and cook ten more
-minutes.  Serve hot.
+Drop the dough in spoonfuls onto the boiling chicken and vegetable mixture. Cook uncovered on medium
+heat for 10 minutes. Lower the heat, add the frozen peas, and cover and cook ten more minutes. Serve
+hot.
 
 ~~~ recipe-ingredients
 3/4 C frozen peas

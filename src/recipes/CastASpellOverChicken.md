@@ -22,8 +22,8 @@ Combine in a glass pie pan:
 1/2 tsp pepper
 ~~~
 
-Melt the butter in a glass pie pan.  Trim and pat dry the chicken breasts and dip
-each in the melted butter, then in the crumb mixture.
+Melt the butter in a glass pie pan. Trim and pat dry the chicken breasts and dip each in the melted
+butter, then in the crumb mixture.
 
 ~~~ recipe-ingredients
 1/4 C butter
@@ -31,5 +31,5 @@ each in the melted butter, then in the crumb mixture.
 6 boneless skinless chicken breasts
 ~~~
 
-Place in a baking pan sprayed with nonstick
-coating and bake for 20 - 25 minute at 400 degrees until browned and cooked through.
+Place in a baking pan sprayed with nonstick coating and bake for 20 - 25 minute at 400 degrees until
+browned and cooked through.

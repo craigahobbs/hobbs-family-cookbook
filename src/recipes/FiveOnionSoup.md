@@ -43,7 +43,7 @@ Puree the mixture with a handheld blender, then add:
 2 Tbsp chopped fresh thyme
 ~~~
 
-Cook fifteen more minutes and add salt and freshly ground pepper to taste.  Soup is better is made 1
-day ahead.  Recipe serves 6 to 8 generously.  This soup freezes well.
+Cook fifteen more minutes and add salt and freshly ground pepper to taste. Soup is better is made 1
+day ahead. Recipe serves 6 to 8 generously. This soup freezes well.
 
 Serve with snipped chives on top.

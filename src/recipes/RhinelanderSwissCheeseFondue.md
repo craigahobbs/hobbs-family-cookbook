@@ -20,7 +20,7 @@ Add a dash of MSG if desired. Ground white pepper to taste.
 Serve in a heated fondue pot or small casserole dish with sliced dark Russian bread and crisp bread
 sticks.
 
-This recipe comes from the Rhinelander Restaurant in Portland, Oregon.  When Dad and I were first
+This recipe comes from the Rhinelander Restaurant in Portland, Oregon. When Dad and I were first
 married we could eat a complete meal (fondue, lentil soup, salad, complete dinner, and dessert)
-there for $3.25 apiece.  Needless to say, it was one of our favorite restaurants!  The Rhinelander
-is still in its' original location on Burnside in Portland, but it is a lot more expensive now.
+there for $3.25 apiece. Needless to say, it was one of our favorite restaurants! The Rhinelander is
+still in its' original location on Burnside in Portland, but it is a lot more expensive now.

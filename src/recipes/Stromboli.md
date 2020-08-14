@@ -19,6 +19,7 @@ Categories: Main Dishes
 8 oz Italian sausage, crumbled, cooked, and drained
 ~~~
 
+
 ### Topping
 
 ~~~ recipe-ingredients
@@ -31,17 +32,16 @@ Categories: Main Dishes
 1/2 tsp garlic powder
 ~~~
 
-Thaw the frozen bread dough.  On a lightly floured board, roll each into a 16" X
-10" rectangle.  Spread the center 1/3 of each rectangle with 1 Tbsp Dijon mustard.
+Thaw the frozen bread dough. On a lightly floured board, roll each into a 16" X 10" rectangle.
+Spread the center 1/3 of each rectangle with 1 Tbsp Dijon mustard.
 
 Layer each loaf with 1/2 of each ingredient in the order listed, ending by sprinkling the cooked
-sausage on.  Fold both sides to the center, moisten with water, and pinch together to seal.  Seal
-the ends of the loaf and fold  in toward center.  Then turn both strombolis seam side down on a
-oiled baking sheet, brush the tops with melted butter and sprinkle the last 3 ingredients mixed
-together.
+sausage on. Fold both sides to the center, moisten with water, and pinch together to seal. Seal the
+ends of the loaf and fold in toward center. Then turn both strombolis seam side down on a oiled
+baking sheet, brush the tops with melted butter and sprinkle the last 3 ingredients mixed together.
 
-Bake the stromboli at 350 degrees for 25 minutes until the crust is golden brown.  Slice and serve
+Bake the stromboli at 350 degrees for 25 minutes until the crust is golden brown. Slice and serve
 with a salad for a complete meal.
 
 This recipe comes from the Better Homes and Gardens Community Recipe book given to me by Craig A.
-for Christmas one year.  It quickly became a family favorite.
+for Christmas one year. It quickly became a family favorite.

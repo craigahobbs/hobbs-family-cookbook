@@ -3,8 +3,8 @@ Title: Rosellinis Summer Pasta Salad
 Categories: Salads & Sides
 ~~~
 
-Cook the chicken breasts either by poaching or baking.  When chicken is cooked
-and cooled, remove the skin and bones and cut into 1/2" pieces.
+Cook the chicken breasts either by poaching or baking. When chicken is cooked and cooled, remove the
+skin and bones and cut into 1/2" pieces.
 
 ~~~ recipe-ingredients
 3 large bone in, skin on, chicken breasts
@@ -54,6 +54,7 @@ Add and stir in:
 1/2 C grated parmesan cheese
 ~~~
 
+
 ### Dressing
 
 ~~~ recipe-ingredients
@@ -70,5 +71,5 @@ Add and stir in:
 1/3 C red wine vinegar
 ~~~
 
-Whisk together, pour over the salad and stir together.  Top the Salad with additional parmesan
-cheese and serve with warm, crusty bread and fresh fruit.
+Whisk together, pour over the salad and stir together. Top the Salad with additional parmesan cheese
+and serve with warm, crusty bread and fresh fruit.

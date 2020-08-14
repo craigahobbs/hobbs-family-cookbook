@@ -33,15 +33,16 @@ Add and stir in:
 ~~~
 
 Turn the batter into a buttered glass loaf pan and bake in a 350 degree for 1 hour or until a
-toothpick inserted in the center comes out clean.  Cool the bread in the pan for 10 to 15 minutes,
+toothpick inserted in the center comes out clean. Cool the bread in the pan for 10 to 15 minutes,
 then loosen the edges with a knife blade and turn out onto a cutting board and continue to cool or
 slice and serve.
 
 \* Mix the milk and the white vinegar (I'm convinced that this step is what makes this banana bread
-so great.  Use vinegar, not lemon juice.)
+so great. Use vinegar, not lemon juice.)
 
 ~~~ recipe-ingredients
 4 Tbsp milk
+
 2 tsp white vinegar
 ~~~
 

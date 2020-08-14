@@ -20,7 +20,7 @@ Place the following ingredients in a blender:
 ~~~
 
 With the blender on low slowly add 1 cup canola or other vegetable oil. When all of the oil has been
-added and mixture is thickened add one more tablespoon of vinegar.  Place in a covered container and
+added and mixture is thickened add one more tablespoon of vinegar. Place in a covered container and
 store in the refrigerator.
 
 
@@ -40,4 +40,4 @@ store in the refrigerator.
 
 Salt and freshly ground pepper to taste
 
-Mix together.  I always made this dressing for shrimp louies and chef's salads.
+Mix together. I always made this dressing for shrimp louies and chef's salads.

@@ -13,7 +13,7 @@ Mix together:
 3 Tbsp cornstarch
 ~~~
 
-Add and marinate for  1/2 hour:
+Add and marinate for 1/2 hour:
 
 ~~~ recipe-ingredients
 4 boneless, skinless chicken breasts, cut into 1" chunks
@@ -31,8 +31,8 @@ In a large skillet, stir fry chicken in 1 to 2 Tbsp vegetable oil until crispy.
 1 Tbsp vegetable oil
 ~~~
 
-Remove chicken and
-set aside.  Drain all but 1 Tbsp oil and stir fry (peppers and onion in large dice):
+Remove chicken and set aside. Drain all but 1 Tbsp oil and stir fry (peppers and onion in large
+dice):
 
 ~~~ recipe-ingredients
 1 sweet red pepper
@@ -44,7 +44,7 @@ set aside.  Drain all but 1 Tbsp oil and stir fry (peppers and onion in large di
 1 large carrot slice 1/4" diagonally
 ~~~
 
-When vegetables are tender crisp, add back the crispy chicken and the sauce as follows.  Mix
+When vegetables are tender crisp, add back the crispy chicken and the sauce as follows. Mix
 together:
 
 ~~~ recipe-ingredients
@@ -69,4 +69,4 @@ together:
 1 juice from small can pineapple tidbits (in their own juice)
 ~~~
 
-Stir and cook until thickened.  Add pineapple.  Serve over cooked rice with toasted sesame seeds.
+Stir and cook until thickened. Add pineapple. Serve over cooked rice with toasted sesame seeds.

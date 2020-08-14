@@ -26,11 +26,11 @@ Pour mixture into a mixing bowl and add and incorporate:
 1 C finely chopped pecans.
 ~~~
 
-Roll the dough into 1" balls and place on an ungreased cookie sheet.  Bake at 350 degrees for 20
+Roll the dough into 1" balls and place on an ungreased cookie sheet. Bake at 350 degrees for 20
 minutes.
 
-Remove from the oven and immediately roll in powdered sugar to coat (I roll 5 - 6
-cookies at a time) and cool.
+Remove from the oven and immediately roll in powdered sugar to coat (I roll 5 - 6 cookies at a time)
+and cool.
 
 ~~~ recipe-ingredients
 1/4 C powdered sugar

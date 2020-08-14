@@ -35,8 +35,9 @@ Using the dough hook add and mix until a soft dough forms:
 4 1/2 C flour
 ~~~
 
-Turn the dough onto a floured surface and knead to form a smooth, elastic ball.  Turn dough into a
+Turn the dough onto a floured surface and knead to form a smooth, elastic ball. Turn dough into a
 greased bowl, cover, and let rise until double in size (about 1 1/2 hours).
+
 
 ### Sausage Filling
 
@@ -62,7 +63,7 @@ Add and heat until bubbling hot:
 2 fresh tomatoes, seeded and diced
 ~~~
 
-Pour mixture into a large mixing bowl and allow to cool.  Then mix in:
+Pour mixture into a large mixing bowl and allow to cool. Then mix in:
 
 ~~~ recipe-ingredients
 1/2 C grated parmesan cheese
@@ -74,11 +75,11 @@ Pour mixture into a large mixing bowl and allow to cool.  Then mix in:
 
 Salt and pepper to taste
 
-Assemble the Calzones by dividing the dough in 6 pieces\*.  Roll each piece of dough on a floured
-board into an 8" circle.  Place 1/6 of the filling on 1/2 of each circle, fold circle in half, seal
-with water, and crimp the the edges well.  Place calzones on a large baking sheet (4 to a 1/2 sheet
+Assemble the Calzones by dividing the dough in 6 pieces\*. Roll each piece of dough on a floured
+board into an 8" circle. Place 1/6 of the filling on 1/2 of each circle, fold circle in half, seal
+with water, and crimp the the edges well. Place calzones on a large baking sheet (4 to a 1/2 sheet
 pan) and bake at 375 degrees for 30 minutes until golden brown.
 
 Serve with warm Marinara sauce of your choice.
 
-\* These will be large calzones.  Recipe can be divided to make 8 calzones.
+\* These will be large calzones. Recipe can be divided to make 8 calzones.

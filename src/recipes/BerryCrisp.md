@@ -26,12 +26,12 @@ Crust topping; mix together in a medium bowl:
 1 beaten egg
 ~~~
 
-Mixture will look crumbly.  Spread evenly over the berries.  Melt one cube of butter and pour evenly
-over the whole mixture.  Bake at 375 degrees for 45 minutes or until bubbly.
+Mixture will look crumbly. Spread evenly over the berries. Melt one cube of butter and pour evenly
+over the whole mixture. Bake at 375 degrees for 45 minutes or until bubbly.
 
 Serve with whipped cream or ice cream.
 
 \* If using frozen berries, let that slightly.
 
 When the kids were little we would pick blackberries here on the Island and freeze them for winter
-use.  We had lots of "free" desserts.
+use. We had lots of "free" desserts.

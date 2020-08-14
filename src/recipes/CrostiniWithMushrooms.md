@@ -28,7 +28,7 @@ Remove from heat and add blue cheese (I prefer gorgonzola) and stir until melted
 1/2 C blue cheese
 ~~~
 
-Mix-in proscuitto and season to taste with salt and pepper.*
+Mix-in proscuitto and season to taste with salt and pepper.\*
 
 ~~~ recipe-ingredients
 1/2 C thinly sliced proscuitto
@@ -41,7 +41,7 @@ Slice the baguette into 1/2" slices and bake at 375 degrees until golden (about 
 ~~~
 
 Spread each slice with about a tablespoon of the mushroom mixture and return to the oven until
-topping is heated through and bubbly (about 6 minutes).  Sprinkle with chopped fresh parsley and
+topping is heated through and bubbly (about 6 minutes). Sprinkle with chopped fresh parsley and
 serve.
 
 These appetizers are delicious and always a hit!

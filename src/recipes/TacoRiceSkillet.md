@@ -27,4 +27,4 @@ Stir in, cover and cook on low heat for 25 minutes stirring occasionally until r
 1 C grated cheddar cheese
 ~~~
 
-Sprinkle with the grated cheddar cheese.  Serve on a bed of crisp shredded lettuce.
+Sprinkle with the grated cheddar cheese. Serve on a bed of crisp shredded lettuce.

@@ -36,9 +36,9 @@ To layer:
 
 Sprinkle the bottom of the containers with a 1/6 of the pine nuts, 1/6 of the sundried tomatoes, 1/6
 of the pesto, and 1/6 of the cheese mixture. Repeat two more times and end with more pine nuts.
-Close the saran over the layered mixture and snap the lids on.  Chill at lease one hour, or up to a
-week.  To unmold, unwrap the saran and turn the mold upside down on a serving platter. Carefully
+Close the saran over the layered mixture and snap the lids on. Chill at lease one hour, or up to a
+week. To unmold, unwrap the saran and turn the mold upside down on a serving platter. Carefully
 remove the saran and serve with multigrain crackers or melba toasts.
 
 Because this torta is so festive looking we would often have it as an appetizer during the holidays.
- It has always been a family favorite.
+It has always been a family favorite.

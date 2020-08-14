@@ -23,8 +23,8 @@ Stir together:
 1 tsp (or to taste) Lawry's seasoned salt
 ~~~
 
-Refrigerate until ready for use.  Serve with fresh tortilla chips.
+Refrigerate until ready for use. Serve with fresh tortilla chips.
 
 This recipe came from a friend in Olympia, who gave it to me, then refused to give it to anyone
-else.  Naturally, I was happy to share it with everyone, since Barbie turned out to be kind of a
-"stinker" as we all got to know her better.  Pass it on!
+else. Naturally, I was happy to share it with everyone, since Barbie turned out to be kind of a
+"stinker" as we all got to know her better. Pass it on!

@@ -12,9 +12,9 @@ buttered.
 1 pound of carrots
 ~~~
 
-Peel and slice the carrots and then cook in sauce pan with about an inch of salted water
-until tender.  Puree the drained carrots with a couple of tablespoons of the cooking liquid in a
-Cuisinart.  Turn the pureed carrots into a large bowl to cool.
+Peel and slice the carrots and then cook in sauce pan with about an inch of salted water until
+tender. Puree the drained carrots with a couple of tablespoons of the cooking liquid in a Cuisinart.
+Turn the pureed carrots into a large bowl to cool.
 
 When cool add and whisk in:
 
@@ -47,7 +47,7 @@ Add to the above and stir in by hand:
 ~~~
 
 Turn the batter evenly into the three prepared pans and bake at 350 degrees for 35 minutes until a
-toothpick inserted into the center comes out clean.  Cool the cakes in the pans on a rack.
+toothpick inserted into the center comes out clean. Cool the cakes in the pans on a rack.
 
 Frost with:
 
@@ -63,7 +63,7 @@ Frost with:
 5 2/3 C sifted confectioners sugar
 ~~~
 
-Beat until light and fluffy, then chill until firm but spreadable (about and hour).  Frost the cake
+Beat until light and fluffy, then chill until firm but spreadable (about and hour). Frost the cake
 and then coat the sides with toasted sliced almonds. Refrigerate until 1 hour before serving.
 
 ~~~ recipe-ingredients

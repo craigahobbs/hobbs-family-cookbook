@@ -42,9 +42,9 @@ Place the above ingredients in a large serving bowl.
 
 Freshly ground pepper to taste.
 
-Stir the vegetables and dressing ingredients together.  Allow the mixture to sit on the counter for
-a half hour, taste and adjust the seasonings.  When the salad is to your taste cover and
-refrigerate.  Serve heaped over sliced avocado slices.
+Stir the vegetables and dressing ingredients together. Allow the mixture to sit on the counter for a
+half hour, taste and adjust the seasonings. When the salad is to your taste cover and refrigerate.
+Serve heaped over sliced avocado slices.
 
-This salad is the basis for a good summer meal with a cheese or chicken and cheese quesadilla.  This
+This salad is the basis for a good summer meal with a cheese or chicken and cheese quesadilla. This
 salad is one of Sadie's favorites and our kids loved it too.

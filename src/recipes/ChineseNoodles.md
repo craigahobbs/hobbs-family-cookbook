@@ -32,8 +32,9 @@ Cook until al dente:
 1 lb vermicelli noodles
 ~~~
 
-Drain the noodles, rinse in cold water and drain again.  Add the noodles to the sauce and toss with
-clean hands to coat thoroughly.   Transfer to a serving bowl and sprinkle with the sliced green scallions.
+Drain the noodles, rinse in cold water and drain again. Add the noodles to the sauce and toss with
+clean hands to coat thoroughly. Transfer to a serving bowl and sprinkle with the sliced green
+scallions.
 
 ~~~ recipe-ingredients
 1/3 C sliced green

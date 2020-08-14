@@ -3,10 +3,6 @@ Title: Stir Fried Beef With Bean Threads
 Categories: Main Dishes
 ~~~
 
-~~~ recipe-ingredients
-2 1/2 lbs flank steak sliced thinly across the grain
-~~~
-
 ### Marinade
 
 ~~~ recipe-ingredients
@@ -20,6 +16,11 @@ Categories: Main Dishes
 ~~~
 
 Add the beef slices and marinate in the refrigerator for 30 minutes or up to two hours.
+
+~~~ recipe-ingredients
+2 1/2 lbs flank steak sliced thinly across the grain
+~~~
+
 
 ### Vegetables
 
@@ -41,12 +42,12 @@ Add the beef slices and marinate in the refrigerator for 30 minutes or up to two
 4 cup peanut oil
 ~~~
 
-Heat the oil to 400 degrees in a wok for deep frying pan.  Cook noodles in two batches in the oil
-(turn noodles to cook both sides) until the noodles are puffed.  Set aside and drain.  This step is
+Heat the oil to 400 degrees in a wok for deep frying pan. Cook noodles in two batches in the oil
+(turn noodles to cook both sides) until the noodles are puffed. Set aside and drain. This step is
 quite dramatic and quick.
 
-Save tbsp of the oil and stir fry the ginger and garlic, then discard.   Add the drained meat slices
-stirring constantly (cook in three batches until meat is done - set aside).  Add 2 more Tbsp oil
-and saute all the vegetables.  Add the meat back in with the oyster sauce and stir to combine and
-until mixture is heated through.  Arrange the cooked noodles on a serving platter and heap the meat
-and vegetables in the center. Serve.
+Save tbsp of the oil and stir fry the ginger and garlic, then discard. Add the drained meat slices
+stirring constantly (cook in three batches until meat is done - set aside). Add 2 more Tbsp oil and
+saute all the vegetables. Add the meat back in with the oyster sauce and stir to combine and until
+mixture is heated through. Arrange the cooked noodles on a serving platter and heap the meat and
+vegetables in the center. Serve.

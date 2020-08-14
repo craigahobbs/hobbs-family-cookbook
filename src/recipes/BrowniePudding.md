@@ -21,7 +21,7 @@ Stir together by hand:
 1/2 C milk
 ~~~
 
-Spread batter in a  9 X 9" baking pan.
+Spread batter in a 9 X 9" baking pan.
 
 Mix together and sprinkle over the batter:
 
@@ -37,6 +37,5 @@ Pour the hot water over all and bake in a 350 degree oven for 45 minutes.
 1 3/4 C hot water
 ~~~
 
-During baking crispy
-cake rises to the top, and a rich chocolate sauce forms on the bottom.   Spoon into dessert bowls
-and serve warm with freshly whipped cream.
+During baking crispy cake rises to the top, and a rich chocolate sauce forms on the bottom. Spoon
+into dessert bowls and serve warm with freshly whipped cream.

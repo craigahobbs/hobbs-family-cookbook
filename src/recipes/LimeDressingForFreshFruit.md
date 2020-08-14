@@ -26,9 +26,9 @@ Blend in:
 1 tsp poppy seeds
 ~~~
 
-Place mixture in serving bowl and refrigerate until ready to use.  I usually pass this dressing to
-be served with a medley of fruits such as sliced strawberries, blackberries, and melon balls
-(honeydew & cantaloupe).
+Place mixture in serving bowl and refrigerate until ready to use. I usually pass this dressing to be
+served with a medley of fruits such as sliced strawberries, blackberries, and melon balls (honeydew
+& cantaloupe).
 
-This is an old southern recipe and is absolutely delicious.  The dressing will keep for up to a week
+This is an old southern recipe and is absolutely delicious. The dressing will keep for up to a week
 refrigerated.

@@ -4,7 +4,7 @@ Categories: Main Dishes
 Author: Diana Riley
 ~~~
 
-Bake a 9" [pie crust](#recipe=PieCrust) at 475 for 7 to 9 minutes.  Cool.
+Bake a 9" [pie crust](#recipe=PieCrust) at 475 for 7 to 9 minutes. Cool.
 
 Brown and drain:
 
@@ -18,7 +18,7 @@ Saute:
 1/4 C yellow onion in olive oil
 ~~~
 
-Place the crisped bwacon and sauteed onion in the bottom of the cooked pie shell.  Sprinkle with the
+Place the crisped bwacon and sauteed onion in the bottom of the cooked pie shell. Sprinkle with the
 grated swiss cheese.
 
 ~~~ recipe-ingredients
@@ -41,5 +41,5 @@ Whisk together:
 1 pinch white pepper
 ~~~
 
-Carefully pour the custard mixture into the pie shell.  Bake at 375 degrees for 30 - 35 minutes
-until set.  Cool at least 5 minutes before cutting.
+Carefully pour the custard mixture into the pie shell. Bake at 375 degrees for 30 - 35 minutes until
+set. Cool at least 5 minutes before cutting.

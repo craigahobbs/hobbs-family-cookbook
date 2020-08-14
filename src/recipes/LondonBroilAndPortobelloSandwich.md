@@ -29,17 +29,17 @@ Cover and refrigerate until ready to use.
 1/4 C olive oil
 ~~~
 
-Clean and slice the portobello mushrooms (scoop out the dark gills) and the sweet onion.  Line a
+Clean and slice the portobello mushrooms (scoop out the dark gills) and the sweet onion. Line a
 large baking sheet with foil and spread out the sliced vegetables in a single layer, toss with the
-balsamic vinegar, olive oil, and salt and pepper.  Bake in a 400 degree oven for 10 minutes or
-until vegetables are tender.  Place in a serving bowl and set aside to cool slightly.
+balsamic vinegar, olive oil, and salt and pepper. Bake in a 400 degree oven for 10 minutes or until
+vegetables are tender. Place in a serving bowl and set aside to cool slightly.
 
 ~~~ recipe-ingredients
 1 1/2 lb flank steak
 ~~~
 
-Brush the prepared flank steak with olive oil and sprinkle with salt and pepper.  Grill to the
-desired doneness.  Let the steak rest for 5 minutes and slice thinly against the grain.
+Brush the prepared flank steak with olive oil and sprinkle with salt and pepper. Grill to the
+desired doneness. Let the steak rest for 5 minutes and slice thinly against the grain.
 
 Prepare:
 
@@ -51,5 +51,5 @@ Prepare:
 1 bunch of arugula cleaned and spun dry
 ~~~
 
-Let everyone assemble their own sandwich using all of the above ingredients.  I serve this with
-freshly sliced fruit.  It is a delicious summer meal.
+Let everyone assemble their own sandwich using all of the above ingredients. I serve this with
+freshly sliced fruit. It is a delicious summer meal.

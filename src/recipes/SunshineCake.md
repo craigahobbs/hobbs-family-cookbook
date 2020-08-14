@@ -34,11 +34,12 @@ In a large bowl, beat the egg whites, cream of tartar, and salt until very stiff
 1/8 tsp salt
 ~~~
 
-Fold the stiffly beaten whites into the yolk mixture.  Pour batter evenly into an ungreased angel
+Fold the stiffly beaten whites into the yolk mixture. Pour batter evenly into an ungreased angel
 food cake pan and bake for 45 to 50 minutes at 350 degrees.
 
-Cool the cake in the pan.  When cool, loosen the edges and bottom with a sharp knife and place
-upside down on a serving plate.  Frost with glaze, recipe follows.
+Cool the cake in the pan. When cool, loosen the edges and bottom with a sharp knife and place upside
+down on a serving plate. Frost with glaze, recipe follows.
+
 
 ### Lemon Glaze
 
@@ -52,5 +53,5 @@ upside down on a serving plate.  Frost with glaze, recipe follows.
 1 Tbsp milk
 ~~~
 
-This was the favorite birthday cake in Dad's family.  Nonny continued to bake it on request until
-well into her eighties.  It turned out perfectly every time!
+This was the favorite birthday cake in Dad's family. Nonny continued to bake it on request until
+well into her eighties. It turned out perfectly every time!

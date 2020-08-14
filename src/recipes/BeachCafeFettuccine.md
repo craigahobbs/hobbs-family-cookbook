@@ -27,7 +27,7 @@ Remove the chicken from the skillet with a slotted spoon, reduce heat and add:
 1 pinch red pepper flakes
 ~~~
 
-Stir and cook for 2 minutes being careful not to burn the garlic.  Deglaze the pan with the dry
+Stir and cook for 2 minutes being careful not to burn the garlic. Deglaze the pan with the dry
 sherry and reduce for 1 minute.
 
 ~~~ recipe-ingredients
@@ -38,10 +38,11 @@ Add the heavy cream plus the salt and reduce until thickened.
 
 ~~~ recipe-ingredients
 3 C heavy cream
+
 3/4 tsp salt
 ~~~
 
-Add back the cooked chicken and continue to reduce if necessary.  Correct seasoning with additional
+Add back the cooked chicken and continue to reduce if necessary. Correct seasoning with additional
 salt and pepper to taste.
 
 Cook the fettuccine noodles to al dente per package instructions.
@@ -50,9 +51,8 @@ Cook the fettuccine noodles to al dente per package instructions.
 1 lb fettuccine noodles
 ~~~
 
-Drain the noodles and toss with
-the sauce and the grated parmesan cheese.  Serve immediately with more parmesan and chopped
-parsley.
+Drain the noodles and toss with the sauce and the grated parmesan cheese. Serve immediately with
+more parmesan and chopped parsley.
 
 ~~~ recipe-ingredients
 1/2 C grated parmesan cheese

@@ -3,7 +3,7 @@ Title: Bailey's Chocolate Chip Cheesecake
 Categories: Desserts
 ~~~
 
-Using a Cuisinart, process 1  9 oz pkg chocolate wafer cookies to crumbs.  Then add and process:
+Using a Cuisinart, process 1 9 oz pkg chocolate wafer cookies to crumbs. Then add and process:
 
 ~~~ recipe-ingredients
 3 Tbsp sugar
@@ -11,11 +11,11 @@ Using a Cuisinart, process 1  9 oz pkg chocolate wafer cookies to crumbs.  Then 
 6 Tbsp softened butter
 ~~~
 
-Press the mixture on the bottom and 1/2 way up the sides of a 9 1/2 " spring form pan.  Refrigerate
-at least ten minutes until filling is ready.  I use a flat tipped spoon the even the top of the
+Press the mixture on the bottom and 1/2 way up the sides of a 9 1/2 " spring form pan. Refrigerate
+at least ten minutes until filling is ready. I use a flat tipped spoon the even the top of the
 sides.
 
-Wipe the crumb mixture out of the cuisinart workbowl before preparing the filling.  Add to the bowl
+Wipe the crumb mixture out of the cuisinart workbowl before preparing the filling. Add to the bowl
 and process:
 
 ~~~ recipe-ingredients
@@ -36,10 +36,9 @@ Remove the work bowl from the Cuisinart and stir in the mini chocolate chips.
 1 1/2 C mini chocolate chips
 ~~~
 
-Pour the filling
-evenly into the chilled crust and bake at 350 degrees for 40 minutes.  I clad the bottom of the pan
-with foil to prevent butter from the crust from leaking onto the oven floor.  Remove from the oven
-and let cool for 15 minutes.
+Pour the filling evenly into the chilled crust and bake at 350 degrees for 40 minutes. I clad the
+bottom of the pan with foil to prevent butter from the crust from leaking onto the oven floor.
+Remove from the oven and let cool for 15 minutes.
 
 Prepare the topping by stirring together:
 
@@ -51,9 +50,9 @@ Prepare the topping by stirring together:
 1 Tbsp Bailey's
 ~~~
 
-Spread evenly over the top of the cheesecake bake at 425 degrees for 10 minutes.  Cool completely
-before refrigerating.  Carefully run a thin bladed knife around the edge of the spring form pan
-before unhinging it.  I usually pipe the top edge of the cake with whipped cream and sprinkle the
+Spread evenly over the top of the cheesecake bake at 425 degrees for 10 minutes. Cool completely
+before refrigerating. Carefully run a thin bladed knife around the edge of the spring form pan
+before unhinging it. I usually pipe the top edge of the cake with whipped cream and sprinkle the
 piping with more mini chocolate chips.
 
 ~~~ recipe-ingredients

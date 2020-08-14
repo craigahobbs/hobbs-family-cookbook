@@ -38,23 +38,28 @@ Stir in the boiling water (batter will be thin).
 1 cup boiling water
 ~~~
 
-Pour the batter into 2 prepared cake pans
-(greased and floured and lined with greased parchment) and bake at 350 degrees for 30 to 35 minutes
-until a toothpick inserted in the center comes out clean.\*  Allow to cool for ten minutes in the
-pans, then remove the layers from the pans and cool completely on a cake rack.  Frost with:
+Pour the batter into 2 prepared cake pans (greased and floured and lined with greased parchment) and
+bake at 350 degrees for 30 to 35 minutes until a toothpick inserted in the center comes out clean.\*
+Allow to cool for ten minutes in the pans, then remove the layers from the pans and cool completely
+on a cake rack. Frost with:
+
 
 ### Perfectly Chocolate Frosting
 
 ~~~ recipe-ingredients
 1/2 C butter
+
 2/3 cup of cocoa powder
+
 3 cups of powdered sugar
+
 1/3 cup milk
+
 2 tsp vanilla
 ~~~
 
-Melt the butter and stir in thecocoa powder.  Alternately add the powdered sugar
-and the milk beating on a medium speed.  Stir in the vanilla.
-I sometimes make 1 1/2 recipe so that I have plenty of frosting to generously frost cake.
+Melt the butter and stir in thecocoa powder. Alternately add the powdered sugar and the milk beating
+on a medium speed. Stir in the vanilla. I sometimes make 1 1/2 recipe so that I have plenty of
+frosting to generously frost cake.
 
 \* Batter will make approximately 30 cupcakes (2/3 full) bake at 350 degrees for 22 to 25 minutes.

@@ -38,8 +38,8 @@ Mix in to form a sticky dough:
 1/4 tsp baking soda
 ~~~
 
-Turn dough into a greased bowl and allow to rise until double in volume.  Stir dough down, place in
-a greased loaf pan and allow to rise until double again.  Bake at 350 degrees for 40 minutes until
-loaf sounds hollow when thumped.  Remove from the oven, brush with butter and sprinkle with kosher
-salt.  Cool in the pan for 15 minutes, then run a knife blade around the edge, and remove from the
-loaf pan.  Cut the loaf in thick slices and serve hot with butter and lentil soup.
+Turn dough into a greased bowl and allow to rise until double in volume. Stir dough down, place in a
+greased loaf pan and allow to rise until double again. Bake at 350 degrees for 40 minutes until loaf
+sounds hollow when thumped. Remove from the oven, brush with butter and sprinkle with kosher salt.
+Cool in the pan for 15 minutes, then run a knife blade around the edge, and remove from the loaf
+pan. Cut the loaf in thick slices and serve hot with butter and lentil soup.

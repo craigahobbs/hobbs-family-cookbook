@@ -3,8 +3,8 @@ Title: Cucina! Cucina! Chopped Chicken Salad
 Categories: Salads & Sides
 ~~~
 
-Cook the chicken breasts either by poaching or baking.  Cool chicken and cut
-into 3/4 " pieces.  Set aside, or refrigerate until ready to use.
+Cook the chicken breasts either by poaching or baking. Cool chicken and cut into 3/4 " pieces. Set
+aside, or refrigerate until ready to use.
 
 ~~~ recipe-ingredients
 2 skin on, bone in, chicken breasts
@@ -13,7 +13,7 @@ into 3/4 " pieces.  Set aside, or refrigerate until ready to use.
 
 ### Dressing
 
-Whisk together, or make in a blender.  Refrigerate until ready to use:
+Whisk together, or make in a blender. Refrigerate until ready to use:
 
 ~~~ recipe-ingredients
 1 egg yolk
@@ -63,6 +63,6 @@ Place in a large mixing bowl and toss:
 4 oz chopped drained chick peas (garbanzo beans)
 ~~~
 
-Add the diced, cooked chicken and toss.  Add the dressing just before serving.  Since this is a
-large salad, I sometimes save half the salad undressed for the next day and add the dressing when
-ready to serve.  This is a great summer dinner served with sliced fruit and warm, crusty bread.
+Add the diced, cooked chicken and toss. Add the dressing just before serving. Since this is a large
+salad, I sometimes save half the salad undressed for the next day and add the dressing when ready to
+serve. This is a great summer dinner served with sliced fruit and warm, crusty bread.

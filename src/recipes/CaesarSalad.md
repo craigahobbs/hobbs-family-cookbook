@@ -29,8 +29,8 @@ Slowly blend in the olive oil or salad oil.
 1/2 cup olive oil or salad oil
 ~~~
 
-Toss dressing with the chopped romaine lettuce, croutons, shredded
-parmesan cheese, and lots of freshly ground black pepper.
+Toss dressing with the chopped romaine lettuce, croutons, shredded parmesan cheese, and lots of
+freshly ground black pepper.
 
 ~~~ recipe-ingredients
 1 large head romaine lettuce, chopped
@@ -45,5 +45,5 @@ Dressing can be refrigerated up to 3 days.
 
 ### Coddled Egg
 
-Put 2" water in a small saucepan and bring to a boil.  Lower a large egg into the water, cover and
-let stand for 1 minute.  Cool and add egg to the blender.
+Put 2" water in a small saucepan and bring to a boil. Lower a large egg into the water, cover and
+let stand for 1 minute. Cool and add egg to the blender.

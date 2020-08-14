@@ -18,7 +18,7 @@ Categories: Miscellaneous
 Salt and freshly ground pepper to taste.
 
 Melt the butter in a heavy skillet, add the flour and whisk until flour is cooked and bubbly.
-Gradually whisk in the stock and boil 1 minute.  Remove from heat and add the remaining ingredients.
+Gradually whisk in the stock and boil 1 minute. Remove from heat and add the remaining ingredients.
 
 
 ### Robert Sauce
@@ -42,9 +42,9 @@ Gradually whisk in the stock and boil 1 minute.  Remove from heat and add the re
 Salt and freshly ground pepper to taste.
 
 Melt the butter in a heavy skillet over low heat with the onion slice until the butter is brown.
-Remove and discard the onion and add the flour.  Cook the butter flour mixture over low heat until
-the flour is deep mahogany brown.  Remove the pan from the heat and slowly whisk in the bouillon.
-Return to the heat and boil one minute until thickened.  Remove from the heat whisk in the remaining
+Remove and discard the onion and add the flour. Cook the butter flour mixture over low heat until
+the flour is deep mahogany brown. Remove the pan from the heat and slowly whisk in the bouillon.
+Return to the heat and boil one minute until thickened. Remove from the heat whisk in the remaining
 ingredients.
 
 
@@ -62,7 +62,7 @@ ingredients.
 1/4 tsp salt
 ~~~
 
-Place the ingredients in a heavy saucepan and bring to boil and reduce to 2 Tbsp.  Cool. Whisk in the
+Place the ingredients in a heavy saucepan and bring to boil and reduce to 2 Tbsp. Cool. Whisk in the
 egg yolks and add the butter.
 
 ~~~ recipe-ingredients
@@ -71,5 +71,5 @@ egg yolks and add the butter.
 1/2 C butter
 ~~~
 
-Cook over medium heat stirring constantly until the butter is
-melted.  Now add another stick of butter and cook and stir until melted and sauce is thick.
+Cook over medium heat stirring constantly until the butter is melted. Now add another stick of
+butter and cook and stir until melted and sauce is thick.

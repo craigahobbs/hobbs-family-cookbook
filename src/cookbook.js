@@ -145,8 +145,15 @@ export class CookbookPage {
                             // Validate the recipes model
                             this.recipes = {};
                             for (let ixRecipe = 0; ixRecipe < recipeMarkdowns.length; ixRecipe++) {
-                                const matchRecipeId = this.cookbook.recipeURLs[ixRecipe].match(/(?<recipeId>\w+)(?:\.\w+)*$/);
-                                this.recipes[matchRecipeId.groups.recipeId] = parseRecipeMarkdown(recipeMarkdowns[ixRecipe]);
+                                const recipeURL = this.cookbook.recipeURLs[ixRecipe];
+                                const matchRecipeId = recipeURL.match(/(?<recipeId>\w+)(?:\.\w+)*$/);
+                                const {recipeId} = matchRecipeId.groups;
+                                this.recipes[recipeId] = {
+                                    'recipe': parseRecipeMarkdown(recipeMarkdowns[ixRecipe]),
+                                    'recipeId': recipeId,
+                                    'recipeURL': recipeURL,
+                                    'recipeMarkdown': recipeMarkdowns[ixRecipe]
+                                };
                             }
 
                             // Render
@@ -201,7 +208,7 @@ export class CookbookPage {
         // Sort and categorize recipes
         const extras = [];
         const categories = {};
-        const sortedRecipes = Object.entries(this.recipes).map(([recipeId, recipe]) => [recipe.title, recipeId, recipe]).sort();
+        const sortedRecipes = Object.values(this.recipes).map(({recipeId, recipe}) => [recipe.title, recipeId, recipe]).sort();
         for (const [, recipeId, recipe] of sortedRecipes) {
             if ('categories' in recipe) {
                 for (const category of recipe.categories) {
@@ -271,19 +278,29 @@ export class CookbookPage {
         if (!(this.config.recipe in this.recipes)) {
             return CookbookPage.errorElements(`Unknown recipe '${this.config.recipe}`);
         }
-        const recipe = this.recipes[this.config.recipe];
+        const {recipe, recipeURL, recipeMarkdown} = this.recipes[this.config.recipe];
         const isExtra = !('categories' in recipe);
         const scaleAttr = cookbookPageTypes.CookbookPageParams.struct.members.find((member) => member.name === 'scale').attr;
 
         return [
-            // Navigation bar
+            // Menu bar
             {
                 'html': 'p',
-                'elem': {
-                    'html': 'a',
-                    'attr': {'href': chisel.href({...this.params, 'recipe': null, 'scale': null})},
-                    'elem': {'text': 'Back to the index'}
-                }
+                'elem': [
+                    {
+                        'html': 'a',
+                        'attr': {'href': chisel.href({...this.params, 'recipe': null, 'scale': null})},
+                        'elem': {'text': 'Back to the index'}
+                    },
+                    isExtra ? null : [
+                        {'text': ' | '},
+                        {'html': 'a', 'attr': {'href': recipeURL}, 'elem': {'text': 'Recipe Markdown'}},
+                        {'text': ' | '},
+                        {'html': 'a', 'elem': {'text': 'Email Recipe'}, 'attr': {
+                            'href': `mailto:?subject=${encodeURIComponent(recipe.title)}&body=${encodeURIComponent(recipeMarkdown)}`
+                        }}
+                    ]
+                ]
             },
 
             // Title

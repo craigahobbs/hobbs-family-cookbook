@@ -31,5 +31,5 @@ Add and stir in:
 
 Turn into a buttered 1 1/2 C ramekin and bake at 375 degrees for 20 minutes.
 
-Sprinkle with an additional tablespoon of parmesan cheese and broil until the cheese
-melts.  Serve warm with toasted 1/3" sliced baguette slices.
+Sprinkle with an additional tablespoon of parmesan cheese and broil until the cheese melts. Serve
+warm with toasted 1/3" sliced baguette slices.

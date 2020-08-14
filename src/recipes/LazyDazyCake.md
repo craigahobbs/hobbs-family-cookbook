@@ -57,5 +57,5 @@ warm frost with:
 1/2 C flaked coconut
 ~~~
 
-Mix together and spread over cake,  Place under the broiler until topping bubbles.  Cool and serve
+Mix together and spread over cake, Place under the broiler until topping bubbles. Cool and serve
 with freshly whipped cream.

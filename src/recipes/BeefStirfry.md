@@ -19,8 +19,7 @@ Mix together marinade:
 8 oz lean, trimmed beef sirloin, sliced thinly
 ~~~
 
-Add the beef and allow to marinade and let sit for at
-least 1/2 hour or up to 2 hours.
+Add the beef and allow to marinade and let sit for at least 1/2 hour or up to 2 hours.
 
 Cook the white rice per package directions.
 
@@ -43,14 +42,14 @@ Prepare the vegetables as follows:
 ~~~
 
 Drain (discard marinade) and stirfry beef strips in a large skillet with the vegetable oil until
-browned.  Set aside.  Stirfry vegetables until tender crisp.  Add back the beef and one can drained
+browned. Set aside. Stirfry vegetables until tender crisp. Add back the beef and one can drained
 water chestnuts.
 
 ~~~ recipe-ingredients
 1 Tbsp vegetable oil
 ~~~
 
-Mix to together sauce as follows and add to the pan.  Stir and cook just until sauce thickens.
+Mix to together sauce as follows and add to the pan. Stir and cook just until sauce thickens.
 
 ~~~ recipe-ingredients
 1 Tbsp oyster sauce

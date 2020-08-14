@@ -33,7 +33,7 @@ Add and stir in:
 1/4 tsp salt
 ~~~
 
-Spread the mixture in a greased 9 X 13" baking pan.  Sprinkle 12 oz chocolate chips over the
-batter and bake at 350 degrees for 5 minutes.  Remove the pan from the oven and swirl the melted
-chips through the batter.  Return the mixture to the oven for 25 minutes.  Cool cookies and cut into
+Spread the mixture in a greased 9 X 13" baking pan. Sprinkle 12 oz chocolate chips over the batter
+and bake at 350 degrees for 5 minutes. Remove the pan from the oven and swirl the melted chips
+through the batter. Return the mixture to the oven for 25 minutes. Cool cookies and cut into
 squares.

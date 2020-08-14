@@ -17,11 +17,11 @@ Combine and process in a Cuisinart until mixture resembles course meal:
 1 beaten egg yolk
 ~~~
 
-Turn dough out the mixing bowl and work into a ball.  Form the ball into a long cylinder and wrap in
-wax paper.  Chill for thirty minutes, or until ready to bake.
+Turn dough out the mixing bowl and work into a ball. Form the ball into a long cylinder and wrap in
+wax paper. Chill for thirty minutes, or until ready to bake.
 
 Remove dough from frig, unwrap, and slice 1/4" thick and place rounds on an ungreased cookie sheet.
- (about 20 per half sheet pan)
+(about 20 per half sheet pan)
 
 Mix together:
 
@@ -32,13 +32,13 @@ Mix together:
 ~~~
 
 Make a thumbprint "well" in each dough rwound, and add a scant 1/2 tsp of raspberry mixture to it,
-sprinkle with a few almond slices and bake in a 350
-degree oven for 12 to 13 minutes.  The cookies should be only slightly brown on the bottoms.
+sprinkle with a few almond slices and bake in a 350 degree oven for 12 to 13 minutes. The cookies
+should be only slightly brown on the bottoms.
 
 ~~~ recipe-ingredients
 1/2 C almond slices
 ~~~
 
 This is actually Teresa's and my favorite Christmas cookie, but would be good any time of the year
-with a bowl of fruit or pudding for dessert.  These cookies should be layered between wax paper and
-frozen for keeping.  They will thaw in a few minutes for use.
+with a bowl of fruit or pudding for dessert. These cookies should be layered between wax paper and
+frozen for keeping. They will thaw in a few minutes for use.

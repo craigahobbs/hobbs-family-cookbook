@@ -18,8 +18,7 @@ Blend in:
 1 1/2 C flour
 ~~~
 
-Press mixture in bottom of an ungreased 9 X13" baking pan.  Bake at 350 degrees for 12 to 15
-minutes.
+Press mixture in bottom of an ungreased 9 X13" baking pan. Bake at 350 degrees for 12 to 15 minutes.
 
 Mix together:
 
@@ -41,8 +40,9 @@ Mix together:
 1/2 C flaked coconut
 ~~~
 
-Pour evenly mixture over the hot crust and return to the oven for 20  minutes.  While cookies are
+Pour evenly mixture over the hot crust and return to the oven for 20 minutes. While cookies are
 still warm spread with the icing.
+
 
 ### Orange Lemon Icing
 

@@ -29,6 +29,6 @@ Put mixture in a large bowl and add:
 1 beaten egg
 ~~~
 
-Stir just to blend.  Turn dough out on a floured board and knead lightly.  Form dough into 3 even
-balls, press each ball into a 5 1/2 " circle.  Next cut each circle into quarters, and place each
-on an ungreased baking sheet.  Bake at 375 degrees for 18 minutes.  Serve hot with jam and butter.
+Stir just to blend. Turn dough out on a floured board and knead lightly. Form dough into 3 even
+balls, press each ball into a 5 1/2 " circle. Next cut each circle into quarters, and place each on
+an ungreased baking sheet. Bake at 375 degrees for 18 minutes. Serve hot with jam and butter.
