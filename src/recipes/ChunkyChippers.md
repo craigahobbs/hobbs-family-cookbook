@@ -3,7 +3,7 @@ Title: Chunky Chippers
 Categories: Cookies
 ~~~
 
-![Chocolate Chip and Ginger Snap](cookbook/ChunkyChippers.jpg "Chocolate Chip and Ginger Snap")
+![Chocolate Chip and Ginger Snap](recipes/ChunkyChippers.jpg "Chocolate Chip and Ginger Snap")
 
 Cream together:
 
