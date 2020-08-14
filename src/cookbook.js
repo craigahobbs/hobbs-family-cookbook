@@ -227,19 +227,25 @@ export class CookbookPage {
             {'html': 'h1', 'elem': {'text': this.cookbook.title}},
 
             // Extras
-            {
+            !(extras.length || 'sourceURL' in this.cookbook) ? null : {
                 'html': 'ul',
                 'attr': {'class': 'cookbook-index-list'},
                 'elem': {
                     'html': 'li',
-                    'elem': {'html': 'ul', 'elem': extras.map(([recipeId, recipe]) => ({
-                        'html': 'li',
-                        'elem': {
-                            'html': 'a',
-                            'attr': {'href': chisel.href({...this.params, 'recipe': recipeId})},
-                            'elem': {'text': recipe.title}
+                    'elem': {'html': 'ul', 'elem': [
+                        extras.map(([recipeId, recipe]) => ({
+                            'html': 'li',
+                            'elem': {
+                                'html': 'a',
+                                'attr': {'href': chisel.href({...this.params, 'recipe': recipeId})},
+                                'elem': {'text': recipe.title}
+                            }
+                        })),
+                        !('sourceURL' in this.cookbook) ? null : {
+                            'html': 'li',
+                            'elem': {'html': 'a', 'attr': {'href': this.cookbook.sourceURL}, 'elem': {'text': 'Source'}}
                         }
-                    }))}
+                    ]}
                 }
             },
 

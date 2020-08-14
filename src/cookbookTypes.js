@@ -64,16 +64,22 @@ export const cookbookTypes =
             ],
             "members": [
                 {
-                    "attr": {
-                        "lenGT": 0,
-                        "lenLT": 100
-                    },
                     "doc": [
                         "The cookbook title text"
                     ],
                     "name": "title",
                     "type": {
-                        "builtin": "string"
+                        "user": "CookbookString"
+                    }
+                },
+                {
+                    "doc": [
+                        "The cookbook source URL"
+                    ],
+                    "name": "sourceURL",
+                    "optional": true,
+                    "type": {
+                        "user": "CookbookString"
                     }
                 },
                 {
@@ -87,18 +93,29 @@ export const cookbookTypes =
                     "name": "recipeURLs",
                     "type": {
                         "array": {
-                            "attr": {
-                                "lenGT": 0,
-                                "lenLT": 1000
-                            },
                             "type": {
-                                "builtin": "string"
+                                "user": "CookbookString"
                             }
                         }
                     }
                 }
             ],
             "name": "Cookbook"
+        }
+    },
+    "CookbookString": {
+        "typedef": {
+            "attr": {
+                "lenGT": 0,
+                "lenLT": 1000
+            },
+            "doc": [
+                "Cookbook string typedef"
+            ],
+            "name": "CookbookString",
+            "type": {
+                "builtin": "string"
+            }
         }
     },
     "ImageSpan": {
@@ -158,16 +175,12 @@ export const cookbookTypes =
             ],
             "members": [
                 {
-                    "attr": {
-                        "lenGT": 0,
-                        "lenLT": 100
-                    },
                     "doc": [
                         "The ingredient name"
                     ],
                     "name": "name",
                     "type": {
-                        "builtin": "string"
+                        "user": "CookbookString"
                     }
                 },
                 {
@@ -464,16 +477,12 @@ export const cookbookTypes =
             ],
             "members": [
                 {
-                    "attr": {
-                        "lenGT": 0,
-                        "lenLT": 100
-                    },
                     "doc": [
                         "The recipe title text"
                     ],
                     "name": "title",
                     "type": {
-                        "builtin": "string"
+                        "user": "CookbookString"
                     }
                 },
                 {
@@ -487,28 +496,20 @@ export const cookbookTypes =
                     "optional": true,
                     "type": {
                         "array": {
-                            "attr": {
-                                "lenGT": 0,
-                                "lenLT": 100
-                            },
                             "type": {
-                                "builtin": "string"
+                                "user": "CookbookString"
                             }
                         }
                     }
                 },
                 {
-                    "attr": {
-                        "lenGT": 0,
-                        "lenLT": 100
-                    },
                     "doc": [
                         "The recipe's author"
                     ],
                     "name": "author",
                     "optional": true,
                     "type": {
-                        "builtin": "string"
+                        "user": "CookbookString"
                     }
                 },
                 {
@@ -527,7 +528,7 @@ export const cookbookTypes =
                 {
                     "attr": {
                         "lenGT": 0,
-                        "lenLT": 100
+                        "lenLT": 1000
                     },
                     "doc": [
                         "The recipe markdown parts"
@@ -563,7 +564,7 @@ export const cookbookTypes =
                 {
                     "attr": {
                         "lenGT": 0,
-                        "lenLT": 100
+                        "lenLT": 1000
                     },
                     "doc": [
                         "An ingredient list"

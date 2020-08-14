@@ -2,29 +2,36 @@
 struct Cookbook
 
     # The cookbook title text
-    string(len > 0, len < 100) title
+    CookbookString title
+
+    # The cookbook source URL
+    optional CookbookString sourceURL
 
     # The cookbook's recipe model URLs
-    string(len > 0, len < 1000)[len > 0, len < 1000] recipeURLs
+    CookbookString[len > 0, len < 1000] recipeURLs
+
+
+# Cookbook string typedef
+typedef string(len > 0, len < 1000) CookbookString
 
 
 # Recipe model struct
 struct Recipe
 
     # The recipe title text
-    string(len > 0, len < 100) title
+    CookbookString title
 
     # The recipe's categories
-    optional string(len > 0, len < 100)[len > 0] categories
+    optional CookbookString[len > 0] categories
 
     # The recipe's author
-    optional string(len > 0, len < 100) author
+    optional CookbookString author
 
     # The number of servings
     optional int (> 0) servings
 
     # The recipe markdown parts
-    RecipePart[len > 0, len < 100] parts
+    RecipePart[len > 0, len < 1000] parts
 
 
 # Recipe list typedef
@@ -39,14 +46,14 @@ union RecipePart
     Markdown markdown
 
     # An ingredient list
-    Ingredient[len > 0, len < 100] ingredients
+    Ingredient[len > 0, len < 1000] ingredients
 
 
 # Recipe ingredient struct
 struct Ingredient
 
     # The ingredient name
-    string(len > 0, len < 100) name
+    CookbookString name
 
     # The ingredient unit
     Unit unit
