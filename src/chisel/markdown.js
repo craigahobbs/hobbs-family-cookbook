@@ -292,7 +292,7 @@ function paragraphSpans(text) {
  * Generate an element model from a markdown model
  *
  * @param {Object} markdown - The markdown model
- * @param {?Object} [codeBlockLanguages=null] - Optional map of language to code block render function with signature (lines) => elements.
+ * @param {?Object} codeBlockLanguages - Optional map of language to code block render function with signature (lines) => elements.
  * @returns {Object[]}
  */
 export function markdownElements(markdown, codeBlockLanguages = null) {
