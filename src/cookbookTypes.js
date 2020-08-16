@@ -199,25 +199,6 @@ export const cookbookTypes =
             "name": "Recipe"
         }
     },
-    "Recipes": {
-        "typedef": {
-            "attr": {
-                "lenGT": 0,
-                "lenLT": 1000
-            },
-            "doc": [
-                "Recipe list typedef"
-            ],
-            "name": "Recipes",
-            "type": {
-                "array": {
-                    "type": {
-                        "user": "Recipe"
-                    }
-                }
-            }
-        }
-    },
     "Unit": {
         "enum": {
             "doc": [

@@ -40,10 +40,6 @@ struct Recipe
     object markdown
 
 
-# Recipe list typedef
-typedef Recipe[len > 0, len < 1000] Recipes
-
-
 # Recipe ingredient struct
 struct Ingredient
 
