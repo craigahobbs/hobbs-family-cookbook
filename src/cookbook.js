@@ -489,22 +489,15 @@ const rRecipeMarkdownIngredients = new RegExp(
  * @returns {Object} The recipe model
  */
 export function parseRecipeMarkdown(markdown) {
-    // Parse the markdown
+    // Parse the recipe markdown
     const recipe = {
         'title': 'Untitled Recipe',
         'ingredients': []
     };
-
-    // Convert the markdown to a recipe model
-    const markdownModel = parseMarkdown(markdown);
-    for (const part of markdownModel.parts) {
-        const codeBlockLanguage = 'codeBlock' in part && 'language' in part.codeBlock ? part.codeBlock.language : null;
-        if (codeBlockLanguage === 'recipe-info') {
-            Object.assign(recipe, parseRecipeInfoCodeBlock(part.codeBlock));
-        } else if (codeBlockLanguage === 'recipe-ingredients') {
-            recipe.ingredients.push(...parseRecipeIngredientCodeBlock(part.codeBlock));
-        }
-    }
+    markdownElements(parseMarkdown(markdown), {
+        'recipe-info': (codeBlock) => Object.assign(recipe, parseRecipeInfoCodeBlock(codeBlock)),
+        'recipe-ingredients': (codeBlock) => recipe.ingredients.push(...parseRecipeIngredientCodeBlock(codeBlock))
+    });
 
     // Validate the recipe model
     return chisel.validateType(cookbookTypes, 'Recipe', recipe);
