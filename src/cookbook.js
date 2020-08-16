@@ -331,29 +331,17 @@ export class CookbookPage {
             // Serving size and count
             isExtra || !('servings' in recipe) ? null : {'html': 'p', 'elem': {'text': `Servings: ${recipe.servings * this.config.scale}`}},
 
-            // Recipe markdown parts
-            recipe.parts.map((parts) => {
-                // Ingredients list?
-                if ('ingredients' in parts) {
-                    return {
-                        'html': 'p',
-                        'elem': [
-                            {
-                                'html': 'ul',
-                                'attr': {'class': 'cookbook-ingredient-list'},
-                                'elem': parts.ingredients.map(
-                                    (ingredient) => ({
-                                        'html': 'li',
-                                        'elem': {'text': ingredientText(ingredient, this.config.scale).join(' ')}
-                                    })
-                                )
-                            }
-                        ]
-                    };
-                }
-
-                // Markdown
-                return markdownElements(parts.markdown);
+            // Markdown
+            markdownElements(parseMarkdown(recipeMarkdown), {
+                'recipe-info': () => null,
+                'recipe-ingredients': (codeBlock) => ({
+                    'html': 'ul',
+                    'attr': {'class': 'cookbook-ingredient-list'},
+                    'elem': parseRecipeIngredientCodeBlock(codeBlock).map((ingredient) => ({
+                        'html': 'li',
+                        'elem': {'text': ingredientText(ingredient, this.config.scale).join(' ')}
+                    }))
+                })
             })
         ];
     }
@@ -502,65 +490,52 @@ const rRecipeMarkdownIngredients = new RegExp(
  */
 export function parseRecipeMarkdown(markdown) {
     // Parse the markdown
-    const markdownModel = parseMarkdown(markdown);
+    const recipe = {
+        'title': 'Untitled Recipe',
+        'ingredients': []
+    };
 
     // Convert the markdown to a recipe model
-    const recipe = {'parts': []};
+    const markdownModel = parseMarkdown(markdown);
     for (const part of markdownModel.parts) {
         const codeBlockLanguage = 'codeBlock' in part && 'language' in part.codeBlock ? part.codeBlock.language : null;
         if (codeBlockLanguage === 'recipe-info') {
-            for (const line of part.codeBlock.lines) {
-                const match = line.match(rRecipeMarkdownInfo);
-                const key = match !== null ? match.groups.key.toLowerCase() : null;
-                const value = match !== null ? match.groups.value : null;
-                if (key === 'title') {
-                    recipe.title = value;
-                } else if (key === 'author') {
-                    recipe.author = value;
-                } else if (key === 'categories') {
-                    recipe.categories = value.split(rRecipeMarkdownCategories);
-                } else if (key === 'servings') {
-                    const servingsNumber = parseFloat(value);
-                    if (!isNaN(servingsNumber)) {
-                        recipe.servings = servingsNumber;
-                    }
-                }
-            }
+            Object.assign(recipe, parseRecipeInfoCodeBlock(part.codeBlock));
         } else if (codeBlockLanguage === 'recipe-ingredients') {
-            for (const line of part.codeBlock.lines) {
-                // Ignore blank lines
-                if (rRecipeMarkdownBlank.test(line)) {
-                    continue;
-                }
-
-                // Parse the ingredient line
-                const ingredient = parseIngredient(line);
-                if (ingredient !== null) {
-                    // Add the ingredients part
-                    if (recipe.parts.length === 0 || !('ingredients' in recipe.parts[recipe.parts.length - 1])) {
-                        recipe.parts.push({'ingredients': []});
-                    }
-                    recipe.parts[recipe.parts.length - 1].ingredients.push(ingredient);
-                } else {
-                    // No ingredient match - add the markdown part
-                    if (recipe.parts.length === 0 || !('markdown' in recipe.parts[recipe.parts.length - 1])) {
-                        recipe.parts.push({'markdown': {'parts': []}});
-                    }
-                    recipe.parts[recipe.parts.length - 1].markdown.parts.push({'paragraph': {'spans': [{'text': line}]}});
-                }
-            }
-        } else {
-            // Add the markdown part
-            if (recipe.parts.length === 0 || !('markdown' in recipe.parts[recipe.parts.length - 1])) {
-                recipe.parts.push({'markdown': {'parts': []}});
-            }
-            recipe.parts[recipe.parts.length - 1].markdown.parts.push(part);
+            recipe.ingredients.push(...parseRecipeIngredientCodeBlock(part.codeBlock));
         }
     }
 
-    // Fill-in missing info
-    if (!('title' in recipe)) {
-        recipe.title = 'Untitled Recipe';
+    // Validate the recipe model
+    return chisel.validateType(cookbookTypes, 'Recipe', recipe);
+}
+
+
+/**
+ * Helper function to parse a recipe ingredient code block
+ *
+ * @param {Object} codeBlock - The "recipe-ingredient" code block
+ * @returns {Object} The recipe model
+ */
+function parseRecipeInfoCodeBlock(codeBlock) {
+    const recipe = {};
+
+    for (const line of codeBlock.lines) {
+        const match = line.match(rRecipeMarkdownInfo);
+        const key = match !== null ? match.groups.key.toLowerCase() : null;
+        const value = match !== null ? match.groups.value : null;
+        if (key === 'title') {
+            recipe.title = value;
+        } else if (key === 'author') {
+            recipe.author = value;
+        } else if (key === 'categories') {
+            recipe.categories = value.split(rRecipeMarkdownCategories);
+        } else if (key === 'servings') {
+            const servingsNumber = parseFloat(value);
+            if (!isNaN(servingsNumber)) {
+                recipe.servings = servingsNumber;
+            }
+        }
     }
 
     return recipe;
@@ -568,24 +543,35 @@ export function parseRecipeMarkdown(markdown) {
 
 
 /**
- * Parse an ingredient line
+ * Helper function to parse a recipe ingredient code block
  *
- * @param {string} line - The ingredient line string
- * @returns {?Object} The ingredient model or null if the line syntax is not recognized
+ * @param {Object} codeBlock - The "recipe-ingredient" code block
+ * @returns {Object[]} The ingredient model array
  */
-function parseIngredient(line) {
-    const match = line.match(rRecipeMarkdownIngredients);
-    const whole = match !== null && typeof match.groups.whole !== 'undefined' ? parseFloat(match.groups.whole, 10) : 0;
-    const numer = match !== null && typeof match.groups.numer !== 'undefined' ? parseInt(match.groups.numer, 10) : 0;
-    const denom = match !== null && typeof match.groups.denom !== 'undefined' ? parseInt(match.groups.denom, 10) : 1;
-    const unit = match !== null && typeof match.groups.unit !== 'undefined' ? match.groups.unit : null;
-    const name = match !== null ? match.groups.name : null;
-    if ((whole !== 0 || numer !== 0) && name !== null) {
-        return {
-            'amount': whole + numer / denom,
-            'unit': unit !== null ? (unit in alternateUnits ? alternateUnits[unit] : unit) : 'count',
-            'name': name
-        };
+function parseRecipeIngredientCodeBlock(codeBlock) {
+    const ingredients = [];
+
+    for (const line of codeBlock.lines) {
+        // Ignore blank lines
+        if (rRecipeMarkdownBlank.test(line)) {
+            continue;
+        }
+
+        // Match the ingredient line
+        const match = line.match(rRecipeMarkdownIngredients);
+        const whole = match !== null && typeof match.groups.whole !== 'undefined' ? parseFloat(match.groups.whole, 10) : 0;
+        const numer = match !== null && typeof match.groups.numer !== 'undefined' ? parseInt(match.groups.numer, 10) : 0;
+        const denom = match !== null && typeof match.groups.denom !== 'undefined' ? parseInt(match.groups.denom, 10) : 1;
+        const unit = match !== null && typeof match.groups.unit !== 'undefined' ? match.groups.unit : null;
+        const name = match !== null ? match.groups.name : null;
+        if ((whole !== 0 || numer !== 0) && name !== null) {
+            ingredients.push({
+                'amount': whole + numer / denom,
+                'unit': unit !== null ? (unit in alternateUnits ? alternateUnits[unit] : unit) : 'count',
+                'name': name
+            });
+        }
     }
-    return null;
+
+    return ingredients;
 }

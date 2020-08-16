@@ -344,15 +344,13 @@ function markdownPartElements(parts, codeBlockLanguages) {
             const {codeBlock} = markdownPart;
 
             // Render the code block elements
-            let codeElements;
             if (codeBlockLanguages !== null && 'language' in codeBlock && codeBlock.language in codeBlockLanguages) {
-                codeElements = codeBlockLanguages[codeBlock.language](codeBlock.lines);
+                partElements.push(codeBlockLanguages[codeBlock.language](codeBlock));
             } else {
-                codeElements = codeBlock.lines.map((line) => ({'text': `${line}\n`}));
+                partElements.push(
+                    {'html': 'pre', 'elem': {'html': 'code', 'elem': codeBlock.lines.map((line) => ({'text': `${line}\n`}))}}
+                );
             }
-
-            // Add the code block part
-            partElements.push({'html': 'pre', 'elem': {'html': 'code', 'elem': codeElements}});
         }
     }
 

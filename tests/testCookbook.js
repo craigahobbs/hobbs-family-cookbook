@@ -71,20 +71,9 @@ Mix together:
         {
             'author': 'The Author',
             'categories': ['Stuff'],
-            'parts': [
-                {
-                    'markdown': {
-                        'parts': [
-                            {'paragraph': {'spans': [{'text': 'Mix together:'}]}}
-                        ]
-                    }
-                },
-                {
-                    'ingredients': [
-                        {'amount': 0.25, 'name': 'this', 'unit': 'cup'},
-                        {'amount': 2, 'name': 'that', 'unit': 'tbsp'}
-                    ]
-                }
+            'ingredients': [
+                {'amount': 0.25, 'name': 'this', 'unit': 'cup'},
+                {'amount': 2, 'name': 'that', 'unit': 'tbsp'}
             ],
             'title': 'The Title'
         }
@@ -101,16 +90,7 @@ Mix together:
 2 tbsp that
 `),
         {
-            'parts': [
-                {
-                    'markdown': {
-                        'parts': [
-                            {'paragraph': {'spans': [{'text': 'Mix together:'}]}},
-                            {'paragraph': {'spans': [{'text': '1/4 C this\n2 tbsp that'}]}}
-                        ]
-                    }
-                }
-            ],
+            'ingredients': [],
             'title': 'Untitled Recipe'
         }
     );
@@ -121,7 +101,7 @@ test('parseRecipeMarkdown, empty', (t) => {
     t.deepEqual(
         parseRecipeMarkdown(''),
         {
-            'parts': [],
+            'ingredients': [],
             'title': 'Untitled Recipe'
         }
     );
@@ -136,12 +116,8 @@ test('parseRecipeMarkdown, float ingredient amount', (t) => {
 ~~~
 `),
         {
-            'parts': [
-                {
-                    'ingredients': [
-                        {'amount': 1.5, 'name': 'water', 'unit': 'cup'}
-                    ]
-                }
+            'ingredients': [
+                {'amount': 1.5, 'name': 'water', 'unit': 'cup'}
             ],
             'title': 'Untitled Recipe'
         }
@@ -157,7 +133,7 @@ Servings: 10
 ~~~
 `),
         {
-            'parts': [],
+            'ingredients': [],
             'servings': 10,
             'title': 'Untitled Recipe'
         }

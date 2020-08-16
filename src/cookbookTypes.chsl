@@ -22,7 +22,7 @@ struct Recipe
     CookbookString title
 
     # The recipe's categories
-    optional CookbookString[len > 0] categories
+    optional CookbookString[len > 0, len < 1000] categories
 
     # The recipe's author
     optional CookbookString author
@@ -30,23 +30,12 @@ struct Recipe
     # The number of servings
     optional int (> 0) servings
 
-    # The recipe markdown parts
-    RecipePart[len > 0, len < 1000] parts
+    # The recipe's ingredients
+    Ingredient[len < 1000] ingredients
 
 
 # Recipe list typedef
 typedef Recipe[len > 0, len < 1000] Recipes
-
-
-
-# Recipe markdown part union
-union RecipePart
-
-    #  A list of markdown lines
-    Markdown markdown
-
-    # An ingredient list
-    Ingredient[len > 0, len < 1000] ingredients
 
 
 # Recipe ingredient struct
