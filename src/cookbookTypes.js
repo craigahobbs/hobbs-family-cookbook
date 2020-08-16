@@ -32,7 +32,7 @@ export const cookbookTypes =
                         "lenLT": 1000
                     },
                     "doc": [
-                        "The cookbook's recipe model URLs"
+                        "The cookbook's recipe markdown URLs"
                     ],
                     "name": "recipeURLs",
                     "type": {
@@ -172,6 +172,27 @@ export const cookbookTypes =
                                 "user": "Ingredient"
                             }
                         }
+                    }
+                },
+                {
+                    "attr": {
+                        "lenLT": 10000
+                    },
+                    "doc": [
+                        "The recipe's markdown text"
+                    ],
+                    "name": "markdownText",
+                    "type": {
+                        "builtin": "string"
+                    }
+                },
+                {
+                    "doc": [
+                        "The recipe's markdown model"
+                    ],
+                    "name": "markdown",
+                    "type": {
+                        "builtin": "object"
                     }
                 }
             ],

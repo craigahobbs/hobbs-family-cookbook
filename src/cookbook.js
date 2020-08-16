@@ -151,8 +151,7 @@ export class CookbookPage {
                                 this.recipes[recipeId] = {
                                     'recipe': parseRecipeMarkdown(recipeMarkdowns[ixRecipe]),
                                     'recipeId': recipeId,
-                                    'recipeURL': recipeURL,
-                                    'recipeMarkdown': recipeMarkdowns[ixRecipe]
+                                    'recipeURL': recipeURL
                                 };
                             }
 
@@ -284,7 +283,7 @@ export class CookbookPage {
         if (!(this.config.recipe in this.recipes)) {
             return CookbookPage.errorElements(`Unknown recipe '${this.config.recipe}`);
         }
-        const {recipe, recipeURL, recipeMarkdown} = this.recipes[this.config.recipe];
+        const {recipe, recipeURL} = this.recipes[this.config.recipe];
         const isExtra = !('categories' in recipe);
         const scaleAttr = cookbookPageTypes.CookbookPageParams.struct.members.find((member) => member.name === 'scale').attr;
 
@@ -303,7 +302,7 @@ export class CookbookPage {
                         {'html': 'a', 'attr': {'href': recipeURL}, 'elem': {'text': 'Recipe Markdown'}},
                         {'text': ' | '},
                         {'html': 'a', 'elem': {'text': 'Email Recipe'}, 'attr': {
-                            'href': `mailto:?subject=${encodeURIComponent(recipe.title)}&body=${encodeURIComponent(recipeMarkdown)}`
+                            'href': `mailto:?subject=${encodeURIComponent(recipe.title)}&body=${encodeURIComponent(recipe.markdownText)}`
                         }}
                     ]
                 ]
@@ -332,7 +331,7 @@ export class CookbookPage {
             isExtra || !('servings' in recipe) ? null : {'html': 'p', 'elem': {'text': `Servings: ${recipe.servings * this.config.scale}`}},
 
             // Markdown
-            markdownElements(parseMarkdown(recipeMarkdown), {
+            markdownElements(recipe.markdown, {
                 'recipe-info': () => null,
                 'recipe-ingredients': (codeBlock) => ({
                     'html': 'ul',
@@ -492,9 +491,11 @@ export function parseRecipeMarkdown(markdown) {
     // Parse the recipe markdown
     const recipe = {
         'title': 'Untitled Recipe',
-        'ingredients': []
+        'ingredients': [],
+        'markdownText': markdown,
+        'markdown': parseMarkdown(markdown)
     };
-    markdownElements(parseMarkdown(markdown), {
+    markdownElements(recipe.markdown, {
         'recipe-info': (codeBlock) => Object.assign(recipe, parseRecipeInfoCodeBlock(codeBlock)),
         'recipe-ingredients': (codeBlock) => recipe.ingredients.push(...parseRecipeIngredientCodeBlock(codeBlock))
     });

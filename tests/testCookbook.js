@@ -52,8 +52,7 @@ test('ingredientText, 2/3 cup doubled', (t) => {
 
 
 test('parseRecipeMarkdown', (t) => {
-    t.deepEqual(
-        parseRecipeMarkdown(`
+    const markdownText = `
 ~~~ recipe-info
 Title: The Title
 Categories: Stuff
@@ -67,7 +66,12 @@ Mix together:
 
 2 tbsp that
 ~~~
-`),
+`;
+    const recipe = parseRecipeMarkdown(markdownText);
+    t.is(typeof recipe.markdown, 'object');
+    delete recipe.markdown;
+    t.deepEqual(
+        recipe,
         {
             'author': 'The Author',
             'categories': ['Stuff'],
@@ -75,6 +79,7 @@ Mix together:
                 {'amount': 0.25, 'name': 'this', 'unit': 'cup'},
                 {'amount': 2, 'name': 'that', 'unit': 'tbsp'}
             ],
+            'markdownText': markdownText,
             'title': 'The Title'
         }
     );
@@ -82,15 +87,20 @@ Mix together:
 
 
 test('parseRecipeMarkdown, degenerate', (t) => {
-    t.deepEqual(
-        parseRecipeMarkdown(`
+    const markdownText = `
 Mix together:
 
 1/4 C this
 2 tbsp that
-`),
+`;
+    const recipe = parseRecipeMarkdown(markdownText);
+    t.is(typeof recipe.markdown, 'object');
+    delete recipe.markdown;
+    t.deepEqual(
+        recipe,
         {
             'ingredients': [],
+            'markdownText': markdownText,
             'title': 'Untitled Recipe'
         }
     );
@@ -98,10 +108,15 @@ Mix together:
 
 
 test('parseRecipeMarkdown, empty', (t) => {
+    const markdownText = '';
+    const recipe = parseRecipeMarkdown(markdownText);
+    t.is(typeof recipe.markdown, 'object');
+    delete recipe.markdown;
     t.deepEqual(
-        parseRecipeMarkdown(''),
+        recipe,
         {
             'ingredients': [],
+            'markdownText': markdownText,
             'title': 'Untitled Recipe'
         }
     );
@@ -109,16 +124,21 @@ test('parseRecipeMarkdown, empty', (t) => {
 
 
 test('parseRecipeMarkdown, float ingredient amount', (t) => {
-    t.deepEqual(
-        parseRecipeMarkdown(`
+    const markdownText = `
 ~~~ recipe-ingredients
 1.5 C water
 ~~~
-`),
+`;
+    const recipe = parseRecipeMarkdown(markdownText);
+    t.is(typeof recipe.markdown, 'object');
+    delete recipe.markdown;
+    t.deepEqual(
+        recipe,
         {
             'ingredients': [
                 {'amount': 1.5, 'name': 'water', 'unit': 'cup'}
             ],
+            'markdownText': markdownText,
             'title': 'Untitled Recipe'
         }
     );
@@ -126,14 +146,19 @@ test('parseRecipeMarkdown, float ingredient amount', (t) => {
 
 
 test('parseRecipeMarkdown, servings', (t) => {
-    t.deepEqual(
-        parseRecipeMarkdown(`
+    const markdownText = `
 ~~~ recipe-info
 Servings: 10
 ~~~
-`),
+`;
+    const recipe = parseRecipeMarkdown(markdownText);
+    t.is(typeof recipe.markdown, 'object');
+    delete recipe.markdown;
+    t.deepEqual(
+        recipe,
         {
             'ingredients': [],
+            'markdownText': markdownText,
             'servings': 10,
             'title': 'Untitled Recipe'
         }

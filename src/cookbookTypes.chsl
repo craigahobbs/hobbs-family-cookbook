@@ -7,7 +7,7 @@ struct Cookbook
     # The cookbook source URL
     optional CookbookString sourceURL
 
-    # The cookbook's recipe model URLs
+    # The cookbook's recipe markdown URLs
     CookbookString[len > 0, len < 1000] recipeURLs
 
 
@@ -32,6 +32,12 @@ struct Recipe
 
     # The recipe's ingredients
     Ingredient[len < 1000] ingredients
+
+    # The recipe's markdown text
+    string(len < 10000) markdownText
+
+    # The recipe's markdown model
+    object markdown
 
 
 # Recipe list typedef
