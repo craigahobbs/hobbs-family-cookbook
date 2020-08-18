@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Hot Cabbage Salad
-Categories: Salads & Sides
+Category: Salads & Sides
 Author: Emery Hobbs
 ~~~
 

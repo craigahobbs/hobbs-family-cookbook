@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Raspberry Ripples
-Categories: Cookies
+Category: Cookies
 ~~~
 
 Combine and process in a Cuisinart until mixture resembles course meal:

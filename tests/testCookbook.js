@@ -55,7 +55,7 @@ test('parseRecipeMarkdown', (t) => {
     const markdownText = `
 ~~~ recipe-info
 Title: The Title
-Categories: Stuff
+Category: Stuff
 Author: The Author
 ~~~
 
@@ -74,7 +74,7 @@ Mix together:
         recipe,
         {
             'author': 'The Author',
-            'categories': ['Stuff'],
+            'category': 'Stuff',
             'ingredients': [
                 {'amount': 0.25, 'name': 'this', 'unit': 'cup'},
                 {'amount': 2, 'name': 'that', 'unit': 'tbsp'}
@@ -99,9 +99,10 @@ Mix together:
     t.deepEqual(
         recipe,
         {
+            'category': 'Uncategorized',
             'ingredients': [],
             'markdownText': markdownText,
-            'title': 'Untitled Recipe'
+            'title': 'Untitled'
         }
     );
 });
@@ -115,9 +116,10 @@ test('parseRecipeMarkdown, empty', (t) => {
     t.deepEqual(
         recipe,
         {
+            'category': 'Uncategorized',
             'ingredients': [],
             'markdownText': markdownText,
-            'title': 'Untitled Recipe'
+            'title': 'Untitled'
         }
     );
 });
@@ -135,11 +137,12 @@ test('parseRecipeMarkdown, float ingredient amount', (t) => {
     t.deepEqual(
         recipe,
         {
+            'category': 'Uncategorized',
             'ingredients': [
                 {'amount': 1.5, 'name': 'water', 'unit': 'cup'}
             ],
             'markdownText': markdownText,
-            'title': 'Untitled Recipe'
+            'title': 'Untitled'
         }
     );
 });
@@ -157,10 +160,11 @@ Servings: 10
     t.deepEqual(
         recipe,
         {
+            'category': 'Uncategorized',
             'ingredients': [],
             'markdownText': markdownText,
             'servings': 10,
-            'title': 'Untitled Recipe'
+            'title': 'Untitled'
         }
     );
 });

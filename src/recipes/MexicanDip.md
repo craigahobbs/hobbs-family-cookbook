@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Mexican Dip
-Categories: Appetizers
+Category: Appetizers
 ~~~
 
 (also known as Barbie's Secret Dip)

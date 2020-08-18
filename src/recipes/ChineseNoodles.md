@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Chinese Noodles
-Categories: Salads & Sides
+Category: Salads & Sides
 Author: Teresa Ball
 ~~~
 

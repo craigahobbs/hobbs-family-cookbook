@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Caesar Salad
-Categories: Salads & Sides
+Category: Salads & Sides
 ~~~
 
 In a blender combine and process until smooth and thickened:

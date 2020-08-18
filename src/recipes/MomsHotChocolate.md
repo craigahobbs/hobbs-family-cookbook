@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Moms Hot Chocolate
-Categories: Miscellaneous
+Category: Miscellaneous
 ~~~
 
 In a large saucepan whisk together:

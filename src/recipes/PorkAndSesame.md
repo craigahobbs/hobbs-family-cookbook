@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Pork And Sesame
-Categories: Main Dishes
+Category: Main Dishes
 ~~~
 
 Whisk together:

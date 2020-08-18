@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Black Bean Chili
-Categories: Soups
+Category: Soups
 ~~~
 
 In a 6 qt covered soup pot bring to a boil and simmer for 2 hours:

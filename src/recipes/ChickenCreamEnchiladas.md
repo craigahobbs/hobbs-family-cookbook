@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Chicken Cream Enchiladas
-Categories: Main Dishes
+Category: Main Dishes
 Servings: 12
 Author: Teresa Ball
 ~~~

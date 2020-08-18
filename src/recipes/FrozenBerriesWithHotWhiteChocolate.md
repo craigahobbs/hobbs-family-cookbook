@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Frozen Berries With Hot White Chocolate
-Categories: Desserts
+Category: Desserts
 ~~~
 
 Combine in a heat proof bowl and set over a pan of simmering water and stir until chocolate melts:

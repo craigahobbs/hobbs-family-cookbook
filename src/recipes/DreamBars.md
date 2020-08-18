@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Dream Bars
-Categories: Cookies
+Category: Cookies
 ~~~
 
 Cream together:

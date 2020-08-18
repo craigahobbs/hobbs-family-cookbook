@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Bailey's Chocolate Chip Cheesecake
-Categories: Desserts
+Category: Desserts
 ~~~
 
 Using a Cuisinart, process 1 9 oz pkg chocolate wafer cookies to crumbs. Then add and process:

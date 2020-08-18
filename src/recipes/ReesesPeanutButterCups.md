@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Reeses Peanut Butter Cups
-Categories: Miscellaneous
+Category: Miscellaneous
 ~~~
 
 Recipe discovered by Teresa (who loved Peanut butter cups)

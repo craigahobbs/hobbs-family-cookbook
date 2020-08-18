@@ -16,12 +16,30 @@
                 },
                 {
                     "doc": [
-                        "The cookbook source URL"
+                        "The cookbook's title recipe ID"
                     ],
-                    "name": "sourceURL",
+                    "name": "titleId",
                     "optional": true,
                     "type": {
                         "user": "CookbookString"
+                    }
+                },
+                {
+                    "attr": {
+                        "lenGT": 0,
+                        "lenLT": 1000
+                    },
+                    "doc": [
+                        "The cookbook's content categories"
+                    ],
+                    "name": "contentCategories",
+                    "optional": true,
+                    "type": {
+                        "array": {
+                            "type": {
+                                "user": "CookbookString"
+                            }
+                        }
                     }
                 },
                 {
@@ -43,6 +61,45 @@
                 }
             ],
             "name": "Cookbook"
+        }
+    },
+    "CookbookLoaded": {
+        "struct": {
+            "doc": [
+                "A loaded cookbook struct"
+            ],
+            "members": [
+                {
+                    "doc": [
+                        "The cookbook model"
+                    ],
+                    "name": "cookbook",
+                    "type": {
+                        "user": "Cookbook"
+                    }
+                },
+                {
+                    "attr": {
+                        "lenGT": 0,
+                        "lenLT": 1000
+                    },
+                    "doc": [
+                        "The map of recipe ID to loaded recipe model"
+                    ],
+                    "name": "recipes",
+                    "type": {
+                        "dict": {
+                            "keyType": {
+                                "user": "CookbookString"
+                            },
+                            "type": {
+                                "user": "RecipeLoaded"
+                            }
+                        }
+                    }
+                }
+            ],
+            "name": "CookbookLoaded"
         }
     },
     "CookbookString": {
@@ -116,21 +173,12 @@
                     }
                 },
                 {
-                    "attr": {
-                        "lenGT": 0,
-                        "lenLT": 1000
-                    },
                     "doc": [
-                        "The recipe's categories"
+                        "The recipe's category"
                     ],
-                    "name": "categories",
-                    "optional": true,
+                    "name": "category",
                     "type": {
-                        "array": {
-                            "type": {
-                                "user": "CookbookString"
-                            }
-                        }
+                        "user": "CookbookString"
                     }
                 },
                 {
@@ -195,6 +243,43 @@
                 }
             ],
             "name": "Recipe"
+        }
+    },
+    "RecipeLoaded": {
+        "struct": {
+            "doc": [
+                "A loaded recipe struct"
+            ],
+            "members": [
+                {
+                    "doc": [
+                        "The recipe ID"
+                    ],
+                    "name": "id",
+                    "type": {
+                        "user": "CookbookString"
+                    }
+                },
+                {
+                    "doc": [
+                        "The recipe URL"
+                    ],
+                    "name": "url",
+                    "type": {
+                        "user": "CookbookString"
+                    }
+                },
+                {
+                    "doc": [
+                        "The recipe model"
+                    ],
+                    "name": "recipe",
+                    "type": {
+                        "user": "Recipe"
+                    }
+                }
+            ],
+            "name": "RecipeLoaded"
         }
     },
     "Unit": {

@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Perfectly Chocolate Cake
-Categories: Desserts
+Category: Desserts
 Author: Jacquie Cain
 ~~~
 

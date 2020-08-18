@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Stir Fried Beef With Bean Threads
-Categories: Main Dishes
+Category: Main Dishes
 ~~~
 
 ### Marinade

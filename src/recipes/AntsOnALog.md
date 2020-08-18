@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Ants On A Log
-Categories: Miscellaneous
+Category: Miscellaneous
 Author: Cooper Campbell when in Kindergarten
 ~~~
 

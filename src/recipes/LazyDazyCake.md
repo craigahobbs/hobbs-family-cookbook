@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Lazy Dazy Cake
-Categories: Desserts
+Category: Desserts
 Author: Aunt Laura
 ~~~
 

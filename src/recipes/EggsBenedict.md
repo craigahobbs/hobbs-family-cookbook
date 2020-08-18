@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Eggs Benedict
-Categories: Main Dishes
+Category: Main Dishes
 ~~~
 
 Split and toast the english muffins, butter and place on a baking sheet, top with the Canadian bacon

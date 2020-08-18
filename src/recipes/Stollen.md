@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Stollen
-Categories: Breads
+Category: Breads
 Author: Geoff Ball
 ~~~
 

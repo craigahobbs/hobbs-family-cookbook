@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Crescent Rolls
-Categories: Breads
+Category: Breads
 ~~~
 
 Stir together and dissolve:

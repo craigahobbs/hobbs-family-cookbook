@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Chocolate Pots De Creme
-Categories: Desserts
+Category: Desserts
 ~~~
 
 ### Ingredients

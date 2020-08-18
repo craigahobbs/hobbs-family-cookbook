@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Lime Dressing For Fresh Fruit
-Categories: Miscellaneous
+Category: Miscellaneous
 Author: Ann McLean
 ~~~
 

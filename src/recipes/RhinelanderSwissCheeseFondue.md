@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Rhinelander Swiss Cheese Fondue
-Categories: Appetizers
+Category: Appetizers
 ~~~
 
 Combine the following ingredients in a small sauce pan and stir until melted:

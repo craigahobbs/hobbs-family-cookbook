@@ -1,6 +1,9 @@
 ~~~ recipe-info
 Title: Recipe Know How
+Category: Introduction
 ~~~
+
+# Recipe Know How
 
 Always **READ THE RECIPE COMPLETELY** to make sure you have all of the ingredients on hand before
 you begin.

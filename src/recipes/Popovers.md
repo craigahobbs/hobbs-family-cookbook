@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Popovers
-Categories: Breads
+Category: Breads
 ~~~
 
 Oil two Chicago@ metallic nonstick popover pans. Cut 2 Tbsp butter into cubes and place one dot in

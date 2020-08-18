@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Egg Foo Yung
-Categories: Main Dishes
+Category: Main Dishes
 Author: Teresa Ball
 ~~~
 

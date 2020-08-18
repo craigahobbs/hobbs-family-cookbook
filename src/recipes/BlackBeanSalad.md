@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Black Bean Salad
-Categories: Salads & Sides
+Category: Salads & Sides
 ~~~
 
 ~~~ recipe-ingredients

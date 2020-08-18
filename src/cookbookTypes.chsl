@@ -1,18 +1,44 @@
+# A loaded cookbook struct
+struct CookbookLoaded
+
+    # The cookbook model
+    Cookbook cookbook
+
+    # The map of recipe ID to loaded recipe model
+    CookbookString : RecipeLoaded{len > 0, len < 1000} recipes
+
+
+# Cookbook string typedef
+typedef string(len > 0, len < 1000) CookbookString
+
+
 # Cookbook struct
 struct Cookbook
 
     # The cookbook title text
     CookbookString title
 
-    # The cookbook source URL
-    optional CookbookString sourceURL
+    # The cookbook's title recipe ID
+    optional CookbookString titleId
+
+    # The cookbook's content categories
+    optional CookbookString[len > 0, len < 1000] contentCategories
 
     # The cookbook's recipe markdown URLs
     CookbookString[len > 0, len < 1000] recipeURLs
 
 
-# Cookbook string typedef
-typedef string(len > 0, len < 1000) CookbookString
+# A loaded recipe struct
+struct RecipeLoaded
+
+    # The recipe ID
+    CookbookString id
+
+    # The recipe URL
+    CookbookString url
+
+    # The recipe model
+    Recipe recipe
 
 
 # Recipe model struct
@@ -21,8 +47,8 @@ struct Recipe
     # The recipe title text
     CookbookString title
 
-    # The recipe's categories
-    optional CookbookString[len > 0, len < 1000] categories
+    # The recipe's category
+    CookbookString category
 
     # The recipe's author
     optional CookbookString author

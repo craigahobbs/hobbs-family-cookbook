@@ -1,9 +1,12 @@
 {
     "title": "The Hobbs Family Cookbook",
-    "sourceURL": "https://github.com/craigahobbs/hobbs-family-cookbook#readme",
+    "titleId": "Title",
+    "contentCategories": ["Introduction"],
     "recipeURLs": [
         "extras/ItsYourFavorite.md",
         "extras/RecipeKnowHow.md",
+        "extras/Source.md",
+        "extras/Title.md",
         "recipes/AfricanCornbread.md",
         "recipes/AntsOnALog.md",
         "recipes/BaileysChocolateChipCheesecake.md",

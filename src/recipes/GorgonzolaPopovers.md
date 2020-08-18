@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Gorgonzola Popovers
-Categories: Appetizers
+Category: Appetizers
 Servings: 24
 ~~~
 

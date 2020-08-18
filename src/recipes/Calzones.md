@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Calzones
-Categories: Main Dishes
+Category: Main Dishes
 ~~~
 
 ### Dough

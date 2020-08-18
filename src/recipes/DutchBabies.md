@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Dutch Babies
-Categories: Breads
+Category: Breads
 ~~~
 
 Dutch babies are made in a glass pie pan or a shallow casserole dish. Select the proportions to fit

@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Canneloni
-Categories: Main Dishes
+Category: Main Dishes
 Servings: 16
 Author: Marilin Pasbrig (Aunt Marilin)
 ~~~

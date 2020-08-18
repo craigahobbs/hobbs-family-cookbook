@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Mom's Onion Rings
-Categories: Appetizers
+Category: Appetizers
 ~~~
 
 Prepare batter by whisking together:

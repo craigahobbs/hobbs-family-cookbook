@@ -49,7 +49,6 @@ export class CookbookPage {
     constructor(cookbookUrl) {
         this.cookbookUrl = cookbookUrl;
         this.cookbook = null;
-        this.recipes = null;
         this.params = null;
         this.config = null;
     }
@@ -127,33 +126,38 @@ export class CookbookPage {
         chisel.render(document.body);
         window.scrollTo(0, 0);
 
-        // Recipes already loaded? If so, render...
-        if (this.recipes !== null) {
+        // Cookbook already loaded? If so, render...
+        if (this.cookbook !== null) {
             chisel.render(document.body, this.pageElements());
         } else {
             // Fetch the cookbook model
             window.fetch(this.cookbookUrl).
-                then((cookbook) => cookbook.json()).
-                then((cookbook) => {
+                then((cookbookResponse) => cookbookResponse.json()).
+                then((cookbookResponse) => {
                     // Validate the cookbook model
-                    this.cookbook = chisel.validateType(cookbookTypes, 'Cookbook', cookbook);
+                    const cookbook = chisel.validateType(cookbookTypes, 'Cookbook', cookbookResponse);
 
                     // Fetch the recipe models
-                    Promise.all(this.cookbook.recipeURLs.map((recipeUrl) => window.fetch(recipeUrl))).
+                    Promise.all(cookbook.recipeURLs.map((recipeUrl) => window.fetch(recipeUrl))).
                         then((responses) => Promise.all(responses.map((response) => response.text()))).
-                        then((recipeMarkdowns) => {
-                            // Validate the recipes model
-                            this.recipes = {};
-                            for (let ixRecipe = 0; ixRecipe < recipeMarkdowns.length; ixRecipe++) {
-                                const recipeURL = this.cookbook.recipeURLs[ixRecipe];
+                        then((responses) => {
+                            // Create the "loaded" cookbook model
+                            const cookbookLoaded = {'cookbook': cookbook, 'recipes': {}};
+
+                            // Parse the recipe markdown text
+                            for (let ixRecipe = 0; ixRecipe < responses.length; ixRecipe++) {
+                                const recipeURL = cookbook.recipeURLs[ixRecipe];
                                 const matchRecipeId = recipeURL.match(/(?<recipeId>\w+)(?:\.\w+)*$/);
                                 const {recipeId} = matchRecipeId.groups;
-                                this.recipes[recipeId] = {
-                                    'recipe': parseRecipeMarkdown(recipeMarkdowns[ixRecipe]),
-                                    'recipeId': recipeId,
-                                    'recipeURL': recipeURL
+                                cookbookLoaded.recipes[recipeId] = {
+                                    'id': recipeId,
+                                    'url': recipeURL,
+                                    'recipe': parseRecipeMarkdown(responses[ixRecipe])
                                 };
                             }
+
+                            // Validate the "loaded" cookbook model
+                            this.cookbook = validateCookbookLoaded(cookbookLoaded);
 
                             // Render
                             chisel.render(document.body, this.pageElements());
@@ -205,69 +209,44 @@ export class CookbookPage {
      */
     indexElements() {
         // Sort and categorize recipes
-        const extras = [];
-        const categories = {};
-        const sortedRecipes = Object.values(this.recipes).map(({recipeId, recipe}) => [recipe.title, recipeId, recipe]).sort();
-        for (const [, recipeId, recipe] of sortedRecipes) {
-            if ('categories' in recipe) {
-                for (const category of recipe.categories) {
-                    if (!(category in categories)) {
-                        categories[category] = [];
-                    }
-                    categories[category].push([recipeId, recipe]);
-                }
-            } else {
-                extras.push([recipeId, recipe]);
+        const sortedRecipes = Object.values(this.cookbook.recipes).map((recipe) => [recipe.recipe.title, recipe]).sort();
+        const contentCategories = {};
+        const recipeCategories = {};
+        for (const [, recipe] of sortedRecipes) {
+            const isContent = this.cookbook.cookbook.contentCategories.indexOf(recipe.recipe.category) !== -1;
+            const categories = isContent ? contentCategories : recipeCategories;
+            if (!(recipe.recipe.category in categories)) {
+                categories[recipe.recipe.category] = [];
             }
+            categories[recipe.recipe.category].push(recipe);
         }
 
         return [
             // Title
-            {'html': 'h1', 'elem': {'text': this.cookbook.title}},
-
-            // Extras
-            !(extras.length || 'sourceURL' in this.cookbook) ? null : {
-                'html': 'ul',
-                'attr': {'class': 'cookbook-index-list'},
-                'elem': {
-                    'html': 'li',
-                    'elem': {'html': 'ul', 'elem': [
-                        extras.map(([recipeId, recipe]) => ({
-                            'html': 'li',
-                            'elem': {
-                                'html': 'a',
-                                'attr': {'href': chisel.href({...this.params, 'recipe': recipeId})},
-                                'elem': {'text': recipe.title}
-                            }
-                        })),
-                        !('sourceURL' in this.cookbook) ? null : {
-                            'html': 'li',
-                            'elem': {'html': 'a', 'attr': {'href': this.cookbook.sourceURL}, 'elem': {'text': 'Source'}}
-                        }
-                    ]}
-                }
-            },
+            {'html': 'h1', 'elem': {'text': this.cookbook.cookbook.title}},
 
             // Sorted recipe links
             {
                 'html': 'ul',
                 'attr': {'class': 'cookbook-index-list'},
-                'elem': Object.entries(categories).sort().map(([category, recipeIdTuples]) => [
-                    {
-                        'html': 'li',
-                        'elem': [
-                            {'html': 'h2', 'elem': {'text': category}},
-                            {'html': 'ul', 'elem': recipeIdTuples.map(([recipeId, recipe]) => ({
-                                'html': 'li',
-                                'elem': {
-                                    'html': 'a',
-                                    'attr': {'href': chisel.href({...this.params, 'recipe': recipeId})},
-                                    'elem': {'text': recipe.title}
-                                }
-                            }))}
-                        ]
-                    }
-                ])
+                'elem': [contentCategories, recipeCategories].map(
+                    (categories) => Object.entries(categories).sort().map(
+                        ([category, recipes]) => ({
+                            'html': 'li',
+                            'elem': [
+                                {'html': 'h2', 'elem': {'text': category}},
+                                {'html': 'ul', 'elem': recipes.map((recipe) => ({
+                                    'html': 'li',
+                                    'elem': {
+                                        'html': 'a',
+                                        'attr': {'href': chisel.href({...this.params, 'recipe': recipe.id})},
+                                        'elem': {'text': recipe.recipe.title}
+                                    }
+                                }))}
+                            ]
+                        })
+                    )
+                )
             }
         ];
     }
@@ -280,11 +259,11 @@ export class CookbookPage {
      */
     recipeElements() {
         // Find the recipe
-        if (!(this.config.recipe in this.recipes)) {
+        if (!(this.config.recipe in this.cookbook.recipes)) {
             return CookbookPage.errorElements(`Unknown recipe '${this.config.recipe}`);
         }
-        const {recipe, recipeURL} = this.recipes[this.config.recipe];
-        const isExtra = !('categories' in recipe);
+        const {recipe, 'url': recipeURL} = this.cookbook.recipes[this.config.recipe];
+        const isContent = this.cookbook.cookbook.contentCategories.indexOf(recipe.category) !== -1;
         const scaleAttr = cookbookPageTypes.CookbookPageParams.struct.members.find((member) => member.name === 'scale').attr;
 
         return [
@@ -297,38 +276,38 @@ export class CookbookPage {
                         'attr': {'href': chisel.href({...this.params, 'recipe': null, 'scale': null})},
                         'elem': {'text': 'Back to the index'}
                     },
-                    isExtra ? null : [
-                        {'text': ' | '},
-                        {'html': 'a', 'attr': {'href': recipeURL}, 'elem': {'text': 'Recipe Markdown'}},
-                        {'text': ' | '},
-                        {'html': 'a', 'elem': {'text': 'Email Recipe'}, 'attr': {
-                            'href': `mailto:?subject=${encodeURIComponent(recipe.title)}&body=${encodeURIComponent(recipe.markdownText)}`
-                        }}
-                    ]
+                    {'text': ' | '},
+                    {'html': 'a', 'attr': {'href': recipeURL}, 'elem': {'text': 'Recipe Markdown'}},
+                    {'text': ' | '},
+                    {'html': 'a', 'elem': {'text': 'Email Recipe'}, 'attr': {
+                        'href': `mailto:?subject=${encodeURIComponent(recipe.title)}&body=${encodeURIComponent(recipe.markdownText)}`
+                    }}
                 ]
             },
 
-            // Title
-            {'html': 'h1', 'elem': {'text': recipe.title}},
-            'author' in recipe ? {'html': 'p', 'elem': {'text': `Author: ${recipe.author}`}} : null,
+            isContent ? null : [
+                // Title
+                {'html': 'h1', 'elem': {'text': recipe.title}},
+                'author' in recipe ? {'html': 'p', 'elem': {'text': `Author: ${recipe.author}`}} : null,
 
-            // Scale
-            isExtra ? null : {'html': 'p', 'elem': [
-                {'text': `Scale: ${this.config.scale}`},
-                {
-                    'html': 'a',
-                    'attr': {'href': chisel.href({...this.params, 'scale': Math.max(scaleAttr.gte, this.config.scale / 2)})},
-                    'elem': {'text': ' Halve'}
-                },
-                {
-                    'html': 'a',
-                    'attr': {'href': chisel.href({...this.params, 'scale': Math.min(scaleAttr.lte, this.config.scale * 2)})},
-                    'elem': {'text': ' Double'}
-                }
-            ]},
+                // Scale
+                {'html': 'p', 'elem': [
+                    {'text': `Scale: ${this.config.scale}`},
+                    {
+                        'html': 'a',
+                        'attr': {'href': chisel.href({...this.params, 'scale': Math.max(scaleAttr.gte, this.config.scale / 2)})},
+                        'elem': {'text': ' Halve'}
+                    },
+                    {
+                        'html': 'a',
+                        'attr': {'href': chisel.href({...this.params, 'scale': Math.min(scaleAttr.lte, this.config.scale * 2)})},
+                        'elem': {'text': ' Double'}
+                    }
+                ]},
 
-            // Serving size and count
-            isExtra || !('servings' in recipe) ? null : {'html': 'p', 'elem': {'text': `Servings: ${recipe.servings * this.config.scale}`}},
+                // Serving size and count
+                !('servings' in recipe) ? null : {'html': 'p', 'elem': {'text': `Servings: ${recipe.servings * this.config.scale}`}}
+            ],
 
             // Markdown
             markdownElements(recipe.markdown, {
@@ -470,9 +449,38 @@ export function ingredientText(ingredient, scale = 1) {
 }
 
 
+/**
+ * Validate a "loaded" cookbook model
+ *
+ * @param {object} cookbookLoaded - The "loaded" cookbook model
+ * @returns {object} The validated "loaded" cookbook model
+ */
+function validateCookbookLoaded(cookbookLoaded) {
+    const validatedCookbookLoaded = chisel.validateType(cookbookTypes, 'CookbookLoaded', cookbookLoaded);
+
+    // Validate the cookbook title page ID
+    if ('titleId' in validatedCookbookLoaded.cookbook) {
+        if (!(validatedCookbookLoaded.cookbook.titleId in validatedCookbookLoaded.recipes)) {
+            throw Error(`Unknown title page ID '${validatedCookbookLoaded.cookbook.titleId}'`);
+        }
+    }
+
+    // Validate the cookbook content categories
+    if ('contentCategories' in validatedCookbookLoaded.cookbook) {
+        const categories = Object.values(validatedCookbookLoaded.recipes).reduce((acc, val) => acc.add(val.recipe.category), new Set());
+        for (const contentCategory of validatedCookbookLoaded.cookbook.contentCategories) {
+            if (!categories.has(contentCategory)) {
+                throw Error(`Unknown content category '${contentCategory}'`);
+            }
+        }
+    }
+
+    return validatedCookbookLoaded;
+}
+
+
 // Recipe markdown code block regular expressions
-const rRecipeMarkdownInfo = /^\s*(?<key>[Tt]itle|[Cc]ategories|[Aa]uthor|[Ss]ervings)\s*:\s*(?<value>.*?)\s*$/;
-const rRecipeMarkdownCategories = /\s*,\s*/;
+const rRecipeMarkdownInfo = /^\s*(?<key>[Tt]itle|[Cc]ategory|[Aa]uthor|[Ss]ervings)\s*:\s*(?<value>.*?)\s*$/;
 const rRecipeMarkdownBlank = /^\s*$/;
 const rRecipeMarkdownIngredients = new RegExp(
     '^(?:\\s*(?<whole>[1-9][0-9]*(?:\\.[0-9]*)?))?(?:\\s*(?<numer>[1-9][0-9]*)\\s*/\\s*(?<denom>[1-9][0-9]*))?' +
@@ -490,7 +498,8 @@ const rRecipeMarkdownIngredients = new RegExp(
 export function parseRecipeMarkdown(markdown) {
     // Parse the recipe markdown
     const recipe = {
-        'title': 'Untitled Recipe',
+        'title': 'Untitled',
+        'category': 'Uncategorized',
         'ingredients': [],
         'markdownText': markdown,
         'markdown': parseMarkdown(markdown)
@@ -522,8 +531,8 @@ function parseRecipeInfoCodeBlock(codeBlock) {
             recipe.title = value;
         } else if (key === 'author') {
             recipe.author = value;
-        } else if (key === 'categories') {
-            recipe.categories = value.split(rRecipeMarkdownCategories);
+        } else if (key === 'category') {
+            recipe.category = value;
         } else if (key === 'servings') {
             const servingsNumber = parseFloat(value);
             if (!isNaN(servingsNumber)) {

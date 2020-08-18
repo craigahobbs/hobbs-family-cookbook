@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Mom's Cinnamon Rolls
-Categories: Breads
+Category: Breads
 ~~~
 
 [Large Batch](#scale=1&recipe=MomsCinnamonRolls) (10 1/2 " X 14 1/2 " pan)  

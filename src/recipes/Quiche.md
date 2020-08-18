@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Quiche
-Categories: Main Dishes
+Category: Main Dishes
 Author: Diana Riley
 ~~~
 

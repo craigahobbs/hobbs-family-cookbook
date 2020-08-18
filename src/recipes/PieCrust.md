@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Pie Crust
-Categories: Desserts
+Category: Desserts
 ~~~
 
 Dice and chill:

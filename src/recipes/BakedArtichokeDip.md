@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Baked Artichoke Dip
-Categories: Appetizers
+Category: Appetizers
 ~~~
 
 Whisk together:

@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Rosellinis Summer Pasta Salad
-Categories: Salads & Sides
+Category: Salads & Sides
 ~~~
 
 Cook the chicken breasts either by poaching or baking. When chicken is cooked and cooled, remove the

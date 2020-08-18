@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Beach Cafe Fettuccine
-Categories: Main Dishes
+Category: Main Dishes
 ~~~
 
 Preheat a large skillet and saute until browned and cooked through:

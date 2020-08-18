@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Homemade Play Dough
-Categories: Miscellaneous
+Category: Miscellaneous
 ~~~
 
 ~~~ recipe-ingredients

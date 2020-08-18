@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Homemade Mayonnaise
-Categories: Miscellaneous
+Category: Miscellaneous
 ~~~
 
 Place the following ingredients in a blender:

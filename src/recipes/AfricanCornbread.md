@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: African (Liberian) Cornbread
-Categories: Breads
+Category: Breads
 Author: Teresa Ball
 ~~~
 

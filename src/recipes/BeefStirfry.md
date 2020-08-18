@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Beef Stirfry
-Categories: Main Dishes
+Category: Main Dishes
 ~~~
 
 Mix together marinade:

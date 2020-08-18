@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Cast A Spell Over Chicken
-Categories: Main Dishes
+Category: Main Dishes
 Author: Grandma Peggy (Peggy Hobbs Seeley)
 ~~~
 

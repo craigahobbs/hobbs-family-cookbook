@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Berry Crisp
-Categories: Desserts
+Category: Desserts
 Author: Shannon Childs
 ~~~
 

@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Ham And Cheese Chowder
-Categories: Soups
+Category: Soups
 ~~~
 
 Cook in salted, boiling water until just tender:

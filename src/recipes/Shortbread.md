@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Shortbread
-Categories: Cookies
+Category: Cookies
 Author: Kimble Hobbs
 ~~~
 

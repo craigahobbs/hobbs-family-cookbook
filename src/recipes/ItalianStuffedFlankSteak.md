@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Italian Stuffed Flank Steak
-Categories: Main Dishes
+Category: Main Dishes
 Author: Geoff Ball
 ~~~
 

@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Five Onion Soup
-Categories: Soups
+Category: Soups
 ~~~
 
 Heat a large stockpot until very hot, add and saute for 10 to l5 minutes until onions are tender:

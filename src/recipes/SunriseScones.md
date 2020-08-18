@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Sunrise Scones
-Categories: Breads
+Category: Breads
 ~~~
 
 Combine:

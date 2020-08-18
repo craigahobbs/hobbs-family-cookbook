@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Taco Rice Skillet
-Categories: Main Dishes
+Category: Main Dishes
 ~~~
 
 In a large skillet (with a lid), brown in olive oil:

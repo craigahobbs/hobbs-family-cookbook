@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Moms Pizza
-Categories: Main Dishes
+Category: Main Dishes
 ~~~
 
 ### Crust

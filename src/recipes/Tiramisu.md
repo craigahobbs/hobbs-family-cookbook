@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Tiramisu
-Categories: Desserts
+Category: Desserts
 Servings: 12
 ~~~
 

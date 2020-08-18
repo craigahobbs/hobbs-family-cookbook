@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Big Sandwich
-Categories: Main Dishes
+Category: Main Dishes
 ~~~
 
 A Hobbs family favorite

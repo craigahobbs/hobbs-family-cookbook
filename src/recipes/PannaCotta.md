@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Panna Cotta
-Categories: Main Dishes
+Category: Main Dishes
 Author: Matt Kramer*
 ~~~
 

@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Hummingbird Cake
-Categories: Desserts
+Category: Desserts
 ~~~
 
 Mix together in a large bowl:

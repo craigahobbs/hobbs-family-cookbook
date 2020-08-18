@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Cucina! Cucina! Chopped Chicken Salad
-Categories: Salads & Sides
+Category: Salads & Sides
 ~~~
 
 Cook the chicken breasts either by poaching or baking. Cool chicken and cut into 3/4 " pieces. Set

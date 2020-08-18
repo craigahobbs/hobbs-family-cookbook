@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Chunky Chippers
-Categories: Cookies
+Category: Cookies
 ~~~
 
 ![Ginger Snap and Chocolate Chip](recipes/ChunkyChippers.jpg "Ginger Snap and Chocolate Chip")

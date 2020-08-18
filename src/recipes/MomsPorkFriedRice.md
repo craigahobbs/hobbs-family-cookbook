@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Mom's Pork Fried Rice
-Categories: Main Dishes
+Category: Main Dishes
 ~~~
 
 One day ahead (this is a very important step as it prevents the rice from sticking during the frying

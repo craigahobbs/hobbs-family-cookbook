@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Craig A.'s Ginger Snaps
-Categories: Cookies
+Category: Cookies
 ~~~
 
 Mix together in a large bowl:

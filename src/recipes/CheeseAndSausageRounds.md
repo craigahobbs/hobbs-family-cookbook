@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Cheese and Sausage Rounds
-Categories: Appetizers
+Category: Appetizers
 Author: Nancy Thomas
 ~~~
 

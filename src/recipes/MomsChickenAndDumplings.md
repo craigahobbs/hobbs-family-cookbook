@@ -1,6 +1,6 @@
 ~~~ recipe-info
 Title: Mom's Chicken And Dumplings
-Categories: Main Dishes
+Category: Main Dishes
 ~~~
 
 ~~~ recipe-ingredients
