@@ -34,7 +34,7 @@ h3 {
 p {
     margin-top: 0.5em;
 }
-h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child, p:first-child, li:first-child {
+h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child, p:first-child, li:first-child, table:first-child {
     margin-top: 0;
 }
 hr {
@@ -82,7 +82,7 @@ table {
 th {
     font-weight: bold;
     text-align: left;
-    padding-top: 0.3em;
+    padding-top: 0.2em;
     padding-right: 0.8em;
 }
 th:last-child {
@@ -90,7 +90,7 @@ th:last-child {
 }
 td {
     text-align: left;
-    padding-top: 0.3em;
+    padding-top: 0.2em;
     padding-right: 0.8em;
 }
 td:last-child {
@@ -100,18 +100,17 @@ td:last-child {
 /* Index page */
 ul.cookbook-index-list {
     list-style: none;
+    font-size: 1.1rem;
+    margin-top: 0;
     margin-left: 0;
-}
-ul.cookbook-index-list li {
-    margin-top: 1em;
 }
 ul.cookbook-index-list li ul {
     list-style: none;
+    margin-top: 0;
     margin-left: 0;
 }
 ul.cookbook-index-list li ul li {
-    font-size: 1.1rem;
-    margin-top: 0.5em;
+    margin-top: 0.4em;
     margin-left: 0.2em;
 }
 
