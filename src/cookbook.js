@@ -27,6 +27,12 @@ const cookbookPageTypes = {
                     'type': {'builtin': 'float'},
                     'attr': {'gte': 0.125, 'lte': 8},
                     'optional': true
+                },
+                {
+                    'name': 'sidebar',
+                    'doc': 'If true, only show the sidebar (default is true)',
+                    'type': {'builtin': 'bool'},
+                    'optional': true
                 }
             ]
         }
@@ -97,6 +103,7 @@ export class CookbookPage {
         this.params = chisel.validateType(cookbookPageTypes, 'CookbookPageParams', chisel.decodeParams());
         this.config = {
             'scale': 1,
+            'sidebar': false,
             ...this.params
         };
     }
@@ -189,23 +196,56 @@ export class CookbookPage {
     /**
      * Generate the cookbook page elments for use with the chisel.render function.
      *
-     * @returns {Array}
+     * @returns {object[]}
      */
     pageElements() {
-        // Recipe page?
-        if ('recipe' in this.config) {
-            return this.recipeElements();
-        }
-
-        // Index page
-        return this.indexElements();
+        return [
+            {
+                'html': 'div',
+                'attr': {'class': 'header'},
+                'elem': {
+                    'html': 'div',
+                    'elem': [
+                        {
+                            'html': 'a',
+                            'attr': {'href': chisel.href({...this.params, 'sidebar': this.config.sidebar ? null : 'true'})},
+                            'elem': {'html': 'img', 'attr': {'src': 'cookbook-hamburger.svg'}}
+                        },
+                        {'text': ' '},
+                        {
+                            'html': 'a',
+                            'attr': {'href': '#'},
+                            'elem': {'text': this.cookbook.cookbook.title}
+                        }
+                    ]
+                }
+            },
+            {
+                'html': 'div',
+                'attr': {'class': `sidebar${this.config.sidebar ? ' sidebar-force' : ''}`},
+                'elem': {
+                    'html': 'div',
+                    'elem': [
+                        {
+                            'html': 'div',
+                            'elem': this.indexElements()
+                        },
+                        {
+                            'html': 'div',
+                            'attr': 'recipe' in this.config ? null : {'class': 'sidebar-title'},
+                            'elem': this.recipeElements()
+                        }
+                    ]
+                }
+            }
+        ];
     }
 
 
     /**
      * Helper function to generate the index page's element model
      *
-     * @returns {Array}
+     * @returns {Object}
      */
     indexElements() {
         // Sort and categorize recipes
@@ -218,51 +258,51 @@ export class CookbookPage {
             if (!(recipe.recipe.category in categories)) {
                 categories[recipe.recipe.category] = [];
             }
-            categories[recipe.recipe.category].push(recipe);
+            if (recipe.id !== this.cookbook.cookbook.titleId) {
+                categories[recipe.recipe.category].push(recipe);
+            }
         }
 
-        return [
-            // Title
-            {'html': 'h1', 'elem': {'text': this.cookbook.cookbook.title}},
-
-            // Sorted recipe links
-            {
-                'html': 'ul',
-                'attr': {'class': 'cookbook-index-list'},
-                'elem': [contentCategories, recipeCategories].map(
-                    (categories) => Object.entries(categories).sort().map(
-                        ([category, recipes]) => ({
-                            'html': 'li',
-                            'elem': [
-                                {'html': 'h2', 'elem': {'text': category}},
-                                {'html': 'ul', 'elem': recipes.map((recipe) => ({
-                                    'html': 'li',
-                                    'elem': {
-                                        'html': 'a',
-                                        'attr': {'href': chisel.href({...this.params, 'recipe': recipe.id})},
-                                        'elem': {'text': recipe.recipe.title}
-                                    }
-                                }))}
-                            ]
-                        })
-                    )
+        return {
+            'html': 'ul',
+            'attr': {'class': 'cookbook-index-list'},
+            'elem': [contentCategories, recipeCategories].map(
+                (categories) => Object.entries(categories).sort().map(
+                    ([category, recipes]) => ({
+                        'html': 'li',
+                        'elem': [
+                            {'html': 'h2', 'elem': {'text': category}},
+                            {'html': 'ul', 'elem': recipes.map((recipe) => ({
+                                'html': 'li',
+                                'elem': {
+                                    'html': 'a',
+                                    'attr': {'href': chisel.href({...this.params, 'sidebar': null, 'recipe': recipe.id})},
+                                    'elem': {'text': recipe.recipe.title}
+                                }
+                            }))}
+                        ]
+                    })
                 )
-            }
-        ];
+            )
+        };
     }
 
 
     /**
      * Helper function to generate the recipe page's element model
      *
-     * @returns {Array}
+     * @returns {object[]}
      */
     recipeElements() {
         // Find the recipe
-        if (!(this.config.recipe in this.cookbook.recipes)) {
-            return CookbookPage.errorElements(`Unknown recipe '${this.config.recipe}`);
+        const recipeId = 'recipe' in this.config ? this.config.recipe
+            : ('titleId' in this.cookbook.cookbook ? this.cookbook.cookbook.titleId : null);
+        if (recipeId === null) {
+            return null;
+        } else if (!(recipeId in this.cookbook.recipes)) {
+            return CookbookPage.errorElements(`Unknown recipe '${recipeId}`);
         }
-        const {recipe, 'url': recipeURL} = this.cookbook.recipes[this.config.recipe];
+        const {recipe, 'url': recipeURL} = this.cookbook.recipes[recipeId];
         const isContent = this.cookbook.cookbook.contentCategories.indexOf(recipe.category) !== -1;
         const scaleAttr = cookbookPageTypes.CookbookPageParams.struct.members.find((member) => member.name === 'scale').attr;
 
@@ -271,12 +311,6 @@ export class CookbookPage {
             {
                 'html': 'p',
                 'elem': [
-                    {
-                        'html': 'a',
-                        'attr': {'href': chisel.href({...this.params, 'recipe': null, 'scale': null})},
-                        'elem': {'text': 'Back to the index'}
-                    },
-                    {'text': ' | '},
                     {'html': 'a', 'attr': {'href': recipeURL}, 'elem': {'text': 'Recipe Markdown'}},
                     {'text': ' | '},
                     {'html': 'a', 'elem': {'text': 'Email Recipe'}, 'attr': {

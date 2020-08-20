@@ -97,6 +97,13 @@ td:last-child {
     padding-right: 0;
 }
 
+/* Variables */
+:root {
+    --header-height: 24px;
+    --sidebar-margin: 2rem;
+    --sidebar-width: 18rem;
+}
+
 /* Index page */
 ul.cookbook-index-list {
     list-style: none;
@@ -104,14 +111,25 @@ ul.cookbook-index-list {
     margin-top: 0;
     margin-left: 0;
 }
-ul.cookbook-index-list li ul {
+ul.cookbook-index-list > li > ul {
     list-style: none;
     margin-top: 0;
     margin-left: 0;
 }
-ul.cookbook-index-list li ul li {
+ul.cookbook-index-list > li > ul > li {
     margin-top: 0.4em;
     margin-left: 0.2em;
+
+    /* Limit index width */
+    max-width: calc(var(--sidebar-width));
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+@media only screen and (max-width: 768px) {
+    ul.cookbook-index-list > li > ul > li {
+        max-width: none;
+    }
 }
 
 /* Recipe page */
@@ -119,6 +137,63 @@ ul.cookbook-ingredient-list {
     list-style: none;
     margin-left: 1em;
 }
-ul.cookbook-ingredient-list li {
+ul.cookbook-ingredient-list > li {
     margin-top: 0.4em;
+}
+
+/* Header */
+div.header {
+    display: flex;
+}
+div.header > div {
+    font-weight: bold;
+    font-size: calc(var(--header-height));
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: calc(0.75 * var(--header-height));
+}
+div.header > div > a {
+    color: black;
+    text-decoration: none;
+    vertical-align: middle;
+    line-height: 1em;
+}
+div.header > div > a > img {
+    width: calc(var(--header-height));
+    height: calc(var(--header-height));
+    vertical-align: middle;
+}
+
+/* Sidebar */
+div.sidebar {
+    overflow: hidden;
+}
+div.sidebar > div {
+    display: flex;
+    flex-wrap: wrap;
+    margin: calc(var(--sidebar-margin) / -2);
+}
+div.sidebar > div > div {
+    margin: calc(var(--sidebar-margin) / 2);
+    flex-grow: 1;
+}
+div.sidebar > div > div:last-child {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: calc(50% - var(--sidebar-margin));
+}
+@media only screen and (max-width: 768px) {
+    div.sidebar > div > div:first-child {
+        display: none;
+    }
+}
+div.sidebar-force > div > div:first-child {
+    display: block !important;
+}
+div.sidebar-title > h1 {
+    font-size: 3.5rem;
+}
+div.sidebar-title > h2 {
+    font-size: 2.5em;
 }
