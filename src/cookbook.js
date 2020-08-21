@@ -212,6 +212,20 @@ export class MarkdownBook {
 
 
     /**
+     * Helper function to generate the "hamburger" SVG element model
+     *
+     * @return {Object}
+     */
+    static hamburgerElements() {
+        return {'svg': 'svg', 'attr': {'width': '24', 'height': '24'}, 'elem': [
+            {'svg': 'rect', 'attr': {'x': '3', 'y': '3', 'width': '18', 'height': '3'}},
+            {'svg': 'rect', 'attr': {'x': '3', 'y': '10', 'width': '18', 'height': '3'}},
+            {'svg': 'rect', 'attr': {'x': '3', 'y': '17', 'width': '18', 'height': '3'}}
+        ]};
+    }
+
+
+    /**
      * Generate the markdown book's page elements for use with the chisel.render function
      *
      * @returns {object[]}
@@ -231,7 +245,7 @@ export class MarkdownBook {
                             {
                                 'html': 'a',
                                 'attr': {'href': chisel.href({...this.params, 'index': this.config.index ? null : 'true'})},
-                                'elem': {'html': 'img', 'attr': {'src': 'hamburger.svg'}}
+                                'elem': MarkdownBook.hamburgerElements()
                             },
                             {
                                 'html': 'a',
