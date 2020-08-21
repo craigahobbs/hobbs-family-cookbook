@@ -7,54 +7,22 @@ import {cookbookTypes} from './cookbookTypes.js';
 
 
 /**
- * The cookbook application hash parameters type model
- */
-const cookbookPageTypes = {
-    'CookbookPageParams': {
-        'struct': {
-            'name': 'CookbookPageParams',
-            'members': [
-                {
-                    'name': 'recipe',
-                    'doc': 'The recipe identifier',
-                    'type': {'builtin': 'string'},
-                    'attr': {'lenGT': 0, 'lenLT': 100},
-                    'optional': true
-                },
-                {
-                    'name': 'scale',
-                    'doc': 'The recipe scale (default is 1)',
-                    'type': {'builtin': 'float'},
-                    'attr': {'gte': 0.125, 'lte': 8},
-                    'optional': true
-                },
-                {
-                    'name': 'sidebar',
-                    'doc': 'If true, only show the sidebar (default is true)',
-                    'type': {'builtin': 'bool'},
-                    'optional': true
-                }
-            ]
-        }
-    }
-};
-
-
-/**
- * The cookbook application class.
+ * The markdown book application class.
  *
- * @property {Object} cookbookUrl - The cookbook URL
- * @property {Object} cookbook - The cookbook model
- * @property {Object} recipes - The cookbook's recipe models
+ * @property {Object} bookURL - The markdown book URL
+ * @property {Array} windowHashChangeArgs - The arguments for the window.addEventListener for "hashchange"
+ * @property {Object} book - The loaded markdown book model
  * @property {Object} params - The validated hash parameters object
+ * @property {Object} config - The validated hash parameters with defaults
  */
-export class CookbookPage {
+export class MarkdownBook {
     /**
-     * Create a cookbook application instance.
+     * Create a markdown book application instance.
      */
-    constructor(cookbookUrl) {
-        this.cookbookUrl = cookbookUrl;
-        this.cookbook = null;
+    constructor(bookURL) {
+        this.bookURL = bookURL;
+        this.windowHashChangeArgs = null;
+        this.book = null;
         this.params = null;
         this.config = null;
     }
@@ -63,119 +31,168 @@ export class CookbookPage {
     /**
      * Run the application
      *
-     * @property {Object} cookbookUrl - The cookbook URL
-     * @returns {Object} Object meant to be passed to "runCleanup" for application shutdown
+     * @property {string} bookURL - The book URL
      */
-    static run(cookbookUrl) {
-        // Create the applicaton object and render
-        const cookbookPage = new CookbookPage(cookbookUrl);
-        cookbookPage.render();
-
-        // Add the hash parameters listener
-        const addEventListenerArgs = ['hashchange', () => cookbookPage.render(), false];
-        window.addEventListener(...addEventListenerArgs);
-
-        // Return the cleanup object
-        return {
-            'windowRemoveEventListener': addEventListenerArgs
-        };
-    }
-
-
-    /*
-     * Cleanup global state created by "run"
-     *
-     * @param {Object} runResult - The return value of "run"
-     */
-    static runCleanup(runResult) {
-        window.removeEventListener(...runResult.windowRemoveEventListener);
+    static run(bookURL) {
+        const book = new MarkdownBook(bookURL);
+        book.init();
+        book.render();
     }
 
 
     /**
-     * Parse the window location's hash parameters. This method sets two class members: this.params and
-     * this.config. this.params is the decoded hash parameters object for use with creating links to the
-     * application. this.config is object containing all known hash parameters parsed and validated.
+     * Initialize the global application state
      */
-    updateParams() {
+    init() {
+        this.windowHashChangeArgs = ['hashchange', () => this.render(), false];
+        window.addEventListener(...this.windowHashChangeArgs);
+    }
+
+
+    /**
+     * Uninitialize the global application state
+     */
+    uninit() {
+        if (this.windowHashChangeArgs !== null) {
+            window.removeEventListener(...this.windowHashChangeArgs);
+        }
+    }
+
+
+    /**
+     * Helper function to parse and validate the hash parameters
+     *
+     *
+     * @param {?string} params - The (hash) params string
+     */
+    updateParams(params = null) {
+        // Clear params and config
         this.params = null;
         this.config = null;
-        this.params = chisel.validateType(cookbookPageTypes, 'CookbookPageParams', chisel.decodeParams());
+
+        // Validate the hash parameters (may throw)
+        this.params = chisel.validateType(cookbookTypes, 'MarkdownBookParams', chisel.decodeParams(params));
+
+        // Set the default hash parameters
         this.config = {
+            'categories': [],
+            'id': null,
+            'index': false,
             'scale': 1,
-            'sidebar': false,
             ...this.params
         };
     }
 
 
     /**
-     * The main entry point for the cookbook application. This method renders the cookbook
-     * page within the document.body element.
+     * The main entry point for the application. This method renders within the document.body element.
      */
     render() {
-        // Decode and validate hash parameters
+        // Validate hash parameters
         try {
-            const oldParams = this.params;
             this.updateParams();
-
-            // Skip the render if the page params haven't changed
-            if (oldParams !== null && JSON.stringify(oldParams) === JSON.stringify(this.params)) {
-                return;
-            }
         } catch ({message}) {
-            chisel.render(document.body, CookbookPage.errorElements(message));
-            window.scrollTo(0, 0);
+            chisel.render(document.body, MarkdownBook.errorElements(message));
             return;
         }
 
-        // Clear the page
-        chisel.render(document.body);
-        window.scrollTo(0, 0);
-
-        // Cookbook already loaded? If so, render...
-        if (this.cookbook !== null) {
+        // Book already loaded?
+        if (this.book !== null) {
             chisel.render(document.body, this.pageElements());
         } else {
-            // Fetch the cookbook model
-            window.fetch(this.cookbookUrl).
-                then((cookbookResponse) => cookbookResponse.json()).
-                then((cookbookResponse) => {
-                    // Validate the cookbook model
-                    const cookbook = chisel.validateType(cookbookTypes, 'Cookbook', cookbookResponse);
+            // Clear the page
+            chisel.render(document.body);
 
-                    // Fetch the recipe models
-                    Promise.all(cookbook.recipeURLs.map((recipeUrl) => window.fetch(recipeUrl))).
-                        then((responses) => Promise.all(responses.map((response) => response.text()))).
-                        then((responses) => {
-                            // Create the "loaded" cookbook model
-                            const cookbookLoaded = {'cookbook': cookbook, 'recipes': {}};
+            // Load the book
+            this.load();
+        }
+    }
 
-                            // Parse the recipe markdown text
-                            for (let ixRecipe = 0; ixRecipe < responses.length; ixRecipe++) {
-                                const recipeURL = cookbook.recipeURLs[ixRecipe];
-                                const matchRecipeId = recipeURL.match(/(?<recipeId>\w+)(?:\.\w+)*$/);
-                                const {recipeId} = matchRecipeId.groups;
-                                cookbookLoaded.recipes[recipeId] = {
-                                    'id': recipeId,
-                                    'url': recipeURL,
-                                    'recipe': parseRecipeMarkdown(responses[ixRecipe])
-                                };
+
+    /**
+     * Helper function to load the markdown book
+     */
+    load() {
+        // Fetch the markdown book file
+        window.fetch(this.bookURL).
+            then((bookResponse) => bookResponse.json()).
+            then((bookResponse) => {
+                // Validate the markdown book model
+                const book = chisel.validateType(cookbookTypes, 'MarkdownBook', bookResponse);
+
+                // Fetch the markdown files
+                const categoryFiles = [[null, {'url': 'titleURL' in book ? book.titleURL : null}]];
+                categoryFiles.push(...book.categories.reduce(
+                    (tuples, category) => {
+                        tuples.push(...category.files.map((file) => [category, file]));
+                        return tuples;
+                    },
+                    []
+                ));
+                Promise.all(categoryFiles.map(([, {url}]) => window.fetch(url))).
+                    then((responses) => Promise.all(responses.map((response) => response.text()))).
+                    then((responses) => {
+                        // Create the loaded markdown book model
+                        const bookLoaded = {
+                            'title': book.title,
+                            'titleURL': book.titleURL,
+                            'titleText': responses[0],
+                            'titleMarkdown': parseMarkdown(responses[0]),
+                            'categories': [],
+                            'files': {},
+                            'headerColor': 'headerColor' in book ? book.headerColor : 'none',
+                            'sidebarColor': 'sidebarColor' in book ? book.sidebarColor : 'none',
+                            'contentColor': 'contentColor' in book ? book.contentColor : 'none',
+                            'titleColor': 'titleColor' in book ? book.titleColor : 'none'
+                        };
+
+                        // Parse each markdown file (skip the title page)
+                        let lastCategory = null;
+                        for (let ixFile = 1; ixFile < responses.length; ixFile++) {
+                            const [category, file] = categoryFiles[ixFile];
+                            const matchFileId = file.url.match(/(?<fileId>\w+)(?:\.\w+)*$/);
+                            const {fileId} = matchFileId.groups;
+                            const markdown = parseMarkdown(responses[ixFile]);
+                            const recipeInfo = parseRecipeInfo(markdown);
+
+                            // Create the loaded file
+                            const fileLoaded = {
+                                'id': fileId,
+                                'title': file.title,
+                                'url': file.url,
+                                'text': responses[ixFile],
+                                'markdown': markdown
+                            };
+                            if (recipeInfo !== null) {
+                                fileLoaded.recipe = recipeInfo;
                             }
 
-                            // Validate the "loaded" cookbook model
-                            this.cookbook = validateCookbookLoaded(cookbookLoaded);
+                            // Add to the category
+                            if (lastCategory === null || lastCategory.title !== category.title) {
+                                bookLoaded.categories.push({
+                                    'title': category.title,
+                                    'files': []
+                                });
+                            }
+                            bookLoaded.categories[bookLoaded.categories.length - 1].files.push(fileLoaded);
+                            lastCategory = category;
 
-                            // Render
-                            chisel.render(document.body, this.pageElements());
-                        }).
-                        catch(({message}) => {
-                            chisel.render(document.body, CookbookPage.errorElements(message));
-                        });
-                }).catch(({message}) => {
-                    chisel.render(document.body, CookbookPage.errorElements(message));
-                });
-        }
+                            // Add the file ID reference
+                            bookLoaded.files[fileId] = fileLoaded;
+                        }
+
+                        // Validate the loaded markdown book model
+                        this.book = chisel.validateType(cookbookTypes, 'MarkdownBookLoaded', bookLoaded);
+
+                        // Render
+                        chisel.render(document.body, this.pageElements());
+                    }).
+                    catch(({message}) => {
+                        chisel.render(document.body, MarkdownBook.errorElements(message));
+                    });
+            }).catch(({message}) => {
+                chisel.render(document.body, MarkdownBook.errorElements(message));
+            });
     }
 
 
@@ -194,51 +211,71 @@ export class CookbookPage {
 
 
     /**
-     * Generate the cookbook page elments for use with the chisel.render function.
+     * Generate the markdown book's page elements for use with the chisel.render function
      *
      * @returns {object[]}
      */
     pageElements() {
-        return [
-            {
-                'html': 'div',
-                'attr': {'class': 'header'},
-                'elem': {
+        return {
+            'html': 'div',
+            'attr': {'class': 'main'},
+            'elem': [
+                // Header
+                {
                     'html': 'div',
-                    'elem': [
-                        {
-                            'html': 'a',
-                            'attr': {'href': chisel.href({...this.params, 'sidebar': this.config.sidebar ? null : 'true'})},
-                            'elem': {'html': 'img', 'attr': {'src': 'cookbook-hamburger.svg'}}
-                        },
-                        {'text': ' '},
-                        {
-                            'html': 'a',
-                            'attr': {'href': '#'},
-                            'elem': {'text': this.cookbook.cookbook.title}
-                        }
-                    ]
-                }
-            },
-            {
-                'html': 'div',
-                'attr': {'class': `sidebar${this.config.sidebar ? ' sidebar-force' : ''}`},
-                'elem': {
+                    'attr': {'class': 'header', 'style': `background: ${this.book.headerColor}`},
+                    'elem': {
+                        'html': 'div',
+                        'elem': [
+                            {
+                                'html': 'a',
+                                'attr': {'href': chisel.href({...this.params, 'index': this.config.index ? null : 'true'})},
+                                'elem': {'html': 'img', 'attr': {'src': 'hamburger.svg'}}
+                            },
+                            {
+                                'html': 'a',
+                                'attr': {'href': '#'},
+                                'elem': {'text': this.book.title}
+                            }
+                        ]
+                    }
+                },
+
+                // Sidebar
+                {
                     'html': 'div',
+                    'attr': {'class': 'sidebar'},
                     'elem': [
+                        // Index
                         {
                             'html': 'div',
+                            'attr': {
+                                'class': this.config.index ? 'sidebar-index' : null,
+                                'style': `background: ${this.book.sidebarColor}`
+                            },
                             'elem': this.indexElements()
                         },
-                        {
-                            'html': 'div',
-                            'attr': 'recipe' in this.config ? null : {'class': 'sidebar-title'},
-                            'elem': this.recipeElements()
-                        }
+
+                        // Markdown file?
+                        this.config.index ? null
+                            : this.config.id !== null ? {
+                                'html': 'div',
+                                'attr': {'style': `background: ${this.book.contentColor}`},
+                                'elem': this.markdownElements()
+
+                                // Title page?
+                            } : 'titleMarkdown' in this.book ? {
+                                'html': 'div',
+                                'attr': {
+                                    'class': 'sidebar-title',
+                                    'style': `background: ${this.book.titleColor}`
+                                },
+                                'elem': markdownElements(this.book.titleMarkdown)
+                            } : null
                     ]
                 }
-            }
-        ];
+            ]
+        };
     }
 
 
@@ -248,78 +285,77 @@ export class CookbookPage {
      * @returns {Object}
      */
     indexElements() {
-        // Sort and categorize recipes
-        const sortedRecipes = Object.values(this.cookbook.recipes).map((recipe) => [recipe.recipe.title, recipe]).sort();
-        const contentCategories = {};
-        const recipeCategories = {};
-        for (const [, recipe] of sortedRecipes) {
-            const isContent = this.cookbook.cookbook.contentCategories.indexOf(recipe.recipe.category) !== -1;
-            const categories = isContent ? contentCategories : recipeCategories;
-            if (!(recipe.recipe.category in categories)) {
-                categories[recipe.recipe.category] = [];
-            }
-            if (recipe.id !== this.cookbook.cookbook.titleId) {
-                categories[recipe.recipe.category].push(recipe);
-            }
-        }
-
         return {
             'html': 'ul',
-            'attr': {'class': 'cookbook-index-list'},
-            'elem': [contentCategories, recipeCategories].map(
-                (categories) => Object.entries(categories).sort().map(
-                    ([category, recipes]) => ({
+            'elem': this.book.categories.map(
+                ({title, files}) => {
+                    // Compute the link categories
+                    let categories = [...this.config.categories];
+                    const ixCategory = categories.indexOf(title);
+                    if (ixCategory !== -1) {
+                        categories = categories.filter((category) => category !== title);
+                    } else {
+                        categories.push(title);
+                    }
+
+                    return {
                         'html': 'li',
                         'elem': [
-                            {'html': 'h2', 'elem': {'text': category}},
-                            {'html': 'ul', 'elem': recipes.map((recipe) => ({
-                                'html': 'li',
-                                'elem': {
-                                    'html': 'a',
-                                    'attr': {'href': chisel.href({...this.params, 'sidebar': null, 'recipe': recipe.id})},
-                                    'elem': {'text': recipe.recipe.title}
-                                }
-                            }))}
+                            {
+                                'html': 'a',
+                                'attr': {'href': chisel.href({...this.params, 'categories': categories.length ? categories.sort() : null})},
+                                'elem': {'text': title}
+                            },
+                            this.config.categories.indexOf(title) === -1 ? null : {
+                                'html': 'ul',
+                                'elem': files.map((file) => [file.title, file.id, file]).sort().map(([,, file]) => ({
+                                    'html': 'li',
+                                    'elem': {
+                                        'html': 'a',
+                                        'attr': {'href': chisel.href({...this.params, 'index': null, 'scale': null, 'id': file.id})},
+                                        'elem': {'text': file.title}
+                                    }
+                                }))}
                         ]
-                    })
-                )
+                    };
+                }
             )
         };
     }
 
 
     /**
-     * Helper function to generate the recipe page's element model
+     * Helper function to generate the markdown file's element model
      *
      * @returns {object[]}
      */
-    recipeElements() {
-        // Find the recipe
-        const recipeId = 'recipe' in this.config ? this.config.recipe
-            : ('titleId' in this.cookbook.cookbook ? this.cookbook.cookbook.titleId : null);
-        if (recipeId === null) {
-            return null;
-        } else if (!(recipeId in this.cookbook.recipes)) {
-            return CookbookPage.errorElements(`Unknown recipe '${recipeId}`);
+    markdownElements() {
+        // Unknown markdown file ID?
+        if (!(this.config.id in this.book.files)) {
+            return MarkdownBook.errorElements(`Unknown markdown file '${this.config.id}'`);
         }
-        const {recipe, 'url': recipeURL} = this.cookbook.recipes[recipeId];
-        const isContent = this.cookbook.cookbook.contentCategories.indexOf(recipe.category) !== -1;
-        const scaleAttr = cookbookPageTypes.CookbookPageParams.struct.members.find((member) => member.name === 'scale').attr;
+
+        // Get the markdown info
+        const file = this.book.files[this.config.id];
+        const recipe = 'recipe' in file ? file.recipe : null;
+        const title = recipe !== null ? recipe.title : file.title;
+        const scaleAttr = cookbookTypes.MarkdownBookParams.struct.members.find((member) => member.name === 'scale').attr;
 
         return [
             // Menu bar
             {
                 'html': 'p',
                 'elem': [
-                    {'html': 'a', 'attr': {'href': recipeURL}, 'elem': {'text': 'Recipe Markdown'}},
+                    {'html': 'a', 'attr': {'href': file.url}, 'elem': {'text': 'Markdown'}},
                     {'text': ' | '},
-                    {'html': 'a', 'elem': {'text': 'Email Recipe'}, 'attr': {
-                        'href': `mailto:?subject=${encodeURIComponent(recipe.title)}&body=${encodeURIComponent(recipe.markdownText)}`
+                    {'html': 'a', 'elem': {'text': 'Email Markdown'}, 'attr': {
+                        'href': `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(file.text)}`
                     }}
                 ]
             },
 
-            isContent ? null : [
+            // Recipe?
+            recipe === null ? null : [
                 // Title
                 {'html': 'h1', 'elem': {'text': recipe.title}},
                 'author' in recipe ? {'html': 'p', 'elem': {'text': `Author: ${recipe.author}`}} : null,
@@ -340,20 +376,25 @@ export class CookbookPage {
                 ]},
 
                 // Serving size and count
-                !('servings' in recipe) ? null : {'html': 'p', 'elem': {'text': `Servings: ${recipe.servings * this.config.scale}`}}
+                !('servings' in recipe) ? null
+                    : {'html': 'p', 'elem': {'text': `Servings: ${recipe.servings * this.config.scale}`}}
             ],
 
             // Markdown
-            markdownElements(recipe.markdown, {
+            markdownElements(file.markdown, {
                 'recipe-info': () => null,
-                'recipe-ingredients': (codeBlock) => ({
-                    'html': 'ul',
-                    'attr': {'class': 'cookbook-ingredient-list'},
-                    'elem': parseRecipeIngredientCodeBlock(codeBlock).map((ingredient) => ({
-                        'html': 'li',
-                        'elem': {'text': ingredientText(ingredient, this.config.scale).join(' ')}
-                    }))
-                })
+                'recipe-ingredients': (codeBlock) => {
+                    const ingredients = [];
+                    parseRecipeIngredientCodeBlock(ingredients, codeBlock);
+                    return {
+                        'html': 'ul',
+                        'attr': {'class': 'recipe-ingredient-list'},
+                        'elem': ingredients.map((ingredient) => ({
+                            'html': 'li',
+                            'elem': {'text': ingredientText(ingredient, this.config.scale).join(' ')}
+                        }))
+                    };
+                }
             })
         ];
     }
@@ -483,111 +524,73 @@ export function ingredientText(ingredient, scale = 1) {
 }
 
 
-/**
- * Validate a "loaded" cookbook model
- *
- * @param {object} cookbookLoaded - The "loaded" cookbook model
- * @returns {object} The validated "loaded" cookbook model
- */
-function validateCookbookLoaded(cookbookLoaded) {
-    const validatedCookbookLoaded = chisel.validateType(cookbookTypes, 'CookbookLoaded', cookbookLoaded);
-
-    // Validate the cookbook title page ID
-    if ('titleId' in validatedCookbookLoaded.cookbook) {
-        if (!(validatedCookbookLoaded.cookbook.titleId in validatedCookbookLoaded.recipes)) {
-            throw Error(`Unknown title page ID '${validatedCookbookLoaded.cookbook.titleId}'`);
-        }
-    }
-
-    // Validate the cookbook content categories
-    if ('contentCategories' in validatedCookbookLoaded.cookbook) {
-        const categories = Object.values(validatedCookbookLoaded.recipes).reduce((acc, val) => acc.add(val.recipe.category), new Set());
-        for (const contentCategory of validatedCookbookLoaded.cookbook.contentCategories) {
-            if (!categories.has(contentCategory)) {
-                throw Error(`Unknown content category '${contentCategory}'`);
-            }
-        }
-    }
-
-    return validatedCookbookLoaded;
-}
-
-
 // Recipe markdown code block regular expressions
-const rRecipeMarkdownInfo = /^\s*(?<key>[Tt]itle|[Cc]ategory|[Aa]uthor|[Ss]ervings)\s*:\s*(?<value>.*?)\s*$/;
+const rRecipeMarkdownInfo = /^\s*(?<key>[Tt]itle|[Aa]uthor|[Ss]ervings)\s*:\s*(?<value>.*?)\s*$/;
 const rRecipeMarkdownBlank = /^\s*$/;
 const rRecipeMarkdownIngredients = new RegExp(
     '^(?:\\s*(?<whole>[1-9][0-9]*(?:\\.[0-9]*)?))?(?:\\s*(?<numer>[1-9][0-9]*)\\s*/\\s*(?<denom>[1-9][0-9]*))?' +
         `(?:\\s*(?<unit>${Object.keys(unitInfo).join('|')}|${Object.keys(alternateUnits).join('|')}))?` +
         '\\s+(?!/)(?<name>.+?)\\s*$'
+
 );
 
 
 /**
- * Parse recipe markdown text to a recipe model
+ * Parse the recipe info of a markdown model
  *
- * @param {string|string[]} markdown - Markdown text or text lines
- * @returns {Object} The recipe model
+ * @param {object} markdown - The markdown model
+ * @returns {object} The recipe info model
  */
-export function parseRecipeMarkdown(markdown) {
-    // Parse the recipe markdown
-    const recipe = {
-        'title': 'Untitled',
-        'category': 'Uncategorized',
-        'ingredients': [],
-        'markdownText': markdown,
-        'markdown': parseMarkdown(markdown)
-    };
-    markdownElements(recipe.markdown, {
-        'recipe-info': (codeBlock) => Object.assign(recipe, parseRecipeInfoCodeBlock(codeBlock)),
-        'recipe-ingredients': (codeBlock) => recipe.ingredients.push(...parseRecipeIngredientCodeBlock(codeBlock))
+export function parseRecipeInfo(markdown) {
+    const recipeInfo = {'title': 'Untitled Recipe', 'ingredients': []};
+    markdownElements(markdown, {
+        'recipe-info': (codeBlock) => parseRecipeInfoCodeBlock(recipeInfo, codeBlock),
+        'recipe-ingredients': (codeBlock) => parseRecipeIngredientCodeBlock(recipeInfo.ingredients, codeBlock)
     });
 
-    // Validate the recipe model
-    return chisel.validateType(cookbookTypes, 'Recipe', recipe);
+    // Validate the recipe info model, if any
+    if ('author' in recipeInfo || 'servings' in recipeInfo || recipeInfo.ingredients.length !== 0) {
+        return chisel.validateType(cookbookTypes, 'RecipeInfo', recipeInfo);
+    }
+
+    return null;
 }
 
 
 /**
  * Helper function to parse a recipe ingredient code block
  *
+ * @param {Object} recipeInfo - The recipe info model
  * @param {Object} codeBlock - The "recipe-ingredient" code block
- * @returns {Object} The recipe model
  */
-function parseRecipeInfoCodeBlock(codeBlock) {
-    const recipe = {};
-
+function parseRecipeInfoCodeBlock(recipeInfo, codeBlock) {
     for (const line of codeBlock.lines) {
         const match = line.match(rRecipeMarkdownInfo);
         const key = match !== null ? match.groups.key.toLowerCase() : null;
         const value = match !== null ? match.groups.value : null;
         if (key === 'title') {
-            recipe.title = value;
+            recipeInfo.title = value;
         } else if (key === 'author') {
-            recipe.author = value;
-        } else if (key === 'category') {
-            recipe.category = value;
+            recipeInfo.author = value;
         } else if (key === 'servings') {
             const servingsNumber = parseFloat(value);
             if (!isNaN(servingsNumber)) {
-                recipe.servings = servingsNumber;
+                recipeInfo.servings = servingsNumber;
             }
         }
     }
 
-    return recipe;
+    return null;
 }
 
 
 /**
  * Helper function to parse a recipe ingredient code block
  *
+ * @param {Object[]} ingredients - The ingredients array
  * @param {Object} codeBlock - The "recipe-ingredient" code block
- * @returns {Object[]} The ingredient model array
  */
-function parseRecipeIngredientCodeBlock(codeBlock) {
-    const ingredients = [];
-
+function parseRecipeIngredientCodeBlock(ingredients, codeBlock) {
     for (const line of codeBlock.lines) {
         // Ignore blank lines
         if (rRecipeMarkdownBlank.test(line)) {
@@ -610,5 +613,5 @@ function parseRecipeIngredientCodeBlock(codeBlock) {
         }
     }
 
-    return ingredients;
+    return null;
 }

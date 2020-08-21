@@ -1,13 +1,19 @@
-import {CookbookPage, ingredientText, parseRecipeMarkdown} from '../src/cookbook.js';
+import {MarkdownBook, ingredientText, parseRecipeInfo} from '../src/cookbook.js';
+import {parseMarkdown} from '../src/chisel/markdown.js';
 import test from 'ava';
 
 /* eslint-disable id-length */
 
 
-test('CookbookPage, constructor', (t) => {
-    const cookbook = new CookbookPage('cookbook.json');
-    t.is(cookbook.cookbookUrl, 'cookbook.json');
-    t.is(cookbook.params, null);
+test('MarkdownBook, constructor', (t) => {
+    const book = new MarkdownBook('book.json');
+    t.deepEqual({...book}, {
+        'book': null,
+        'bookURL': 'book.json',
+        'config': null,
+        'params': null,
+        'windowHashChangeArgs': null
+    });
 });
 
 
@@ -51,11 +57,10 @@ test('ingredientText, 2/3 cup doubled', (t) => {
 });
 
 
-test('parseRecipeMarkdown', (t) => {
+test('parseRecipeInfo', (t) => {
     const markdownText = `
 ~~~ recipe-info
 Title: The Title
-Category: Stuff
 Author: The Author
 ~~~
 
@@ -67,19 +72,15 @@ Mix together:
 2 tbsp that
 ~~~
 `;
-    const recipe = parseRecipeMarkdown(markdownText);
-    t.is(typeof recipe.markdown, 'object');
-    delete recipe.markdown;
+    const recipeInfo = parseRecipeInfo(parseMarkdown(markdownText));
     t.deepEqual(
-        recipe,
+        recipeInfo,
         {
             'author': 'The Author',
-            'category': 'Stuff',
             'ingredients': [
                 {'amount': 0.25, 'name': 'this', 'unit': 'cup'},
                 {'amount': 2, 'name': 'that', 'unit': 'tbsp'}
             ],
-            'markdownText': markdownText,
             'title': 'The Title'
         }
     );
@@ -93,35 +94,15 @@ Mix together:
 1/4 C this
 2 tbsp that
 `;
-    const recipe = parseRecipeMarkdown(markdownText);
-    t.is(typeof recipe.markdown, 'object');
-    delete recipe.markdown;
-    t.deepEqual(
-        recipe,
-        {
-            'category': 'Uncategorized',
-            'ingredients': [],
-            'markdownText': markdownText,
-            'title': 'Untitled'
-        }
-    );
+    const recipeInfo = parseRecipeInfo(parseMarkdown(markdownText));
+    t.is(recipeInfo, null);
 });
 
 
 test('parseRecipeMarkdown, empty', (t) => {
     const markdownText = '';
-    const recipe = parseRecipeMarkdown(markdownText);
-    t.is(typeof recipe.markdown, 'object');
-    delete recipe.markdown;
-    t.deepEqual(
-        recipe,
-        {
-            'category': 'Uncategorized',
-            'ingredients': [],
-            'markdownText': markdownText,
-            'title': 'Untitled'
-        }
-    );
+    const recipeInfo = parseRecipeInfo(parseMarkdown(markdownText));
+    t.is(recipeInfo, null);
 });
 
 
@@ -131,18 +112,14 @@ test('parseRecipeMarkdown, float ingredient amount', (t) => {
 1.5 C water
 ~~~
 `;
-    const recipe = parseRecipeMarkdown(markdownText);
-    t.is(typeof recipe.markdown, 'object');
-    delete recipe.markdown;
+    const recipeInfo = parseRecipeInfo(parseMarkdown(markdownText));
     t.deepEqual(
-        recipe,
+        recipeInfo,
         {
-            'category': 'Uncategorized',
             'ingredients': [
                 {'amount': 1.5, 'name': 'water', 'unit': 'cup'}
             ],
-            'markdownText': markdownText,
-            'title': 'Untitled'
+            'title': 'Untitled Recipe'
         }
     );
 });
@@ -154,17 +131,13 @@ test('parseRecipeMarkdown, servings', (t) => {
 Servings: 10
 ~~~
 `;
-    const recipe = parseRecipeMarkdown(markdownText);
-    t.is(typeof recipe.markdown, 'object');
-    delete recipe.markdown;
+    const recipeInfo = parseRecipeInfo(parseMarkdown(markdownText));
     t.deepEqual(
-        recipe,
+        recipeInfo,
         {
-            'category': 'Uncategorized',
             'ingredients': [],
-            'markdownText': markdownText,
             'servings': 10,
-            'title': 'Untitled'
+            'title': 'Untitled Recipe'
         }
     );
 });

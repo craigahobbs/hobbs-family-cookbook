@@ -1,8 +1,3 @@
-~~~ recipe-info
-Title: It's Your Favorite!
-Category: Introduction
-~~~
-
 # It's Your Favorite!
 
 "It's Your Favorite!" cookbook was written after years of urging from Teresa (Hobbs) Ball.
