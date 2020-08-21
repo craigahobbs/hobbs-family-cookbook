@@ -133,17 +133,18 @@ td:last-child {
     font-size: 2.5rem;
 }
 .sidebar > :first-child {
-    flex-basis: 18rem;
-    max-width: 18rem;
     padding: 1em;
 }
 .sidebar-index > :first-child {
     display: block !important;
-    max-width: none;
 }
 .sidebar > :first-child > div {
     display: flex;
     flex-direction: column;
+    width: 18rem;
+}
+.sidebar-index > :first-child > div {
+    width: unset;
 }
 .sidebar > :first-child > div > div {
     display: flex;
