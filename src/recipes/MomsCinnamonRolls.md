@@ -53,7 +53,7 @@ For the **stickey pecan topping**, in baking pan, mix together into a thick past
 
 1 C packed brown sugar
 
-2 to 3 Tbsp dark corn syrup
+2 Tbsp dark corn syrup
 ~~~
 
 Sprinkle with pecan halves:

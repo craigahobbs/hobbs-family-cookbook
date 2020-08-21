@@ -393,11 +393,13 @@ export class MarkdownBook {
                     const ingredients = [];
                     parseRecipeIngredientCodeBlock(ingredients, codeBlock);
                     return {
-                        'html': 'ul',
-                        'attr': {'class': 'recipe-ingredient-list'},
+                        'html': 'div',
+                        'attr': {'class': 'recipe-ingredients'},
                         'elem': ingredients.map((ingredient) => ({
-                            'html': 'li',
-                            'elem': {'text': ingredientText(ingredient, this.config.scale).join(' ')}
+                            'html': 'div',
+                            'elem': ingredientText(ingredient, this.config.scale)
+                                .filter((text) => text.length)
+                                .map((text) => ({'html': 'div', 'elem': {'text': text}}))
                         }))
                     };
                 }
