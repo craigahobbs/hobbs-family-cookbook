@@ -1,5 +1,5 @@
 ~~~ recipe-info
-Title: Crostini with Mushrooms, Prosciuttto, and Blue Cheese
+Title: Crostini with Mushrooms, Prosciutto, and Blue Cheese
 Category: Appetizers
 Author: Teresa Ball
 ~~~
@@ -22,16 +22,16 @@ Add heavy cream and continue cooking until liquid is completely absorbed (about 
 1/2 C heavy cream
 ~~~
 
-Remove from heat and add blue cheese (I prefer gorgonzola) and stir until melted.
+Remove from heat and add blue cheese (I prefer Gorgonzola) and stir until melted.
 
 ~~~ recipe-ingredients
 1/2 C blue cheese
 ~~~
 
-Mix-in proscuitto and season to taste with salt and pepper.\*
+Mix-in prosciutto and season to taste with salt and pepper.\*
 
 ~~~ recipe-ingredients
-1/2 C thinly sliced proscuitto
+1/2 C thinly sliced prosciutto
 ~~~
 
 Slice the baguette into 1/2" slices and bake at 375 degrees until golden (about 5 minutes).
