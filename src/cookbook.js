@@ -298,10 +298,10 @@ export class MarkdownBook {
      */
     indexElements() {
         return {
-            'html': 'ul',
+            'html': 'div',
             'elem': this.book.categories.map(
                 ({title, files}) => {
-                    // Compute the link categories
+                    // Compute the category's href
                     let categories = [...this.config.categories];
                     const ixCategory = categories.indexOf(title);
                     if (ixCategory !== -1) {
@@ -309,25 +309,19 @@ export class MarkdownBook {
                     } else {
                         categories.push(title);
                     }
+                    const categoryHref = chisel.href({...this.params, 'categories': categories.length ? categories.sort() : null});
 
                     return {
-                        'html': 'li',
+                        'html': 'div',
                         'elem': [
-                            {
-                                'html': 'a',
-                                'attr': {'href': chisel.href({...this.params, 'categories': categories.length ? categories.sort() : null})},
-                                'elem': {'text': title}
-                            },
+                            {'html': 'a', 'attr': {'href': categoryHref}, 'elem': {'text': title}},
                             this.config.categories.indexOf(title) === -1 ? null : {
-                                'html': 'ul',
-                                'elem': files.map((file) => [file.title, file.id, file]).sort().map(([,, file]) => ({
-                                    'html': 'li',
-                                    'elem': {
-                                        'html': 'a',
-                                        'attr': {'href': chisel.href({...this.params, 'index': null, 'scale': null, 'id': file.id})},
-                                        'elem': {'text': file.title}
-                                    }
-                                }))}
+                                'html': 'div',
+                                'elem': files.map((file) => [file.title, file.id, file]).sort().map(([,, file]) => {
+                                    const fileHref = chisel.href({...this.params, 'index': null, 'scale': null, 'id': file.id});
+                                    return {'html': 'div','elem': {'html': 'a','attr': {'href': fileHref},'elem': {'text': file.title}}};
+                                })
+                            }
                         ]
                     };
                 }
