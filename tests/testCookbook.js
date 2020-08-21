@@ -1,4 +1,4 @@
-import {MarkdownBook, ingredientText, parseRecipeInfo} from '../src/cookbook.js';
+import {MarkdownBook, ingredientText, parseRecipeInfo} from '../src/markdownBook.js';
 import {parseMarkdown} from '../src/chisel/markdown.js';
 import test from 'ava';
 

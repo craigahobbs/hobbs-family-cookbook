@@ -1,9 +1,9 @@
 // Licensed under the MIT License
-// https://github.com/craigahobbs/cookbook/blob/master/LICENSE
+// https://github.com/craigahobbs/hobbs-family-cookbook/blob/master/LICENSE
 
 import * as chisel from './chisel/chisel.js';
 import {markdownElements, parseMarkdown} from './chisel/markdown.js';
-import {cookbookTypes} from './cookbookTypes.js';
+import {markdownBookTypes} from './markdownBookTypes.js';
 
 
 /**
@@ -71,7 +71,7 @@ export class MarkdownBook {
         this.config = null;
 
         // Validate the hash parameters (may throw)
-        this.params = chisel.validateType(cookbookTypes, 'MarkdownBookParams', chisel.decodeParams(params));
+        this.params = chisel.validateType(markdownBookTypes, 'MarkdownBookParams', chisel.decodeParams(params));
 
         // Set the default hash parameters
         this.config = {
@@ -118,7 +118,7 @@ export class MarkdownBook {
             then((bookResponse) => bookResponse.json()).
             then((bookResponse) => {
                 // Validate the markdown book model
-                const book = chisel.validateType(cookbookTypes, 'MarkdownBook', bookResponse);
+                const book = chisel.validateType(markdownBookTypes, 'MarkdownBook', bookResponse);
 
                 // Fetch the markdown files
                 const categoryFiles = [[null, {'url': 'titleURL' in book ? book.titleURL : null}]];
@@ -182,7 +182,7 @@ export class MarkdownBook {
                         }
 
                         // Validate the loaded markdown book model
-                        this.book = chisel.validateType(cookbookTypes, 'MarkdownBookLoaded', bookLoaded);
+                        this.book = chisel.validateType(markdownBookTypes, 'MarkdownBookLoaded', bookLoaded);
 
                         // Render
                         chisel.render(document.body, this.pageElements());
@@ -319,7 +319,7 @@ export class MarkdownBook {
                                 'html': 'div',
                                 'elem': files.map((file) => [file.title, file.id, file]).sort().map(([,, file]) => {
                                     const fileHref = chisel.href({...this.params, 'index': null, 'scale': null, 'id': file.id});
-                                    return {'html': 'div','elem': {'html': 'a','attr': {'href': fileHref},'elem': {'text': file.title}}};
+                                    return {'html': 'div', 'elem': {'html': 'a', 'attr': {'href': fileHref}, 'elem': {'text': file.title}}};
                                 })
                             }
                         ]
@@ -345,7 +345,7 @@ export class MarkdownBook {
         const file = this.book.files[this.config.id];
         const recipe = 'recipe' in file ? file.recipe : null;
         const title = recipe !== null ? recipe.title : file.title;
-        const scaleAttr = cookbookTypes.MarkdownBookParams.struct.members.find((member) => member.name === 'scale').attr;
+        const scaleAttr = markdownBookTypes.MarkdownBookParams.struct.members.find((member) => member.name === 'scale').attr;
 
         return [
             // Menu bar
@@ -397,9 +397,9 @@ export class MarkdownBook {
                         'attr': {'class': 'recipe-ingredients'},
                         'elem': ingredients.map((ingredient) => ({
                             'html': 'div',
-                            'elem': ingredientText(ingredient, this.config.scale)
-                                .filter((text) => text.length)
-                                .map((text) => ({'html': 'div', 'elem': {'text': text}}))
+                            'elem': ingredientText(ingredient, this.config.scale).
+                                filter((text) => text.length).
+                                map((text) => ({'html': 'div', 'elem': {'text': text}}))
                         }))
                     };
                 }
@@ -558,7 +558,7 @@ export function parseRecipeInfo(markdown) {
 
     // Validate the recipe info model, if any
     if ('author' in recipeInfo || 'servings' in recipeInfo || recipeInfo.ingredients.length !== 0) {
-        return chisel.validateType(cookbookTypes, 'RecipeInfo', recipeInfo);
+        return chisel.validateType(markdownBookTypes, 'RecipeInfo', recipeInfo);
     }
 
     return null;

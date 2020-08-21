@@ -1,5 +1,5 @@
 /* eslint-disable quotes */
-export const cookbookTypes =
+export const markdownBookTypes =
 {
     "Color": {
         "enum": {

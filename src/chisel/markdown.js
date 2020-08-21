@@ -1,5 +1,5 @@
 // Licensed under the MIT License
-// https://github.com/craigahobbs/cookbook/blob/master/LICENSE
+// https://github.com/craigahobbs/chisel/blob/master/LICENSE
 
 import * as chisel from './chisel.js';
 import {markdownTypes} from './markdownTypes.js';
