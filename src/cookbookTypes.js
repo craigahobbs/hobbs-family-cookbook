@@ -686,7 +686,7 @@ export const cookbookTypes =
                         "lenLT": 1000
                     },
                     "doc": [
-                        "The currently expanded category"
+                        "The currently expanded categories"
                     ],
                     "name": "categories",
                     "optional": true,

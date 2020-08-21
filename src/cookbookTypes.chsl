@@ -4,7 +4,7 @@ struct MarkdownBookParams
     # If true, show the markdown book's index
     optional bool index
 
-    # The currently expanded category
+    # The currently expanded categories
     optional NonEmptyString[len > 0, len < 1000] categories
 
     # The markdown file identifier to display. If not present, the title page is displayed.
