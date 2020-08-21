@@ -97,9 +97,13 @@ td:last-child {
 }
 
 /* Header */
+html, body {
+    height: 100%;
+}
 .main {
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 .header {
     font-size: 1.6rem;
@@ -125,6 +129,7 @@ td:last-child {
 }
 .sidebar {
     display: flex;
+    flex-grow: 1;
 }
 .sidebar-title > h1 {
     font-size: 3.5rem;
