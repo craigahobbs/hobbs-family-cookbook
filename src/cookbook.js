@@ -205,6 +205,7 @@ export class MarkdownBook {
     static errorElements(error = null) {
         return {
             'html': 'p',
+            'attr': {'class': 'error'},
             'elem': {'text': error !== null ? `Error: ${error}` : 'An unexpected error occurred.'}
         };
     }
@@ -244,15 +245,12 @@ export class MarkdownBook {
                 // Sidebar
                 {
                     'html': 'div',
-                    'attr': {'class': 'sidebar'},
+                    'attr': {'class': `sidebar${this.config.index ? ' sidebar-index' : ''}`},
                     'elem': [
                         // Index
                         {
                             'html': 'div',
-                            'attr': {
-                                'class': this.config.index ? 'sidebar-index' : null,
-                                'style': `background: ${this.book.sidebarColor}`
-                            },
+                            'attr': {'style': `background: ${this.book.sidebarColor}`},
                             'elem': this.indexElements()
                         },
 
