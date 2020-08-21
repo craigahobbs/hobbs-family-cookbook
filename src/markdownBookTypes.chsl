@@ -4,6 +4,9 @@
 # The Markdown Book application's hash parameter struct
 struct MarkdownBookParams
 
+    # The markdown book URL
+    optional NonEmptyString url
+
     # If true, show the markdown book's index
     optional bool index
 

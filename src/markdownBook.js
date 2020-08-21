@@ -79,6 +79,7 @@ export class MarkdownBook {
             'id': null,
             'index': false,
             'scale': 1,
+            'url': null,
             ...this.params
         };
     }
@@ -114,7 +115,7 @@ export class MarkdownBook {
      */
     load() {
         // Fetch the markdown book file
-        window.fetch(this.bookURL).
+        window.fetch(this.config.url !== null ? this.config.url : this.bookURL).
             then((bookResponse) => bookResponse.json()).
             then((bookResponse) => {
                 // Validate the markdown book model
@@ -249,7 +250,7 @@ export class MarkdownBook {
                             },
                             {
                                 'html': 'a',
-                                'attr': {'href': '#'},
+                                'attr': {'href': chisel.href({...this.params, 'id': null, 'index': null, 'scale': null})},
                                 'elem': {'text': this.book.title}
                             }
                         ]
@@ -318,7 +319,7 @@ export class MarkdownBook {
                             this.config.categories.indexOf(title) === -1 ? null : {
                                 'html': 'div',
                                 'elem': files.map((file) => [file.title, file.id, file]).sort().map(([,, file]) => {
-                                    const fileHref = chisel.href({...this.params, 'index': null, 'scale': null, 'id': file.id});
+                                    const fileHref = chisel.href({...this.params, 'id': file.id, 'index': null, 'scale': null});
                                     return {'html': 'div', 'elem': {'html': 'a', 'attr': {'href': fileHref}, 'elem': {'text': file.title}}};
                                 })
                             }

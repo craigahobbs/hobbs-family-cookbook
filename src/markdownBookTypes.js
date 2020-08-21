@@ -672,6 +672,16 @@ export const markdownBookTypes =
             "members": [
                 {
                     "doc": [
+                        "The markdown book URL"
+                    ],
+                    "name": "url",
+                    "optional": true,
+                    "type": {
+                        "user": "NonEmptyString"
+                    }
+                },
+                {
+                    "doc": [
                         "If true, show the markdown book's index"
                     ],
                     "name": "index",
