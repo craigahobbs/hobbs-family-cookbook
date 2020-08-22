@@ -170,7 +170,8 @@ html, body {
     max-width: 18rem;
 }
 .sidebar-index > :first-child > div {
-    width: unset;
+    min-width: unset;
+    max-width: unset;
 }
 .sidebar > :first-child > div > div {
     display: flex;
