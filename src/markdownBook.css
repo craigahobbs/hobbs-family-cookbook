@@ -111,19 +111,34 @@ html, body {
     height: 100%;
 }
 .header {
+    display: flex;
+    justify-content: space-between;
     font-size: 1.6rem;
     padding: 0.4em;
 }
-.header > :first-child {
+.header > div:first-child {
     display: flex;
 }
-.header > :first-child > a {
+.header > div:last-child {
     display: flex;
+    flex-shrink: 0;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+.header > div:first-child > div {
+    display: flex;
+    padding-right: 0.5em;
+}
+.header > div:last-child > div {
+    display: flex;
+    padding-left: 0.5em;
+}
+.header > div > div > a {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     color: black;
     text-decoration: none;
-    line-height: 1em;
-    vertical-align: middle;
-    padding-right: 0.3em;
 }
 
 /* Sidebar */

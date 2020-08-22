@@ -17,6 +17,9 @@ struct MarkdownBookParams
     # The markdown file identifier to display. If not present, the title page is displayed.
     optional NonEmptyString id
 
+    # The base font size (default is 12pt)
+    optional int(>= 8, <= 24) fontSize
+
     # The recipe scale (default is 1)
     optional float(>= 0.125, <= 8) scale
 

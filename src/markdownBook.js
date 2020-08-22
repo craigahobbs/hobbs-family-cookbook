@@ -76,6 +76,7 @@ export class MarkdownBook {
         // Set the default hash parameters
         this.config = {
             'categories': [],
+            'fontSize': 12,
             'id': null,
             'index': false,
             'scale': 1,
@@ -97,6 +98,9 @@ export class MarkdownBook {
             return;
         }
 
+        // Set the root font size
+        document.documentElement.style.fontSize = `${this.config.fontSize}pt`;
+
         // Book already loaded?
         if (this.book !== null) {
             this.renderPageElements();
@@ -115,7 +119,7 @@ export class MarkdownBook {
      */
     renderPageElements() {
         // Set the page title
-        let title = this.book.title;
+        let {title} = this.book;
         if (this.config.id !== null) {
             const file = this.book.files[this.config.id];
             const recipe = 'recipe' in file ? file.recipe : null;
@@ -248,11 +252,37 @@ export class MarkdownBook {
 
 
     /**
+     * Helper function to generate the "minus" SVG element model
+     *
+     * @return {Object}
+     */
+    static minusElements() {
+        return {'svg': 'svg', 'attr': {'width': '24', 'height': '24'}, 'elem': [
+            {'svg': 'rect', 'attr': {'x': '3', 'y': '11', 'width': '19', 'height': '3'}}
+        ]};
+    }
+
+
+    /**
+     * Helper function to generate the "plus" SVG element model
+     *
+     * @return {Object}
+     */
+    static plusElements() {
+        return {'svg': 'svg', 'attr': {'width': '24', 'height': '24'}, 'elem': [
+            {'svg': 'rect', 'attr': {'x': '3', 'y': '11', 'width': '19', 'height': '3'}},
+            {'svg': 'rect', 'attr': {'x': '11', 'y': '3', 'width': '3', 'height': '19'}}
+        ]};
+    }
+
+
+    /**
      * Generate the markdown book's page elements for use with the chisel.render function
      *
      * @returns {object[]}
      */
     pageElements() {
+        const fontSizeAttr = markdownBookTypes.MarkdownBookParams.struct.members.find((member) => member.name === 'fontSize').attr;
         return {
             'html': 'div',
             'attr': {'class': 'main'},
@@ -261,21 +291,60 @@ export class MarkdownBook {
                 {
                     'html': 'div',
                     'attr': {'class': 'header', 'style': `background: ${this.book.headerColor}`},
-                    'elem': {
-                        'html': 'div',
-                        'elem': [
-                            {
-                                'html': 'a',
-                                'attr': {'href': chisel.href({...this.params, 'index': this.config.index ? null : 'true'})},
-                                'elem': MarkdownBook.hamburgerElements()
-                            },
-                            {
-                                'html': 'a',
-                                'attr': {'href': chisel.href({...this.params, 'id': null, 'index': null, 'scale': null})},
-                                'elem': {'text': this.book.title}
-                            }
-                        ]
-                    }
+                    'elem': [
+                        {
+                            'html': 'div',
+                            'elem': [
+                                {
+                                    'html': 'div',
+                                    'elem': {
+                                        'html': 'a',
+                                        'attr': {'href': chisel.href({...this.params, 'index': this.config.index ? null : 'true'})},
+                                        'elem': MarkdownBook.hamburgerElements()
+                                    }
+                                },
+                                {
+                                    'html': 'div',
+                                    'elem': {
+                                        'html': 'a',
+                                        'attr': {'href': chisel.href({...this.params, 'id': null, 'index': null, 'scale': null})},
+                                        'elem': {'text': this.book.title}
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            'html': 'div',
+                            'elem': [
+                                {
+                                    'html': 'div',
+                                    'elem': {
+                                        'html': 'a',
+                                        'attr': {
+                                            'href': chisel.href({
+                                                ...this.params,
+                                                'fontSize': `${Math.max(fontSizeAttr.gte, this.config.fontSize - 1)}`
+                                            })
+                                        },
+                                        'elem': MarkdownBook.minusElements()
+                                    }
+                                },
+                                {
+                                    'html': 'div',
+                                    'elem': {
+                                        'html': 'a',
+                                        'attr': {
+                                            'href': chisel.href({
+                                                ...this.params,
+                                                'fontSize': `${Math.min(fontSizeAttr.lte, this.config.fontSize + 1)}`
+                                            })
+                                        },
+                                        'elem': MarkdownBook.plusElements()
+                                    }
+                                }
+                            ]
+                        }
+                    ]
                 },
 
                 // Sidebar

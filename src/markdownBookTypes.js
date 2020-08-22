@@ -720,6 +720,20 @@ export const markdownBookTypes =
                 },
                 {
                     "attr": {
+                        "gte": 8.0,
+                        "lte": 24.0
+                    },
+                    "doc": [
+                        "The base font size (default is 12pt)"
+                    ],
+                    "name": "fontSize",
+                    "optional": true,
+                    "type": {
+                        "builtin": "int"
+                    }
+                },
+                {
+                    "attr": {
                         "gte": 0.125,
                         "lte": 8.0
                     },
