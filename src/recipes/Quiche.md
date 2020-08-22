@@ -4,7 +4,7 @@ Category: Main Dishes
 Author: Diana Riley
 ~~~
 
-Bake a 9" [pie crust](#id=PieCrust) at 475 for 7 to 9 minutes. Cool.
+Bake a 9" [pie crust](../#id=PieCrust) at 475 for 7 to 9 minutes. Cool.
 
 Brown and drain:
 
