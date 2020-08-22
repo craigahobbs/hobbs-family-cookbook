@@ -2,4 +2,4 @@
 
 ## *"It's your favorite!"*
 
-## ![It's Your Favorite!](TheHobbsFamilyCookbook.png "It's Your Favorite!")
+## ![It's your favorite!](TheHobbsFamilyCookbook.png "It's your favorite!")
