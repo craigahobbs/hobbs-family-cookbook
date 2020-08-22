@@ -1,6 +1,6 @@
-# It's Your Favorite!
+# It's your favorite!
 
-"It's Your Favorite!" cookbook was written after years of urging from Teresa (Hobbs) Ball.
+"It's your favorite!" cookbook was written after years of urging from Teresa (Hobbs) Ball.
 
 I have always thought of cooking for my family as a way to show them how much I love them. Craig and
 I have always lived in rural areas and have not always been able to access good restaurants, or even
