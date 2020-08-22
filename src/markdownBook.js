@@ -99,7 +99,7 @@ export class MarkdownBook {
 
         // Book already loaded?
         if (this.book !== null) {
-            chisel.render(document.body, this.pageElements());
+            this.renderPageElements();
         } else {
             // Clear the page
             chisel.render(document.body);
@@ -107,6 +107,24 @@ export class MarkdownBook {
             // Load the book
             this.load();
         }
+    }
+
+
+    /**
+     * Render the page elements and set the document title
+     */
+    renderPageElements() {
+        // Set the page title
+        let title = this.book.title;
+        if (this.config.id !== null) {
+            const file = this.book.files[this.config.id];
+            const recipe = 'recipe' in file ? file.recipe : null;
+            title = (recipe !== null ? recipe.title : file.title);
+        }
+        document.title = title;
+
+        // Render the page
+        chisel.render(document.body, this.pageElements());
     }
 
 
@@ -189,7 +207,7 @@ export class MarkdownBook {
                         this.book = chisel.validateType(markdownBookTypes, 'MarkdownBookLoaded', bookLoaded);
 
                         // Render
-                        chisel.render(document.body, this.pageElements());
+                        this.renderPageElements();
                     }).
                     catch(({message}) => {
                         chisel.render(document.body, MarkdownBook.errorElements(message));
