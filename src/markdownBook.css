@@ -203,7 +203,6 @@ html, body {
 .recipe-ingredients {
     display: flex;
     flex-direction: column;
-    padding-top: 0.5em;
     padding-left: 1em;
 }
 .recipe-ingredients > div {

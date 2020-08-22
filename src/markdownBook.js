@@ -115,7 +115,8 @@ export class MarkdownBook {
      */
     load() {
         // Fetch the markdown book file
-        window.fetch(this.config.url !== null ? this.config.url : this.bookURL).
+        const bookURL = this.config.url !== null ? this.config.url : this.bookURL;
+        window.fetch(bookURL).
             then((bookResponse) => bookResponse.json()).
             then((bookResponse) => {
                 // Validate the markdown book model
@@ -130,13 +131,15 @@ export class MarkdownBook {
                     },
                     []
                 ));
-                Promise.all(categoryFiles.map(([, {url}]) => window.fetch(url))).
+                const baseURL = chisel.getBaseURL(bookURL);
+                const markdownFileURLs = categoryFiles.map(([, {url}]) => (chisel.isAbsoluteURL(url) ? url : `${baseURL}${url}`));
+                Promise.all(markdownFileURLs.map((url) => window.fetch(url))).
                     then((responses) => Promise.all(responses.map((response) => response.text()))).
                     then((responses) => {
                         // Create the loaded markdown book model
                         const bookLoaded = {
                             'title': book.title,
-                            'titleURL': book.titleURL,
+                            'titleURL': markdownFileURLs[0],
                             'titleText': responses[0],
                             'titleMarkdown': parseMarkdown(responses[0]),
                             'categories': [],
@@ -151,7 +154,7 @@ export class MarkdownBook {
                         let lastCategory = null;
                         for (let ixFile = 1; ixFile < responses.length; ixFile++) {
                             const [category, file] = categoryFiles[ixFile];
-                            const matchFileId = file.url.match(/(?<fileId>\w+)(?:\.\w+)*$/);
+                            const matchFileId = markdownFileURLs[ixFile].match(/(?<fileId>\w+)(?:\.\w+)*$/);
                             const {fileId} = matchFileId.groups;
                             const markdown = parseMarkdown(responses[ixFile]);
                             const recipeInfo = parseRecipeInfo(markdown);
@@ -160,7 +163,7 @@ export class MarkdownBook {
                             const fileLoaded = {
                                 'id': fileId,
                                 'title': file.title,
-                                'url': file.url,
+                                'url': markdownFileURLs[ixFile],
                                 'text': responses[ixFile],
                                 'markdown': markdown
                             };
@@ -283,7 +286,7 @@ export class MarkdownBook {
                                     'class': 'sidebar-title',
                                     'style': `background: ${this.book.titleColor}`
                                 },
-                                'elem': markdownElements(this.book.titleMarkdown)
+                                'elem': markdownElements(this.book.titleMarkdown, this.book.titleURL)
                             } : null
                     ]
                 }
@@ -316,7 +319,7 @@ export class MarkdownBook {
                         'html': 'div',
                         'elem': [
                             {'html': 'a', 'attr': {'href': categoryHref}, 'elem': {'text': title}},
-                            this.config.categories.indexOf(title) === -1 ? null : {
+                            this.book.categories.length !== 1 && this.config.categories.indexOf(title) === -1 ? null : {
                                 'html': 'div',
                                 'elem': files.map((file) => [file.title, file.id, file]).sort().map(([,, file]) => {
                                     const fileHref = chisel.href({...this.params, 'id': file.id, 'index': null, 'scale': null});
@@ -388,13 +391,13 @@ export class MarkdownBook {
             ],
 
             // Markdown
-            markdownElements(file.markdown, {
+            markdownElements(file.markdown, file.url, {
                 'recipe-info': () => null,
                 'recipe-ingredients': (codeBlock) => {
                     const ingredients = [];
                     parseRecipeIngredientCodeBlock(ingredients, codeBlock);
                     return {
-                        'html': 'div',
+                        'html': 'p',
                         'attr': {'class': 'recipe-ingredients'},
                         'elem': ingredients.map((ingredient) => ({
                             'html': 'div',
@@ -552,7 +555,7 @@ const rRecipeMarkdownIngredients = new RegExp(
  */
 export function parseRecipeInfo(markdown) {
     const recipeInfo = {'title': 'Untitled Recipe', 'ingredients': []};
-    markdownElements(markdown, {
+    markdownElements(markdown, null, {
         'recipe-info': (codeBlock) => parseRecipeInfoCodeBlock(recipeInfo, codeBlock),
         'recipe-ingredients': (codeBlock) => parseRecipeIngredientCodeBlock(recipeInfo.ingredients, codeBlock)
     });
