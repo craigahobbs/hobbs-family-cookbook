@@ -296,20 +296,14 @@ export class MarkdownBook {
                             'html': 'div',
                             'elem': [
                                 {
-                                    'html': 'div',
-                                    'elem': {
-                                        'html': 'a',
-                                        'attr': {'href': chisel.href({...this.params, 'index': this.config.index ? null : 'true'})},
-                                        'elem': MarkdownBook.hamburgerElements()
-                                    }
+                                    'html': 'a',
+                                    'attr': {'href': chisel.href({...this.params, 'index': this.config.index ? null : 'true'})},
+                                    'elem': MarkdownBook.hamburgerElements()
                                 },
                                 {
-                                    'html': 'div',
-                                    'elem': {
-                                        'html': 'a',
-                                        'attr': {'href': chisel.href({...this.params, 'id': null, 'index': null, 'scale': null})},
-                                        'elem': {'text': this.book.title}
-                                    }
+                                    'html': 'a',
+                                    'attr': {'href': chisel.href({...this.params, 'id': null, 'index': null, 'scale': null})},
+                                    'elem': {'text': this.book.title}
                                 }
                             ]
                         },
@@ -317,30 +311,24 @@ export class MarkdownBook {
                             'html': 'div',
                             'elem': [
                                 {
-                                    'html': 'div',
-                                    'elem': {
-                                        'html': 'a',
-                                        'attr': {
-                                            'href': chisel.href({
-                                                ...this.params,
-                                                'fontSize': `${Math.max(fontSizeAttr.gte, this.config.fontSize - 1)}`
-                                            })
-                                        },
-                                        'elem': MarkdownBook.minusElements()
-                                    }
+                                    'html': 'a',
+                                    'attr': {
+                                        'href': chisel.href({
+                                            ...this.params,
+                                            'fontSize': `${Math.max(fontSizeAttr.gte, this.config.fontSize - 1)}`
+                                        })
+                                    },
+                                    'elem': MarkdownBook.minusElements()
                                 },
                                 {
-                                    'html': 'div',
-                                    'elem': {
-                                        'html': 'a',
-                                        'attr': {
-                                            'href': chisel.href({
-                                                ...this.params,
-                                                'fontSize': `${Math.min(fontSizeAttr.lte, this.config.fontSize + 1)}`
-                                            })
-                                        },
-                                        'elem': MarkdownBook.plusElements()
-                                    }
+                                    'html': 'a',
+                                    'attr': {
+                                        'href': chisel.href({
+                                            ...this.params,
+                                            'fontSize': `${Math.min(fontSizeAttr.lte, this.config.fontSize + 1)}`
+                                        })
+                                    },
+                                    'elem': MarkdownBook.plusElements()
                                 }
                             ]
                         }

@@ -118,6 +118,7 @@ html, body {
 }
 .header > div:first-child {
     display: flex;
+    min-width: 0;
 }
 .header > div:last-child {
     display: flex;
@@ -125,20 +126,25 @@ html, body {
     flex-grow: 1;
     justify-content: flex-end;
 }
-.header > div:first-child > div {
-    display: flex;
-    padding-right: 0.5em;
-}
-.header > div:last-child > div {
-    display: flex;
-    padding-left: 0.5em;
-}
-.header > div > div > a {
+.header > div > a {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     color: black;
     text-decoration: none;
+    vertical-align: middle;
+    line-height: 1em;
+    flex-shrink: 0;
+}
+.header > div:first-child > a {
+    padding-right: 0.5em;
+}
+.header > div:first-child > a:nth-child(2) {
+    flex-shrink: 1;
+    min-width: 0;
+}
+.header > div:last-child > a {
+    padding-left: 0.5em;
 }
 
 /* Sidebar */

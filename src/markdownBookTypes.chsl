@@ -18,7 +18,7 @@ struct MarkdownBookParams
     optional NonEmptyString id
 
     # The base font size (default is 12pt)
-    optional int(>= 8, <= 24) fontSize
+    optional int(>= 8, <= 18) fontSize
 
     # The recipe scale (default is 1)
     optional float(>= 0.125, <= 8) scale
