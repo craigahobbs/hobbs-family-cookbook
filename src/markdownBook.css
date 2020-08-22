@@ -166,7 +166,8 @@ html, body {
 .sidebar > :first-child > div {
     display: flex;
     flex-direction: column;
-    width: 18rem;
+    min-width: 12rem;
+    max-width: 18rem;
 }
 .sidebar-index > :first-child > div {
     width: unset;

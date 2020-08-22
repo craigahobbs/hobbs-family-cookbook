@@ -53,10 +53,6 @@
                     "url": "recipes/MomsOnionRings.md"
                 },
                 {
-                    "title": "Potato Bacon Torte",
-                    "url": "recipes/PotatoBaconTorte.md"
-                },
-                {
                     "title": "Rhinelander Swiss Cheese Fondue",
                     "url": "recipes/RhinelanderSwissCheeseFondue.md"
                 },
@@ -355,6 +351,10 @@
                 {
                     "title": "Panna Cotta",
                     "url": "recipes/PannaCotta.md"
+                },
+                {
+                    "title": "Potato Bacon Torte",
+                    "url": "recipes/PotatoBaconTorte.md"
                 },
                 {
                     "title": "Pork And Sesame",
