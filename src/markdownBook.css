@@ -155,7 +155,7 @@ html, body {
     min-width: 0;
 }
 .header > div:last-child > a {
-    padding-left: 0.5em;
+    padding-left: 0.6em;
 }
 
 /* Sidebar */
@@ -226,6 +226,21 @@ html, body {
 .sidebar > :last-child {
     flex-grow: 1;
     padding: 1em;
+}
+
+/* Search */
+.search {
+    font-size: 1.1rem;
+    margin-top: 0.8em;
+    margin-bottom: 1.4em;
+}
+.search > input {
+    font-size: inherit;
+    border: thin solid black;
+    padding: 0.4em;
+}
+.search > a {
+    margin-left: 0.8em;
 }
 
 /* Error page */

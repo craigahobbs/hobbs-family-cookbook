@@ -541,6 +541,40 @@ export const markdownBookTypes =
             "name": "MarkdownBook"
         }
     },
+    "MarkdownBookCommand": {
+        "struct": {
+            "doc": [
+                "Markdown book application command union"
+            ],
+            "members": [
+                {
+                    "doc": [
+                        "If true, show the markdown book's index"
+                    ],
+                    "name": "index",
+                    "optional": true,
+                    "type": {
+                        "builtin": "bool"
+                    }
+                },
+                {
+                    "attr": {
+                        "lenLT": 1000
+                    },
+                    "doc": [
+                        "If present, search for the markdown book"
+                    ],
+                    "name": "search",
+                    "optional": true,
+                    "type": {
+                        "builtin": "string"
+                    }
+                }
+            ],
+            "name": "MarkdownBookCommand",
+            "union": true
+        }
+    },
     "MarkdownBookLoaded": {
         "struct": {
             "doc": [
@@ -667,7 +701,7 @@ export const markdownBookTypes =
     "MarkdownBookParams": {
         "struct": {
             "doc": [
-                "The Markdown Book application's hash parameter struct"
+                "Markdown book application's hash parameter struct"
             ],
             "members": [
                 {
@@ -682,25 +716,12 @@ export const markdownBookTypes =
                 },
                 {
                     "doc": [
-                        "If true, show the markdown book's index"
+                        "The application command"
                     ],
-                    "name": "index",
+                    "name": "cmd",
                     "optional": true,
                     "type": {
-                        "builtin": "bool"
-                    }
-                },
-                {
-                    "attr": {
-                        "lenLT": 1000
-                    },
-                    "doc": [
-                        "If present, search for the markdown book"
-                    ],
-                    "name": "search",
-                    "optional": true,
-                    "type": {
-                        "builtin": "string"
+                        "user": "MarkdownBookCommand"
                     }
                 },
                 {

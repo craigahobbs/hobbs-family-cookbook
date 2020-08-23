@@ -60,6 +60,18 @@ export class MarkdownBook {
 
 
     /**
+     * Navigate to a new location. This method is non-static so that it can easily be overwritten in unit tests.
+     *
+     * @param {string} location - The location to navigate to
+     */
+    /* istanbul ignore next */
+    /* eslint-disable-next-line class-methods-use-this */
+    assignLocation(location) {
+        window.location.href = location;
+    }
+
+
+    /**
      * Helper function to parse and validate the hash parameters
      *
      *
@@ -76,11 +88,10 @@ export class MarkdownBook {
         // Set the default hash parameters
         this.config = {
             'categories': [],
+            'command': null,
             'fontSize': 12,
             'id': null,
-            'index': false,
             'scale': 1,
-            'search': null,
             'url': null,
             ...this.params
         };
@@ -130,6 +141,11 @@ export class MarkdownBook {
 
         // Render the page
         chisel.render(document.body, this.pageElements());
+
+        // Set focus
+        if (this.getCommand('search') !== null) {
+            document.getElementById('search-text').focus();
+        }
     }
 
 
@@ -244,11 +260,11 @@ export class MarkdownBook {
      *
      * @return {Object}
      */
-    static hamburgerElements() {
+    static hamburgerSVGElements() {
         return {'svg': 'svg', 'attr': {'width': '24', 'height': '24'}, 'elem': [
-            {'svg': 'rect', 'attr': {'x': '3', 'y': '3', 'width': '18', 'height': '3'}},
-            {'svg': 'rect', 'attr': {'x': '3', 'y': '10', 'width': '18', 'height': '3'}},
-            {'svg': 'rect', 'attr': {'x': '3', 'y': '17', 'width': '18', 'height': '3'}}
+            {'svg': 'rect', 'attr': {'x': '3', 'y': '3', 'width': '18', 'height': '3', 'stroke': 'none', 'fill': 'black'}},
+            {'svg': 'rect', 'attr': {'x': '3', 'y': '10', 'width': '18', 'height': '3', 'stroke': 'none', 'fill': 'black'}},
+            {'svg': 'rect', 'attr': {'x': '3', 'y': '17', 'width': '18', 'height': '3', 'stroke': 'none', 'fill': 'black'}}
         ]};
     }
 
@@ -258,9 +274,9 @@ export class MarkdownBook {
      *
      * @return {Object}
      */
-    static minusElements() {
+    static minusSVGElements() {
         return {'svg': 'svg', 'attr': {'width': '24', 'height': '24'}, 'elem': [
-            {'svg': 'rect', 'attr': {'x': '3', 'y': '11', 'width': '19', 'height': '3'}}
+            {'svg': 'rect', 'attr': {'x': '3', 'y': '11', 'width': '19', 'height': '3', 'stroke': 'none', 'fill': 'black'}}
         ]};
     }
 
@@ -270,11 +286,107 @@ export class MarkdownBook {
      *
      * @return {Object}
      */
-    static plusElements() {
+    static plusSVGElements() {
         return {'svg': 'svg', 'attr': {'width': '24', 'height': '24'}, 'elem': [
-            {'svg': 'rect', 'attr': {'x': '3', 'y': '11', 'width': '19', 'height': '3'}},
-            {'svg': 'rect', 'attr': {'x': '11', 'y': '3', 'width': '3', 'height': '19'}}
+            {'svg': 'rect', 'attr': {'x': '3', 'y': '11', 'width': '19', 'height': '3', 'stroke': 'none', 'fill': 'black'}},
+            {'svg': 'rect', 'attr': {'x': '11', 'y': '3', 'width': '3', 'height': '19', 'stroke': 'none', 'fill': 'black'}}
         ]};
+    }
+
+
+    /**
+     * Helper function to generate the "plus" SVG element model
+     *
+     * @return {Object}
+     */
+    static searchSVGElements() {
+        return {'svg': 'svg', 'attr': {'width': '24', 'height': '24'}, 'elem': [
+            {'svg': 'path', 'attr': {'d': 'M2,22 L10,14', 'stroke': 'black', 'stroke-width': '5', 'fill': 'none'}},
+            {'svg': 'circle', 'attr': {'cx': '15', 'cy': '9', 'r': '7', 'stroke': 'black', 'stroke-width': '3', 'fill': 'none'}}
+        ]};
+    }
+
+
+    /**
+     * Helper function to create an index-toggle link
+     */
+    linkToggle(command, value, toggle = true) {
+        const params = {...this.params};
+        if (toggle && this.getCommand(command) !== null) {
+            delete params.cmd;
+        } else {
+            params.cmd = {};
+            params.cmd[command] = value;
+        }
+        return chisel.href(params);
+    }
+
+
+    /**
+     * Helper function to test if a command is active
+     */
+    getCommand(command) {
+        return 'cmd' in this.params && command in this.params.cmd ? this.params.cmd[command] : null;
+    }
+
+
+    /**
+     * Helper function to create a file link
+     *
+     * @param {?string} file - The file model
+     */
+    linkFile(file = null, addCategory = false) {
+        const params = {...this.params};
+        delete params.cmd;
+        delete params.scale;
+        if (file === null) {
+            delete params.id;
+        } else {
+            params.id = file.id;
+            if (addCategory) {
+                params.categories = [file.category];
+            }
+        }
+        return chisel.href(params);
+    }
+
+
+    /**
+     * Helper function for an up/down link
+     */
+    linkUpDown(paramName, delta) {
+        const value = this.config[paramName];
+        const {attr} = markdownBookTypes.MarkdownBookParams.struct.members.find((member) => member.name === paramName);
+        const valueNew = Math.max(attr.gte, Math.min(attr.lte, value + delta));
+        const params = {...this.params};
+        params[paramName] = `${valueNew}`;
+        return chisel.href(params);
+    }
+
+
+    /**
+     * Helper function to create a category toggle link
+     *
+     * @param {string} category - The category title
+     */
+    linkCategory(category) {
+        // Add/remove the category
+        let categories = [...this.config.categories];
+        const ixCategory = categories.indexOf(category);
+        if (ixCategory !== -1) {
+            categories = categories.filter((categoryFilter) => categoryFilter !== category);
+        } else {
+            categories.push(category);
+        }
+
+        // Update the params' categories
+        const params = {...this.params};
+        if (categories.length === 0) {
+            delete params.categories;
+        } else {
+            params.categories = categories;
+        }
+        return chisel.href(params);
     }
 
 
@@ -284,7 +396,6 @@ export class MarkdownBook {
      * @returns {object[]}
      */
     pageElements() {
-        const fontSizeAttr = markdownBookTypes.MarkdownBookParams.struct.members.find((member) => member.name === 'fontSize').attr;
         return {
             'html': 'div',
             'attr': {'class': 'main'},
@@ -297,41 +408,16 @@ export class MarkdownBook {
                         {
                             'html': 'div',
                             'elem': [
-                                {
-                                    'html': 'a',
-                                    'attr': {'href': chisel.href({...this.params, 'index': this.config.index ? null : 'true'})},
-                                    'elem': MarkdownBook.hamburgerElements()
-                                },
-                                {
-                                    'html': 'a',
-                                    'attr': {'href': chisel.href({...this.params, 'id': null, 'index': null, 'scale': null})},
-                                    'elem': {'text': this.book.title}
-                                }
+                                {'html': 'a', 'attr': {'href': this.linkToggle('index', true)}, 'elem': MarkdownBook.hamburgerSVGElements()},
+                                {'html': 'a', 'attr': {'href': this.linkFile()}, 'elem': {'text': this.book.title}}
                             ]
                         },
                         {
                             'html': 'div',
                             'elem': [
-                                {
-                                    'html': 'a',
-                                    'attr': {
-                                        'href': chisel.href({
-                                            ...this.params,
-                                            'fontSize': `${Math.max(fontSizeAttr.gte, this.config.fontSize - 1)}`
-                                        })
-                                    },
-                                    'elem': MarkdownBook.minusElements()
-                                },
-                                {
-                                    'html': 'a',
-                                    'attr': {
-                                        'href': chisel.href({
-                                            ...this.params,
-                                            'fontSize': `${Math.min(fontSizeAttr.lte, this.config.fontSize + 1)}`
-                                        })
-                                    },
-                                    'elem': MarkdownBook.plusElements()
-                                }
+                                {'html': 'a', 'attr': {'href': this.linkUpDown('fontSize', -1)}, 'elem': MarkdownBook.minusSVGElements()},
+                                {'html': 'a', 'attr': {'href': this.linkUpDown('fontSize', 1)}, 'elem': MarkdownBook.plusSVGElements()},
+                                {'html': 'a', 'attr': {'href': this.linkToggle('search', '')}, 'elem': MarkdownBook.searchSVGElements()}
                             ]
                         }
                     ]
@@ -340,7 +426,7 @@ export class MarkdownBook {
                 // Sidebar
                 {
                     'html': 'div',
-                    'attr': {'class': `sidebar${this.config.index ? ' sidebar-index' : ''}`},
+                    'attr': {'class': `sidebar${this.getCommand('index') ? ' sidebar-index' : ''}`},
                     'elem': [
                         // Index
                         {
@@ -350,7 +436,7 @@ export class MarkdownBook {
                         },
 
                         // Search?
-                        (this.config.search !== null
+                        (this.getCommand('search') !== null
                             ? ({
                                 'html': 'div',
                                 'attr': {'style': `background: ${this.book.contentColor}`},
@@ -358,7 +444,7 @@ export class MarkdownBook {
                             })
 
                             // Index?
-                            : (this.config.index
+                            : (this.getCommand('index')
                                 ? null
 
                                 // Markdown file?
@@ -400,31 +486,19 @@ export class MarkdownBook {
         return {
             'html': 'div',
             'elem': this.book.categories.map(
-                ({title, files}) => {
-                    // Compute the category's href
-                    let categories = [...this.config.categories];
-                    const ixCategory = categories.indexOf(title);
-                    if (ixCategory !== -1) {
-                        categories = categories.filter((category) => category !== title);
-                    } else {
-                        categories.push(title);
-                    }
-                    const categoryHref = chisel.href({...this.params, 'categories': categories.length ? categories.sort() : null});
-
-                    return {
-                        'html': 'div',
-                        'elem': [
-                            {'html': 'a', 'attr': {'href': categoryHref}, 'elem': {'text': title}},
-                            this.book.categories.length !== 1 && this.config.categories.indexOf(title) === -1 ? null : {
+                ({title, files}) => ({
+                    'html': 'div',
+                    'elem': [
+                        {'html': 'a', 'attr': {'href': this.linkCategory(title)}, 'elem': {'text': title}},
+                        this.book.categories.length !== 1 && this.config.categories.indexOf(title) === -1 ? null : {
+                            'html': 'div',
+                            'elem': files.map((file) => [file.title, file.id, file]).sort().map(([,, file]) => ({
                                 'html': 'div',
-                                'elem': files.map((file) => [file.title, file.id, file]).sort().map(([,, file]) => {
-                                    const fileHref = chisel.href({...this.params, 'id': file.id, 'index': null, 'scale': null});
-                                    return {'html': 'div', 'elem': {'html': 'a', 'attr': {'href': fileHref}, 'elem': {'text': file.title}}};
-                                })
-                            }
-                        ]
-                    };
-                }
+                                'elem': {'html': 'a', 'attr': {'href': this.linkFile(file)}, 'elem': {'text': file.title}}
+                            }))
+                        }
+                    ]
+                })
             )
         };
     }
@@ -445,7 +519,6 @@ export class MarkdownBook {
         const file = this.book.files[this.config.id];
         const recipe = 'recipe' in file ? file.recipe : null;
         const title = recipe !== null ? recipe.title : file.title;
-        const scaleAttr = markdownBookTypes.MarkdownBookParams.struct.members.find((member) => member.name === 'scale').attr;
 
         return [
             // Menu bar
@@ -471,12 +544,12 @@ export class MarkdownBook {
                     {'text': `Scale: ${this.config.scale}`},
                     {
                         'html': 'a',
-                        'attr': {'href': chisel.href({...this.params, 'scale': Math.max(scaleAttr.gte, this.config.scale / 2)})},
+                        'attr': {'href': this.linkUpDown('scale', -0.5 * this.config.scale)},
                         'elem': {'text': ' Halve'}
                     },
                     {
                         'html': 'a',
-                        'attr': {'href': chisel.href({...this.params, 'scale': Math.min(scaleAttr.lte, this.config.scale * 2)})},
+                        'attr': {'href': this.linkUpDown('scale', this.config.scale)},
                         'elem': {'text': ' Double'}
                     }
                 ]},
@@ -515,9 +588,49 @@ export class MarkdownBook {
      */
     searchElements() {
         return [
-            {'html': 'h2', 'elem': {'text': 'Search Results'}},
-            this.searchResultsElements(this.config.search)
+            {'html': 'h2', 'elem': {'text': 'Search'}},
+            {
+                'html': 'div',
+                'attr': {'class': 'search'},
+                'elem': [
+                    {
+                        'html': 'input',
+                        'attr': {
+                            'autocomplete': 'off',
+                            'id': 'search-text',
+                            'type': 'text',
+                            'value': this.getCommand('search')
+                        },
+                        'callback': (element) => {
+                            element.addEventListener('keyup', (event) => {
+                                if (event.keyCode === 13) {
+                                    this.onSearchSubmit();
+                                }
+                            }, false);
+                        }
+                    },
+                    {
+                        'html': 'a',
+                        'elem': {'text': 'Search'},
+                        'callback': (element) => {
+                            element.addEventListener('click', () => this.onSearchSubmit(), false);
+                        }
+                    }
+                ]
+            },
+            {
+                'html': 'div',
+                'elem': this.searchResultsElements(this.getCommand('search'))
+            }
         ];
+    }
+
+
+    /**
+     * Helper function to handle a search form submit event
+     */
+    onSearchSubmit() {
+        this.assignLocation(this.linkToggle('search', document.getElementById('search-text').value, false));
     }
 
 
@@ -525,47 +638,38 @@ export class MarkdownBook {
      * Helper function to generate the search results element model
      *
      * @param {string} search - The search string
-     * @returns {object[]}
+     * @returns {?Array}
      */
     searchResultsElements(search) {
-        const files = searchBook(this.book, search);
-        if (files.length === 0) {
-            return {'html': 'p', 'elem': {'text': 'No search results'}};
+        // Get the search words that aren't too small
+        const words = search.replace(rSearchWordClean, '').split(rSearchWordSplit).filter((word) => word.length >= minSearchWordLength);
+        if (words.length === 0) {
+            return null;
         }
-        return files.map((file) => ({'html': 'p', 'elem': {
-            'html': 'a',
-            'attr': {'href': chisel.href({...this.params, 'search': null, 'categories': [file.category], 'id': file.id})},
-            'elem': {'text': file.title}
-        }}));
+
+        // Count the word matches
+        const rWords = new RegExp(`\\b(?:${words.join('|')})`, 'ig');
+        const files = Object.values(this.book.files).map((file) => [Array.from(file.text.matchAll(rWords)).length, file]).
+            filter(([score]) => score > 0).sort(([scoreA, fileA], [scoreB, fileB]) => (
+                (scoreB - scoreA) ||
+                    (fileA.title < fileB.title ? -1 : fileA.title > fileB.title) ||
+                    (fileA.id < fileB.id ? -1 : fileA.id > fileB.id)
+            )).
+            map(([, file]) => file).
+            slice(0, maxSearchResults);
+
+        if (files.length === 0) {
+            return {'html': 'p', 'elem': {'text': 'No results'}};
+        }
+        return [
+            {'html': 'h3', 'elem': {'text': 'Results'}},
+            files.map((file) => ({'html': 'p', 'elem': {
+                'html': 'a',
+                'attr': {'href': this.linkFile(file, true)},
+                'elem': {'text': file.title}
+            }}))
+        ];
     }
-}
-
-
-/**
- * Helper function to search for a phrase in a loaded markdown book model
- *
- * @param {Object} book - The loaded markdown book model
- * @param {string} search - The search phrase
- * @returns{?Object[]} The array of matching loaded markdown files
- */
-function searchBook(book, search) {
-    // Get the search words that aren't too small
-    const words = search.replace(rSearchWordClean, '').split(rSearchWordSplit).filter((word) => word.length >= minSearchWordLength);
-    if (words.length === 0) {
-        return [];
-    }
-
-    // Count the word matches
-    const rWords = new RegExp(`\\b(?:${words.join('|')})`, 'ig');
-    return Object.values(book.files).map((file) => [Array.from(file.text.matchAll(rWords)).length, file]).
-        filter(([score]) => score > 0).
-        sort(([scoreA, fileA], [scoreB, fileB]) => (
-            (scoreB - scoreA) ||
-                (fileA.title < fileB.title ? -1 : fileA.title > fileB.title) ||
-                (fileA.id < fileB.id ? -1 : fileA.id > fileB.id)
-        )).
-        map(([, file]) => file).
-        slice(0, maxSearchResults);
 }
 
 
