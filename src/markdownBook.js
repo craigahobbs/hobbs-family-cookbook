@@ -146,7 +146,8 @@ export class MarkdownBook {
         if (this.getCommand('search') !== null) {
             const searchText = document.getElementById('search-text');
             searchText.focus();
-            searchText.selectionStart = searchText.selectionEnd = searchText.value.length;
+            searchText.selectionStart = searchText.value.length;
+            searchText.selectionEnd = searchText.value.length;
         }
     }
 
@@ -262,7 +263,7 @@ export class MarkdownBook {
      *
      * @return {Object}
      */
-    static hamburgerSVGElements() {
+    static burgerSVGElements() {
         return {'svg': 'svg', 'attr': {'width': '24', 'height': '24'}, 'elem': [
             {'svg': 'rect', 'attr': {'x': '3', 'y': '3', 'width': '18', 'height': '3', 'stroke': 'none', 'fill': 'black'}},
             {'svg': 'rect', 'attr': {'x': '3', 'y': '10', 'width': '18', 'height': '3', 'stroke': 'none', 'fill': 'black'}},
@@ -410,7 +411,7 @@ export class MarkdownBook {
                         {
                             'html': 'div',
                             'elem': [
-                                {'html': 'a', 'attr': {'href': this.linkToggle('index', true)}, 'elem': MarkdownBook.hamburgerSVGElements()},
+                                {'html': 'a', 'attr': {'href': this.linkToggle('index', true)}, 'elem': MarkdownBook.burgerSVGElements()},
                                 {'html': 'a', 'attr': {'href': this.linkFile()}, 'elem': {'text': this.book.title}}
                             ]
                         },
@@ -650,8 +651,19 @@ export class MarkdownBook {
         }
 
         // Count the word matches
-        const rWords = new RegExp(`\\b(?:${words.join('|')})`, 'ig');
-        const files = Object.values(this.book.files).map((file) => [Array.from(file.text.matchAll(rWords)).length, file]).
+        const rWords = words.map((word) => new RegExp(`\\b${word}`, 'ig'));
+        const files = Object.values(this.book.files).map((file) => {
+            let score = 0;
+            for (const rWord of rWords) {
+                const matches = Array.from(file.text.matchAll(rWord)).length;
+                if (matches === 0) {
+                    score = 0;
+                    break;
+                }
+                score += matches;
+            }
+            return [score, file];
+        }).
             filter(([score]) => score > 0).sort(([scoreA, fileA], [scoreB, fileB]) => (
                 (scoreB - scoreA) ||
                     (fileA.title < fileB.title ? -1 : fileA.title > fileB.title) ||
