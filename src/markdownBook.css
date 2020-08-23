@@ -114,8 +114,8 @@ html, body {
     display: flex;
     justify-content: space-between;
     font-size: 1.6rem;
-    padding-left: 0.4em;
-    padding-right: 0.4em;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
     min-height: 1.8em;
     max-height: 1.8em;
 }
@@ -147,7 +147,7 @@ html, body {
 }
 @media only screen and (max-width: 768px) {
     .header > div:first-child > a:first-child {
-        display: block;
+        display: inline-flex;
     }
 }
 .header > div:first-child > a:nth-child(2) {
