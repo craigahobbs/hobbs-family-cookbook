@@ -80,6 +80,7 @@ export class MarkdownBook {
             'id': null,
             'index': false,
             'scale': 1,
+            'search': null,
             'url': null,
             ...this.params
         };
@@ -185,6 +186,7 @@ export class MarkdownBook {
                             const fileLoaded = {
                                 'id': fileId,
                                 'title': file.title,
+                                'category': category.title,
                                 'url': markdownFileURLs[ixFile],
                                 'text': responses[ixFile],
                                 'markdown': markdown
@@ -347,22 +349,41 @@ export class MarkdownBook {
                             'elem': this.indexElements()
                         },
 
-                        // Markdown file?
-                        this.config.index ? null
-                            : this.config.id !== null ? {
+                        // Search?
+                        (this.config.search !== null
+                            ? ({
                                 'html': 'div',
                                 'attr': {'style': `background: ${this.book.contentColor}`},
-                                'elem': this.markdownElements()
+                                'elem': this.searchElements()
+                            })
 
-                                // Title page?
-                            } : 'titleMarkdown' in this.book ? {
-                                'html': 'div',
-                                'attr': {
-                                    'class': 'sidebar-title',
-                                    'style': `background: ${this.book.titleColor}`
-                                },
-                                'elem': markdownElements(this.book.titleMarkdown, this.book.titleURL)
-                            } : null
+                            // Index?
+                            : (this.config.index
+                                ? null
+
+                                // Markdown file?
+                                : (this.config.id !== null
+                                    ? {
+                                        'html': 'div',
+                                        'attr': {'style': `background: ${this.book.contentColor}`},
+                                        'elem': this.markdownElements()
+                                    }
+
+                                    // Title page?
+                                    : ('titleMarkdown' in this.book
+                                        ? {
+                                            'html': 'div',
+                                            'attr': {
+                                                'class': 'sidebar-title',
+                                                'style': `background: ${this.book.titleColor}`
+                                            },
+                                            'elem': markdownElements(this.book.titleMarkdown, this.book.titleURL)
+                                        }
+                                        : null
+                                    )
+                                )
+                            )
+                        )
                     ]
                 }
             ]
@@ -485,7 +506,74 @@ export class MarkdownBook {
             })
         ];
     }
+
+
+    /**
+     * Helper function to generate the search element model
+     *
+     * @returns {object[]}
+     */
+    searchElements() {
+        return [
+            {'html': 'h2', 'elem': {'text': 'Search Results'}},
+            this.searchResultsElements(this.config.search)
+        ];
+    }
+
+
+    /**
+     * Helper function to generate the search results element model
+     *
+     * @param {string} search - The search string
+     * @returns {object[]}
+     */
+    searchResultsElements(search) {
+        const files = searchBook(this.book, search);
+        if (files.length === 0) {
+            return {'html': 'p', 'elem': {'text': 'No search results'}};
+        }
+        return files.map((file) => ({'html': 'p', 'elem': {
+            'html': 'a',
+            'attr': {'href': chisel.href({...this.params, 'search': null, 'categories': [file.category], 'id': file.id})},
+            'elem': {'text': file.title}
+        }}));
+    }
 }
+
+
+/**
+ * Helper function to search for a phrase in a loaded markdown book model
+ *
+ * @param {Object} book - The loaded markdown book model
+ * @param {string} search - The search phrase
+ * @returns{?Object[]} The array of matching loaded markdown files
+ */
+function searchBook(book, search) {
+    // Get the search words that aren't too small
+    const words = search.replace(rSearchWordClean, '').split(rSearchWordSplit).filter((word) => word.length >= minSearchWordLength);
+    if (words.length === 0) {
+        return [];
+    }
+
+    // Count the word matches
+    const rWords = new RegExp(`\\b(?:${words.join('|')})`, 'ig');
+    return Object.values(book.files).map((file) => [Array.from(file.text.matchAll(rWords)).length, file]).
+        filter(([score]) => score > 0).
+        sort(([scoreA, fileA], [scoreB, fileB]) => (
+            (scoreB - scoreA) ||
+                (fileA.title < fileB.title ? -1 : fileA.title > fileB.title) ||
+                (fileA.id < fileB.id ? -1 : fileA.id > fileB.id)
+        )).
+        map(([, file]) => file).
+        slice(0, maxSearchResults);
+}
+
+
+// Book search constants
+const minSearchWordLength = 3;
+const maxSearchResults = 20;
+const rSearchWordClean = /[^A-Za-z\s]+/;
+const rSearchWordSplit = /\s+/;
 
 
 // Ingredient unit info map
@@ -625,8 +713,8 @@ const rRecipeMarkdownIngredients = new RegExp(
 /**
  * Parse the recipe info of a markdown model
  *
- * @param {object} markdown - The markdown model
- * @returns {object} The recipe info model
+ * @param {Object} markdown - The markdown model
+ * @returns {Object} The recipe info model
  */
 export function parseRecipeInfo(markdown) {
     const recipeInfo = {'title': 'Untitled Recipe', 'ingredients': []};

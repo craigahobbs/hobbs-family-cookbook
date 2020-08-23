@@ -11,6 +11,9 @@ struct MarkdownBookParams
     # If true, show the markdown book's index
     optional bool index
 
+    # If present, search for the markdown book
+    optional string(len < 1000) search
+
     # The currently expanded categories
     optional NonEmptyString[len > 0, len < 1000] categories
 
@@ -125,6 +128,9 @@ struct MarkdownFileLoaded
 
     # The markdown file's title
     NonEmptyString title
+
+    # The markdown file's category title
+    NonEmptyString category
 
     # The markdown file's URL
     NonEmptyString url

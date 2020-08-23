@@ -692,6 +692,19 @@ export const markdownBookTypes =
                 },
                 {
                     "attr": {
+                        "lenLT": 1000
+                    },
+                    "doc": [
+                        "If present, search for the markdown book"
+                    ],
+                    "name": "search",
+                    "optional": true,
+                    "type": {
+                        "builtin": "string"
+                    }
+                },
+                {
+                    "attr": {
                         "lenGT": 0,
                         "lenLT": 1000
                     },
@@ -870,6 +883,15 @@ export const markdownBookTypes =
                         "The markdown file's title"
                     ],
                     "name": "title",
+                    "type": {
+                        "user": "NonEmptyString"
+                    }
+                },
+                {
+                    "doc": [
+                        "The markdown file's category title"
+                    ],
+                    "name": "category",
                     "type": {
                         "user": "NonEmptyString"
                     }
