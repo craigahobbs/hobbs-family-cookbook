@@ -325,7 +325,7 @@ export class MarkdownBook {
 
 
     /**
-     * Helper function to test if a command is active
+     * Helper function to a command's data
      */
     getCommand(command) {
         return 'cmd' in this.params && command in this.params.cmd ? this.params.cmd[command] : null;
@@ -727,6 +727,7 @@ const unitInfo = {
         'fractions': [2, 4, 8]
     }
 };
+
 
 // Alternate ingredient unit map
 const alternateUnits = Object.entries(unitInfo).reduce((units, [unit, info]) => {
