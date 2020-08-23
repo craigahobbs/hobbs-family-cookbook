@@ -37,7 +37,7 @@ clean hands to coat thoroughly. Transfer to a serving bowl and sprinkle with the
 scallions.
 
 ~~~ recipe-ingredients
-1/3 C sliced green
+1/3 C sliced green scallions
 ~~~
 
 Serve at room temperature.
