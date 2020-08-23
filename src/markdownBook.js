@@ -144,7 +144,9 @@ export class MarkdownBook {
 
         // Set focus
         if (this.getCommand('search') !== null) {
-            document.getElementById('search-text').focus();
+            const searchText = document.getElementById('search-text');
+            searchText.focus();
+            searchText.selectionStart = searchText.selectionEnd = searchText.value.length;
         }
     }
 
