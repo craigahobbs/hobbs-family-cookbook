@@ -241,6 +241,7 @@ html, body {
 }
 .search > a {
     margin-left: 0.8em;
+    cursor: pointer;
 }
 
 /* Error page */
