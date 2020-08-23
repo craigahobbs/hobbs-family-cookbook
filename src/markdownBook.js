@@ -716,7 +716,7 @@ const unitInfo = {
         'alternates': ['T', 'Tbsp', 'Tablespoon', 'Tablespoons', 'tablespoon', 'tablespoons'],
         'baseUnit': 'tsp',
         'baseRatio': 3,
-        'fractions': [1]
+        'fractions': [1, 2]
     },
     'tsp': {
         'alternates': ['Tsp', 'Teaspoon', 'Teaspoons', 'teaspoon', 'teaspoons'],

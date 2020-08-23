@@ -18,7 +18,7 @@ Stir together:
 
 1/4 C salad oil
 
-2 Tbsp read wine vinegar
+2 Tbsp red wine vinegar
 
 1 tsp (or to taste) Lawry's seasoned salt
 ~~~

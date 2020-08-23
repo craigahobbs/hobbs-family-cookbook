@@ -41,10 +41,11 @@ towel and slice into 1/8" rounds.
 2 Tbsp grated parmesan cheese
 ~~~
 
-Layer 1/3 of the sliced potato over the bottom of the crust, sprinkle with a pinch of kosher salt
-and several grinds of black pepper. Next, strew 1/3 of the crisped bacon over the potatoes and
-sprinkle with 1/3 of the Gruyere cheese. Repeat two more layers. Remove the thyme from the cream and
-pour the cream over the potato layers.
+Use the [pie crust](../#id=PieCrust&categories.0=Desserts) recipe in the dessert portion of the
+book and form the bottom crust of the torte. Layer 1/3 of the sliced potato over the bottom of the
+crust, sprinkle with a pinch of kosher salt and several grinds of black pepper. Next, strew 1/3 of
+the crisped bacon over the potatoes and sprinkle with 1/3 of the Gruyere cheese. Repeat two more
+layers. Remove the thyme from the cream and pour the cream over the potato layers.
 
 Roll out the second disc of pastry to an 11 1/2" round. Moisten the trimmed edges of the bottom
 crust with a little cold water, fold the second crust in half and lay it over the pie. Trim any

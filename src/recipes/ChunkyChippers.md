@@ -8,7 +8,7 @@ Cream together:
 ~~~ recipe-ingredients
 1/2 C butter
 
-1/2 C chunky peanut butter
+1/2 C chunky peanut butter (recommend Jif peanut butter otherwise add about 2 Tbsp extra brown sugar)
 
 2 eggs
 

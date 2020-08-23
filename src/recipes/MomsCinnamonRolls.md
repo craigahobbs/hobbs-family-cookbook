@@ -36,7 +36,7 @@ Add and mix in:
 
 When mixture forms a smooth "batter" mix in and continue to beat until a smooth dough forms:
 
-(Change beater attachment to a dough hook)
+(Change beater attachment to a dough hook) and add and beat in:
 
 ~~~ recipe-ingredients
 3 C flour
@@ -44,7 +44,7 @@ When mixture forms a smooth "batter" mix in and continue to beat until a smooth 
 
 Turn dough out onto a floured surface and knead until completely smooth and elastic. Round the dough
 into a large greased bowl, cover and let rise in a warm place until dough has doubled. Punch the
-dough down and let rise a second time.
+dough down and let rise a second time until doubled again.
 
 For the **stickey pecan topping**, in baking pan, mix together into a thick paste in pan bottom:
 
@@ -53,7 +53,7 @@ For the **stickey pecan topping**, in baking pan, mix together into a thick past
 
 1 C packed brown sugar
 
-2 Tbsp dark corn syrup
+3 Tbsp dark corn syrup
 ~~~
 
 Sprinkle with pecan halves:
@@ -81,8 +81,9 @@ dough to seal. Cut the dough into rounds about 1 1/2" thick and place loosely in
 leaving room for the rolls to rise. At this point the pan may be covered and frozen until about 9
 hours before baking, or allowed to rise until doubled and baked in a 375 degree oven for 25 to 30
 minutes until rolls sound hollow when middle roll is thumped. Remove the pan from the oven, slide
-the blade of a knife around the outer edge, turn upside down on serving platter\*. Let rolls sit
-upside down for a minute or two and then carefully lift pan off, scraping any leftover topping onto
-the hot rolls. Best served hot.
+the blade of a knife around the outer edge, place serving platter on top of the pan and holding the
+two together firmly flip over so the baking pan is on top.\*. Let rolls sit upside down for a
+minute or two and then carefully lift pan off, scraping any leftover topping onto the hot rolls.
+Best served hot.
 
 \* I have a large flat tray that I line with foil.

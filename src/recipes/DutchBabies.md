@@ -7,8 +7,9 @@ Dutch babies are made in a glass pie pan or a shallow casserole dish. Select the
 the size of pan you are using.
 
 Heat oven to 425 degrees. Put the butter in the pan and set aside while you mix the batter. Place
-the eggs in a blender container and whirl on high speed for 1 minute. Add the milk and blend. Add
-the flour and process for 30 seconds. \*
+the eggs (the Baby will have more volume if the eggs and milk are room temperature) in a blender
+container and whirl on high speed for 1 minute. Add the milk and blend. Add the flour and process
+for 30 seconds. \*
 
 Heat the baking pan with the butter in the oven until the butter melts. Remove the pan from the oven
 and pour the batter into the butter. Return the pan to the oven and bake until the pancake is puffed

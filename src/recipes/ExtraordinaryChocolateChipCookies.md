@@ -34,7 +34,7 @@ Add and mix together:
 With the mixer on the lowest speed, add in 4 cups of semisweet chocolate chips. This forms a really
 stiff, chocolatey dough and makes a huge batch of cookies. I roll the dough in large (almost golf
 ball sized) balls and freeze them on a cookie sheet. When frozen, place balls in Ziploc bag. To bake
-cookies place up to 12 balls on a cookie sheet, allow to thaw completely at room temperature, and
+cookies place up to 9 balls on a cookie sheet, allow to thaw completely at room temperature, and
 bake at 350 degrees for 11 to 13 minutes. Baked cookies should be underdone and just barely light
 brown. Allow to stand on the cookie sheet for 1 minute before transferring cookies to a cooling
 rack.

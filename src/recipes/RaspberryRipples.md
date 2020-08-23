@@ -31,7 +31,7 @@ Mix together:
 1/2 tsp vanilla extract
 ~~~
 
-Make a thumbprint "well" in each dough rwound, and add a scant 1/2 tsp of raspberry mixture to it,
+Make a thumbprint "well" in each dough round, and add a scant 1/2 tsp of raspberry mixture to it,
 sprinkle with a few almond slices and bake in a 350 degree oven for 12 to 13 minutes. The cookies
 should be only slightly brown on the bottoms.
 

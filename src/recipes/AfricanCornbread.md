@@ -12,7 +12,7 @@ Use an electric beater with a paddle attachment and combine well:
 1 cup sugar
 ~~~
 
-Add and stir in:
+Add and stir in well:
 
 ~~~ recipe-ingredients
 2 cup cornmeal
@@ -33,7 +33,7 @@ Add and mix well:
 Fold in beaten eggs very slowly by hand.
 
 ~~~ recipe-ingredients
-2 count eggs
+2 eggs
 ~~~
 
 Spread batter in a greased 9 X 9" baking pan and bake at 350 degrees for about 30 minutes, or until

@@ -40,7 +40,7 @@ Mix together:
 1/2 C flaked coconut
 ~~~
 
-Pour evenly mixture over the hot crust and return to the oven for 20 minutes. While cookies are
+Pour mixture evenly over the hot crust and return to the oven for 20 minutes. While cookies are
 still warm spread with the icing.
 
 

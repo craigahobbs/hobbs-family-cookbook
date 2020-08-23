@@ -19,12 +19,14 @@ Combine in a large saucepan:
 ~~~
 
 Stir frequently and cook over medium heat until the candy reaches 280 - 290 degrees on a candy
-thermometer or hard crack stage*, when dropped in cold water about 25 minutes.
+thermometer or hard crack stage*, when dropped in cold water. The cooking takes approximately 25
+minutes stirring frequently.
 
 Remove from heat and stir in the baking soda and the toasted almonds.
 
 ~~~ recipe-ingredients
 1 tsp baking soda
+
 1 1/2 C roughly chopped toasted whole almonds
 ~~~
 
