@@ -1,4 +1,4 @@
-# It's your favorite!
+# It's Your Favorite!
 
 "It's your favorite!" cookbook was written after years of urging from Teresa (Hobbs) Ball.
 
