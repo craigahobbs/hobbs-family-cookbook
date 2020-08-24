@@ -39,5 +39,6 @@ Add to the cooked beans along with:
 2 tsp ground cumin
 ~~~
 
-Simmer covered for about 25 more minutes. Serve with [Liberian Corn Bread](../#id=AfricanCornbread&categories.0=Breads)
+Simmer covered for about 25 more minutes. Serve with
+[Liberian Corn Bread](https://craigahobbs.github.io/markdown-book/#id=AfricanCornbread&categories.0=Breads&url=https://craigahobbs.github.io/hobbs-family-cookbook/HobbsFamilyCookbook.json)
 and a dollop of sour cream and sliced green onions.

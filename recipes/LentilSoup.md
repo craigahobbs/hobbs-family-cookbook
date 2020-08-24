@@ -62,4 +62,5 @@ Cook covered for 1/2 hour more and add the crisped bacon and remove bay leaf and
 soup in a airtight container. Soup is better the second day. Freeze any leftover soup for another
 time.
 
-This was a favorite birthday dinner request with [Dilly Bread](../#id=DillyBread&categories.0=Breads).
+This was a favorite birthday dinner request with
+[Dilly Bread](https://craigahobbs.github.io/markdown-book/#id=DillyBread&categories.0=Breads&url=https://craigahobbs.github.io/hobbs-family-cookbook/HobbsFamilyCookbook.json).
