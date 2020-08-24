@@ -58,7 +58,7 @@ on a cake rack. Frost with:
 2 tsp vanilla
 ~~~
 
-Melt the butter and stir in thecocoa powder. Alternately add the powdered sugar and the milk beating
+Melt the butter and stir in the cocoa powder. Alternately add the powdered sugar and the milk beating
 on a medium speed. Stir in the vanilla. I sometimes make 1 1/2 recipe so that I have plenty of
 frosting to generously frost cake.
 

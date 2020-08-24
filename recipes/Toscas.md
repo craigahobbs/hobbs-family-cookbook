@@ -7,7 +7,7 @@ Servings: 30
 Using a Cuisinart cream together:
 
 ~~~ recipe-ingredients
-1 C butter
+13 Tbsp butter
 
 1/2 C sugar
 ~~~

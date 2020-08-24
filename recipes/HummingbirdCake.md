@@ -1,6 +1,7 @@
 ~~~ recipe-info
 Title: Hummingbird Cake
 Category: Desserts
+Author: Vicki Bessa
 ~~~
 
 Mix together in a large bowl:

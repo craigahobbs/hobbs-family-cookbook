@@ -41,7 +41,7 @@ Zabaglione. Chill again to firm up.
 Combine in a large measuring cup and microwave and stir together until chocolate has melted:
 
 ~~~ recipe-ingredients
-1 C brewed espresso (or strong coffee)
+1 C 2 shots espresso diluted to 1 cup (or strong coffee)
 
 1 tsp vanilla
 

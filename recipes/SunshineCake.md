@@ -19,6 +19,8 @@ In a medium bowl beat together until the consistency of mayonnaise:
 Add and stir in:
 
 ~~~ recipe-ingredients
+7 egg whites
+
 1/2 fresh lemon, juiced
 
 1 zest of the whole lemon

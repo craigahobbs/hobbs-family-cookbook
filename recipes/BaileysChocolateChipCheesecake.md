@@ -51,9 +51,9 @@ Prepare the topping by stirring together:
 ~~~
 
 Spread evenly over the top of the cheesecake bake at 425 degrees for 10 minutes. Cool completely
-before refrigerating. Carefully run a thin bladed knife around the edge of the spring form pan
-before unhinging it. I usually pipe the top edge of the cake with whipped cream and sprinkle the
-piping with more mini chocolate chips.
+before refrigerating. When ready to serve, carefully run a thin bladed knife around the edge of the
+spring form pan before unhinging it. I usually pipe the top edge of the cake with whipped cream and
+sprinkle the piping with more mini chocolate chips.
 
 ~~~ recipe-ingredients
 1/2 C mini chocolate chips

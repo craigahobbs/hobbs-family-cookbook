@@ -28,9 +28,14 @@ Combine the cooled chicken and onion mixture with diced cream cheese and salt an
 1 8 oz pkg cream cheese, diced
 ~~~
 
-Spoon 1/4 to 1/3 C filling into each tortilla and roll up placing seam side down in a 9x 13"
-buttered glass pan. When all enchiladas have been rolled, cover with the whipping cream and shredded
-Monterey Jack cheese.
+Spoon 1/4 to 1/3 C filling into each flour tortilla and roll up placing seam side down in a 9 X 13"
+buttered glass pan.
+
+~~~ recipe-ingredients
+12 flour tortillas
+~~~
+
+When all enchiladas have been rolled, cover with the whipping cream and shredded Monterey Jack cheese.
 
 ~~~ recipe-ingredients
 1 C whipping cream

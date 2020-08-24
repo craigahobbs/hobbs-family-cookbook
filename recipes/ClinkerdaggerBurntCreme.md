@@ -21,5 +21,5 @@ Beat together the egg yolks and the sugar in a medium bowl for 3 minutes. With t
 low speed, slowly pour in the hot cream. Stir in the vanilla. Pour the mixture equally into custard
 cups. Place the custard cups in a large baking pan and carefully fill the pan with 1/2" boiling
 water. Bake in a 350 degree oven for 45 minutes. Remove the custard cups from the water bath and
-refrigerate for 2 hours. Sprinkle the top of each custard with sugar and broil until the sugar
-toping bubbles and is medium brown in color. Refrigerate until serving.
+refrigerate for 2 hours. Sprinkle the top of each custard with sugar and broil or use a butane
+torch until the sugar topping bubbles and is medium brown in color. Refrigerate until serving.

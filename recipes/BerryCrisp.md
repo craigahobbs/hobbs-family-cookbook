@@ -31,7 +31,7 @@ over the whole mixture. Bake at 375 degrees for 45 minutes or until bubbly.
 
 Serve with whipped cream or ice cream.
 
-\* If using frozen berries, let that slightly.
+\* If using frozen berries, let thaw slightly.
 
 When the kids were little we would pick blackberries here on the Island and freeze them for winter
 use. We had lots of "free" desserts.

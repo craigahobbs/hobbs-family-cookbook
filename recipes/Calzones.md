@@ -8,7 +8,7 @@ Category: Main Dishes
 Add to a large electric mixer bowl and allow to stand for 10 minutes:
 
 ~~~ recipe-ingredients
-1 3/4 C warm water (110 degrees)
+1 7/8 C warm water (110 degrees)
 
 1 1/2  Tbsp  active dry yeast
 
@@ -60,7 +60,7 @@ Add and heat until bubbling hot:
 ~~~ recipe-ingredients
 1/4 C diced sun-dried tomatoes
 
-2 fresh tomatoes, seeded and diced
+2 fresh roma tomatoes, seeded and diced
 ~~~
 
 Pour mixture into a large mixing bowl and allow to cool. Then mix in:

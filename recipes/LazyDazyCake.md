@@ -50,7 +50,7 @@ warm frost with:
 
 1/2 C brown sugar packed
 
-3 Tbsp 1/2  & 1/2
+3 Tbsp half & half
 
 1/3 C chopped pecans
 

@@ -14,7 +14,7 @@ Mix together:
 1/4 C sugar
 ~~~
 
-Press half mixture into a 9" X 13" pan reserving the other half for the topping.
+Press half mixture into a 9" X 13” glass pan reserving the other half for the topping.
 
 Mix together and dissolve:
 
