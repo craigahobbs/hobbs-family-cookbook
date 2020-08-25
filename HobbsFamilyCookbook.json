@@ -248,6 +248,10 @@
                     "url": "recipes/LazyDazyCake.md"
                 },
                 {
+                    "title": "Panna Cotta",
+                    "url": "recipes/PannaCotta.md"
+                },
+                {
                     "title": "Perfectly Chocolate Cake",
                     "url": "recipes/PerfectlyChocolateCake.md"
                 },
@@ -349,10 +353,6 @@
                     "url": "recipes/MomsPizza.md"
                 },
                 {
-                    "title": "Panna Cotta",
-                    "url": "recipes/PannaCotta.md"
-                },
-                {
                     "title": "Potato Bacon Torte",
                     "url": "recipes/PotatoBaconTorte.md"
                 },
@@ -363,10 +363,6 @@
                 {
                     "title": "Quiche",
                     "url": "recipes/Quiche.md"
-                },
-                {
-                    "title": "Sadie And Colins Favorite Egg Sandwich",
-                    "url": "recipes/SadieAndColinsFavoriteEggSandwich.md"
                 },
                 {
                     "title": "Seared Halibut With Herbed Tartar Sauce",
@@ -444,6 +440,10 @@
                 {
                     "title": "Reeses Peanut Butter Cups",
                     "url": "recipes/ReesesPeanutButterCups.md"
+                },
+                {
+                    "title": "Sadie And Colin's Favorite Egg Sandwich",
+                    "url": "recipes/SadieAndColinsFavoriteEggSandwich.md"
                 },
                 {
                     "title": "Scrapple",

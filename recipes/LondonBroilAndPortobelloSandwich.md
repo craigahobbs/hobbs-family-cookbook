@@ -6,9 +6,9 @@ Category: Main Dishes
 Prepare the spread by mixing together:
 
 ~~~ recipe-ingredients
-1/2 C mayonnaise
+3/4 C mayonnaise
 
-1 to 2 Tbsp prepared horseradish
+2 Tbsp prepared horseradish
 
 1/2 C chopped fresh parsley
 
@@ -44,11 +44,11 @@ desired doneness. Let the steak rest for 5 minutes and slice thinly against the 
 Prepare:
 
 ~~~ recipe-ingredients
-1/4 lb Fontina cheese, 1/8" sliced
+1/2 lb Fontina cheese, 1/8" sliced
 
-1 loaf ciabatta bread sliced in 1/2 and cut into 6 servings
+2 loaf ciabatta bread sliced in 1/2 and cut into 6 servings
 
-1 bunch of arugula cleaned and spun dry
+4 C arugula cleaned and spun dry
 ~~~
 
 Let everyone assemble their own sandwich using all of the above ingredients. I serve this with

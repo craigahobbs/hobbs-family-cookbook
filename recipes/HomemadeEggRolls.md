@@ -18,7 +18,7 @@ Add and continue to saute until vegetables are just limp:
 
 1 small julienned yellow onion
 
-4 slice cleaned green onions
+4 sliced green onions
 
 1/2  head shredded napa cabbage
 

@@ -23,7 +23,7 @@ tender crisp:
 1 peeled carrot sliced in half and then in 1/4" slices
 ~~~
 
-Add the cooked rice, barbequed port, and frozen peas. Continue stir frying until everything is hot:
+Add the cooked rice, barbequed pork, and frozen peas. Continue stir frying until everything is hot:
 
 ~~~ recipe-ingredients
 1 C diced barbequed pork (pork and sesame)

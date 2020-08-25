@@ -1,5 +1,5 @@
 ~~~ recipe-info
-Title: Pork And Sesame
+Title: Pork And Sesame-Chinese Barbecue Pork
 Category: Main Dishes
 ~~~
 
@@ -31,4 +31,6 @@ serve with red sauce (see recipe for egg rolls) and Chinese mustard and toasted 
 Serve cool with rice and stir fried vegetables.
 
 Leftover pork is delicious in a sandwich with mayo, plum sauce, and lettuce or diced and added to
-fried rice.
+fried rice see
+[Mom's Pork Fried Rice](https://craigahobbs.github.io/markdown-book/#categories.0=Main%20Dishes&id=MomsPorkFriedRice&url=https%3A%2F%2Fcraigahobbs.github.io%2Fhobbs-family-cookbook%2FHobbsFamilyCookbook.json)
+recipe.

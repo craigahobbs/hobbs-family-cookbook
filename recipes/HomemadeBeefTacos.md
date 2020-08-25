@@ -6,7 +6,7 @@ Category: Main Dishes
 ~~~ recipe-ingredients
 3 lbs lean beef chuck, cut into 1" chunks
 
-1 Tbsp olive oil
+2 Tbsp olive oil
 
 1 1/2 C water
 

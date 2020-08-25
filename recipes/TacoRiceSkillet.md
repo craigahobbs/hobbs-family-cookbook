@@ -3,7 +3,7 @@ Title: Taco Rice Skillet
 Category: Main Dishes
 ~~~
 
-In a large skillet (with a lid), brown in olive oil:
+In a large skillet (with a lid), brown:
 
 ~~~ recipe-ingredients
 1 Tbsp olive oil
@@ -18,7 +18,7 @@ Stir in, cover and cook on low heat for 25 minutes stirring occasionally until r
 ~~~ recipe-ingredients
 1 C white rice
 
-1 16 oz can of diced tomatoes drained (reserve juice)
+1 16 oz can of diced tomatoes in juice
 
 2 1/4 C water
 
