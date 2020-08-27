@@ -17,9 +17,9 @@ to heat the pot just before everyone is seated to eat. We always give everyone t
 that one can be cooking while eating the other.
 
 Place the meat and mushroom cubes near the fondue pot so people can help themselves just before
-adding to the cooking pot. Pass the sauces (recipes found on next page) around the table. The dinner
-is complete with a twice baked potato and salad. Dinner takes a while to eat so everyone gets to
-visit while cooking.
+adding to the cooking pot. Pass the sauces around the table. The dinner is complete with a twice
+baked potato and salad. Dinner takes a while to eat so everyone gets to visit while cooking.
 
 The sauces can be made a day ahead and warmed before serving making this is a very easy party to put
-together.
+together. The Sauces are found in the miscellaneous section of this cookbook and are
+[Horseradish, Robert's, and Bearnaise](https://craigahobbs.github.io/markdown-book/#categories.0=Miscellaneous&id=HorseradishSauce&url=https%3A%2F%2Fcraigahobbs.github.io%2Fhobbs-family-cookbook%2FHobbsFamilyCookbook.json).
