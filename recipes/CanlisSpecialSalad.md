@@ -21,7 +21,7 @@ Combine in a blender:
 
 1 tsp salt
 
-1/2 pepper
+1/2 tsp pepper
 ~~~
 
 Combine in a large salad bowl:

@@ -46,7 +46,7 @@ Place in a large mixing bowl and toss:
 ~~~ recipe-ingredients
 1/2 large head of iceberg lettuce chopped
 
-1/2 romaine lettuce cleaned and chopped
+1/2 large head romaine lettuce cleaned and chopped
 
 1 C fresh basil leaves coarsely chopped
 

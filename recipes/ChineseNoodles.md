@@ -19,7 +19,7 @@ Mix together in a large glass bowl:
 
 1 tsp crushed red pepper flakes
 
-3 cloves crushed garlic cloves
+3 cloves crushed garlic
 
 1 Tbsp sugar
 

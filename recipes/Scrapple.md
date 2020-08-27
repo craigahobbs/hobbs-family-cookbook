@@ -52,7 +52,5 @@ scrapple in bacon fat - if you want the recipe to be authentic.)
 ~~~
 
 Serve with butter, salt and pepper. Nonny also used to serve scrapple with maple syrup, so you can
-try it both ways. I have fond memories of Nonny cooking this up especially for me in her kitchen. It
-was one of my favorite breakfasts in the day.
-
-Dad
+try it both ways. Dad has fond memories of Nonny cooking this up especially for him in her kitchen. It
+was one of his favorite breakfasts.

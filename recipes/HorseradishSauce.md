@@ -43,9 +43,9 @@ Salt and freshly ground pepper to taste.
 
 Melt the butter in a heavy skillet over low heat with the onion slice until the butter is brown.
 Remove and discard the onion and add the flour. Cook the butter flour mixture over low heat until
-the flour is deep mahogany brown. Remove the pan from the heat and slowly whisk in the bouillon.
-Return to the heat and boil one minute until thickened. Remove from the heat whisk in the remaining
-ingredients.
+the flour is deep mahogany brown being very careful not to burn. Remove the pan from the heat and
+slowly whisk in the bouillon.  Return to the heat and boil one minute until thickened. Remove from
+the heat and whisk in the remaining ingredients.
 
 
 ### Bearnaise Sauce
@@ -63,13 +63,13 @@ ingredients.
 ~~~
 
 Place the ingredients in a heavy saucepan and bring to boil and reduce to 2 Tbsp. Cool. Whisk in the
-egg yolks and add the butter.
+egg yolks and add a third of the butter.
 
 ~~~ recipe-ingredients
 3 egg yolks
 
-1/2 C butter
+3/4 C  butter
 ~~~
 
-Cook over medium heat stirring constantly until the butter is melted. Now add another stick of
+Cook over medium heat stirring constantly until the butter is melted. Now now add the remaining
 butter and cook and stir until melted and sauce is thick.

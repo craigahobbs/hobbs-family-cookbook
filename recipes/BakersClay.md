@@ -25,6 +25,6 @@ used model enamel, but I'm sure that any craft paint would probably work.
 
 I had a set of cookie cutters from Hallmark that put indentations in the dough for painting lines.
 Norma used to "rice" this dough with a garlic press and attach this (as hair to her angels and
-beards for her santas) pressing it into the ornament with a toothpick.
+beards for her santas) pressing it into the ornament with a toothpick before baking.
 
 These ornaments last for years and years.

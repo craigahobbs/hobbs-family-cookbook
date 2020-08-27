@@ -410,20 +410,12 @@
                     "url": "recipes/HomemadeMarshmallows.md"
                 },
                 {
-                    "title": "Homemade Mayonnaise",
-                    "url": "recipes/HomemadeMayonnaise.md"
-                },
-                {
                     "title": "Homemade Play Dough",
                     "url": "recipes/HomemadePlayDough.md"
                 },
                 {
                     "title": "Horseradish Sauce",
                     "url": "recipes/HorseradishSauce.md"
-                },
-                {
-                    "title": "Lime Dressing For Fresh Fruit",
-                    "url": "recipes/LimeDressingForFreshFruit.md"
                 },
                 {
                     "title": "Marinade For Pork Tenderloin",
@@ -495,6 +487,10 @@
                     "url": "recipes/HerbedBakedMushrooms.md"
                 },
                 {
+                    "title": "Homemade Mayonnaise",
+                    "url": "recipes/HomemadeMayonnaise.md"
+                },
+                {
                     "title": "Hot Cabbage Salad",
                     "url": "recipes/HotCabbageSalad.md"
                 },
@@ -503,11 +499,15 @@
                     "url": "recipes/HotGermanPotatoSalad.md"
                 },
                 {
+                    "title": "Lime Dressing For Fresh Fruit",
+                    "url": "recipes/LimeDressingForFreshFruit.md"
+                },
+                {
                     "title": "Rosellinis Summer Pasta Salad",
                     "url": "recipes/RosellinisSummerPastaSalad.md"
                 },
                 {
-                    "title": "Scalloped Pinapple",
+                    "title": "Scalloped Pineapple",
                     "url": "recipes/ScallopedPinapple.md"
                 },
                 {

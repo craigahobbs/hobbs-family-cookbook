@@ -35,7 +35,7 @@ Category: Desserts
 
 3. Strain the mixture through a fine-mesh strainer into the bowl with the chocolate and let stand
    for 2 minutes. Slowly whisk the mixture until thoroughly combined. Stir in the vanilla, and then
-   divide evenly among six 6-ounced ramekins. Cover with plastic wrap and refrigerate until firm, at
+   divide evenly among six 6-ounce ramekins. Cover with plastic wrap and refrigerate until firm, at
    least 4 hours.
 
 

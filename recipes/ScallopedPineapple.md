@@ -7,7 +7,7 @@ Author: Grandma Peggy
 Cream together:
 
 ~~~ recipe-ingredients
-1/2 butter
+1/2 C butter
 
 1 1/2 C sugar
 ~~~

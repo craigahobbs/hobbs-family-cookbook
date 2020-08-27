@@ -10,7 +10,7 @@ In a 6 qt covered soup pot bring to a boil and simmer for 2 hours:
 
 4 C water
 
-1 qt beef stock*
+1 qt beef stock
 ~~~
 
 Saute in a large skillet until softened:

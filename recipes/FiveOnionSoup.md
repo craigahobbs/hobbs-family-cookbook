@@ -26,7 +26,7 @@ Add and reduce until only 1 C liquid remains:
 ~~~ recipe-ingredients
 1 C dry sherry
 
-1 C brandy (I use Chalfonte VSOP, available at the State Liquor Store)
+1 C brandy (I use Chalfonte VSOP)
 ~~~
 
 Add and simmer 1 hour:
@@ -43,7 +43,7 @@ Puree the mixture with a handheld blender, then add:
 2 Tbsp chopped fresh thyme
 ~~~
 
-Cook fifteen more minutes and add salt and freshly ground pepper to taste. Soup is better is made 1
+Cook fifteen more minutes and add salt and freshly ground pepper to taste. Soup is better made 1
 day ahead. Recipe serves 6 to 8 generously. This soup freezes well.
 
 Serve with snipped chives on top.

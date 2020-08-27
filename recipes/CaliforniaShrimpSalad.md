@@ -31,7 +31,7 @@ Add and stir in:
 
 1 C fresh thinly sliced mushrooms
 
-2 Tbsp thinly slice green onions
+2 Tbsp thinly sliced green onions
 
 1/3 C minced celery
 
