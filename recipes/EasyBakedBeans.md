@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Easy Baked Beans
-Category: Salads & Sides
 Author: Shannon Childs
 ~~~
 

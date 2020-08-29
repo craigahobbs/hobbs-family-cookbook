@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Coconut Chews
-Category: Cookies
 Author: Betty Artus
 ~~~
 

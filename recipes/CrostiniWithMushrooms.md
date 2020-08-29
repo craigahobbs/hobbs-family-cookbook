@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Crostini with Mushrooms, Prosciutto, and Blue Cheese
-Category: Appetizers
 Author: Teresa Ball
 ~~~
 

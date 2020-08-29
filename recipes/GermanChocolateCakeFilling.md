@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: German Chocolate Cake Filling
-Category: Desserts
 ~~~
 
 A Hobbs family favorite!

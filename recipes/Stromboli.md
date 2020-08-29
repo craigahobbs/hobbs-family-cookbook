@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Stromboli
-Category: Main Dishes
 ~~~
 
 ~~~ recipe-ingredients

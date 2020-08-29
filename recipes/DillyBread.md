@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Dilly Bread
-Category: Breads
 Author: Helen Minkiewitz (Nonny)
 ~~~
 

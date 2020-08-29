@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Lentil Soup
-Category: Soups
 ~~~
 
 Cook together in a 6 qt covered soup pot for 2 1/2 hours:

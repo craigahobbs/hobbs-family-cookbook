@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: London Broil And Portobello Sandwich
-Category: Main Dishes
 ~~~
 
 Prepare the spread by mixing together:

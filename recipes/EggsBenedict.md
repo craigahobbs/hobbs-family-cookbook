@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Eggs Benedict
-Category: Main Dishes
 ~~~
 
 Split and toast the english muffins, butter and place on a baking sheet, top with the Canadian bacon
@@ -23,8 +22,8 @@ Prepare the **hollandaise sauce** as follows:
 1 cube butter cut in half
 ~~~
 
-Place the first 3 ingredients in a sauce pan and whisk together. Put 1/2 of the butter in the pan
-and continue to whisk over medium heat until the butter is almost melted. Add the other 1/2 of the
+Place the first 3 ingredients in a sauce pan and whisk together. Put half of the butter in the pan
+and continue to whisk over medium heat until the butter is almost melted. Add the other half of the
 butter and repeat. The sauce should be thickened and smooth by now, if not continue to stir over
 slightly lower heat until it is. Set the sauce aside, stirring occasionally until the eggs are
 poached.

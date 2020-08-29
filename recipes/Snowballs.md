@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Snowballs
-Category: Cookies
 Author: Nonny (Helen Minkiewitz)
 ~~~
 

@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Homemade Egg Rolls
-Category: Main Dishes
 ~~~
 
 Using a large skillet saute and stir:

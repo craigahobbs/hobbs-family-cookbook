@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Mom's Cinnamon Rolls
-Category: Breads
 ~~~
 
 [Large Batch](https://craigahobbs.github.io/markdown-book/#scale=1&id=MomsCinnamonRolls&categories.0=Breads&url=https://craigahobbs.github.io/hobbs-family-cookbook/HobbsFamilyCookbook.json) (10 1/2 " X 14 1/2 " pan)  

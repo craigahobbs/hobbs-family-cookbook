@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Horseradish Sauce
-Category: Miscellaneous
 ~~~
 
 ~~~ recipe-ingredients

@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Clinkerdagger Burnt Creme
-Category: Desserts
 Servings: 6
 ~~~
 

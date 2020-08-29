@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Chunky Chippers
-Category: Cookies
 ~~~
 
 Cream together:

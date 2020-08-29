@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Toscas
-Category: Cookies
 Servings: 30
 ~~~
 

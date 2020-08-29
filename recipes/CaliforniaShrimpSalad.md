@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: California Shrimp Salad
-Category: Salads & Sides
 Servings: 6
 ~~~
 

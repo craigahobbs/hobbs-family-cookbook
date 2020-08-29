@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Homemade Beef Tacos
-Category: Main Dishes
 ~~~
 
 ~~~ recipe-ingredients

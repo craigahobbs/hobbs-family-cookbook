@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Whole Wheat Waffles
-Category: Breads
 Servings: 8
 ~~~
 

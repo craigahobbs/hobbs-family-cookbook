@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Cookie "Dessert" Pizza
-Category: Cookies
 ~~~
 
 Roll the tube of cookie dough into a 13" circle between a sheet of parchment paper on the bottom and

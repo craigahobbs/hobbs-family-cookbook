@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Wilted Spinach Salad
-Category: Salads & Sides
 Author: Betty Artus
 ~~~
 

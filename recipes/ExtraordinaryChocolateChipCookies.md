@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Extraordinary Chocolate Chip Cookies
-Category: Cookies
 ~~~
 
 Cream together until light and fluffy:

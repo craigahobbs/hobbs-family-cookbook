@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Egg On A Raft
-Category: Miscellaneous
 ~~~
 
 ~~~ recipe-ingredients

@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Marinade For Pork Tenderloin
-Category: Miscellaneous
 ~~~
 
 Add together in a large zip food storage bag

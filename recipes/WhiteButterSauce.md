@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: White Butter Sauce
-Category: Miscellaneous
 ~~~
 
 The only sauce to serve with baked salmon.

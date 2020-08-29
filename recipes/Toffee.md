@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Toffee
-Category: Cookies
 Author: Pearl Salter, my Mom
 ~~~
 

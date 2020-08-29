@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Sees Fudge
-Category: Cookies
 Author: Laura Ferguson
 ~~~
 

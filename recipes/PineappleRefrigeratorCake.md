@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Pineapple Refrigerator Cake
-Category: Desserts
 Author: Aunt Laura
 ~~~
 

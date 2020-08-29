@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Cream Puffs
-Category: Desserts
 Servings: 8
 Author: Laura Ferguson (Aunt Laura)
 ~~~

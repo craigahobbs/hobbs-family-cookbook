@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Sweet And Sour Chicken
-Category: Main Dishes
 ~~~
 
 Mix together:

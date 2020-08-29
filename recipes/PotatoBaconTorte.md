@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Potato Bacon Torte
-Category: Appetizers
 ~~~
 
 Saute until crisp and drain:

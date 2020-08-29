@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Banana Nut Bread
-Category: Breads
 Author: Merlin Salter
 ~~~
 

@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Lemon Bars
-Category: Cookies
 Author: Karen Sandberg
 ~~~
 

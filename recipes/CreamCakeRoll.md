@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Cream Cake Roll
-Category: Desserts
 ~~~
 
 Line a jelly roll pan, 15 1/2" X 10 1/2" X 1", with greased foil. (grease the pan first, the foil

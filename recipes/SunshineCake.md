@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Sunshine Cake
-Category: Desserts
 Author: Nonny (Helen Minkiewitz)
 ~~~
 

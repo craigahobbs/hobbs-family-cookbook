@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Canlis Special Salad
-Category: Salads & Sides
 Servings: 8
 ~~~
 

@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Sweet And Sour Red Cabbage
-Category: Salads & Sides
 ~~~
 
 ~~~ recipe-ingredients

@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Craig's Salsa
-Category: Appetizers
 ~~~
 
 Using a food processor, process until chunky:

@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Orange Julius
-Category: Miscellaneous
 Author: Teresa Ball
 ~~~
 

@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Sun-dried Tomato and Feta Torta
-Category: Appetizers
 ~~~
 
 Prepare and set aside:

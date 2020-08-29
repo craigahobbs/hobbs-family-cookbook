@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Carrot Cake With Lemon Frosting
-Category: Desserts
 ~~~
 
 Still Teresa's favorite birthday cake!

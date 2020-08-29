@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Easy Baked Beans Rev
-Category: Salads & Sides
 Author: Shannon Childs
 ~~~
 

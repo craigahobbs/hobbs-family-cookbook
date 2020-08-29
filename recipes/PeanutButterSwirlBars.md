@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Peanut Butter Swirl Bars
-Category: Cookies
 ~~~
 
 Cream together:

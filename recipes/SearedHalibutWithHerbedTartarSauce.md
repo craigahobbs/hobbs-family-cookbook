@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Seared Halibut With Herbed Tartar Sauce
-Category: Main Dishes
 ~~~
 
 Prepare the sauce by mixing together:

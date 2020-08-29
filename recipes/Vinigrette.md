@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Vinigrette
-Category: Salads & Sides
 ~~~
 
 Whisk together:

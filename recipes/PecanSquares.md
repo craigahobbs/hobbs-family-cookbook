@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Pecan Squares
-Category: Cookies
 ~~~
 
 Using a Cuisinart blend together until moist clumps form:

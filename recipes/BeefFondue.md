@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Beef Fondue
-Category: Main Dishes
 ~~~
 
 When we were younger, fondues were all the rage and they became one of the Hobbs' family's favorite

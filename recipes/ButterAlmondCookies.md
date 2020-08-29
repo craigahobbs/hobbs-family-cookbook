@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Butter Almond Cookies
-Category: Cookies
 Author: Karen Sandberg
 ~~~
 

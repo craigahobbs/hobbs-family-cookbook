@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Homemade Marshmallows
-Category: Miscellaneous
 Author: Pearl Salter
 ~~~
 

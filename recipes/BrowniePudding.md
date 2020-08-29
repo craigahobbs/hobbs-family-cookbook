@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Brownie Pudding
-Category: Desserts
 ~~~
 
 Stir together by hand:

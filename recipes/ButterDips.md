@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Butter Dips
-Category: Breads
 Author: Pearl Salter
 ~~~
 

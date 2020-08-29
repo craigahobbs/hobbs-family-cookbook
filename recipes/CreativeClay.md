@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Creative Clay
-Category: Miscellaneous
 ~~~
 
 Mix together in a medium saucepan:

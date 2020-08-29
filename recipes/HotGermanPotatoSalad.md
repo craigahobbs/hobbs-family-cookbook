@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Hot German Potato Salad
-Category: Salads & Sides
 Author: Betty Artus
 ~~~
 

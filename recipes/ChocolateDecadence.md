@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Chocolate Decadence
-Category: Desserts
 ~~~
 
 Melt the dark sweet chocolate (or use semi-sweet), sugar, and butter in a double boiler.

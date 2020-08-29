@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Bourbon Balls
-Category: Cookies
 Author: Wendy Newton
 ~~~
 

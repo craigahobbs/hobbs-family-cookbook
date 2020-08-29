@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Potato Refrigerator Rolls
-Category: Breads
 ~~~
 
 Stir together to dissolve:

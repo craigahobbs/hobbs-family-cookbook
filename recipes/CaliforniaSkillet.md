@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: California Skillet
-Category: Main Dishes
 ~~~
 
 How could I leave this one out!

@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Bakers Clay
-Category: Miscellaneous
 Author: Norma Lind
 ~~~
 

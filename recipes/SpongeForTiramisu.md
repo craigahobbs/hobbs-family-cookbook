@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Sponge For Tiramisu
-Category: Desserts
 ~~~
 
 Grease a 12 1/2" X 17 1/2 " sheet pan and line the bottom and sides with foil. Grease the foil

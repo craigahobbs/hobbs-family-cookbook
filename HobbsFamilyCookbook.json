@@ -66,6 +66,10 @@
             "title": "Breads",
             "files": [
                 {
+                    "title": "Angel Biscuits",
+                    "url": "recipes/AngelBiscuits.md"
+                },
+                {
                     "title": "African (Liberian) Cornbread",
                     "url": "recipes/AfricanCornbread.md"
                 },
@@ -157,6 +161,10 @@
                 {
                     "title": "Lemon Bars",
                     "url": "recipes/LemonBars.md"
+                },
+                {
+                    "title": "Molasses Cookies",
+                    "url": "recipes/MolassesCookies.md"
                 },
                 {
                     "title": "Peanut Butter Swirl Bars",
@@ -297,6 +305,10 @@
                     "url": "recipes/BigSandwich.md"
                 },
                 {
+                    "title": "Bolognese",
+                    "url": "recipes/Bolognese.md"
+                },
+                {
                     "title": "California Skillet",
                     "url": "recipes/CaliforniaSkillet.md"
                 },
@@ -339,6 +351,10 @@
                 {
                     "title": "London Broil And Portobello Sandwich",
                     "url": "recipes/LondonBroilAndPortobelloSandwich.md"
+                },
+                {
+                    "title": "Meat Loaf",
+                    "url": "recipes/MeatLoaf.md"
                 },
                 {
                     "title": "Mom's Chicken And Dumplings",
@@ -542,6 +558,10 @@
                 {
                     "title": "Lentil Soup",
                     "url": "recipes/LentilSoup.md"
+                },
+                {
+                    "title": "Roasted Red Pepper Soup",
+                    "url": "recipes/RoastedRedPepperSoup.md"
                 }
             ]
         }

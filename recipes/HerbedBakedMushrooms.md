@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Herbed Baked Mushrooms
-Category: Salads & Sides
 ~~~
 
 Mix together in a 1 qt buttered baking dish:

@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Pork And Sesame-Chinese Barbecue Pork
-Category: Main Dishes
 ~~~
 
 Whisk together:

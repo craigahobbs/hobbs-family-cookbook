@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Sadie And Colins Favorite Egg Sandwich
-Category: Main Dishes
 ~~~
 
 ### Ingredients

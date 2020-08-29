@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Taco Rice Skillet
-Category: Main Dishes
 ~~~
 
 In a large skillet (with a lid), brown:

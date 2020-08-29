@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Scalloped Pinapple
-Category: Salads & Sides
 Author: Grandma Peggy
 ~~~
 

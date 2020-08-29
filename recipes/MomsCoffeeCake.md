@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Mom's Coffee Cake
-Category: Breads
 ~~~
 
 Using an electric mixer with a paddle attachment, mix together:

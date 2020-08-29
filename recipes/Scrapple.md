@@ -1,6 +1,5 @@
 ~~~ recipe-info
 Title: Scrapple
-Category: Miscellaneous
 Author: Helen Minkiewitz (Nonny)
 ~~~
 
