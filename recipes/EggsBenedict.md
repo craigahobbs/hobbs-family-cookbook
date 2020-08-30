@@ -1,5 +1,6 @@
 ~~~ recipe-info
 Title: Eggs Benedict
+Servings: 2
 ~~~
 
 Split and toast the english muffins, butter and place on a baking sheet, top with the Canadian bacon
