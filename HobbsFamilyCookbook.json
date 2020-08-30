@@ -66,12 +66,12 @@
             "title": "Breads",
             "files": [
                 {
-                    "title": "Angel Biscuits",
-                    "url": "recipes/AngelBiscuits.md"
-                },
-                {
                     "title": "African (Liberian) Cornbread",
                     "url": "recipes/AfricanCornbread.md"
+                },
+                {
+                    "title": "Angel Biscuits",
+                    "url": "recipes/AngelBiscuits.md"
                 },
                 {
                     "title": "Banana Nut Bread",
