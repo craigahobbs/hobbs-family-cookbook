@@ -26,3 +26,5 @@ Combine with the crisp bacon and serve.
 ~~~ recipe-ingredients
 2 slices crisp cooked diced bacon
 ~~~
+
+![Hot Cabbage Salad](HotCabbageSalad.jpg "Hot Cabbage Salad")
