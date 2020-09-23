@@ -40,9 +40,11 @@ greased bowl, cover, and let rise until double in size (about 1 1/2 hours).
 
 ### Sausage Filling
 
-Heat a large saute pan with 1 Tbsp until very hot and add:
+In a large saute pan, heat the olive oil until very hot and then add the diced onion and garlic:
 
 ~~~ recipe-ingredients
+1 Tbsp olive oil
+
 1 large diced onion
 
 3 cloves diced garlic
