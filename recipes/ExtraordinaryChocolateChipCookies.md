@@ -30,7 +30,13 @@ Add and mix together:
 1/2 tsp salt
 ~~~
 
-With the mixer on the lowest speed, add in 4 cups of semisweet chocolate chips. This forms a really
+With the mixer on the lowest speed, add in the chocolate chips.
+
+~~~ recipe-ingredients
+4 cups semisweet chocolate chips
+~~~
+
+This forms a really
 stiff, chocolatey dough and makes a huge batch of cookies. I roll the dough in large (almost golf
 ball sized) balls and freeze them on a cookie sheet. When frozen, place balls in Ziploc bag. To bake
 cookies place up to 9 balls on a cookie sheet, allow to thaw completely at room temperature, and
