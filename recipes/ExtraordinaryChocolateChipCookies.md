@@ -46,3 +46,5 @@ Coarsely chopped nuts may be added to the dough with the chips.
 
 These chocolate chip cookies are really the best we've ever tasted and live up to the billing of
 **extraordinary**!
+
+![Extraordinary Chocolate Chip Cookies](ExtraordinaryChocolateChipCookies.jpg "Extraordinary Chocolate Chip Cookies")

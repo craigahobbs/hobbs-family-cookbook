@@ -72,3 +72,5 @@ Add and stir in:
 
 Whisk together, pour over the salad and stir together. Top the Salad with additional parmesan cheese
 and serve with warm, crusty bread and fresh fruit.
+
+![Rosellinis Summer Pasta Salad](RosellinisSummerPastaSalad.jpg "Rosellinis Summer Pasta Salad")
