@@ -1,5 +1,5 @@
 ~~~ recipe-info
-Title: Moms Pizza
+Title: Mom's Pizza
 ~~~
 
 ### Crust

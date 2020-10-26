@@ -1,5 +1,5 @@
 ~~~ recipe-info
-Title: Moms Hot Chocolate
+Title: Mom's Hot Chocolate
 ~~~
 
 In a large saucepan whisk together:
