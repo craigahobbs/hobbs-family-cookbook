@@ -32,7 +32,11 @@ Mix together in a quart measuring cup:
 ~~~
 
 Add the wet ingredients all at once to the dry ingredients, blend together BY HAND just until mixed.
-Fold in 2 to 3 small chopped ripe bananas lightly.
+Fold in chopped ripe bananas lightly.
+
+~~~ recipe-ingredients
+2 small ripe bananas, chopped
+~~~
 
 Turn batter into a tube (angel food cake pan) or bundt pan which has been greased and dusted with
 flour. Bake at 350 degrees for 65 minutes. Coo! the cake in the pan for at least one hour and turn
