@@ -44,3 +44,5 @@ Use a rotary beater to mix first 4 ingredients, then stir in the nuts and coconu
 
 Bake coffee cake in a 350 degree oven for 40 minutes or until a toothpick inserted in center comes
 out clean. Usually this cake takes an extra 10 minutes depending on your oven.
+
+![Mom's Coffee Cake](MomsCoffeeCake.jpg "Mom's Coffee Cake")

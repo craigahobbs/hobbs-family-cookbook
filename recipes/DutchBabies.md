@@ -77,3 +77,5 @@ although the butter is delicious.
 
 \* Babies can also be made using rotary mixer: beat the eggs until light and lemon colored, mix in
 the milk, blend in the flour to form a batter.
+
+![Dutch Babies](DutchBabies.jpg "Dutch Babies")
