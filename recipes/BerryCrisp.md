@@ -10,7 +10,7 @@ Gently toss together in a buttered 9 X 13" baking dish:
 
 1/4 C flour
 
-3/4 sugar (depending on the sweetness of the berries)
+3/4 C sugar (depending on the sweetness of the berries)
 ~~~
 
 Crust topping; mix together in a medium bowl:
