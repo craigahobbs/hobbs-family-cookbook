@@ -43,7 +43,7 @@ plate and glaze.
 
 1 C confectioners sugar
 
-2 Tbsp warm water
+3 Tbsp hot water
 ~~~
 
 Melt the butter and bittersweet chocolate in a saucepan on low heat. Whisk in the confectioners
@@ -51,3 +51,5 @@ sugar and the warm water. Let glaze cool slightly before covering cake. Refriger
 the glaze.
 
 To serve slice the cake and serve with sweetened whipped cream and fresh raspberries.
+
+![Chocolate Decadence](ChocolateDecadence.jpg "Chocolate Decadence")
