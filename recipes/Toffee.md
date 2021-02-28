@@ -17,7 +17,7 @@ Combine in a large saucepan:
 4 Tbsp water (1/4 C)
 ~~~
 
-Stir frequently and cook over medium heat until the candy reaches 280 - 290 degrees on a candy
+Stir frequently and cook over medium heat until the candy reaches 300 degrees using a quick-read electronic
 thermometer or hard crack stage*, when dropped in cold water. The cooking takes approximately 25
 minutes stirring frequently.
 
