@@ -59,3 +59,5 @@ sprinkle the piping with more mini chocolate chips.
 ~~~
 
 Like all cheesecake this is better if made a day ahead.
+
+![Bailey's Chocolate Chip Cheesecake](BaileysChocolateChipCheesecake.jpg "Bailey's Chocolate Chip Cheesecake")
