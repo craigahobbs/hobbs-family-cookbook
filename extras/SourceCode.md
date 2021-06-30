@@ -1,6 +1,8 @@
 # Source Code
 
 The source code for the Hobbs Family Cookbook is available
-[here](https://github.com/craigahobbs/hobbs-family-cookbook#readme).
+[here](https://github.com/craigahobbs/hobbs-family-cookbook/).
 
-This cookbook is viewed above using the [Markdown Book](https://github.com/craigahobbs/markdown-book#readme) application.
+This cookbook is built using the
+[Markdown Book](https://craigahobbs.github.io/markdown-book/)
+application.
