@@ -41,7 +41,7 @@ towel and slice into 1/8" rounds.
 ~~~
 
 Use the
-[pie crust](https://craigahobbs.github.io/markdown-book/#id=PieCrust&categories.0=Desserts&url=https://craigahobbs.github.io/hobbs-family-cookbook/HobbsFamilyCookbook.json)
+[pie crust](#id=recipes-PieCrust&categories.0=Desserts)
 recipe in the dessert portion of the book and form the bottom crust of the torte. Layer 1/3 of the
 sliced potato over the bottom of the crust, sprinkle with a pinch of kosher salt and several grinds
 of black pepper. Next, strew 1/3 of the crisped bacon over the potatoes and sprinkle with 1/3 of the

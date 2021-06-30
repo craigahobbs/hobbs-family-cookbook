@@ -21,4 +21,4 @@ baked potato and salad. Dinner takes a while to eat so everyone gets to visit wh
 
 The sauces can be made a day ahead and warmed before serving making this is a very easy party to put
 together. The Sauces are found in the miscellaneous section of this cookbook and are
-[Horseradish, Robert's, and Bearnaise](https://craigahobbs.github.io/markdown-book/#categories.0=Miscellaneous&id=HorseradishSauce&url=https%3A%2F%2Fcraigahobbs.github.io%2Fhobbs-family-cookbook%2FHobbsFamilyCookbook.json).
+[Horseradish, Robert's, and Bearnaise](#id=recipes-HorseradishSauce&categories.0=Miscellaneous).

@@ -2,8 +2,8 @@
 Title: Mom's Cinnamon Rolls
 ~~~
 
-[Large Batch](https://craigahobbs.github.io/markdown-book/#scale=1&id=MomsCinnamonRolls&categories.0=Breads&url=https://craigahobbs.github.io/hobbs-family-cookbook/HobbsFamilyCookbook.json) (10 1/2 " X 14 1/2 " pan)  
-[Small Batch](https://craigahobbs.github.io/markdown-book/#scale=0.5&id=MomsCinnamonRolls&categories.0=Breads&url=https://craigahobbs.github.io/hobbs-family-cookbook/HobbsFamilyCookbook.json) (9 1/2 X 13" pan)
+[Large Batch](#id=recipes-MomsCinnamonRolls&categories.0=Breads) (10 1/2 " X 14 1/2 " pan)  
+[Small Batch](#id=recipes-MomsCinnamonRolls&categories.0=Breads&scale=0.5) (9 1/2 X 13" pan)
 
 Dissolve yeast in a large mixing bowl and let proof for 10 minutes:
 

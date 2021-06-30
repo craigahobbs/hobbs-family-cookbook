@@ -62,4 +62,4 @@ soup in a airtight container. Soup is better the second day. Freeze any leftover
 time.
 
 This was a favorite birthday dinner request with
-[Dilly Bread](https://craigahobbs.github.io/markdown-book/#id=DillyBread&categories.0=Breads&url=https://craigahobbs.github.io/hobbs-family-cookbook/HobbsFamilyCookbook.json).
+[Dilly Bread](#id=recipes-DillyBread&categories.0=Breads).

@@ -1,0 +1,182 @@
+{
+    "title": "The Hobbs Family Cookbook",
+    "titleURL": "extras/Title.md",
+    "headerColor": "lightgray",
+    "titleColor": "yellowgreen",
+    "categories": [
+        {
+            "title": "Introduction",
+            "files": [
+                "extras/ItsYourFavorite.md",
+                "extras/RecipeKnowHow.md",
+                "extras/SourceCode.md"
+            ]
+        },
+        {
+            "title": "Appetizers",
+            "files": [
+                "recipes/BakedArtichokeDip.md",
+                "recipes/CheeseAndSausageRounds.md",
+                "recipes/CraigsSalsa.md",
+                "recipes/CrostiniWithMushrooms.md",
+                "recipes/GorgonzolaPopovers.md",
+                "recipes/MexicanDip.md",
+                "recipes/MomsOnionRings.md",
+                "recipes/RhinelanderSwissCheeseFondue.md",
+                "recipes/SundriedTomatoAndFetaTorta.md"
+            ]
+        },
+        {
+            "title": "Breads",
+            "files": [
+                "recipes/AfricanCornbread.md",
+                "recipes/AngelBiscuits.md",
+                "recipes/BananaNutBread.md",
+                "recipes/ButterDips.md",
+                "recipes/CrescentRolls.md",
+                "recipes/DillyBread.md",
+                "recipes/DutchBabies.md",
+                "recipes/MomsCinnamonRolls.md",
+                "recipes/MomsCoffeeCake.md",
+                "recipes/Popovers.md",
+                "recipes/PotatoRefrigeratorRolls.md",
+                "recipes/Stollen.md",
+                "recipes/SunriseScones.md",
+                "recipes/WholeWheatWaffles.md"
+            ]
+        },
+        {
+            "title": "Cookies",
+            "files": [
+                "recipes/BourbonBalls.md",
+                "recipes/ButterAlmondCookies.md",
+                "recipes/ChunkyChippers.md",
+                "recipes/CoconutChews.md",
+                "recipes/CookieDessertPizza.md",
+                "recipes/CraigAsGingerSnaps.md",
+                "recipes/DreamBars.md",
+                "recipes/ExtraordinaryChocolateChipCookies.md",
+                "recipes/LemonBars.md",
+                "recipes/MolassesCookies.md",
+                "recipes/PeanutButterSwirlBars.md",
+                "recipes/PecanSquares.md",
+                "recipes/RaspberryRipples.md",
+                "recipes/SeesFudge.md",
+                "recipes/Shortbread.md",
+                "recipes/Snowballs.md",
+                "recipes/Toffee.md",
+                "recipes/Toscas.md"
+            ]
+        },
+        {
+            "title": "Desserts",
+            "files": [
+                "recipes/BaileysChocolateChipCheesecake.md",
+                "recipes/BerryCrisp.md",
+                "recipes/BrowniePudding.md",
+                "recipes/CarrotCakeWithLemonFrosting.md",
+                "recipes/ChocolateDecadence.md",
+                "recipes/ChocolatePotsDeCreme.md",
+                "recipes/ClinkerdaggerBurntCreme.md",
+                "recipes/CreamCakeRoll.md",
+                "recipes/CreamPuffs.md",
+                "recipes/FrozenBerriesWithHotWhiteChocolate.md",
+                "recipes/GermanChocolateCakeFilling.md",
+                "recipes/HummingbirdCake.md",
+                "recipes/LazyDazyCake.md",
+                "recipes/PannaCotta.md",
+                "recipes/PerfectlyChocolateCake.md",
+                "recipes/PieCrust.md",
+                "recipes/PineappleRefrigeratorCake.md",
+                "recipes/SpongeForTiramisu.md",
+                "recipes/SunshineCake.md",
+                "recipes/Tiramisu.md"
+            ]
+        },
+        {
+            "title": "Main Dishes",
+            "files": [
+                "recipes/BeachCafeFettuccine.md",
+                "recipes/BeefFondue.md",
+                "recipes/BeefStirfry.md",
+                "recipes/BigSandwich.md",
+                "recipes/Bolognese.md",
+                "recipes/CaliforniaSkillet.md",
+                "recipes/Calzones.md",
+                "recipes/Canneloni.md",
+                "recipes/CastASpellOverChicken.md",
+                "recipes/ChickenCreamEnchiladas.md",
+                "recipes/EggFooYung.md",
+                "recipes/EggsBenedict.md",
+                "recipes/HomemadeBeefTacos.md",
+                "recipes/HomemadeEggRolls.md",
+                "recipes/ItalianStuffedFlankSteak.md",
+                "recipes/LondonBroilAndPortobelloSandwich.md",
+                "recipes/MeatLoaf.md",
+                "recipes/MomsChickenAndDumplings.md",
+                "recipes/MomsPorkFriedRice.md",
+                "recipes/MomsPizza.md",
+                "recipes/PotatoBaconTorte.md",
+                "recipes/PorkAndSesame.md",
+                "recipes/Quiche.md",
+                "recipes/SearedHalibutWithHerbedTartarSauce.md",
+                "recipes/StirFriedBeefWithBeanThreads.md",
+                "recipes/Stromboli.md",
+                "recipes/SweetAndSourChicken.md",
+                "recipes/TacoRiceSkillet.md"
+            ]
+        },
+        {
+            "title": "Miscellaneous",
+            "files": [
+                "recipes/AntsOnALog.md",
+                "recipes/BakersClay.md",
+                "recipes/CreativeClay.md",
+                "recipes/EggOnARaft.md",
+                "recipes/HomemadeMarshmallows.md",
+                "recipes/HomemadePlayDough.md",
+                "recipes/HorseradishSauce.md",
+                "recipes/MarinadeForPorkTenderloin.md",
+                "recipes/MomsHotChocolate.md",
+                "recipes/OrangeJulius.md",
+                "recipes/ReesesPeanutButterCups.md",
+                "recipes/SadieAndColinsFavoriteEggSandwich.md",
+                "recipes/Scrapple.md",
+                "recipes/WhiteButterSauce.md"
+            ]
+        },
+        {
+            "title": "Salads & Sides",
+            "files": [
+                "recipes/BlackBeanSalad.md",
+                "recipes/CaesarSalad.md",
+                "recipes/CaliforniaShrimpSalad.md",
+                "recipes/CanlisSpecialSalad.md",
+                "recipes/ChineseNoodles.md",
+                "recipes/Cucina.md",
+                "recipes/EasyBakedBeans.md",
+                "recipes/EasyBakedBeansRev.md",
+                "recipes/HerbedBakedMushrooms.md",
+                "recipes/HomemadeMayonnaise.md",
+                "recipes/HotCabbageSalad.md",
+                "recipes/HotGermanPotatoSalad.md",
+                "recipes/LimeDressingForFreshFruit.md",
+                "recipes/RosellinisSummerPastaSalad.md",
+                "recipes/ScallopedPineapple.md",
+                "recipes/SweetAndSourRedCabbage.md",
+                "recipes/Vinigrette.md",
+                "recipes/WiltedSpinachSalad.md"
+            ]
+        },
+        {
+            "title": "Soups",
+            "files": [
+                "recipes/BlackBeanChili.md",
+                "recipes/FiveOnionSoup.md",
+                "recipes/HamAndCheeseChowder.md",
+                "recipes/LentilSoup.md",
+                "recipes/RoastedRedPepperSoup.md"
+            ]
+        }
+    ]
+}

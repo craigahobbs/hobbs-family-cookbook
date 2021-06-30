@@ -4,7 +4,7 @@ Author: Diana Riley
 ~~~
 
 Bake a 9"
-[pie crust](https://craigahobbs.github.io/markdown-book/#id=PieCrust&categories.0=Desserts&url=https://craigahobbs.github.io/hobbs-family-cookbook/HobbsFamilyCookbook.json)
+[pie crust](#id=recipes-PieCrust&categories.0=Desserts)
 at 475 for 7 to 9 minutes. Cool.
 
 Brown and drain:

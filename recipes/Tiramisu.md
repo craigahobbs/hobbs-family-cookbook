@@ -4,7 +4,7 @@ Servings: 12
 ~~~
 
 Use the recipe for
-[Cream Roll](https://craigahobbs.github.io/markdown-book/#scale=1.5&id=CreamCakeRoll&categories.0=Desserts&url=https://craigahobbs.github.io/hobbs-family-cookbook/HobbsFamilyCookbook.json),
+[Cream Roll](#id=recipes-CreamCakeRoll&categories.0=Desserts&scale=1.5),
 except increase by 1/2 and bake as directed in an 18' X 13" sheet pan. Cool cake in the pan. Lift the cake out with the
 foil liner and slice in 4 pieces across the short side. Can be done 1 day ahead. Do not cover cake.
 
