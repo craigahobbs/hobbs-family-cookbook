@@ -26,7 +26,7 @@ Add and stir in:
 ~~~ recipe-ingredients
 2 C flour
 
-1 tsp soda
+1 tsp baking soda
 
 1/2 C chopped pecans
 ~~~
