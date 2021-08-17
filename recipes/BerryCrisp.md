@@ -25,8 +25,15 @@ Crust topping; mix together in a medium bowl:
 1 beaten egg
 ~~~
 
-Mixture will look crumbly. Spread evenly over the berries. Melt one cube of butter and pour evenly
-over the whole mixture. Bake at 375 degrees for 45 minutes or until bubbly.
+Mixture will look crumbly. Spread evenly over the berries
+
+~~~ recipe-ingredients
+1 cube butter
+~~~
+
+Melt the butter and pour evenly over the whole mixture.
+
+Bake at 375 degrees for 45 minutes or until bubbly.
 
 Serve with whipped cream or ice cream.
 
