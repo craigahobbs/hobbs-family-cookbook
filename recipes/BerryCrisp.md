@@ -3,6 +3,8 @@ Title: Berry Crisp
 Author: Shannon Childs
 ~~~
 
+[9 x 9" baking dish](#categories.0=Desserts&id=recipes-BerryCrisp&scale=0.75)
+
 Gently toss together in a buttered 9 X 13" baking dish:
 
 ~~~ recipe-ingredients
@@ -28,7 +30,7 @@ Crust topping; mix together in a medium bowl:
 Mixture will look crumbly. Spread evenly over the berries
 
 ~~~ recipe-ingredients
-1 cube butter
+1/2 C butter
 ~~~
 
 Melt the butter and pour evenly over the whole mixture.
