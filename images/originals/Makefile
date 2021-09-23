@@ -14,15 +14,13 @@ help:
 SIZE := 240x240
 
 
-# Helper functions to compute the image width/height - w/h, percent, original
-WHP = `identify -format '%[fx:$(strip $(1))*$(strip $(2))/100]' $(strip $(3))`
-
-
-# Helper function to generate image resize rules - width %, height %, x %, y%, original
+# Helper function to generate image resize rules - w%, h%, x%, y%, original
 define RESIZE
 .PHONY: resize-$(strip $(5))
 resize-$(strip $(5)):
-	convert $(strip $(5)) -crop $(strip $(1))%x$(strip $(2))%+$(call WHP, w, $(3), $(5))+$(call WHP, h, $(4), $(5)) -resize $(SIZE) ../$(strip $(5))
+	convert $(strip $(5)) \
+-crop $(strip $(1))%x$(strip $(2))`identify -format '+%[fx:w*$(strip $(3))/100]+%[fx:h*$(strip $(4))/100]' $(strip $(5))` \
+-resize $(SIZE) ../$(strip $(5))
 
 .phony: resize
 resize: resize-$(strip $(5))
