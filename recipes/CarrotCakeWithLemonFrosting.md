@@ -2,6 +2,8 @@
 Title: Carrot Cake With Lemon Frosting
 ~~~
 
+![Carrot Cake With Lemon Frosting](../images/CarrotCakeWithLemonFrosting.jpg "Carrot Cake With Lemon Frosting")
+
 Still Teresa's favorite birthday cake!
 
 Prepare three 9" cake pans by buttering them and lining the bottoms with parchment paper also

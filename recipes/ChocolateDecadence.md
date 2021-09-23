@@ -2,6 +2,8 @@
 Title: Chocolate Decadence
 ~~~
 
+![Chocolate Decadence](../images/ChocolateDecadence.jpg "Chocolate Decadence")
+
 Melt the dark sweet chocolate (or use semi-sweet), sugar, and butter in a double boiler.
 
 ~~~ recipe-ingredients
@@ -51,5 +53,3 @@ sugar and the warm water. Let glaze cool slightly before covering cake. Refriger
 the glaze.
 
 To serve slice the cake and serve with sweetened whipped cream and fresh raspberries.
-
-![Chocolate Decadence](ChocolateDecadence.jpg "Chocolate Decadence")

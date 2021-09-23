@@ -3,6 +3,8 @@ Title: Dilly Bread
 Author: Helen Minkiewitz (Nonny)
 ~~~
 
+![Dilly Bread](../images/DillyBread.jpg "Dilly Bread")
+
 Soften and mix together and let stand for 10 minutes:
 
 ~~~ recipe-ingredients

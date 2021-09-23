@@ -2,6 +2,8 @@
 Title: Stromboli
 ~~~
 
+![Stromboli](../images/Stromboli.jpg "Stromboli")
+
 ~~~ recipe-ingredients
 2 1 lb loaves frozen bread dough
 

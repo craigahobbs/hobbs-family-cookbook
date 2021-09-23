@@ -2,6 +2,8 @@
 Title: Bailey's Chocolate Chip Cheesecake
 ~~~
 
+![Bailey's Chocolate Chip Cheesecake](../images/BaileysChocolateChipCheesecake.jpg "Bailey's Chocolate Chip Cheesecake")
+
 Using a Cuisinart, process 1 9 oz pkg chocolate wafer cookies to crumbs. Then add and process:
 
 ~~~ recipe-ingredients
@@ -59,5 +61,3 @@ sprinkle the piping with more mini chocolate chips.
 ~~~
 
 Like all cheesecake this is better if made a day ahead.
-
-![Bailey's Chocolate Chip Cheesecake](BaileysChocolateChipCheesecake.jpg "Bailey's Chocolate Chip Cheesecake")

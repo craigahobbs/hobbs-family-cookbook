@@ -2,6 +2,8 @@
 Title: Rosellinis Summer Pasta Salad
 ~~~
 
+![Rosellinis Summer Pasta Salad](../images/RosellinisSummerPastaSalad.jpg "Rosellinis Summer Pasta Salad")
+
 Cook the chicken breasts either by poaching or baking. When chicken is cooked and cooled, remove the
 skin and bones and cut into 1/2" pieces.
 
@@ -72,5 +74,3 @@ Add and stir in:
 
 Whisk together, pour over the salad and stir together. Top the Salad with additional parmesan cheese
 and serve with warm, crusty bread and fresh fruit.
-
-![Rosellinis Summer Pasta Salad](RosellinisSummerPastaSalad.jpg "Rosellinis Summer Pasta Salad")

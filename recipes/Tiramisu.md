@@ -3,6 +3,8 @@ Title: Tiramisu
 Servings: 12
 ~~~
 
+![Tiramisu](../images/Tiramisu.jpg "Tiramisu")
+
 Use the recipe for
 [Cream Roll](#id=recipes-CreamCakeRoll&categories.0=Desserts&scale=1.5),
 except increase by 1/2 and bake as directed in an 18' X 13" sheet pan. Cool cake in the pan. Lift the cake out with the

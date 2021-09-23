@@ -3,6 +3,8 @@ Title: Banana Nut Bread
 Author: Merlin Salter
 ~~~
 
+![Banana Nut Bread](../images/BananaNutBread.jpg "Banana Nut Bread")
+
 Cream together:
 
 ~~~ recipe-ingredients

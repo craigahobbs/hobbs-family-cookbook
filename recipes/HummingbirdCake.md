@@ -3,6 +3,8 @@ Title: Hummingbird Cake
 Author: Vicki Bessa
 ~~~
 
+![Hummingbird Cake](../images/HummingbirdCake.jpg "Hummingbird Cake")
+
 Mix together in a large bowl:
 
 ~~~ recipe-ingredients
@@ -43,5 +45,3 @@ flour. Bake at 350 degrees for 65 minutes. Coo! the cake in the pan for at least
 upside down on a cake plate. Dust with powdered sugar and serve with whipped cream.
 
 The flavor of this cake is better the second day. This cake is great for breakfast, too.
-
-![Hummingbird Cake](HummingbirdCake.jpg "Hummingbird Cake")

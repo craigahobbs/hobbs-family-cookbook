@@ -2,6 +2,8 @@
 Title: Dutch Babies
 ~~~
 
+![Dutch Babies](../images/DutchBabies.jpg "Dutch Babies")
+
 Dutch babies are made in a glass pie pan or a shallow casserole dish. Select the proportions to fit
 the size of pan you are using.
 
@@ -77,5 +79,3 @@ although the butter is delicious.
 
 \* Babies can also be made using rotary mixer: beat the eggs until light and lemon colored, mix in
 the milk, blend in the flour to form a batter.
-
-![Dutch Babies](DutchBabies.jpg "Dutch Babies")

@@ -2,6 +2,8 @@
 Title: Beef Stirfry
 ~~~
 
+![Beef Stirfry](../images/BeefStirfry.jpg "Beef Stirfry")
+
 Mix together marinade:
 
 ~~~ recipe-ingredients

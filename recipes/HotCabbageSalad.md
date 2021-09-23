@@ -3,6 +3,8 @@ Title: Hot Cabbage Salad
 Author: Emery Hobbs
 ~~~
 
+![Hot Cabbage Salad](../images/HotCabbageSalad.jpg "Hot Cabbage Salad")
+
 Combine in a large saucepan:
 
 ~~~ recipe-ingredients
@@ -26,5 +28,3 @@ Combine with the crisp bacon and serve.
 ~~~ recipe-ingredients
 2 slices crisp cooked diced bacon
 ~~~
-
-![Hot Cabbage Salad](HotCabbageSalad.jpg "Hot Cabbage Salad")
