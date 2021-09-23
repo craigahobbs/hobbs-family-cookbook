@@ -5,7 +5,7 @@ Author: Shannon Childs
 
 ![Berry Crisp](../images/BerryCrisp.jpg "Berry Crisp")
 
-[9 x 9" baking dish](#categories.0=Desserts&id=recipes-BerryCrisp&scale=0.75)
+[Scale for 9 x 9" baking dish](#categories.0=Desserts&id=recipes-BerryCrisp&scale=0.75)
 
 Gently toss together in a buttered 9 X 13" baking dish:
 
