@@ -28,9 +28,11 @@ Add and stir in:
 1 tsp baking soda
 
 1/2 tsp salt
+~~~
 
 Stir in:
 
+~~~ recipe-ingredients
 2 C chocolate chips
 ~~~
 
