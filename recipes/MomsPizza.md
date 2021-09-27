@@ -9,7 +9,7 @@ Stir together in a large measuring cup and let stand for 10 minutes:
 ~~~ recipe-ingredients
 1 3/4 C warm water (110 degrees)
 
-2 Tbsp dry yeast (two packages)
+2 Tbsp dry yeast
 
 2 tsp sugar
 ~~~
