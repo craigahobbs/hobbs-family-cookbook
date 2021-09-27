@@ -8,7 +8,7 @@ Author: Helen Minkiewitz (Nonny)
 Soften and mix together and let stand for 10 minutes:
 
 ~~~ recipe-ingredients
-1 pkg dry yeast (1 Tbsp)
+1 Tbsp dry yeast
 
 1/4 C lukewarm water
 
