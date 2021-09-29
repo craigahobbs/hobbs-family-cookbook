@@ -19,8 +19,8 @@ define RESIZE
 .PHONY: resize-$(strip $(5))
 resize-$(strip $(5)):
 	convert $(strip $(5)) \
--crop $(strip $(1))%x$(strip $(2))`identify -format '+%[fx:w*$(strip $(3))/100]+%[fx:h*$(strip $(4))/100]' $(strip $(5))` \
--resize $(SIZE) ../$(strip $(5))
+		-crop $(strip $(1))%x$(strip $(2))`identify -format '+%[fx:w*$(strip $(3))/100]+%[fx:h*$(strip $(4))/100]' $(strip $(5))` \
+		-resize $(SIZE) ../$(strip $(5))
 
 .phony: resize
 resize: resize-$(strip $(5))
