@@ -1,5 +1,5 @@
 ~~~ recipe-info
-Title: Craig's Salsa
+Title: Craig A.'s Salsa
 ~~~
 
 Using a food processor, process until chunky:

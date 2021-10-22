@@ -31,4 +31,4 @@ onions and shredded lettuce. Place the top of the loaf on and wrap the whole san
 saran wrap. Refrigerate until ready to slice.
 
 The big sandwich, ala the Seinfeld show, became a favorite in our family for casual dinners. The
-kids often requested it when Craig and I were going out for the evening.
+kids often requested it when Craig S. and I were going out for the evening.
