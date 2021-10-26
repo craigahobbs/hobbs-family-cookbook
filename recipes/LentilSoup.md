@@ -5,7 +5,7 @@ Title: Lentil Soup
 Cook together in a 6 qt covered soup pot for 2 1/2 hours:
 
 ~~~ recipe-ingredients
-3 C raw lentils
+2 C raw lentils
 
 8 C beef stock
 
