@@ -12,7 +12,8 @@
     <body>
     </body>
     <script type="module">
-        import {MarkdownBookApp} from 'https://craigahobbs.github.io/markdown-book-app/markdown-book-app/index.js';
-        MarkdownBookApp.run(window);
+        import {MarkdownBookApp} from 'https://craigahobbs.github.io/markdown-book-app/lib/app.js';
+        const app = MarkdownBookApp(window);
+        app.run();
     </script>
 </html>
