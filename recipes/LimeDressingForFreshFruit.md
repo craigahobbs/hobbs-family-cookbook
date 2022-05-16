@@ -1,28 +1,33 @@
-~~~ recipe-info
-Title: Lime Dressing For Fresh Fruit
-Author: Ann McLean
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Lime Dressing For Fresh Fruit
+
+~~~ markdown-script
+recipeHeader('Ann McLean')
 ~~~
 
 Whisk together in a small saucepan and stir over medium heat until thickened:
 
-~~~ recipe-ingredients
-1 egg
-
-1/4 cup fresh lime juice
-
-1/2 cup honey
+~~~ markdown-script
+recipeIngredients( \
+    '1 egg', \
+    '1/4 cup fresh lime juice', \
+    '1/2 cup honey' \
+)
 ~~~
 
 Blend in:
 
-~~~ recipe-ingredients
-1 cup sour cream
-
-1 pinch of salt
-
-1 pinch of ground mace
-
-1 tsp poppy seeds
+~~~ markdown-script
+recipeIngredients( \
+    '1 cup sour cream', \
+    '1 pinch of salt', \
+    '1 pinch of ground mace', \
+    '1 tsp poppy seeds' \
+)
 ~~~
 
 Place mixture in serving bowl and refrigerate until ready to use. I usually pass this dressing to be

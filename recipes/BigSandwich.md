@@ -1,27 +1,28 @@
-~~~ recipe-info
-Title: Big Sandwich
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Big Sandwich
+
+~~~ markdown-script
+recipeHeader()
 ~~~
 
 A Hobbs family favorite
 
-~~~ recipe-ingredients
-1 loaf of freshly baked French bread
-
-1/2 head of shredded iceberg lettuce
-
-2 large tomatoes sliced thinly
-
-1 medium red onion sliced thinly
-
-3/4 lb thinly slice deli ham
-
-3/4 lb thinly sliced deli turkey
-
-1/2 lb swiss or havarti cheese
-
-1/4 C mayonnaise
-
-2 tbsp Dijon mustard
+~~~ markdown-script
+recipeIngredients( \
+    '1 loaf of freshly baked French bread', \
+    '1/2 head of shredded iceberg lettuce', \
+    '2 large tomatoes sliced thinly', \
+    '1 medium red onion sliced thinly', \
+    '3/4 lb thinly slice deli ham', \
+    '3/4 lb thinly sliced deli turkey', \
+    '1/2 lb swiss or havarti cheese', \
+    '1/4 C mayonnaise', \
+    '2 tbsp Dijon mustard' \
+)
 ~~~
 
 Slice the French loaf in half lengthwise, if the loaf is really thick, scoop out some of the bread

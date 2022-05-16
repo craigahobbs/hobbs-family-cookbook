@@ -1,3 +1,8 @@
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
 # Recipe Know How
 
 Always **READ THE RECIPE COMPLETELY** to make sure you have all of the ingredients on hand before

@@ -1,10 +1,12 @@
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
 # The Hobbs Family Cookbook
 
-## *"It's your favorite!"*
+## *["It's your favorite!"](#url=ItsYourFavorite.md&var=)*
 
-## ![It's your favorite!](TheHobbsFamilyCookbook.png "It's your favorite!")
+## [![It's your favorite!](TheHobbsFamilyCookbook.png)](#url=ItsYourFavorite.md&var=)
 
-Copyright (c) 2020 Craig A. Hobbs
-
-Click here for the
-[story of the Hobbs Family Cookbook](#id=extras-ItsYourFavorite&categories.0=Introduction).
+[Source Code](https://github.com/craigahobbs/hobbs-family-cookbook)

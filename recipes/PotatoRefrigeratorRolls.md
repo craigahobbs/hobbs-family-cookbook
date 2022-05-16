@@ -1,35 +1,42 @@
-~~~ recipe-info
-Title: Potato Refrigerator Rolls
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Potato Refrigerator Rolls
+
+~~~ markdown-script
+recipeHeader()
 ~~~
 
 Stir together to dissolve:
 
-~~~ recipe-ingredients
-1 1/2 C warm water (110 degrees)
-
-1 Tbsp active dry yeast (1 pkg)
-
-1 tsp sugar
+~~~ markdown-script
+recipeIngredients( \
+    '1 1/2 C warm water (110 degrees)', \
+    '1 Tbsp active dry yeast (1 pkg)', \
+    '1 tsp sugar' \
+)
 ~~~
 
 Let mixture sit for 10 minutes, then add and mix in:
 
-~~~ recipe-ingredients
-2/3 C sugar
-
-1 1/2 tsp salt
-
-2/3 C soft butter
-
-2 beaten eggs
-
-1 C lukewarm mashed potatoes (or leftover mashed potatoes at room temperature)
+~~~ markdown-script
+recipeIngredients( \
+    '2/3 C sugar', \
+    '1 1/2 tsp salt', \
+    '2/3 C soft butter', \
+    '2 beaten eggs', \
+    '1 C lukewarm mashed potatoes (or leftover mashed potatoes at room temperature)' \
+)
 ~~~
 
 Add and mix by hand:
 
-~~~ recipe-ingredients
-7 to 7 1/2 C flour
+~~~ markdown-script
+recipeIngredients( \
+    '7 to 7 1/2 C flour' \
+)
 ~~~
 
 Turn dough onto a floured board and knead until smooth and elastic. Place dough in a greased bowl

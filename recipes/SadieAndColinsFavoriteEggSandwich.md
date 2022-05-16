@@ -1,12 +1,20 @@
-~~~ recipe-info
-Title: Sadie And Colins Favorite Egg Sandwich
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Sadie And Colins Favorite Egg Sandwich
+
+~~~ markdown-script
+recipeHeader()
 ~~~
 
 ### Ingredients
-~~~ recipe-ingredients
-2 eggs
-
-2 slices whole wheat bread
+~~~ markdown-script
+recipeIngredients( \
+    '2 eggs', \
+    '2 slices whole wheat bread' \
+)
 ~~~
 
 Heat a skillet with a little oil or butter to medium. Crack the eggs in the skillet and break the

@@ -1,35 +1,35 @@
-~~~ recipe-info
-Title: Angel Biscuits
-Author: Dennis Artus
-Servings: 20
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
 ~~~
 
-~~~ recipe-ingredients
-4 1/2 tsp (2 packages) active dry yeast
+# Angel Biscuits
 
-3 tbsp warm water (110 to 155 degrees)
+~~~ markdown-script
+recipeHeader('Dennis Artus', 20)
+~~~
 
-5 C all-purpose flour (aerate flour before measuring)
-
-1/4 C white sugar
-
-1 1/2 tsp Kosher salt
-
-2 tsp baking powder
-
-1 tsp baking soda
-
-1/2 C butter, cold
-
-1/2 C shortening, cold
-
-2 C buttermilk
+~~~ markdown-script
+recipeIngredients( \
+    '4 1/2 tsp (2 packages) active dry yeast', \
+    '3 tbsp warm water (110 to 155 degrees)', \
+    '5 C all-purpose flour (aerate flour before measuring)', \
+    '1/4 C white sugar', \
+    '1 1/2 tsp Kosher salt', \
+    '2 tsp baking powder', \
+    '1 tsp baking soda', \
+    '1/2 C butter, cold', \
+    '1/2 C shortening, cold', \
+    '2 C buttermilk' \
+)
 ~~~
 
 To finish:  Extra flour for forming and cutting biscuits plus:
 
-~~~ recipe-ingredients
-3 tbsp melted butter
+~~~ markdown-script
+recipeIngredients( \
+    '3 tbsp melted butter' \
+)
 ~~~
 
 Place yeast and warm water in a small bowl and stir to dissolve to form a thick paste.

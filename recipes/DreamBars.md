@@ -1,41 +1,46 @@
-~~~ recipe-info
-Title: Dream Bars
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Dream Bars
+
+~~~ markdown-script
+recipeHeader()
 ~~~
 
 Cream together:
 
-~~~ recipe-ingredients
-1/2 C butter
-
-1/2 C brown sugar packed
+~~~ markdown-script
+recipeIngredients( \
+    '1/2 C butter', \
+    '1/2 C brown sugar packed' \
+)
 ~~~
 
 Stir in:
 
-~~~ recipe-ingredients
-1 C flour
+~~~ markdown-script
+recipeIngredients( \
+    '1 C flour' \
+)
 ~~~
 
 Turn into a 9 X 13" buttered pan pat out evenly and bake at 350 degrees for 10 minutes.
 
 Mix together:
 
-~~~ recipe-ingredients
-2 eggs beaten
-
-1 C brown sugar packed
-
-1 tsp vanilla
-
-2 Tbsp flour
-
-1 tsp baking powder
-
-1/2 tsp salt
-
-1 C flaked coconut
-
-1 C chopped pecans
+~~~ markdown-script
+recipeIngredients( \
+    '2 eggs beaten', \
+    '1 C brown sugar packed', \
+    '1 tsp vanilla', \
+    '2 Tbsp flour', \
+    '1 tsp baking powder', \
+    '1/2 tsp salt', \
+    '1 C flaked coconut', \
+    '1 C chopped pecans' \
+)
 ~~~
 
 Spread the topping on the baked crust and return to the oven for 25 minutes more.

@@ -1,20 +1,29 @@
-~~~ recipe-info
-Title: Toscas
-Servings: 30
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Toscas
+
+~~~ markdown-script
+recipeHeader(null, 30)
 ~~~
 
 Using a Cuisinart cream together:
 
-~~~ recipe-ingredients
-13 Tbsp butter
-
-1/2 C sugar
+~~~ markdown-script
+recipeIngredients( \
+    '13 Tbsp butter', \
+    '1/2 C sugar' \
+)
 ~~~
 
 Add and process to form crumbs:
 
-~~~ recipe-ingredients
-2 C flour
+~~~ markdown-script
+recipeIngredients( \
+    '2 C flour' \
+)
 ~~~
 
 Press the crumbs into small (2") muffin cups, bottoms and sides, and bake at 350 degrees for 10
@@ -22,20 +31,21 @@ minutes.
 
 For the filling, combine and cook while stirring in a small sauce pan until boiling:
 
-~~~ recipe-ingredients
-1/4 C butter
-
-3 Tbsp heavy cream
-
-4 tsp flour
-
-1/2 C sugar
+~~~ markdown-script
+recipeIngredients( \
+    '1/4 C butter', \
+    '3 Tbsp heavy cream', \
+    '4 tsp flour', \
+    '1/2 C sugar' \
+)
 ~~~
 
 Remove from heat and add the slivered almonds.
 
-~~~ recipe-ingredients
-2/3 C slivered almonds
+~~~ markdown-script
+recipeIngredients( \
+    '2/3 C slivered almonds' \
+)
 ~~~
 
 Spoon a small (tsp) amount of filling into baked crusts and return to the oven and bake until

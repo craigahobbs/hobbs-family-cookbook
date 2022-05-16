@@ -1,17 +1,23 @@
-~~~ recipe-info
-Title: Rhinelander Swiss Cheese Fondue
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Rhinelander Swiss Cheese Fondue
+
+~~~ markdown-script
+recipeHeader()
 ~~~
 
 Combine the following ingredients in a small sauce pan and stir until melted:
 
-~~~ recipe-ingredients
-12 oz processed swiss cheese
-
-1/8 tsp garlic powder
-
-1/2 C dry white wine
-
-1/8 C hot water
+~~~ markdown-script
+recipeIngredients( \
+    '12 oz processed swiss cheese', \
+    '1/8 tsp garlic powder', \
+    '1/2 C dry white wine', \
+    '1/8 C hot water' \
+)
 ~~~
 
 Add a dash of MSG if desired. Ground white pepper to taste.

@@ -1,16 +1,22 @@
-~~~ recipe-info
-Title: Cheese and Sausage Rounds
-Author: Nancy Thomas
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Cheese and Sausage Rounds
+
+~~~ markdown-script
+recipeHeader('Nancy Thomas')
 ~~~
 
 Combine and mix together with hands:
 
-~~~ recipe-ingredients
-3 C Bisquick
-
-1 lb shredded cheddar cheese
-
-1 lb Jimmy Deans hot sausage warmed to room temperature
+~~~ markdown-script
+recipeIngredients( \
+    '3 C Bisquick', \
+    '1 lb shredded cheddar cheese', \
+    '1 lb Jimmy Deans hot sausage warmed to room temperature' \
+)
 ~~~
 
 Shape the dough into balls about the size of ping pong balls. Bake on a greased cookie sheet at 350

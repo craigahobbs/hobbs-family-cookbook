@@ -1,5 +1,12 @@
-~~~ recipe-info
-Title: Popovers
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Popovers
+
+~~~ markdown-script
+recipeHeader()
 ~~~
 
 Oil two Chicago@ metallic nonstick popover pans. Cut 2 Tbsp butter into cubes and place one dot in
@@ -7,16 +14,14 @@ each of eight popover cups.
 
 Blend together until the mixture is the consistency of thick cream:
 
-~~~ recipe-ingredients
-1 1/4 C flour
-
-1/4 tsp salt
-
-3 large eggs at room temperature
-
-1 1/4 C milk at room temperature
-
-2 Tbsp melted butter
+~~~ markdown-script
+recipeIngredients( \
+    '1 1/4 C flour', \
+    '1/4 tsp salt', \
+    '3 large eggs at room temperature', \
+    '1 1/4 C milk at room temperature', \
+    '2 Tbsp melted butter' \
+)
 ~~~
 
 Heat the oven to 400 degrees. When oven is up to temp, heat the prepared pans until butter is

@@ -1,15 +1,11 @@
 {
-    "title": "The Hobbs Family Cookbook",
     "titleURL": "extras/Title.md",
-    "headerColor": "lightgray",
-    "titleColor": "yellowgreen",
     "categories": [
         {
             "title": "Introduction",
             "files": [
                 "extras/ItsYourFavorite.md",
-                "extras/RecipeKnowHow.md",
-                "extras/SourceCode.md"
+                "extras/RecipeKnowHow.md"
             ]
         },
         {

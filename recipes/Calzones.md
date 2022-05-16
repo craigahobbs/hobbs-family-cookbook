@@ -1,37 +1,44 @@
-~~~ recipe-info
-Title: Calzones
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Calzones
+
+~~~ markdown-script
+recipeHeader()
 ~~~
 
 ### Dough
 
 Add to a large electric mixer bowl and allow to stand for 10 minutes:
 
-~~~ recipe-ingredients
-1 7/8 C warm water (110 degrees)
-
-1 1/2  Tbsp  active dry yeast
-
-1 tsp sugar
+~~~ markdown-script
+recipeIngredients( \
+    '1 7/8 C warm water (110 degrees)', \
+    '1 1/2  Tbsp  active dry yeast', \
+    '1 tsp sugar' \
+)
 ~~~
 
 Mix in with a spoon:
 
-~~~ recipe-ingredients
-3 Tbsp olive oil
-
-4 cloves chopped fresh garlic
-
-1 1/2 Tbsp chopped fresh basil
-
-1 1/2 tsp pepper
-
-1 1/2 tsp salt
+~~~ markdown-script
+recipeIngredients( \
+    '3 Tbsp olive oil', \
+    '4 cloves chopped fresh garlic', \
+    '1 1/2 Tbsp chopped fresh basil', \
+    '1 1/2 tsp pepper', \
+    '1 1/2 tsp salt' \
+)
 ~~~
 
 Using the dough hook add and mix until a soft dough forms:
 
-~~~ recipe-ingredients
-4 1/2 C flour
+~~~ markdown-script
+recipeIngredients( \
+    '4 1/2 C flour' \
+)
 ~~~
 
 Turn the dough onto a floured surface and knead to form a smooth, elastic ball. Turn dough into a
@@ -42,36 +49,39 @@ greased bowl, cover, and let rise until double in size (about 1 1/2 hours).
 
 In a large saute pan, heat the olive oil until very hot and then add the diced onion and garlic:
 
-~~~ recipe-ingredients
-1 Tbsp olive oil
-
-1 large diced onion
-
-3 cloves diced garlic
+~~~ markdown-script
+recipeIngredients( \
+    '1 Tbsp olive oil', \
+    '1 large diced onion', \
+    '3 cloves diced garlic' \
+)
 ~~~
 
 When onion and garlic are cooked and fragrant, add and cook:
 
-~~~ recipe-ingredients
-1 lb Italian sausage
+~~~ markdown-script
+recipeIngredients( \
+    '1 lb Italian sausage' \
+)
 ~~~
 
 Add and heat until bubbling hot:
 
-~~~ recipe-ingredients
-1/4 C diced sun-dried tomatoes
-
-2 fresh roma tomatoes, seeded and diced
+~~~ markdown-script
+recipeIngredients( \
+    '1/4 C diced sun-dried tomatoes', \
+    '2 fresh roma tomatoes, seeded and diced' \
+)
 ~~~
 
 Pour mixture into a large mixing bowl and allow to cool. Then mix in:
 
-~~~ recipe-ingredients
-1/2 C grated parmesan cheese
-
-3/4 lb grated mozzarella cheese
-
-2 Tbsp chopped fresh basil
+~~~ markdown-script
+recipeIngredients( \
+    '1/2 C grated parmesan cheese', \
+    '3/4 lb grated mozzarella cheese', \
+    '2 Tbsp chopped fresh basil' \
+)
 ~~~
 
 Salt and pepper to taste

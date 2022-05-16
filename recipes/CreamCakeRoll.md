@@ -1,5 +1,12 @@
-~~~ recipe-info
-Title: Cream Cake Roll
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Cream Cake Roll
+
+~~~ markdown-script
+recipeHeader()
 ~~~
 
 Line a jelly roll pan, 15 1/2" X 10 1/2" X 1", with greased foil. (grease the pan first, the foil
@@ -8,24 +15,23 @@ stays in place better)
 Use an electric mixer to beat the eggs until thick and lemon colored. Gradually beat in the sugar.
 Now blend in the water and the vanilla.
 
-~~~ recipe-ingredients
-3 large eggs
-
-1 C sugar
-
-1/3 C water
-
-1 tsp vanilla
+~~~ markdown-script
+recipeIngredients( \
+    '3 large eggs', \
+    '1 C sugar', \
+    '1/3 C water', \
+    '1 tsp vanilla' \
+)
 ~~~
 
 Mix in to form a smooth batter:
 
-~~~ recipe-ingredients
-1 C flour
-
-1/4 tsp salt
-
-1 tsp baking powder
+~~~ markdown-script
+recipeIngredients( \
+    '1 C flour', \
+    '1/4 tsp salt', \
+    '1 tsp baking powder' \
+)
 ~~~
 
 Pour the batter evenly into the prepared pan and bake at 375 degrees for 12 to 15 minutes, until
@@ -41,8 +47,10 @@ When the cake is cool, carefully unroll and fill with cream filling leaving the 
 
 ### Cream Filling
 
-~~~ recipe-ingredients
-1 C heavy whipping cream
+~~~ markdown-script
+recipeIngredients( \
+    '1 C heavy whipping cream' \
+)
 ~~~
 
 Beat the heavy whipping cream until stiff. Sweeten to taste.

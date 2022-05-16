@@ -1,26 +1,33 @@
-~~~ recipe-info
-Title: Eggs Benedict
-Servings: 2
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Eggs Benedict
+
+~~~ markdown-script
+recipeHeader(null, 2)
 ~~~
 
 Split and toast the english muffins, butter and place on a baking sheet, top with the Canadian bacon
 and place in a warm (200 degree) oven.
 
-~~~ recipe-ingredients
-2 English muffins
-4 slices Canadian bacon, lightly sauteed
+~~~ markdown-script
+recipeIngredients( \
+    '2 English muffins', \
+    '4 slices Canadian bacon, lightly sauteed' \
+)
 ~~~
 
 Prepare the **hollandaise sauce** as follows:
 
-~~~ recipe-ingredients
-2 egg yolks
-
-2 Tbsp champagne
-
-1 Tbsp fresh lemon juice
-
-1 cube butter cut in half
+~~~ markdown-script
+recipeIngredients( \
+    '2 egg yolks', \
+    '2 Tbsp champagne', \
+    '1 Tbsp fresh lemon juice', \
+    '1 cube butter cut in half' \
+)
 ~~~
 
 Place the first 3 ingredients in a sauce pan and whisk together. Put half of the butter in the pan
@@ -32,21 +39,27 @@ poached.
 Spray a large non stick saute pan with cooking spray. Fill the pan 1 1/2 inch deep with water and
 add the white vinegar or lemon juice.
 
-~~~ recipe-ingredients
-1 Tbsp white vinegar
+~~~ markdown-script
+recipeIngredients( \
+    '1 Tbsp white vinegar' \
+)
 ~~~
 
 Alternatively:
 
-~~~ recipe-ingredients
-1/2 lemon, juiced
+~~~ markdown-script
+recipeIngredients( \
+    '1/2 lemon, juiced' \
+)
 ~~~
 
 Set the pan on a burner and bring the water to a simmering boil. Carefully crack the eggs into the
 water, as the eggs cook spoon water over the yolks to set them.
 
-~~~ recipe-ingredients
-4 large eggs
+~~~ markdown-script
+recipeIngredients( \
+    '4 large eggs' \
+)
 ~~~
 
 Cook the eggs until the white is set but the center is still soft. Carefully remove each egg with a

@@ -1,43 +1,52 @@
-~~~ recipe-info
-Title: California Skillet
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# California Skillet
+
+~~~ markdown-script
+recipeHeader()
 ~~~
 
 How could I leave this one out!
 
 Brown in a large skillet in olive oil: (skillet should have a lid)
 
-~~~ recipe-ingredients
-1 Tbsp olive oil
-
-1 lb lean ground beef
-
-1 large chopped onion diced
+~~~ markdown-script
+recipeIngredients( \
+    '1 Tbsp olive oil', \
+    '1 lb lean ground beef', \
+    '1 large chopped onion diced' \
+)
 ~~~
 
 Stir in, cover and cook  on low heat for 25 minutes:
 
-~~~ recipe-ingredients
-2 1/2 C water
-
-1 C white rice
-
-3 beef bouillon cubes, crushed
-
-1/2 tsp dry mustard
+~~~ markdown-script
+recipeIngredients( \
+    '2 1/2 C water', \
+    '1 C white rice', \
+    '3 beef bouillon cubes, crushed', \
+    '1/2 tsp dry mustard' \
+)
 ~~~
 
 Stir in:
 
-~~~ recipe-ingredients
-1 medium diced green pepper
-
-1 medium diced tomato
+~~~ markdown-script
+recipeIngredients( \
+    '1 medium diced green pepper', \
+    '1 medium diced tomato' \
+)
 ~~~
 
 Sprinkle with:
 
-~~~ recipe-ingredients
-1 C shredded Monterey Jack cheese
+~~~ markdown-script
+recipeIngredients( \
+    '1 C shredded Monterey Jack cheese' \
+)
 ~~~
 
 Remove the skillet from heat, cover and let stand for 3 - 5 minutes.

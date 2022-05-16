@@ -1,32 +1,29 @@
-~~~ recipe-info
-Title: Meat Loaf
-Servings: 4
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
 ~~~
 
-~~~ recipe-ingredients
-1 tbsp good olive oil
+# Meat Loaf
 
-1 onion, medium, finely chopped
+~~~ markdown-script
+recipeHeader(null, 4)
+~~~
 
-1/2 tsp dried thyme
-
-1 tsp Kosher salt
-
-1/2 tsp freshly ground black pepper
-
-1 1/2 tbsp Worcestershire sauce
-
-3 Tbsp canned chicken stock or stock
-
-1 tbsp tomato paste
-
-1 1/4 lb ground chuck (81% lean)
-
-1/4 C plain panko bread crumbs(Progresso recommended)
-
-1 extra-large egg, beaten
-
-1/4 C ketchup (Heinz recommended)
+~~~ markdown-script
+recipeIngredients( \
+    '1 tbsp good olive oil', \
+    '1 onion, medium, finely chopped', \
+    '1/2 tsp dried thyme', \
+    '1 tsp Kosher salt', \
+    '1/2 tsp freshly ground black pepper', \
+    '1 1/2 tbsp Worcestershire sauce', \
+    '3 Tbsp canned chicken stock or stock', \
+    '1 tbsp tomato paste', \
+    '1 1/4 lb ground chuck (81% lean)', \
+    '1/4 C plain panko bread crumbs(Progresso recommended)', \
+    '1 extra-large egg, beaten', \
+    '1/4 C ketchup (Heinz recommended)' \
+)
 ~~~
 
 Preheat oven to 350 degrees.

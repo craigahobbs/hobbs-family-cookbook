@@ -1,21 +1,25 @@
-~~~ recipe-info
-Title: Herbed Baked Mushrooms
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Herbed Baked Mushrooms
+
+~~~ markdown-script
+recipeHeader()
 ~~~
 
 Mix together in a 1 qt buttered baking dish:
 
-~~~ recipe-ingredients
-1 lb cleaned, trimmed, halved fresh mushroom caps
-
-2 Tbsp melted butter
-
-1 Tbsp fresh lemon juice
-
-1 tsp dried dill weed
-
-1/2 tsp onion powder
-
-1/2 tsp salt
+~~~ markdown-script
+recipeIngredients( \
+    '1 lb cleaned, trimmed, halved fresh mushroom caps', \
+    '2 Tbsp melted butter', \
+    '1 Tbsp fresh lemon juice', \
+    '1 tsp dried dill weed', \
+    '1/2 tsp onion powder', \
+    '1/2 tsp salt' \
+)
 ~~~
 
 Freshly ground pepper to taste.

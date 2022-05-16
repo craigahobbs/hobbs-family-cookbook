@@ -1,23 +1,26 @@
-~~~ recipe-info
-Title: Chocolate Pots De Creme
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Chocolate Pots De Creme
+
+~~~ markdown-script
+recipeHeader()
 ~~~
 
 ### Ingredients
 
-~~~ recipe-ingredients
-6 ounces bittersweet chocolate, chopped fine
-
-7 large egg yolks
-
-1/3 cup sugar
-
-1/8 teaspoon salt
-
-1 1/2 cup heavy cream
-
-1/2 cup whole milk
-
-1 teaspoon vanilla extract
+~~~ markdown-script
+recipeIngredients( \
+    '6 ounces bittersweet chocolate, chopped fine', \
+    '7 large egg yolks', \
+    '1/3 cup sugar', \
+    '1/8 teaspoon salt', \
+    '1 1/2 cup heavy cream', \
+    '1/2 cup whole milk', \
+    '1 teaspoon vanilla extract' \
+)
 ~~~
 
 
@@ -40,8 +43,10 @@ Title: Chocolate Pots De Creme
 
 ### Variation:  Mocha Pots De Creme
 
-~~~ recipe-ingredients
-2 teaspoons instant espresso powder
+~~~ markdown-script
+recipeIngredients( \
+    '2 teaspoons instant espresso powder' \
+)
 ~~~
 
 Heat the instant espresso powder with the cream and milk mixture in step 2.

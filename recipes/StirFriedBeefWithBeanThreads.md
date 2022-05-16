@@ -1,44 +1,47 @@
-~~~ recipe-info
-Title: Stir Fried Beef With Bean Threads
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Stir Fried Beef With Bean Threads
+
+~~~ markdown-script
+recipeHeader()
 ~~~
 
 ### Marinade
 
-~~~ recipe-ingredients
-1/2 cup soy sauce
-
-1/2 cup dry sherry
-
-1/2 tsp MSG (optional)
-
-2 tsps sugar
+~~~ markdown-script
+recipeIngredients( \
+    '1/2 cup soy sauce', \
+    '1/2 cup dry sherry', \
+    '1/2 tsp MSG (optional)', \
+    '2 tsps sugar' \
+)
 ~~~
 
 Add the beef slices and marinate in the refrigerator for 30 minutes or up to two hours.
 
-~~~ recipe-ingredients
-2 1/2 lbs flank steak sliced thinly across the grain
+~~~ markdown-script
+recipeIngredients( \
+    '2 1/2 lbs flank steak sliced thinly across the grain' \
+)
 ~~~
 
 
 ### Vegetables
 
-~~~ recipe-ingredients
-1 1/4 lb bok choy sliced
-
-2 red bell peppers deveined and sliced
-
-1 8 oz can sliced water chestnuts drained
-
-1 inch piece ginger root pealed and sliced
-
-2 large cloves garlic peeled and split in half
-
-2 Tbsp oyster sauce
-
-6 oz package bean thread noodles (cellophane noodles)
-
-4 cup peanut oil
+~~~ markdown-script
+recipeIngredients( \
+    '1 1/4 lb bok choy sliced', \
+    '2 red bell peppers deveined and sliced', \
+    '1 8 oz can sliced water chestnuts drained', \
+    '1 inch piece ginger root pealed and sliced', \
+    '2 large cloves garlic peeled and split in half', \
+    '2 Tbsp oyster sauce', \
+    '6 oz package bean thread noodles (cellophane noodles)', \
+    '4 cup peanut oil' \
+)
 ~~~
 
 Heat the oil to 400 degrees in a wok for deep frying pan. Cook noodles in two batches in the oil

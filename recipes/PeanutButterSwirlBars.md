@@ -1,35 +1,42 @@
-~~~ recipe-info
-Title: Peanut Butter Swirl Bars
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Peanut Butter Swirl Bars
+
+~~~ markdown-script
+recipeHeader()
 ~~~
 
 Cream together:
 
-~~~ recipe-ingredients
-1/2 C Chunky peanut butter
-
-1/3 C butter
-
-3/4 C packed brown sugar
-
-3/4 C sugar
+~~~ markdown-script
+recipeIngredients( \
+    '1/2 C Chunky peanut butter', \
+    '1/3 C butter', \
+    '3/4 C packed brown sugar', \
+    '3/4 C sugar' \
+)
 ~~~
 
 Add and mix in:
 
-~~~ recipe-ingredients
-2 eggs
-
-2 tsp vanilla extract
+~~~ markdown-script
+recipeIngredients( \
+    '2 eggs', \
+    '2 tsp vanilla extract' \
+)
 ~~~
 
 Add and stir in:
 
-~~~ recipe-ingredients
-1 C flour
-
-1 tsp baking powder
-
-1/4 tsp salt
+~~~ markdown-script
+recipeIngredients( \
+    '1 C flour', \
+    '1 tsp baking powder', \
+    '1/4 tsp salt' \
+)
 ~~~
 
 Spread the mixture in a greased 9 X 13" baking pan. Sprinkle 12 oz chocolate chips over the batter

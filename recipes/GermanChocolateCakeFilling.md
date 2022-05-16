@@ -1,30 +1,36 @@
-~~~ recipe-info
-Title: German Chocolate Cake Filling
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# German Chocolate Cake Filling
+
+~~~ markdown-script
+recipeHeader()
 ~~~
 
 A Hobbs family favorite!
 
 Combine in a medium sized saucepan:
 
-~~~ recipe-ingredients
-1 cup sugar
-
-1 cup evaporated milk
-
-3 egg yolks
-
-1 stick (1/2 cup) butter
-
-1 tsp vanilla
+~~~ markdown-script
+recipeIngredients( \
+    '1 cup sugar', \
+    '1 cup evaporated milk', \
+    '3 egg yolks', \
+    '1 stick (1/2 cup) butter', \
+    '1 tsp vanilla' \
+)
 ~~~
 
 Cook and stir over medium heat until sauce is thickened, about 12 minutes. Remove from the heat and
 add and stir in:
 
-~~~ recipe-ingredients
-1 1/3 cup angel flake coconut
-
-1 cup chopped pecans
+~~~ markdown-script
+recipeIngredients( \
+    '1 1/3 cup angel flake coconut', \
+    '1 cup chopped pecans' \
+)
 ~~~
 
 Cool and spread. This is enough filling for 3- 9" cake layers. I spread each layer with frosting and

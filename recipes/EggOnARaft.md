@@ -1,11 +1,19 @@
-~~~ recipe-info
-Title: Egg On A Raft
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
 ~~~
 
-~~~ recipe-ingredients
-1 egg
+# Egg On A Raft
 
-1 slice of bread
+~~~ markdown-script
+recipeHeader()
+~~~
+
+~~~ markdown-script
+recipeIngredients( \
+    '1 egg', \
+    '1 slice of bread' \
+)
 ~~~
 
 Place the bread on a cutting board and use a cookie or biscuit cutter to cut a hole in the center of

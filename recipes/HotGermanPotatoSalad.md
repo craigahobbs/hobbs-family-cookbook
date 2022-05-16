@@ -1,28 +1,27 @@
-~~~ recipe-info
-Title: Hot German Potato Salad
-Author: Betty Artus
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
 ~~~
 
-~~~ recipe-ingredients
-3 lbs of white or yellow potatoes
+# Hot German Potato Salad
 
-6 slices of thick sliced bacon cut in 1/3" piece
+~~~ markdown-script
+recipeHeader('Betty Artus')
+~~~
 
-3 cup diced white or yellow onion
-
-2 Tbsp flour
-
-2 tsp sugar
-
-2 tsp salt
-
-1/2 tsp celery seed
-
-1 pinch of pepper
-
-3/4 cup water
-
-1/3 cup cider vinegar
+~~~ markdown-script
+recipeIngredients( \
+    '3 lbs of white or yellow potatoes', \
+    '6 slices of thick sliced bacon cut in 1/3" piece', \
+    '3 cup diced white or yellow onion', \
+    '2 Tbsp flour', \
+    '2 tsp sugar', \
+    '2 tsp salt', \
+    '1/2 tsp celery seed', \
+    '1 pinch of pepper', \
+    '3/4 cup water', \
+    '1/3 cup cider vinegar' \
+)
 ~~~
 
 Peel the potatoes and boil in a large covered pot of salted water until tender. Drain and set aside

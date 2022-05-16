@@ -1,29 +1,35 @@
-~~~ recipe-info
-Title: Seared Halibut With Herbed Tartar Sauce
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Seared Halibut With Herbed Tartar Sauce
+
+~~~ markdown-script
+recipeHeader()
 ~~~
 
 Prepare the sauce by mixing together:
 
-~~~ recipe-ingredients
-1/2 C Mayonnaise
-
-3 Tbsp freshly squeezed lemon juice
-
-1 Tbsp chopped fresh parsley
-
-1 large thinly sliced green onion
-
-1 Tbsp chopped fresh thyme
-
-1/2 tsp salt
+~~~ markdown-script
+recipeIngredients( \
+    '1/2 C Mayonnaise', \
+    '3 Tbsp freshly squeezed lemon juice', \
+    '1 Tbsp chopped fresh parsley', \
+    '1 large thinly sliced green onion', \
+    '1 Tbsp chopped fresh thyme', \
+    '1/2 tsp salt' \
+)
 ~~~
 
 Freshly ground pepper to taste.
 
 Cover and refrigerate until ready to use.
 
-~~~ recipe-ingredients
-4 8 oz skinless halibut fillets
+~~~ markdown-script
+recipeIngredients( \
+    '4 8 oz skinless halibut fillets' \
+)
 ~~~
 
 Clean and pat dry the halibut fillets, sprinkle with salt and pepper, and dust with flour. Heat 1 to

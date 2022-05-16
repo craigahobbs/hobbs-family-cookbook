@@ -1,0 +1,96 @@
+# Licensed under the MIT License
+# https://github.com/craigahobbs/hobbs-family-cookbook/blob/main/LICENSE
+
+
+#
+# The Markdown Book application
+#
+
+
+# The Markdown Book application main entry point
+async function markdownBook(bookURL)
+    # Load and validate the Markdown Book file
+    bookURL = if(bookURL != null, bookURL, 'book.json')
+    book = schemaValidate(bookTypes, 'MarkdownBook', fetch(bookURL))
+
+    # Render the page
+    if (vDoc, markdownBookDoc(), markdownBookIndex(book))
+endfunction
+
+
+# Render the Markdown Book file format documentation
+function markdownBookDoc()
+    setDocumentTitle('MarkdownBook')
+    schemaPrint(bookTypes, 'MarkdownBook')
+endfunction
+
+
+# Render the Markdown Book index
+async function markdownBookIndex(book)
+    titleURL = objectGet(book, 'titleURL')
+    categories = objectGet(book, 'categories')
+
+    # Determine the title
+    titleText = fetch(titleURL, null, true)
+    title = markdownTitle(markdownParse(titleText))
+
+    # Set the page title
+    setDocumentTitle(title)
+    markdownPrint( \
+        '[Title](#url=' + encodeURIComponent(titleURL) + ')', \
+        '# ' + markdownEncode(title) \
+    )
+
+    # Render the category links
+    ixCategory = 0
+    categoryLoop:
+        category = arrayGet(categories, ixCategory)
+        categoryTitle = objectGet(category, 'title')
+        isSelected = (vCategory == categoryTitle)
+        categoryTitleURL = if(isSelected, '#var=', "#var.vCategory='" + encodeURIComponent(categoryTitle) + "'")
+
+        # Render the category title link
+        markdownPrint('', '### [' + markdownEncode(categoryTitle) + '](' + categoryTitleURL + ')')
+
+        # If this is the selected category, fetch the category files and render the file links
+        jumpif (!isSelected) categoryDone
+            categoryFiles = objectGet(category, 'files')
+            categoryTexts = fetch(categoryFiles, null, true)
+            ixFile = 0
+            fileLoop:
+                categoryFile = arrayGet(categoryFiles, ixFile)
+                categoryText = arrayGet(categoryTexts, ixFile)
+                fileTitle = markdownTitle(markdownParse(categoryText))
+                linkTitle = if(fileTitle != null, fileTitle, categoryFile)
+                markdownPrint('', fromCharCode(160) + '[' + markdownEncode(linkTitle) + '](#url=' + \
+                    encodeURIComponent(categoryFile) + "&var.vCategory='" + encodeURIComponent(categoryTitle) + "')")
+                ixFile = ixFile + 1
+            jumpif (ixFile < arrayLength(categoryFiles)) fileLoop
+        categoryDone:
+
+        ixCategory = ixCategory + 1
+    jumpif (ixCategory < arrayLength(categories)) categoryLoop
+endfunction
+
+
+# The Markdown Book file format schema
+bookTypes = schemaParse( \
+    '# The Markdown Book JSON file format', \
+    'struct MarkdownBook', \
+    '', \
+    "    # The markdown book's title page markdown file relative URL", \
+    '    optional string(len > 0) titleURL', \
+    '', \
+    "    # The markdown book's categories", \
+    '    MarkdownBookCategory[len > 0] categories', \
+    '', \
+    '', \
+    '# The Markdown Book category struct', \
+    'struct MarkdownBookCategory', \
+    '', \
+    '    # The category title', \
+    '    string(len > 0) title', \
+    '', \
+    "    # The category's markdown file relative URLs", \
+    '    string(len > 0)[len > 0] files' \
+)

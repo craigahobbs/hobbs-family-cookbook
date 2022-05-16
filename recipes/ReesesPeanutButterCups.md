@@ -1,5 +1,12 @@
-~~~ recipe-info
-Title: Reeses Peanut Butter Cups
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Reeses Peanut Butter Cups
+
+~~~ markdown-script
+recipeHeader()
 ~~~
 
 Recipe discovered by Teresa (who loved Peanut butter cups)
@@ -8,12 +15,12 @@ In The Secret Recipes Collection
 
 In a medium saucepan over low heat, melt together:
 
-~~~ recipe-ingredients
-1 8 oz milk chocolate bar
-
-1/2 C peanut butter
-
-1/4  C butter
+~~~ markdown-script
+recipeIngredients( \
+    '1 8 oz milk chocolate bar', \
+    '1/2 C peanut butter', \
+    '1/4  C butter' \
+)
 ~~~
 
 Using a paper lined muffin tin, place a tablespoon of the chocolate mixture in each paper cup. Next

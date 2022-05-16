@@ -1,41 +1,51 @@
-~~~ recipe-info
-Title: Extraordinary Chocolate Chip Cookies
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Extraordinary Chocolate Chip Cookies
+
+~~~ markdown-script
+recipeHeader()
 ~~~
 
 ![Extraordinary Chocolate Chip Cookies](../images/ExtraordinaryChocolateChipCookies.jpg "Extraordinary Chocolate Chip Cookies")
 
 Cream together until light and fluffy:
 
-~~~ recipe-ingredients
-1 1/2 C butter
+~~~ markdown-script
+recipeIngredients( \
+    '1 1/2 C butter' \
+)
 ~~~
 
 Add and continue to cream:
 
-~~~ recipe-ingredients
-1 1/4 C sugar
-
-1 1/4 C packed light brown sugar
-
-2 eggs
-
-1 Tbsp vanilla extract
+~~~ markdown-script
+recipeIngredients( \
+    '1 1/4 C sugar', \
+    '1 1/4 C packed light brown sugar', \
+    '2 eggs', \
+    '1 Tbsp vanilla extract' \
+)
 ~~~
 
 Add and mix together:
 
-~~~ recipe-ingredients
-4 C flour (I lightly toss the flour before measuring it)
-
-2 tsp baking soda
-
-1/2 tsp salt
+~~~ markdown-script
+recipeIngredients( \
+    '4 C flour (I lightly toss the flour before measuring it)', \
+    '2 tsp baking soda', \
+    '1/2 tsp salt' \
+)
 ~~~
 
 With the mixer on the lowest speed, add in the chocolate chips.
 
-~~~ recipe-ingredients
-4 cups semisweet chocolate chips
+~~~ markdown-script
+recipeIngredients( \
+    '4 cups semisweet chocolate chips' \
+)
 ~~~
 
 This forms a really
@@ -48,8 +58,10 @@ rack.
 
 Coarsely chopped nuts may be added to the dough with the chips.
 
-~~~ recipe-ingredients
-2 C coarsely chopped nuts (optional)
+~~~ markdown-script
+recipeIngredients( \
+    '2 C coarsely chopped nuts (optional)' \
+)
 ~~~
 
 These chocolate chip cookies are really the best we've ever tasted and live up to the billing of

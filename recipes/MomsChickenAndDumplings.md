@@ -1,13 +1,20 @@
-~~~ recipe-info
-Title: Mom's Chicken And Dumplings
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
 ~~~
 
-~~~ recipe-ingredients
-2 large, bone in, skin on, chicken breasts
+# Mom's Chicken And Dumplings
 
-1 Tbsp olive
+~~~ markdown-script
+recipeHeader()
+~~~
 
-4 C water
+~~~ markdown-script
+recipeIngredients( \
+    '2 large, bone in, skin on, chicken breasts', \
+    '1 Tbsp olive', \
+    '4 C water' \
+)
 ~~~
 
 Salt and pepper the chicken breasts. Sear the chicken in the olive oil in a 6 qt dutch oven. When
@@ -17,16 +24,14 @@ pieces. Refrigerate the chicken until ready to add back.
 
 Dice:
 
-~~~ recipe-ingredients
-2 large stalks celery
-
-1 large onion
-
-1 large shallot
-
-2 large carrots
-
-2 cloves garlic minced
+~~~ markdown-script
+recipeIngredients( \
+    '2 large stalks celery', \
+    '1 large onion', \
+    '1 large shallot', \
+    '2 large carrots', \
+    '2 cloves garlic minced' \
+)
 ~~~
 
 Saute cut vegetables in a large skillet in olive oil just until vegetables are softened. Add one
@@ -35,18 +40,15 @@ additional chicken broth and the bay leaf. Simmer covered until all the vegetabl
 20 minutes. Correct the seasoning with salt and pepper and remove the bay leaf. Thicken with the
 butter mixed with the flour. Bring back to a boil to thicken before adding the dumpling dough.
 
-~~~ recipe-ingredients
-1 Tbsp olive oil
-
-1 potato, peeled and cubed
-
-2 C additional chicken broth
-
-1 bay leaf
-
-3 Tbsp butter, softened
-
-2 Tbsp flour
+~~~ markdown-script
+recipeIngredients( \
+    '1 Tbsp olive oil', \
+    '1 potato, peeled and cubed', \
+    '2 C additional chicken broth', \
+    '1 bay leaf', \
+    '3 Tbsp butter, softened', \
+    '2 Tbsp flour' \
+)
 ~~~
 
 
@@ -54,16 +56,14 @@ butter mixed with the flour. Bring back to a boil to thicken before adding the d
 
 Mix together:
 
-~~~ recipe-ingredients
-1 1/2 C flour
-
-2 tsp baking powder
-
-3/4 tsp salt
-
-3 Tbsp shortening
-
-3/4 C milk
+~~~ markdown-script
+recipeIngredients( \
+    '1 1/2 C flour', \
+    '2 tsp baking powder', \
+    '3/4 tsp salt', \
+    '3 Tbsp shortening', \
+    '3/4 C milk' \
+)
 ~~~
 
 Cut in the shortening. Stir in the milk.
@@ -72,6 +72,8 @@ Drop the dough in spoonfuls onto the boiling chicken and vegetable mixture. Cook
 heat for 10 minutes. Lower the heat, add the frozen peas, and cover and cook ten more minutes. Serve
 hot.
 
-~~~ recipe-ingredients
-3/4 C frozen peas
+~~~ markdown-script
+recipeIngredients( \
+    '3/4 C frozen peas' \
+)
 ~~~

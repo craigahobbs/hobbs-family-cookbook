@@ -1,44 +1,50 @@
-~~~ recipe-info
-Title: Mom's Cinnamon Rolls
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
 ~~~
 
-[Large Batch](#id=recipes-MomsCinnamonRolls&categories.0=Breads&scale=1) (10 1/2 " X 14 1/2 " pan)  
-[Small Batch](#id=recipes-MomsCinnamonRolls&categories.0=Breads&scale=0.5) (9 1/2 X 13" pan)
+# Mom's Cinnamon Rolls
+
+~~~ markdown-script
+recipeHeader()
+~~~
+
+[Large Batch](#var.vScale=1) (10 1/2 " X 14 1/2 " pan)  
+[Small Batch](#var.vScale=0.5) (9 1/2 X 13" pan)
 
 Dissolve yeast in a large mixing bowl and let proof for 10 minutes:
 
 (Use a stand mixer with a paddle attachment)
 
-~~~ recipe-ingredients
-1/2 C  water at 110 degrees
-
-2 Tbsp dry active yeast
-
-2 tsp sugar
+~~~ markdown-script
+recipeIngredients( \
+    '1/2 C  water at 110 degrees', \
+    '2 Tbsp dry active yeast', \
+    '2 tsp sugar' \
+)
 ~~~
 
 Add and mix in:
 
-~~~ recipe-ingredients
-1/2 C butter
-
-1/2 C sugar
-
-2 beaten eggs
-
-2 tsp salt
-
-1 1/2 C lukewarm milk
-
-4 C flour
+~~~ markdown-script
+recipeIngredients( \
+    '1/2 C butter', \
+    '1/2 C sugar', \
+    '2 beaten eggs', \
+    '2 tsp salt', \
+    '1 1/2 C lukewarm milk', \
+    '4 C flour' \
+)
 ~~~
 
 When mixture forms a smooth "batter" mix in and continue to beat until a smooth dough forms:
 
 (Change beater attachment to a dough hook) and add and beat in:
 
-~~~ recipe-ingredients
-3 C flour
+~~~ markdown-script
+recipeIngredients( \
+    '3 C flour' \
+)
 ~~~
 
 Turn dough out onto a floured surface and knead until completely smooth and elastic. Round the dough
@@ -47,32 +53,38 @@ dough down and let rise a second time until doubled again.
 
 For the **stickey pecan topping**, in baking pan, mix together into a thick paste in pan bottom:
 
-~~~ recipe-ingredients
-1/2 C butter softened
-
-1 C packed brown sugar
-
-3 Tbsp dark corn syrup
+~~~ markdown-script
+recipeIngredients( \
+    '1/2 C butter softened', \
+    '1 C packed brown sugar', \
+    '3 Tbsp dark corn syrup' \
+)
 ~~~
 
 Sprinkle with pecan halves:
 
-~~~ recipe-ingredients
-1 1/2 C pecan halves
+~~~ markdown-script
+recipeIngredients( \
+    '1 1/2 C pecan halves' \
+)
 ~~~
 
 Form the rolls by punching down the dough and turning it out on a floured surface. Roll the dough
 into a large rectangle (20 X 15" or 15 X 9" respectively). Spread rectangle with soft butter:
 
-~~~ recipe-ingredients
-1/2 C soft butter
+~~~ markdown-script
+recipeIngredients( \
+    '1/2 C soft butter' \
+)
 ~~~
 
 Sprinkle with sugar and cinnamon mixture:
 
-~~~ recipe-ingredients
-1 C sugar
-1 tsp cinnamon
+~~~ markdown-script
+recipeIngredients( \
+    '1 C sugar', \
+    '1 tsp cinnamon' \
+)
 ~~~
 
 Smooth mixture with hands and roll the dough beginning with the long side into a log. Pinch the

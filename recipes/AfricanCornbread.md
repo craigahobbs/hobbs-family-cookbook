@@ -1,38 +1,48 @@
-~~~ recipe-info
-Title: African (Liberian) Cornbread
-Author: Teresa Ball
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# African (Liberian) Cornbread
+
+~~~ markdown-script
+recipeHeader('Teresa Ball')
 ~~~
 
 Use an electric beater with a paddle attachment and combine well:
 
-~~~ recipe-ingredients
-1 cup butter at room temperature (do not melt)
-
-1 cup sugar
+~~~ markdown-script
+recipeIngredients( \
+    '1 cup butter at room temperature (do not melt)', \
+    '1 cup sugar' \
+)
 ~~~
 
 Add and stir in well:
 
-~~~ recipe-ingredients
-2 cup cornmeal
-
-1 cup flour
-
-1/2 tsp salt
-
-1 tbsp baking powder
+~~~ markdown-script
+recipeIngredients( \
+    '2 cup cornmeal', \
+    '1 cup flour', \
+    '1/2 tsp salt', \
+    '1 tbsp baking powder' \
+)
 ~~~
 
 Add and mix well:
 
-~~~ recipe-ingredients
-1 cup milk
+~~~ markdown-script
+recipeIngredients( \
+    '1 cup milk' \
+)
 ~~~
 
 Fold in beaten eggs very slowly by hand.
 
-~~~ recipe-ingredients
-2 eggs
+~~~ markdown-script
+recipeIngredients( \
+    '2 eggs' \
+)
 ~~~
 
 Spread batter in a greased 9 X 9" baking pan and bake at 350 degrees for about 30 minutes, or until

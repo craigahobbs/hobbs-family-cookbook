@@ -1,25 +1,28 @@
-~~~ recipe-info
-Title: Mexican Dip
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Mexican Dip
+
+~~~ markdown-script
+recipeHeader()
 ~~~
 
 (also known as Barbie's Secret Dip)
 
 Stir together:
 
-~~~ recipe-ingredients
-3 large diced ripe tomatoes
-
-1 small can chopped black olives
-
-2 bunches cleaned and sliced green onions
-
-1 small can diced green chiles
-
-1/4 C salad oil
-
-2 Tbsp red wine vinegar
-
-1 tsp (or to taste) Lawry's seasoned salt
+~~~ markdown-script
+recipeIngredients( \
+    '3 large diced ripe tomatoes', \
+    '1 small can chopped black olives', \
+    '2 bunches cleaned and sliced green onions', \
+    '1 small can diced green chiles', \
+    '1/4 C salad oil', \
+    '2 Tbsp red wine vinegar', \
+    "1 tsp (or to taste) Lawry's seasoned salt" \
+)
 ~~~
 
 Refrigerate until ready for use. Serve with fresh tortilla chips.

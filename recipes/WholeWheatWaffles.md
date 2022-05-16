@@ -1,32 +1,35 @@
-~~~ recipe-info
-Title: Whole Wheat Waffles
-Servings: 8
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Whole Wheat Waffles
+
+~~~ markdown-script
+recipeHeader(null, 8)
 ~~~
 
 Combine:
 
-~~~ recipe-ingredients
-1 C flour
-
-1 C whole wheat flour
-
-1/2 tsp baking soda
-
-1 tsp baking powder
-
-1 tsp salt
-
-3 Tbsp sugar
+~~~ markdown-script
+recipeIngredients( \
+    '1 C flour', \
+    '1 C whole wheat flour', \
+    '1/2 tsp baking soda', \
+    '1 tsp baking powder', \
+    '1 tsp salt', \
+    '3 Tbsp sugar' \
+)
 ~~~
 
 Whisk together in a large measuring cup:
 
-~~~ recipe-ingredients
-2 C of buttermilk (at room temperature)
-
-3 eggs
-
-2 Tbsp melted butter
+~~~ markdown-script
+recipeIngredients( \
+    '2 C of buttermilk (at room temperature)', \
+    '3 eggs', \
+    '2 Tbsp melted butter' \
+)
 ~~~
 
 Whisk the wet ingredients into the dry until combined, then allow to rest for 5 minutes.

@@ -1,38 +1,44 @@
-~~~ recipe-info
-Title: Sunshine Cake
-Author: Nonny (Helen Minkiewitz)
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Sunshine Cake
+
+~~~ markdown-script
+recipeHeader('Nonny (Helen Minkiewitz)')
 ~~~
 
 A two time blue ribbon winner at the Oregon State Fair in Salem
 
 In a medium bowl beat together until the consistency of mayonnaise:
 
-~~~ recipe-ingredients
-7 egg yolks (reserve egg whites for next step)
-
-1 1/4 C sugar
-
-2 Tbsp water
+~~~ markdown-script
+recipeIngredients( \
+    '7 egg yolks (reserve egg whites for next step)', \
+    '1 1/4 C sugar', \
+    '2 Tbsp water' \
+)
 ~~~
 
 Add and stir in:
 
-~~~ recipe-ingredients
-7 egg whites
-
-1/2 fresh lemon, juiced
-
-1 zest of the whole lemon
-
-1 C flour
+~~~ markdown-script
+recipeIngredients( \
+    '7 egg whites', \
+    '1/2 fresh lemon, juiced', \
+    '1 zest of the whole lemon', \
+    '1 C flour' \
+)
 ~~~
 
 In a large bowl, beat the egg whites, cream of tartar, and salt until very stiff.
 
-~~~ recipe-ingredients
-1 tsp cream of tartar
-
-1/8 tsp salt
+~~~ markdown-script
+recipeIngredients( \
+    '1 tsp cream of tartar', \
+    '1/8 tsp salt' \
+)
 ~~~
 
 Fold the stiffly beaten whites into the yolk mixture. Pour batter evenly into an ungreased angel
@@ -44,14 +50,13 @@ down on a serving plate. Frost with glaze, recipe follows.
 
 ### Lemon Glaze
 
-~~~ recipe-ingredients
-1 C confectioners sugar
-
-1 tsp lemon juice
-
-1/2 tsp lemon zest
-
-1 Tbsp milk
+~~~ markdown-script
+recipeIngredients( \
+    '1 C confectioners sugar', \
+    '1 tsp lemon juice', \
+    '1/2 tsp lemon zest', \
+    '1 Tbsp milk' \
+)
 ~~~
 
 This was the favorite birthday cake in Dad's family. Nonny continued to bake it on request until

@@ -1,21 +1,25 @@
-~~~ recipe-info
-Title: Pork And Sesame-Chinese Barbecue Pork
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Pork And Sesame-Chinese Barbecue Pork
+
+~~~ markdown-script
+recipeHeader()
 ~~~
 
 Whisk together:
 
-~~~ recipe-ingredients
-2 pork tenderloins, trimmed
-
-1 C ketchup
-
-1/3 C sugar
-
-3 Tbsp soy sauce
-
-3 to 4 cloves minced garlic
-
-1/2 tsp dried ginger powder
+~~~ markdown-script
+recipeIngredients( \
+    '2 pork tenderloins, trimmed', \
+    '1 C ketchup', \
+    '1/3 C sugar', \
+    '3 Tbsp soy sauce', \
+    '3 to 4 cloves minced garlic', \
+    '1/2 tsp dried ginger powder' \
+)
 ~~~
 
 Marinate the pork tenderloins in the above for 20 to 30 minutes. Prepare a cookie sheet or roasting
@@ -31,5 +35,5 @@ Serve cool with rice and stir fried vegetables.
 
 Leftover pork is delicious in a sandwich with mayo, plum sauce, and lettuce or diced and added to
 fried rice see
-[Mom's Pork Fried Rice](#id=recipes-MomsPorkFriedRice&categories.0=Main%20Dishes)
+[Mom's Pork Fried Rice](#url=MomsPorkFriedRice.md&var=)
 recipe.

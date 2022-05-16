@@ -1,17 +1,23 @@
-~~~ recipe-info
-Title: Bakers Clay
-Author: Norma Lind
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Bakers Clay
+
+~~~ markdown-script
+recipeHeader('Norma Lind')
 ~~~
 
 When the kids were young, and we had no money, I made our Christmas ornaments from this recipe. My
 friend Norma, actually made and sold her ornaments for $4 apiece- a lot of money in those days.
 
-~~~ recipe-ingredients
-4 C flour
-
-1 C table salt
-
-1 1/2 C water
+~~~ markdown-script
+recipeIngredients( \
+    '4 C flour', \
+    '1 C table salt', \
+    '1 1/2 C water' \
+)
 ~~~
 
 Mix together and knead for ten minutes until mixture forms a smooth elastic dough.

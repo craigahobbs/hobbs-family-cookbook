@@ -1,21 +1,29 @@
-~~~ recipe-info
-Title: Homemade Play Dough
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
 ~~~
 
-~~~ recipe-ingredients
-1/2 C table salt
+# Homemade Play Dough
 
-1 C flour
+~~~ markdown-script
+recipeHeader()
+~~~
 
-1 tsp alum
-
-1 Tbsp canola oil
+~~~ markdown-script
+recipeIngredients( \
+    '1/2 C table salt', \
+    '1 C flour', \
+    '1 tsp alum', \
+    '1 Tbsp canola oil' \
+)
 ~~~
 
 Stir together and add the boiling water and knead until smooth.\*
 
-~~~ recipe-ingredients
-1 C boiling water
+~~~ markdown-script
+recipeIngredients( \
+    '1 C boiling water' \
+)
 ~~~
 
 \* Add food coloring to the water before adding to the dry ingredients. The more coloring added, the

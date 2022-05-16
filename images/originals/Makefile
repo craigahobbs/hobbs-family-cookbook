@@ -1,7 +1,7 @@
 #
-# Makefile for cropping and resizing recipe images.
+# Makefile for cropping and resizing recipe images
 #
-# Requires ImageMagick command line tools.
+# Requires ImageMagick command line tools
 #
 
 

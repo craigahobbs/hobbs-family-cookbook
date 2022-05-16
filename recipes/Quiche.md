@@ -1,45 +1,54 @@
-~~~ recipe-info
-Title: Quiche
-Author: Diana Riley
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Quiche
+
+~~~ markdown-script
+recipeHeader('Diana Riley')
 ~~~
 
 Bake a 9"
-[pie crust](#id=recipes-PieCrust&categories.0=Desserts)
+[pie crust](#url=PieCrust.md&var=)
 at 475 for 7 to 9 minutes. Cool.
 
 Brown and drain:
 
-~~~ recipe-ingredients
-1/2 lb diced bacon
+~~~ markdown-script
+recipeIngredients( \
+    '1/2 lb diced bacon' \
+)
 ~~~
 
 Saute:
 
-~~~ recipe-ingredients
-1/4 C yellow onion in olive oil
+~~~ markdown-script
+recipeIngredients( \
+    '1/4 C yellow onion in olive oil' \
+)
 ~~~
 
 Place the crisped bwacon and sauteed onion in the bottom of the cooked pie shell. Sprinkle with the
 grated swiss cheese.
 
-~~~ recipe-ingredients
-1 C grated swiss cheese
+~~~ markdown-script
+recipeIngredients( \
+    '1 C grated swiss cheese' \
+)
 ~~~
 
 Whisk together:
 
-~~~ recipe-ingredients
-5 eggs plus one egg yolk
-
-2 1/2 C half and half
-
-1 pinch of nutmeg
-
-1/2 tsp salt
-
-2 pinch cayenne
-
-1 pinch white pepper
+~~~ markdown-script
+recipeIngredients( \
+    '5 eggs plus one egg yolk', \
+    '2 1/2 C half and half', \
+    '1 pinch of nutmeg', \
+    '1/2 tsp salt', \
+    '2 pinch cayenne', \
+    '1 pinch white pepper' \
+)
 ~~~
 
 Carefully pour the custard mixture into the pie shell. Bake at 375 degrees for 30 - 35 minutes until

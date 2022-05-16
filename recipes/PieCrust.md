@@ -1,28 +1,39 @@
-~~~ recipe-info
-Title: Pie Crust
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Pie Crust
+
+~~~ markdown-script
+recipeHeader()
 ~~~
 
 Dice and chill:
 
-~~~ recipe-ingredients
-2 sticks of butter
+~~~ markdown-script
+recipeIngredients( \
+    '2 sticks of butter' \
+)
 ~~~
 
 Add to Cuisinart bowl and process. Then add the chilled butter and pulse until butter forms pea size lumps:
 
-~~~ recipe-ingredients
-2 1/4 C flour
-
-1 tsp salt
-
-2 sticks cold butter
+~~~ markdown-script
+recipeIngredients( \
+    '2 1/4 C flour', \
+    '1 tsp salt', \
+    '2 sticks cold butter' \
+)
 ~~~
 
 Gradually add the ice water and process until dough just forms clumps on the top of the blades (the
 amount of water depends on how "dry" the flour is, this varies with the seasons).
 
-~~~ recipe-ingredients
-8 Tbsp ice water or more
+~~~ markdown-script
+recipeIngredients( \
+    '8 Tbsp ice water or more' \
+)
 ~~~
 
 Remove the dough from the bowl, divide into two pieces. Place each piece into a zip sandwich bag and
@@ -40,8 +51,9 @@ directs, until filling is bubbly and crust is golden brown.
 Double crust pies may be brushed with and egg wash, the egg yolk whisked with the water and brushed
 on the crust before baking.
 
-~~~ recipe-ingredients
-1 egg yolk
-
-1 1/2 tbsp of water
+~~~ markdown-script
+recipeIngredients( \
+    '1 egg yolk', \
+    '1 1/2 tbsp of water' \
+)
 ~~~

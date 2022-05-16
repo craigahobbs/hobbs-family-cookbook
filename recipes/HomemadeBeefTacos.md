@@ -1,19 +1,23 @@
-~~~ recipe-info
-Title: Homemade Beef Tacos
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
 ~~~
 
-~~~ recipe-ingredients
-3 lbs lean beef chuck, cut into 1" chunks
+# Homemade Beef Tacos
 
-2 Tbsp olive oil
+~~~ markdown-script
+recipeHeader()
+~~~
 
-1 1/2 C water
-
-1 package taco seasoning mix
-
-1 Tbsp butter, softened
-
-1 Tbsp flour
+~~~ markdown-script
+recipeIngredients( \
+    '3 lbs lean beef chuck, cut into 1" chunks', \
+    '2 Tbsp olive oil', \
+    '1 1/2 C water', \
+    '1 package taco seasoning mix', \
+    '1 Tbsp butter, softened', \
+    '1 Tbsp flour' \
+)
 ~~~
 
 Using a 4.5 qt dutch oven, sear beef chunks (which have been salted and peppered) in the olive oil.
@@ -28,12 +32,12 @@ fold over. Continue until all the desired tortillas are cooked.
 
 Prepare the toppings as follows:
 
-~~~ recipe-ingredients
-2 C shredded  iceberg or romaine lettuce
-
-2 C shredded medium cheddar cheese
-
-2 diced fresh tomatoes
+~~~ markdown-script
+recipeIngredients( \
+    '2 C shredded  iceberg or romaine lettuce', \
+    '2 C shredded medium cheddar cheese', \
+    '2 diced fresh tomatoes' \
+)
 ~~~
 
 Other topping ideas:

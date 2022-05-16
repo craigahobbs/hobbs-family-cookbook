@@ -1,20 +1,24 @@
-~~~ recipe-info
-Title: Toffee
-Author: Pearl Salter, my Mom
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Toffee
+
+~~~ markdown-script
+recipeHeader('Pearl Salter, my Mom')
 ~~~
 
 Combine in a large saucepan:
 
-~~~ recipe-ingredients
-2 C butter
-
-2 C sugar
-
-2/3 C brown sugar
-
-6 Tbsp light Karo syrup (dark Karo does not give the same crispy texture to the finished candy
-
-4 Tbsp water (1/4 C)
+~~~ markdown-script
+recipeIngredients( \
+    '2 C butter', \
+    '2 C sugar', \
+    '2/3 C brown sugar', \
+    '6 Tbsp light Karo syrup (dark Karo does not give the same crispy texture to the finished candy', \
+    '4 Tbsp water (1/4 C)' \
+)
 ~~~
 
 Stir frequently and cook over medium heat until the candy reaches 300 degrees using a quick-read electronic
@@ -23,30 +27,37 @@ minutes stirring frequently.
 
 Remove from heat and stir in the baking soda and the toasted almonds.
 
-~~~ recipe-ingredients
-1 tsp baking soda
-
-1 1/2 C roughly chopped toasted whole almonds
+~~~ markdown-script
+recipeIngredients( \
+    '1 tsp baking soda', \
+    '1 1/2 C roughly chopped toasted whole almonds' \
+)
 ~~~
 
 Turn out on a greased sheet pan and allow to cool slightly. While still quite warm, sprinkle with
 the chocolate chips or the broken milk chocolate bars, allow to melt and spread over top of the
 cooling candy.
 
-~~~ recipe-ingredients
-12 oz Milk chocolate chips
+~~~ markdown-script
+recipeIngredients( \
+    '12 oz Milk chocolate chips' \
+)
 ~~~
 
 Alternatively:
 
-~~~ recipe-ingredients
-6 small broken milk chocolate bars
+~~~ markdown-script
+recipeIngredients( \
+    '6 small broken milk chocolate bars' \
+)
 ~~~
 
 Sprinkle immediately with finely chopped toasted whole almonds and allow to cool for overnight.
 
-~~~ recipe-ingredients
-1 1/2 C finely chopped toasted whole almonds
+~~~ markdown-script
+recipeIngredients( \
+    '1 1/2 C finely chopped toasted whole almonds' \
+)
 ~~~
 
 Break apart into pieces by lifting the edges off the sheet pan with a table knife and snapping the

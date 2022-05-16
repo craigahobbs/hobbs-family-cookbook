@@ -1,33 +1,30 @@
-~~~ recipe-info
-Title: Bolognese
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
 ~~~
 
-~~~ recipe-ingredients
-2 tbsp good olive oil, plus extra to cook the pasta
+# Bolognese
 
-1 lb mild Italian sausage or lean ground sirloin
+~~~ markdown-script
+recipeHeader()
+~~~
 
-4 tsp minced garlic (4 cloves)
-
-1 tbsp dried oregano
-
-1/4 tsp crushed red pepper flakes
-
-1 1/4 C dry red wine, divided
-
-1 28-ounce can crushed tomatoes, preferably San Marzano
-
-2 tbsp tomato paste
-
-12 oz dried pasta (I use Barilla Casarecce)
-
-1/4 tsp ground nutmeg
-
-1/4 C chopped fresh basil leaves, lightly packed
-
-1/2 C heavy cream
-
-1/2 C freshly grated Parmesan cheese, plus extra for serving
+~~~ markdown-script
+recipeIngredients( \
+    '2 tbsp good olive oil, plus extra to cook the pasta', \
+    '1 lb mild Italian sausage or lean ground sirloin', \
+    '4 tsp minced garlic (4 cloves)', \
+    '1 tbsp dried oregano', \
+    '1/4 tsp crushed red pepper flakes', \
+    '1 1/4 C dry red wine, divided', \
+    '1 28-ounce can crushed tomatoes, preferably San Marzano', \
+    '2 tbsp tomato paste', \
+    '12 oz dried pasta (I use Barilla Casarecce)', \
+    '1/4 tsp ground nutmeg', \
+    '1/4 C chopped fresh basil leaves, lightly packed', \
+    '1/2 C heavy cream', \
+    '1/2 C freshly grated Parmesan cheese, plus extra for serving' \
+)
 ~~~
 
 Kosher salt and freshly ground pepper to taste.

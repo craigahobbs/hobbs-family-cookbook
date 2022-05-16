@@ -1,6 +1,12 @@
-~~~ recipe-info
-Title: Ants On A Log
-Author: Cooper Campbell when in Kindergarten
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Ants On A Log
+
+~~~ markdown-script
+recipeHeader('Cooper Campbell when in Kindergarten')
 ~~~
 
 Fill a clean and dry celery rib with peanut butter and place chocolate chips in a row on the top of

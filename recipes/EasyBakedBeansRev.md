@@ -1,28 +1,28 @@
-~~~ recipe-info
-Title: Easy Baked Beans Rev
-Author: Shannon Childs
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Easy Baked Beans Rev
+
+~~~ markdown-script
+recipeHeader('Shannon Childs')
 ~~~
 
 Combine in a buttered deep 9" X 13" baking pan\*:
 
-~~~ recipe-ingredients
-2 cups diced sweet onions
-
-2 31 oz cans of B & M baked beans
-
-2 15 oz can kidney beans (drained)
-
-3/4 lb diced, crisp cooked bacon
-
-1 1/2 C Sweet Baby Ray's BBQ sauce
-
-1/2 C brown sugar packed
-
-3 T apple cider vinegar
-
-1 tsp salt
-
-1/2 tsp pepper
+~~~ markdown-script
+recipeIngredients( \
+    '2 cups diced sweet onions', \
+    '2 31 oz cans of B & M baked beans', \
+    '2 15 oz can kidney beans (drained)', \
+    '3/4 lb diced, crisp cooked bacon', \
+    "1 1/2 C Sweet Baby Ray's BBQ sauce", \
+    '1/2 C brown sugar packed', \
+    '3 T apple cider vinegar', \
+    '1 tsp salt', \
+    '1/2 tsp pepper' \
+)
 ~~~
 
 Bake at 350 degrees for one hour uncovered.

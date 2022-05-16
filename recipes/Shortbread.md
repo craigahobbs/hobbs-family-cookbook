@@ -1,27 +1,38 @@
-~~~ recipe-info
-Title: Shortbread
-Author: Kimble Hobbs
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Shortbread
+
+~~~ markdown-script
+recipeHeader('Kimble Hobbs')
 ~~~
 
 In a large mixing bowl, soften by massaging and working with your hands and fingers until no hard
 lumps remain:
 
-~~~ recipe-ingredients
-1 lb cold butter (4 sticks)
+~~~ markdown-script
+recipeIngredients( \
+    '1 lb cold butter (4 sticks)' \
+)
 ~~~
 
 Add and mix in with a spoon until totally incorporated:
 
-~~~ recipe-ingredients
-1 C sugar
+~~~ markdown-script
+recipeIngredients( \
+    '1 C sugar' \
+)
 ~~~
 
 Add and mix with a spoon or hands if needed:
 
-~~~ recipe-ingredients
-4 C flour
-
-1/2 tsp salt
+~~~ markdown-script
+recipeIngredients( \
+    '4 C flour', \
+    '1/2 tsp salt' \
+)
 ~~~
 
 Form the dough into a ball. Press the dough onto a baking sheet so it is about 1/2" thick, and cut

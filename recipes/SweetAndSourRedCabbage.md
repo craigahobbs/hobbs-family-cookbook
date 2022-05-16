@@ -1,15 +1,21 @@
-~~~ recipe-info
-Title: Sweet And Sour Red Cabbage
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
 ~~~
 
-~~~ recipe-ingredients
-2 1/4 lb red cabbage
+# Sweet And Sour Red Cabbage
 
-1/2 C butter
+~~~ markdown-script
+recipeHeader()
+~~~
 
-6 Tbsp granulated sugar
-
-2/3 cup balsamic vinegar
+~~~ markdown-script
+recipeIngredients( \
+    '2 1/4 lb red cabbage', \
+    '1/2 C butter', \
+    '6 Tbsp granulated sugar', \
+    '2/3 cup balsamic vinegar' \
+)
 ~~~
 
 Thinly slice the red cabbage in a Cuisinart using a number two slicing disc. Melt the butter in a

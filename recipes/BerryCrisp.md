@@ -1,38 +1,45 @@
-~~~ recipe-info
-Title: Berry Crisp
-Author: Shannon Childs
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Berry Crisp
+
+~~~ markdown-script
+recipeHeader('Shannon Childs')
 ~~~
 
 ![Berry Crisp](../images/BerryCrisp.jpg "Berry Crisp")
 
-[Scale for 9 x 9" baking dish](#categories.0=Desserts&id=recipes-BerryCrisp&scale=0.75)
+[Scale for 9 x 9" baking dish](#var.vScale=0.75)
 
 Gently toss together in a buttered 9 X 13" baking dish:
 
-~~~ recipe-ingredients
-8 C frozen* or fresh berries (blackberries, raspberries, blueberries, or marian berries or a mixture)
-
-1/4 C flour
-
-2/3 C sugar (depending on the sweetness of the berries)
+~~~ markdown-script
+recipeIngredients( \
+    '8 C frozen* or fresh berries (blackberries, raspberries, blueberries, or marian berries or a mixture)', \
+    '1/4 C flour', \
+    '2/3 C sugar (depending on the sweetness of the berries)' \
+)
 ~~~
 
 Crust topping; mix together in a medium bowl:
 
-~~~ recipe-ingredients
-1 C flour
-
-1 C sugar
-
-1 tsp baking powder
-
-1 beaten egg
+~~~ markdown-script
+recipeIngredients( \
+    '1 C flour', \
+    '1 C sugar', \
+    '1 tsp baking powder', \
+    '1 beaten egg' \
+)
 ~~~
 
 Mixture will look crumbly. Spread evenly over the berries
 
-~~~ recipe-ingredients
-1/2 C butter
+~~~ markdown-script
+recipeIngredients( \
+    '1/2 C butter' \
+)
 ~~~
 
 Melt the butter and pour evenly over the whole mixture.

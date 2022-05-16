@@ -1,42 +1,55 @@
-~~~ recipe-info
-Title: Crostini with Mushrooms, Prosciutto, and Blue Cheese
-Author: Teresa Ball
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Crostini with Mushrooms, Prosciutto, and Blue Cheese
+
+~~~ markdown-script
+recipeHeader('Teresa Ball')
 ~~~
 
 Saute in a large skillet until cooked through and browned (about 10 minutes):
 
-~~~ recipe-ingredients
-3 Tbsp butter
-
-1/2 lb crimini mushroom cleaned and chopped
-
-1/4 lb shiitake mushroom caps cleaned and chopped
-
-2 cloves chopped garlic
+~~~ markdown-script
+recipeIngredients( \
+    '3 Tbsp butter', \
+    '1/2 lb crimini mushroom cleaned and chopped', \
+    '1/4 lb shiitake mushroom caps cleaned and chopped', \
+    '2 cloves chopped garlic' \
+)
 ~~~
 
 Add heavy cream and continue cooking until liquid is completely absorbed (about 2 minutes).
 
-~~~ recipe-ingredients
-1/2 C heavy cream
+~~~ markdown-script
+recipeIngredients( \
+    '1/2 C heavy cream' \
+)
 ~~~
 
 Remove from heat and add blue cheese (I prefer Gorgonzola) and stir until melted.
 
-~~~ recipe-ingredients
-1/2 C blue cheese
+~~~ markdown-script
+recipeIngredients( \
+    '1/2 C blue cheese' \
+)
 ~~~
 
 Mix-in prosciutto and season to taste with salt and pepper.\*
 
-~~~ recipe-ingredients
-1/2 C thinly sliced prosciutto
+~~~ markdown-script
+recipeIngredients( \
+    '1/2 C thinly sliced prosciutto' \
+)
 ~~~
 
 Slice the baguette into 1/2" slices and bake at 375 degrees until golden (about 5 minutes).
 
-~~~ recipe-ingredients
-18 " baguette
+~~~ markdown-script
+recipeIngredients( \
+    '18 " baguette' \
+)
 ~~~
 
 Spread each slice with about a tablespoon of the mushroom mixture and return to the oven until

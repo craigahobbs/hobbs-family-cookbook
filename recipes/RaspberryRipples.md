@@ -1,19 +1,24 @@
-~~~ recipe-info
-Title: Raspberry Ripples
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Raspberry Ripples
+
+~~~ markdown-script
+recipeHeader()
 ~~~
 
 Combine and process in a Cuisinart until mixture resembles course meal:
 
-~~~ recipe-ingredients
-2 C flour
-
-1 C butter
-
-1/2 C sugar
-
-1/8 tsp salt
-
-1 beaten egg yolk
+~~~ markdown-script
+recipeIngredients( \
+    '2 C flour', \
+    '1 C butter', \
+    '1/2 C sugar', \
+    '1/8 tsp salt', \
+    '1 beaten egg yolk' \
+)
 ~~~
 
 Turn dough out the mixing bowl and work into a ball. Form the ball into a long cylinder and wrap in
@@ -24,18 +29,21 @@ Remove dough from frig, unwrap, and slice 1/4" thick and place rounds on an ungr
 
 Mix together:
 
-~~~ recipe-ingredients
-1/2 C raspberry jam
-
-1/2 tsp vanilla extract
+~~~ markdown-script
+recipeIngredients( \
+    '1/2 C raspberry jam', \
+    '1/2 tsp vanilla extract' \
+)
 ~~~
 
 Make a thumbprint "well" in each dough round, and add a scant 1/2 tsp of raspberry mixture to it,
 sprinkle with a few almond slices and bake in a 350 degree oven for 12 to 13 minutes. The cookies
 should be only slightly brown on the bottoms.
 
-~~~ recipe-ingredients
-1/2 C almond slices
+~~~ markdown-script
+recipeIngredients( \
+    '1/2 C almond slices' \
+)
 ~~~
 
 This is actually Teresa's and my favorite Christmas cookie, but would be good any time of the year

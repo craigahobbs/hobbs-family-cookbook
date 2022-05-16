@@ -5,14 +5,20 @@
         <meta charset="UTF-8">
         <meta name="description" content="The Hobbs Family Cookbook">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://craigahobbs.github.io/markdown-book-app/markdown-model.css">
-        <link rel="stylesheet" href="https://craigahobbs.github.io/markdown-book-app/app.css">
+        <link rel="stylesheet" href="https://craigahobbs.github.io/markdown-up/markdown-model.css">
+        <link rel="stylesheet" href="https://craigahobbs.github.io/markdown-up/app.css">
     </head>
     <body>
     </body>
     <script type="module">
-        import {MarkdownBookApp} from 'https://craigahobbs.github.io/markdown-book-app/lib/app.js';
-        const app = new MarkdownBookApp(window);
+        import {MarkdownUp} from 'https://craigahobbs.github.io/markdown-up/lib/app.js';
+        const app = new MarkdownUp(window, {
+            'markdownText': `\
+~~~ markdown-script
+include 'markdownBook.mds'
+markdownBook()
+~~~
+`});
         app.run();
     </script>
 </html>

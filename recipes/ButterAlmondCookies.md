@@ -1,22 +1,31 @@
-~~~ recipe-info
-Title: Butter Almond Cookies
-Author: Karen Sandberg
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Butter Almond Cookies
+
+~~~ markdown-script
+recipeHeader('Karen Sandberg')
 ~~~
 
 Cream together:
 
-~~~ recipe-ingredients
-1 C butter
-
-1/2 C sugar
+~~~ markdown-script
+recipeIngredients( \
+    '1 C butter', \
+    '1/2 C sugar' \
+)
+~~~
 
 Add and mix in:
 
-2 C flour
-
-3/4 C slivered blanched almonds
-
-1 tsp vanilla
+~~~ markdown-script
+recipeIngredients( \
+    '2 C flour', \
+    '3/4 C slivered blanched almonds', \
+    '1 tsp vanilla' \
+)
 ~~~
 
 Roll the dough into large walnut sized balls and chill for 20 minutes. Remove dough from frig and

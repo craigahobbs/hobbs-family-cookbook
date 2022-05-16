@@ -1,16 +1,21 @@
-~~~ recipe-info
-Title: Clinkerdagger Burnt Creme
-Servings: 6
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
 ~~~
 
-~~~ recipe-ingredients
-2 C whipping cream
+# Clinkerdagger Burnt Creme
 
-4 egg yolks
+~~~ markdown-script
+recipeHeader(null, 6)
+~~~
 
-1/2 C sugar
-
-1 Tbsp good vanilla
+~~~ markdown-script
+recipeIngredients( \
+    '2 C whipping cream', \
+    '4 egg yolks', \
+    '1/2 C sugar', \
+    '1 Tbsp good vanilla' \
+)
 ~~~
 
 Heat the whipping cream in a medium saucepan over low heat until bubbles form around the edges of

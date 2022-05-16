@@ -1,18 +1,24 @@
-~~~ recipe-info
-Title: Sponge For Tiramisu
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Sponge For Tiramisu
+
+~~~ markdown-script
+recipeHeader()
 ~~~
 
 Grease a 12 1/2" X 17 1/2 " sheet pan and line the bottom and sides with foil. Grease the foil
 as well.
 
-~~~ recipe-ingredients
-5 large eggs
-
-1 1/2 cups sugar
-
-1/2 cup water
-
-1 1/2 tsp vanilla
+~~~ markdown-script
+recipeIngredients( \
+    '5 large eggs', \
+    '1 1/2 cups sugar', \
+    '1/2 cup water', \
+    '1 1/2 tsp vanilla' \
+)
 ~~~
 
 Use an electric mixer to beat the eggs in a large bowl until thick and lemon colored. Gradually beat
@@ -20,12 +26,12 @@ in the sugar. Blend in the water and the vanilla.
 
 Add and mix in to form a smooth batter:
 
-~~~ recipe-ingredients
-1 1/2 cup flour
-
-1/2 tsp salt
-
-1 1/2 tsp baking powder
+~~~ markdown-script
+recipeIngredients( \
+    '1 1/2 cup flour', \
+    '1/2 tsp salt', \
+    '1 1/2 tsp baking powder' \
+)
 ~~~
 
 Spread the batter evenly in the prepared pan and bake 12 to 15 minutes in 375 degree oven until

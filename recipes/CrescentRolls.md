@@ -1,35 +1,42 @@
-~~~ recipe-info
-Title: Crescent Rolls
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
+~~~
+
+# Crescent Rolls
+
+~~~ markdown-script
+recipeHeader()
 ~~~
 
 Stir together and dissolve:
 
-~~~ recipe-ingredients
-3/4 C warm water (110 degrees)
-
-2 Tbsp active dry yeast (two pkgs)
-
-1 tsp sugar
+~~~ markdown-script
+recipeIngredients( \
+    '3/4 C warm water (110 degrees)', \
+    '2 Tbsp active dry yeast (two pkgs)', \
+    '1 tsp sugar' \
+)
 ~~~
 
 Let yeast mixture sit for about ten minutes. Then add and stir in:
 
-~~~ recipe-ingredients
-1/2 C butter softened
-
-2 beaten eggs
-
-1/2 C sugar
-
-1 tsp salt
-
-2 C flour
+~~~ markdown-script
+recipeIngredients( \
+    '1/2 C butter softened', \
+    '2 beaten eggs', \
+    '1/2 C sugar', \
+    '1 tsp salt', \
+    '2 C flour' \
+)
 ~~~
 
 Then add and stir in:
 
-~~~ recipe-ingredients
-2 C additional flour
+~~~ markdown-script
+recipeIngredients( \
+    '2 C additional flour' \
+)
 ~~~
 
 Scrape down the sides of the bowl, cover with saran wrap, and let rise until double in a warm place

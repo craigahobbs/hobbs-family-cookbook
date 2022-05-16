@@ -1,17 +1,22 @@
-~~~ recipe-info
-Title: Horseradish Sauce
+~~~ markdown-script
+include '../markdownBookRecipe.mds'
+recipeMenu()
 ~~~
 
-~~~ recipe-ingredients
-2 Tbsp butter
+# Horseradish Sauce
 
-2 Tbsp flour
+~~~ markdown-script
+recipeHeader()
+~~~
 
-1 C chicken stock
-
-1 Tbsp prepared horseradish (our favorite is Beaver - from Beaverton, Oregon)
-
-1 tsp French's mustard
+~~~ markdown-script
+recipeIngredients( \
+    '2 Tbsp butter', \
+    '2 Tbsp flour', \
+    '1 C chicken stock', \
+    '1 Tbsp prepared horseradish (our favorite is Beaver - from Beaverton, Oregon)', \
+    "1 tsp French's mustard" \
+)
 ~~~
 
 Salt and freshly ground pepper to taste.
@@ -22,20 +27,16 @@ Gradually whisk in the stock and boil 1 minute. Remove from heat and add the rem
 
 ### Robert Sauce
 
-~~~ recipe-ingredients
-2 Tbsp butter
-
-1 slice onion
-
-2 Tbsp flour
-
-1 C beef bouillon
-
-1 Tbsp red wine vinegar
-
-1Tbsp minced onion
-
-2 tsp French's mustard
+~~~ markdown-script
+recipeIngredients( \
+    '2 Tbsp butter', \
+    '1 slice onion', \
+    '2 Tbsp flour', \
+    '1 C beef bouillon', \
+    '1 Tbsp red wine vinegar', \
+    '1Tbsp minced onion', \
+    "2 tsp French's mustard" \
+)
 ~~~
 
 Salt and freshly ground pepper to taste.
@@ -49,25 +50,24 @@ the heat and whisk in the remaining ingredients.
 
 ### Bearnaise Sauce
 
-~~~ recipe-ingredients
-1/4 C white wine (champagne) vinegar
-
-1/4 C dry vermouth
-
-1 Tbsp minced shallots
-
-1/2 tsp dried tarragon
-
-1/4 tsp salt
+~~~ markdown-script
+recipeIngredients( \
+    '1/4 C white wine (champagne) vinegar', \
+    '1/4 C dry vermouth', \
+    '1 Tbsp minced shallots', \
+    '1/2 tsp dried tarragon', \
+    '1/4 tsp salt' \
+)
 ~~~
 
 Place the ingredients in a heavy saucepan and bring to boil and reduce to 2 Tbsp. Cool. Whisk in the
 egg yolks and add a third of the butter.
 
-~~~ recipe-ingredients
-3 egg yolks
-
-3/4 C  butter
+~~~ markdown-script
+recipeIngredients( \
+    '3 egg yolks', \
+    '3/4 C  butter' \
+)
 ~~~
 
 Cook over medium heat stirring constantly until the butter is melted. Now now add the remaining
