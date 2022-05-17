@@ -43,5 +43,5 @@ recipeIngredients( \
 ~~~
 
 Simmer covered for about 25 more minutes. Serve with
-[Liberian Corn Bread](#url=AfricanCornbread.md&var=)
+[Liberian Corn Bread](#url=AfricanCornbread.md&var.vCategory='Breads')
 and a dollop of sour cream and sliced green onions.

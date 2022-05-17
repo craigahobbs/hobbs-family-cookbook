@@ -11,7 +11,7 @@ recipeHeader('Shannon Childs')
 
 ![Berry Crisp](../images/BerryCrisp.jpg "Berry Crisp")
 
-[Scale for 9 x 9" baking dish](#var.vScale=0.75)
+[Scale for 9 x 9" baking dish](#var.vCategory='Desserts'&var.vScale=0.75)
 
 Gently toss together in a buttered 9 X 13" baking dish:
 

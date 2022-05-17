@@ -10,7 +10,7 @@ recipeHeader('Diana Riley')
 ~~~
 
 Bake a 9"
-[pie crust](#url=PieCrust.md&var=)
+[pie crust](#url=PieCrust.md&var.vCategory='Desserts')
 at 475 for 7 to 9 minutes. Cool.
 
 Brown and drain:

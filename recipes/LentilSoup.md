@@ -64,4 +64,4 @@ soup in a airtight container. Soup is better the second day. Freeze any leftover
 time.
 
 This was a favorite birthday dinner request with
-[Dilly Bread](#url=DillyBread.md&var=).
+[Dilly Bread](#url=DillyBread.md&var.vCategory='Breads').

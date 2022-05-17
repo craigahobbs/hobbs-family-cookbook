@@ -57,7 +57,7 @@ recipeIngredients( \
 ~~~
 
 Use the
-[pie crust](#url=PieCrust.md&var=)
+[pie crust](#url=PieCrust.md&var.vCategory='Desserts')
 recipe in the dessert portion of the book and form the bottom crust of the torte. Layer 1/3 of the
 sliced potato over the bottom of the crust, sprinkle with a pinch of kosher salt and several grinds
 of black pepper. Next, strew 1/3 of the crisped bacon over the potatoes and sprinkle with 1/3 of the

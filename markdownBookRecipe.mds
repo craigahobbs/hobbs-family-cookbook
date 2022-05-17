@@ -30,10 +30,11 @@ function recipeHeader(author, servings)
     halfScale = 0.5 * scale
     doubleScale = 2 * scale
     if(author != null, markdownPrint('', 'Author: ' + markdownEncode(author)))
+    category = if(vCategory != null, "var.vCategory='" + encodeURIComponent(vCategory) + "'&", '')
     markdownPrint( \
         '', 'Scale: ' + round(scale, 3) + fromCharCode(160, 160) + \
-        if(halfScale >= recipeMinScale, '([Halve](#var.vScale=' + round(halfScale, 3) + ') | ', '(Halve | '), \
-        if(doubleScale <= recipeMaxScale, '[Double](#var.vScale=' + round(doubleScale, 3) + '))', 'Double)') \
+        if(halfScale >= recipeMinScale, '([Halve](#' + category + 'var.vScale=' + round(halfScale, 3) + ') | ', '(Halve | '), \
+        if(doubleScale <= recipeMaxScale, '[Double](#' + category + 'var.vScale=' + round(doubleScale, 3) + '))', 'Double)') \
     )
     if(servings != null, markdownPrint('', 'Servings: ' + scale * servings))
 endfunction

@@ -12,7 +12,7 @@ recipeHeader(null, 12)
 ![Tiramisu](../images/Tiramisu.jpg "Tiramisu")
 
 Use the recipe for
-[Cream Roll](#url=CreamCakeRoll.md&var.vScale=1.5),
+[Cream Roll](#url=CreamCakeRoll.md&var.vCategory='Desserts'&var.vScale=1.5),
 except increase by 1/2 and bake as directed in an 18' X 13" sheet pan. Cool cake in the pan. Lift the cake out with the
 foil liner and slice in 4 pieces across the short side. Can be done 1 day ahead. Do not cover cake.
 

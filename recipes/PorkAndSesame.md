@@ -35,5 +35,5 @@ Serve cool with rice and stir fried vegetables.
 
 Leftover pork is delicious in a sandwich with mayo, plum sauce, and lettuce or diced and added to
 fried rice see
-[Mom's Pork Fried Rice](#url=MomsPorkFriedRice.md&var=)
+[Mom's Pork Fried Rice](#url=MomsPorkFriedRice.md&var.vCategory='Main%20Dishes')
 recipe.
