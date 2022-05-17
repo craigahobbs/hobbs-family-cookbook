@@ -50,7 +50,7 @@ async function markdownBookIndex(book)
         categoryTitleURL = if(isSelected, '#var=', "#var.vCategory='" + encodeURIComponent(categoryTitle) + "'")
 
         # Render the category title link
-        markdownPrint('', '### [' + markdownEncode(categoryTitle) + '](' + categoryTitleURL + ')')
+        markdownPrint('', '## [' + markdownEncode(categoryTitle) + '](' + categoryTitleURL + ')')
 
         # If this is the selected category, fetch the category files and render the file links
         jumpif (!isSelected) categoryDone
