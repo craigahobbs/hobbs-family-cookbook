@@ -35,7 +35,13 @@ function renderTitlePage()
     drawTextStyle(subtitleFontSizePx, 'black', true, true)
     drawText(subtitle, 0.5 * width, 0.5 * height)
     drawImage(0.5 * width - 0.5 * imageWidth, 5 * titleLineSpacing, imageWidth, imageHeight, 'TheHobbsFamilyCookbook.png')
+    drawOnClick(onImageClick)
     markdownPrint('[Source Code](https://github.com/craigahobbs/hobbs-family-cookbook)')
+endfunction
+
+
+function onImageClick()
+    setWindowLocation("#url=ItsYourFavorite.md&var.vCategory='Introduction'")
 endfunction
 
 
