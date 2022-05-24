@@ -27,12 +27,9 @@ endfunction
 
 # Render the Markdown Book index
 async function markdownBookIndex(book)
+    title = objectGet(book, 'title')
     titleURL = objectGet(book, 'titleURL')
     categories = objectGet(book, 'categories')
-
-    # Determine the title
-    titleText = fetch(titleURL, null, true)
-    title = markdownTitle(markdownParse(titleText))
 
     # Set the page title
     setDocumentTitle(title)
@@ -77,6 +74,8 @@ endfunction
 bookTypes = schemaParse( \
     '# The Markdown Book JSON file format', \
     'struct MarkdownBook', \
+    '    # The book title', \
+    '    string title', \
     '', \
     "    # The markdown book's title page markdown file relative URL", \
     '    optional string(len > 0) titleURL', \
