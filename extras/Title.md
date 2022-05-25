@@ -34,7 +34,8 @@ function renderTitlePage()
     drawText(title2, 0.5 * width, 2.5 * titleLineSpacing)
     drawTextStyle(subtitleFontSizePx, 'black', true, true)
     drawText(subtitle, 0.5 * width, 0.5 * height)
-    drawImage(0.5 * width - 0.5 * imageWidth, 5 * titleLineSpacing, imageWidth, imageHeight, 'TheHobbsFamilyCookbook.png')
+    drawImage(0.5 * width - 0.5 * imageWidth, 6 * titleLineSpacing - 0.5 * imageHeight, \
+        imageWidth, imageHeight, 'TheHobbsFamilyCookbook.png')
     drawOnClick(onImageClick)
     markdownPrint('[Source Code](https://github.com/craigahobbs/hobbs-family-cookbook)')
 endfunction
@@ -46,9 +47,6 @@ endfunction
 
 
 # Render the title page
-jumpif (resize) resizeSet
-    resize = true
-    setWindowResize(renderTitlePage)
-resizeSet:
+setWindowResize(renderTitlePage)
 renderTitlePage()
 ~~~
