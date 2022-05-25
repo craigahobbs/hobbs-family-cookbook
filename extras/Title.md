@@ -46,6 +46,9 @@ endfunction
 
 
 # Render the title page
-setWindowResize(renderTitlePage)
+jumpif (resize) resizeSet
+    resize = true
+    setWindowResize(renderTitlePage)
+resizeSet:
 renderTitlePage()
 ~~~
