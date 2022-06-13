@@ -59,18 +59,19 @@ async function markdownBookSearch(book)
             'callback', objectNew('click', markdownBookSearchOnClick) \
         ) \
     ))
+    setDocumentFocus('search-text')
 
     # Compute the search results and render
-    jumpif (!vSearch) resultsDone
+    jumpif (vSearch == '') resultsDone
     markdownPrint('## Results')
     results = markdownBookSearchResults(book, vSearch)
     jumpif (arrayLength(results) == 0) resultsNone
         ixResult = 0
         resultLoop:
             result = arrayGet(results, ixResult)
-            resultURL = arrayGet(result, 0)
-            resultCategory = arrayGet(result, 1)
-            resultTitle = arrayGet(result, 2)
+            resultURL = objectGet(result, 'url')
+            resultCategory = objectGet(result, 'category')
+            resultTitle = objectGet(result, 'title')
             markdownPrint('', '[' + markdownEncode(resultTitle) + \
                 '](#url=' + encodeURIComponent(resultURL) + "&var.vCategory='" + encodeURIComponent(resultCategory) + "')")
             ixResult = ixResult + 1
@@ -83,7 +84,7 @@ endfunction
 
 
 function markdownBookSearchOnClick()
-    searchText = elementModelInputValue('search-text')
+    searchText = getDocumentInputValue('search-text')
     setWindowLocation("#var.vSearch='" + encodeURIComponent(searchText) + "'")
 endfunction
 
@@ -107,7 +108,7 @@ async function markdownBookSearchResults(book, text)
         ixFile = 0
         fileLoop:
             fileURL = arrayGet(files, ixFile)
-            arrayPush(pages, arrayNew(fileURL, objectGet(category, 'title')))
+            arrayPush(pages, objectNew('url', fileURL, 'category', objectGet(category, 'title')))
             arrayPush(pageURLs, fileURL)
             ixFile = ixFile + 1
         jumpif (ixFile < arrayLength(files)) fileLoop
@@ -136,11 +137,11 @@ async function markdownBookSearchResults(book, text)
 
         # Add the result page title
         pageTitle = markdownTitle(markdownParse(pageText))
-        arrayPush(page, pageTitle)
+        objectSet(page, 'title', pageTitle)
 
         # Add the result page match count
         matches = regexMatchAll(reSearch, pageText)
-        arrayPush(page, arrayLength(matches))
+        objectSet(page, 'matches', arrayLength(matches))
 
         # If a match, add to the results
         if(len(matches) > 0, arrayPush(results, page))
@@ -160,12 +161,12 @@ endfunction
 
 
 function markdownBookSearchSort(a, b)
-    aMatches = -arrayGet(a, 3)
-    bMatches = -arrayGet(b, 3)
+    aMatches = -objectGet(a, 'matches')
+    bMatches = -objectGet(b, 'matches')
     compareMatches = if(aMatches < bMatches, -1, if(aMatches == bMatches, 0, 1))
 
-    aTitle = arrayGet(a, 2)
-    bTitle = arrayGet(b, 2)
+    aTitle = objectGet(a, 'title')
+    bTitle = objectGet(b, 'title')
     compareTitle = if(aTitle < bTitle, -1, if(aTitle == bTitle, 0, 1))
 
     return if(compareMatches != 0, compareMatches, compareTitle)
