@@ -61,6 +61,7 @@ async function markdownBookSearch(book)
     ))
 
     # Compute the search results and render
+    jumpif (!vSearch) resultsDone
     markdownPrint('## Results')
     results = markdownBookSearchResults(book, vSearch)
     jumpif (arrayLength(results) == 0) resultsNone
