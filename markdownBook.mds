@@ -113,9 +113,6 @@ async function markdownBookSearchResults(book, text)
         ixCategory = ixCategory + 1
     jumpif (ixCategory < arrayLength(categories)) categoryLoop
 
-    # Load the page text
-    pageTexts = fetch(pageURLs, null, true)
-
     # Create the search text regex
     words = split(text, regexNew('\s+'))
     wordsEscaped = arrayNew()
@@ -130,6 +127,7 @@ async function markdownBookSearchResults(book, text)
     reSearch = regexNew('\b(?:' + arrayJoin(wordsEscaped, '|') + ')', 'ig')
 
     # Load all pages and search each page's text
+    pageTexts = fetch(pageURLs, null, true)
     ixPage = 0
     pageLoop:
         page = arrayGet(pages, ixPage)
