@@ -14,7 +14,9 @@ async function markdownBook(bookURL)
     book = schemaValidate(bookTypes, 'MarkdownBook', fetch(bookURL))
 
     # Render the page
-    if (vDoc, markdownBookDoc(), markdownBookIndex(book))
+    if(vDoc, markdownBookDoc(), \
+    if(vSearch != null, markdownBookSearch(book), \
+    markdownBookIndex(book)))
 endfunction
 
 
@@ -22,6 +24,152 @@ endfunction
 function markdownBookDoc()
     setDocumentTitle('MarkdownBook')
     schemaPrint(bookTypes, 'MarkdownBook')
+endfunction
+
+
+# Render the Markdown Book search page
+async function markdownBookSearch(book)
+    title = objectGet(book, 'title')
+
+    # Set the page title
+    setDocumentTitle(title)
+    markdownPrint( \
+        '[Index](#var=)', \
+        '# Search' \
+    )
+
+    # Render the search form
+    elementModelRender(arrayNew( \
+        objectNew( \
+            'html', 'input', \
+            'attr', objectNew( \
+                'autocomplete', 'off', \
+                'id', 'search-text', \
+                'style', 'font-size: inherit; border: thin solid black; padding: 0.4em;', \
+                'type', 'text', \
+                'value', vSearch \
+            ), \
+            'callback', objectNew('keyup', markdownBookSearchOnKeyup) \
+        ), \
+        objectNew('text', fromCharCode(160, 160)), \
+        objectNew( \
+            'html', 'a', \
+            'attr', objectNew('style', 'cursor: pointer; user-select: none;'), \
+            'elem', objectNew('text', 'Search'), \
+            'callback', objectNew('click', markdownBookSearchOnClick) \
+        ) \
+    ))
+
+    # Compute the search results and render
+    markdownPrint('## Results')
+    results = markdownBookSearchResults(book, vSearch)
+    jumpif (arrayLength(results) == 0) resultsNone
+        ixResult = 0
+        resultLoop:
+            result = arrayGet(results, ixResult)
+            resultURL = arrayGet(result, 0)
+            resultCategory = arrayGet(result, 1)
+            resultTitle = arrayGet(result, 2)
+            markdownPrint('', '[' + markdownEncode(resultTitle) + \
+                '](#url=' + encodeURIComponent(resultURL) + "&var.vCategory='" + encodeURIComponent(resultCategory) + "')")
+            ixResult = ixResult + 1
+        jumpif (ixResult < arrayLength(results)) resultLoop
+        jump resultsDone
+    resultsNone:
+        markdownPrint('No matching pages found')
+    resultsDone:
+endfunction
+
+
+function markdownBookSearchOnClick()
+    searchText = elementModelInputValue('search-text')
+    setWindowLocation("#var.vSearch='" + encodeURIComponent(searchText) + "'")
+endfunction
+
+
+function markdownBookSearchOnKeyup(keyCode)
+    if(keyCode == 13, markdownBookSearchOnClick())
+endfunction
+
+
+async function markdownBookSearchResults(book, text)
+    results = arrayNew()
+
+    # Compute the list of pages (url, category)
+    pages = arrayNew()
+    pageURLs = arrayNew()
+    categories = objectGet(book, 'categories')
+    ixCategory = 0
+    categoryLoop:
+        category = arrayGet(categories, ixCategory)
+        files = objectGet(category, 'files')
+        ixFile = 0
+        fileLoop:
+            fileURL = arrayGet(files, ixFile)
+            arrayPush(pages, arrayNew(fileURL, objectGet(category, 'title')))
+            arrayPush(pageURLs, fileURL)
+            ixFile = ixFile + 1
+        jumpif (ixFile < arrayLength(files)) fileLoop
+        ixCategory = ixCategory + 1
+    jumpif (ixCategory < arrayLength(categories)) categoryLoop
+
+    # Load the page text
+    pageTexts = fetch(pageURLs, null, true)
+
+    # Create the search text regex
+    words = split(text, regexNew('\s+'))
+    wordsEscaped = arrayNew()
+    minSearchWordLength = 3
+    ixWord = 0
+    wordLoop:
+        word = arrayGet(words, ixWord)
+        if(len(word) >= minSearchWordLength, arrayPush(wordsEscaped, regexEscape(word)))
+        ixWord = ixWord + 1
+    jumpif (ixWord < arrayLength(words)) wordLoop
+    jumpif (arrayLength(wordsEscaped) == 0) done
+    reSearch = regexNew('\b(?:' + arrayJoin(wordsEscaped, '|') + ')', 'ig')
+
+    # Load all pages and search each page's text
+    ixPage = 0
+    pageLoop:
+        page = arrayGet(pages, ixPage)
+        pageText = arrayGet(pageTexts, ixPage)
+
+        # Add the result page title
+        pageTitle = markdownTitle(markdownParse(pageText))
+        arrayPush(page, pageTitle)
+
+        # Add the result page match count
+        matches = regexMatchAll(reSearch, pageText)
+        arrayPush(page, arrayLength(matches))
+
+        # If a match, add to the results
+        if(len(matches) > 0, arrayPush(results, page))
+
+        ixPage = ixPage + 1
+    jumpif (ixPage < arrayLength(pages)) pageLoop
+
+    # Filter and sort search results
+    results = arraySort(results, markdownBookSearchSort)
+    maxSearchResults = 20
+    results = if(len(results) <= maxSearchResults, results, arraySlice(results, 0, maxSearchResults))
+
+    # Return list of pages (url, title, category)
+    done:
+    return results
+endfunction
+
+
+function markdownBookSearchSort(a, b)
+    aMatches = -arrayGet(a, 3)
+    bMatches = -arrayGet(b, 3)
+    compareMatches = if(aMatches < bMatches, -1, if(aMatches == bMatches, 0, 1))
+
+    aTitle = arrayGet(a, 2)
+    bTitle = arrayGet(b, 2)
+    compareTitle = if(aTitle < bTitle, -1, if(aTitle == bTitle, 0, 1))
+
+    return if(compareMatches != 0, compareMatches, compareTitle)
 endfunction
 
 
@@ -35,6 +183,7 @@ async function markdownBookIndex(book)
     setDocumentTitle(title)
     markdownPrint( \
         '[Title](#url=' + encodeURIComponent(titleURL) + ')', \
+        " | [Search](#var.vSearch='')", \
         '# ' + markdownEncode(title) \
     )
 
