@@ -149,14 +149,9 @@ async function markdownBookSearchResults(book, text)
         ixPage = ixPage + 1
     jumpif (ixPage < arrayLength(pages)) pageLoop
 
-    # Filter and sort search results
-    results = arraySort(results, markdownBookSearchSort)
-    maxSearchResults = 20
-    results = if(len(results) <= maxSearchResults, results, arraySlice(results, 0, maxSearchResults))
-
-    # Return list of pages (url, title, category)
+    # Return sorted list of matching pages (url, title, category, matches)
     done:
-    return results
+    return arraySort(results, markdownBookSearchSort)
 endfunction
 
 
