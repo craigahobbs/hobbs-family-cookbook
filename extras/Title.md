@@ -23,7 +23,7 @@ function renderTitlePage()
     imageWidth = 4 * imageHeight
 
     # Render the title page
-    setDocumentTitle(title1)
+    setDocumentTitle(title1 + ' ' + title2)
     documentReset()
     recipeMenu()
     setDrawingSize(width, height)

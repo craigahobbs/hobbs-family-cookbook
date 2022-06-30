@@ -144,7 +144,7 @@ async function markdownBookSearchResults(book, text)
         objectSet(page, 'matches', arrayLength(matches))
 
         # If a match, add to the results
-        if(len(matches) > 0, arrayPush(results, page))
+        if(arrayLength(matches) > 0, arrayPush(results, page))
 
         ixPage = ixPage + 1
     jumpif (ixPage < arrayLength(pages)) pageLoop
