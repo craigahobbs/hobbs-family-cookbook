@@ -51,7 +51,7 @@ async function markdownBookSearch(book)
             ), \
             'callback', objectNew('keyup', markdownBookSearchOnKeyup) \
         ), \
-        objectNew('text', fromCharCode(160, 160)), \
+        objectNew('text', stringFromCharCode(160, 160)), \
         objectNew( \
             'html', 'a', \
             'attr', objectNew('style', 'cursor: pointer; user-select: none;'), \
@@ -73,7 +73,7 @@ async function markdownBookSearch(book)
             resultCategory = objectGet(result, 'category')
             resultTitle = objectGet(result, 'title')
             markdownPrint('', '[' + markdownEncode(resultTitle) + \
-                '](#url=' + encodeURIComponent(resultURL) + "&var.vCategory='" + encodeURIComponent(resultCategory) + "')")
+                '](#url=' + stringEncodeURL(resultURL) + "&var.vCategory='" + stringEncodeURL(resultCategory) + "')")
             ixResult = ixResult + 1
         jumpif (ixResult < arrayLength(results)) resultLoop
         jump resultsDone
@@ -85,7 +85,7 @@ endfunction
 
 function markdownBookSearchOnClick()
     searchText = getDocumentInputValue('search-text')
-    setWindowLocation("#var.vSearch='" + encodeURIComponent(searchText) + "'")
+    setWindowLocation("#var.vSearch='" + stringEncodeURL(searchText) + "'")
 endfunction
 
 
@@ -116,13 +116,13 @@ async function markdownBookSearchResults(book, text)
     jumpif (ixCategory < arrayLength(categories)) categoryLoop
 
     # Create the search text regex
-    words = split(text, regexNew('\s+'))
+    words = stringSplit(text, regexNew('\s+'))
     wordsEscaped = arrayNew()
     minSearchWordLength = 3
     ixWord = 0
     wordLoop:
         word = arrayGet(words, ixWord)
-        if(len(word) >= minSearchWordLength, arrayPush(wordsEscaped, regexEscape(word)))
+        if(stringLength(word) >= minSearchWordLength, arrayPush(wordsEscaped, regexEscape(word)))
         ixWord = ixWord + 1
     jumpif (ixWord < arrayLength(words)) wordLoop
     jumpif (arrayLength(wordsEscaped) == 0) done
@@ -177,7 +177,7 @@ async function markdownBookIndex(book)
     # Set the page title
     setDocumentTitle(title)
     markdownPrint( \
-        '[Title](#url=' + encodeURIComponent(titleURL) + ')', \
+        '[Title](#url=' + stringEncodeURL(titleURL) + ')', \
         " | [Search](#var.vSearch='')", \
         '# ' + markdownEncode(title) \
     )
@@ -188,7 +188,7 @@ async function markdownBookIndex(book)
         category = arrayGet(categories, ixCategory)
         categoryTitle = objectGet(category, 'title')
         isSelected = (vCategory == categoryTitle)
-        categoryTitleURL = if(isSelected, '#var=', "#var.vCategory='" + encodeURIComponent(categoryTitle) + "'")
+        categoryTitleURL = if(isSelected, '#var=', "#var.vCategory='" + stringEncodeURL(categoryTitle) + "'")
 
         # Render the category title link
         markdownPrint('', '## [' + markdownEncode(categoryTitle) + '](' + categoryTitleURL + ')')
@@ -203,8 +203,8 @@ async function markdownBookIndex(book)
                 categoryText = arrayGet(categoryTexts, ixFile)
                 fileTitle = markdownTitle(markdownParse(categoryText))
                 linkTitle = if(fileTitle != null, fileTitle, categoryFile)
-                markdownPrint('', fromCharCode(160) + '[' + markdownEncode(linkTitle) + '](#url=' + \
-                    encodeURIComponent(categoryFile) + "&var.vCategory='" + encodeURIComponent(categoryTitle) + "')")
+                markdownPrint('', stringFromCharCode(160) + '[' + markdownEncode(linkTitle) + '](#url=' + \
+                    stringEncodeURL(categoryFile) + "&var.vCategory='" + stringEncodeURL(categoryTitle) + "')")
                 ixFile = ixFile + 1
             jumpif (ixFile < arrayLength(categoryFiles)) fileLoop
         categoryDone:

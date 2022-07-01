@@ -14,13 +14,13 @@ recipeMaxScale = 8
 
 # Get the recipe scale factor (default is 1)
 function recipeScale()
-    return if(vScale != null, max(recipeMinScale, min(recipeMaxScale, vScale)), 1)
+    return if(vScale != null, mathMax(recipeMinScale, mathMin(recipeMaxScale, vScale)), 1)
 endfunction
 
 
 # Render the recipe page's top-menu
 function recipeMenu()
-    markdownPrint('[Index](#url=&' + if(vCategory != null, "var.vCategory='" + encodeURIComponent(vCategory) + "'", 'var=') + ')')
+    markdownPrint('[Index](#url=&' + if(vCategory != null, "var.vCategory='" + stringEncodeURL(vCategory) + "'", 'var=') + ')')
 endfunction
 
 
@@ -30,11 +30,11 @@ function recipeHeader(author, servings)
     halfScale = 0.5 * scale
     doubleScale = 2 * scale
     if(author != null, markdownPrint('', 'Author: ' + markdownEncode(author)))
-    category = if(vCategory != null, "var.vCategory='" + encodeURIComponent(vCategory) + "'&", '')
+    category = if(vCategory != null, "var.vCategory='" + stringEncodeURL(vCategory) + "'&", '')
     markdownPrint( \
-        '', 'Scale: ' + round(scale, 3) + fromCharCode(160, 160) + \
-        if(halfScale >= recipeMinScale, '([Halve](#' + category + 'var.vScale=' + round(halfScale, 3) + ') | ', '(Halve | '), \
-        if(doubleScale <= recipeMaxScale, '[Double](#' + category + 'var.vScale=' + round(doubleScale, 3) + '))', 'Double)') \
+        '', 'Scale: ' + mathRound(scale, 3) + stringFromCharCode(160, 160) + \
+        if(halfScale >= recipeMinScale, '([Halve](#' + category + 'var.vScale=' + mathRound(halfScale, 3) + ') | ', '(Halve | '), \
+        if(doubleScale <= recipeMaxScale, '[Double](#' + category + 'var.vScale=' + mathRound(doubleScale, 3) + '))', 'Double)') \
     )
     if(servings != null, markdownPrint('', 'Servings: ' + scale * servings))
 endfunction
@@ -62,9 +62,9 @@ endfunction
 function recipeParseIngredient(ingredient)
     match = regexMatch(recipeIngredientRegex, ingredient)
     groups = if(match != null, objectGet(match, 'groups', null), null)
-    whole = if(match != null && objectGet(groups, 'whole') != null,  parseFloat(objectGet(groups, 'whole')), 0)
-    numer = if(match != null && objectGet(groups, 'numer') != null, parseInt(objectGet(groups, 'numer')), 0)
-    denom = if(match != null && objectGet(groups, 'denom') != null, parseInt(objectGet(groups, 'denom')), 1)
+    whole = if(match != null && objectGet(groups, 'whole') != null,  numberParseFloat(objectGet(groups, 'whole')), 0)
+    numer = if(match != null && objectGet(groups, 'numer') != null, numberParseInt(objectGet(groups, 'numer')), 0)
+    denom = if(match != null && objectGet(groups, 'denom') != null, numberParseInt(objectGet(groups, 'denom')), 1)
     unit = if(match != null && objectGet(groups, 'unit') != null, objectGet(groups, 'unit'), null)
     unit = if(unit == null, 'count', if(objectGet(recipeAlternateUnits, unit) != null, objectGet(recipeAlternateUnits, unit), unit))
     name = if(match != null, objectGet(groups, 'name'), null)
@@ -187,7 +187,7 @@ function recipeIngredientText(ingredient, scale)
 
         # Match a unit fraction
         amountUnit = amountBase / objectGet(info, 'baseRatio')
-        amountUnitInteger = floor(amountUnit)
+        amountUnitInteger = mathFloor(amountUnit)
         amountUnitFraction = amountUnit - amountUnitInteger
         denominators = objectGet(info, 'fractions')
         ixDenominator = 0
@@ -195,14 +195,14 @@ function recipeIngredientText(ingredient, scale)
             denominator = arrayGet(denominators, ixDenominator)
 
             # Compute the closest numerator
-            numerator = round(amountUnitFraction * denominator)
+            numerator = mathRound(amountUnitFraction * denominator)
             amountFractionInteger = if(numerator != denominator, amountUnitInteger, amountUnitInteger + 1)
             amountFractionNumerator = if(numerator != denominator, numerator, 0)
             amountFraction = amountFractionInteger + (amountFractionNumerator / denominator)
             jumpif (amountFraction == 0) denominatorDone
 
             # Is the fraction close enough (in base units)?
-            diff = abs(amountFraction - amountUnit) * ingredientBaseRatio
+            diff = mathAbs(amountFraction - amountUnit) * ingredientBaseRatio
             jumpif (diff / amountBase > unitFuzz) denominatorDone
 
             # Best conversion?
@@ -236,6 +236,6 @@ function recipeIngredientText(ingredient, scale)
         amountStr = bestIngredientAmount + ' ' + bestIngredientAmountNumerator + '/' + bestIngredientAmountDenominator
     ingredientDone:
 
-    return fromCharCode(160, 160, 160) + amountStr + if(unitStr != '', fromCharCode(160, 160) + unitStr, '') + \
-        fromCharCode(160, 160) + ingredientName
+    return stringFromCharCode(160, 160, 160) + amountStr + if(unitStr != '', stringFromCharCode(160, 160) + unitStr, '') + \
+        stringFromCharCode(160, 160) + ingredientName
 endfunction
