@@ -20,7 +20,8 @@ endfunction
 
 # Render the recipe page's top-menu
 function recipeMenu()
-    markdownPrint('[Index](#url=&' + if(vCategory != null, "var.vCategory='" + stringEncodeURL(vCategory) + "'", 'var=') + ')')
+    markdownPrint('[Index](#url=&' + \
+        if(vCategory != null, "var.vCategory='" + stringEncodeURL(vCategory) + "'&" + markdownHeaderId(vCategory), 'var=') + ')')
 endfunction
 
 

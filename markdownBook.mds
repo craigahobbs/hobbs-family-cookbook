@@ -177,7 +177,7 @@ async function markdownBookIndex(book)
     # Set the page title
     setDocumentTitle(title)
     markdownPrint( \
-        '[Title](#url=' + stringEncodeURL(titleURL) + ')', \
+        '[Title](#url=' + stringEncodeURL(titleURL) + '&var=)', \
         " | [Search](#var.vSearch='')", \
         '# ' + markdownEncode(title) \
     )
