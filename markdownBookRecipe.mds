@@ -153,6 +153,8 @@ recipeIngredientRegex = regexNew( \
     '(?:\s*(?<unit>' + arrayJoin(recipeUnits, '|') + '|' + arrayJoin(objectKeys(recipeAlternateUnits), '|') + '))?' + \
     '\s+(?!/)(?<name>.+?)\s*$' \
 )
+recipeTrimZeroesRegex = regexNew('0+$', 'g')
+recipeTrimDecimalPointRegex = regexNew('\.$', 'g')
 
 
 # Scale and render an ingredient model to Markdown text
@@ -227,7 +229,8 @@ function recipeIngredientText(ingredient, scale)
     bestIngredientInfo = objectGet(recipeUnitInfo, bestIngredientUnit)
     unitStr = if(objectGet(bestIngredientInfo, 'display') != null, objectGet(bestIngredientInfo, 'display'), bestIngredientUnit)
     jumpif (bestIngredientAmountNumerator != 0) nonZeroNumerator
-        amountStr = bestIngredientAmount + ''
+        amountRaw = numberToFixed(bestIngredientAmount, 2)
+        amountStr = stringReplace(stringReplace(amountRaw, recipeTrimZeroesRegex, ''), recipeTrimDecimalPointRegex, '')
         jump ingredientDone
     nonZeroNumerator:
     jumpif (bestIngredientAmount != 0) nonZeroAmount
