@@ -30,7 +30,7 @@ function recipeHeader(author, servings)
     scale = recipeScale()
     halfScale = 0.5 * scale
     doubleScale = 2 * scale
-    if(author != null, markdownPrint('', 'Author: ' + markdownEncode(author)))
+    if(author != null, markdownPrint('', 'Author: ' + markdownEscape(author)))
     category = if(vCategory != null, "var.vCategory='" + stringEncodeURL(vCategory) + "'&", '')
     markdownPrint( \
         '', 'Scale: ' + mathRound(scale, 3) + stringFromCharCode(160, 160) + \

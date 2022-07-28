@@ -72,7 +72,7 @@ async function markdownBookSearch(book)
             resultURL = objectGet(result, 'url')
             resultCategory = objectGet(result, 'category')
             resultTitle = objectGet(result, 'title')
-            markdownPrint('', '[' + markdownEncode(resultTitle) + \
+            markdownPrint('', '[' + markdownEscape(resultTitle) + \
                 '](#url=' + stringEncodeURL(resultURL) + "&var.vCategory='" + stringEncodeURL(resultCategory) + "')")
             ixResult = ixResult + 1
         jumpif (ixResult < arrayLength(results)) resultLoop
@@ -179,7 +179,7 @@ async function markdownBookIndex(book)
     markdownPrint( \
         '[Title](#url=' + stringEncodeURL(titleURL) + '&var=)', \
         " | [Search](#var.vSearch='')", \
-        '# ' + markdownEncode(title) \
+        '# ' + markdownEscape(title) \
     )
 
     # Render the category links
@@ -191,7 +191,7 @@ async function markdownBookIndex(book)
         categoryTitleURL = if(isSelected, '#var=', "#var.vCategory='" + stringEncodeURL(categoryTitle) + "'")
 
         # Render the category title link
-        markdownPrint('', '## [' + markdownEncode(categoryTitle) + '](' + categoryTitleURL + ')')
+        markdownPrint('', '## [' + markdownEscape(categoryTitle) + '](' + categoryTitleURL + ')')
 
         # If this is the selected category, fetch the category files and render the file links
         jumpif (!isSelected) categoryDone
@@ -203,7 +203,7 @@ async function markdownBookIndex(book)
                 categoryText = arrayGet(categoryTexts, ixFile)
                 fileTitle = markdownTitle(markdownParse(categoryText))
                 linkTitle = if(fileTitle != null, fileTitle, categoryFile)
-                markdownPrint('', stringFromCharCode(160) + '[' + markdownEncode(linkTitle) + '](#url=' + \
+                markdownPrint('', stringFromCharCode(160) + '[' + markdownEscape(linkTitle) + '](#url=' + \
                     stringEncodeURL(categoryFile) + "&var.vCategory='" + stringEncodeURL(categoryTitle) + "')")
                 ixFile = ixFile + 1
             jumpif (ixFile < arrayLength(categoryFiles)) fileLoop
