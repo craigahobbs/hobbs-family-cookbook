@@ -72,8 +72,8 @@ async function markdownBookSearch(book)
             resultURL = objectGet(result, 'url')
             resultCategory = objectGet(result, 'category')
             resultTitle = objectGet(result, 'title')
-            markdownPrint('', '[' + markdownEscape(resultTitle) + \
-                '](#url=' + markdownEscapeLinkURL(resultURL) + "&var.vCategory='" + markdownEscapeLinkURL(resultCategory) + "')")
+            markdownPrint('', '[' + markdownEscapeText(resultTitle) + \
+                '](#url=' + markdownEscapeURLComponent(resultURL) + "&var.vCategory='" + markdownEscapeURLComponent(resultCategory) + "')")
             ixResult = ixResult + 1
         jumpif (ixResult < arrayLength(results)) resultLoop
         jump resultsDone
@@ -85,7 +85,7 @@ endfunction
 
 function markdownBookSearchOnClick()
     searchText = getDocumentInputValue('search-text')
-    setWindowLocation("#var.vSearch='" + markdownEscapeLinkURL(searchText) + "'")
+    setWindowLocation("#var.vSearch='" + markdownEscapeURLComponent(searchText) + "'")
 endfunction
 
 
@@ -177,9 +177,9 @@ async function markdownBookIndex(book)
     # Set the page title
     setDocumentTitle(title)
     markdownPrint( \
-        '[Title](#url=' + markdownEscapeLinkURL(titleURL) + '&var=)', \
+        '[Title](#url=' + markdownEscapeURLComponent(titleURL) + '&var=)', \
         " | [Search](#var.vSearch='')", \
-        '# ' + markdownEscape(title) \
+        '# ' + markdownEscapeText(title) \
     )
 
     # Render the category links
@@ -188,10 +188,10 @@ async function markdownBookIndex(book)
         category = arrayGet(categories, ixCategory)
         categoryTitle = objectGet(category, 'title')
         isSelected = (vCategory == categoryTitle)
-        categoryTitleURL = if(isSelected, '#var=', "#var.vCategory='" + markdownEscapeLinkURL(categoryTitle) + "'")
+        categoryTitleURL = if(isSelected, '#var=', "#var.vCategory='" + markdownEscapeURLComponent(categoryTitle) + "'")
 
         # Render the category title link
-        markdownPrint('', '## [' + markdownEscape(categoryTitle) + '](' + categoryTitleURL + ')')
+        markdownPrint('', '## [' + markdownEscapeText(categoryTitle) + '](' + categoryTitleURL + ')')
 
         # If this is the selected category, fetch the category files and render the file links
         jumpif (!isSelected) categoryDone
@@ -203,8 +203,8 @@ async function markdownBookIndex(book)
                 categoryText = arrayGet(categoryTexts, ixFile)
                 fileTitle = markdownTitle(markdownParse(categoryText))
                 linkTitle = if(fileTitle != null, fileTitle, categoryFile)
-                markdownPrint('', stringFromCharCode(160) + '[' + markdownEscape(linkTitle) + '](#url=' + \
-                    markdownEscapeLinkURL(categoryFile) + "&var.vCategory='" + markdownEscapeLinkURL(categoryTitle) + "')")
+                markdownPrint('', stringFromCharCode(160) + '[' + markdownEscapeText(linkTitle) + '](#url=' + \
+                    markdownEscapeURLComponent(categoryFile) + "&var.vCategory='" + markdownEscapeURLComponent(categoryTitle) + "')")
                 ixFile = ixFile + 1
             jumpif (ixFile < arrayLength(categoryFiles)) fileLoop
         categoryDone:
