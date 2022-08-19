@@ -21,7 +21,7 @@ endfunction
 # Render the recipe page's top-menu
 function recipeMenu()
     markdownPrint('[Index](#url=&' + \
-        if(vCategory != null, "var.vCategory='" + markdownEscapeURLComponent(vCategory) + "'&" + markdownHeaderId(vCategory), 'var=') + ')')
+        if(vCategory != null, "var.vCategory='" + encodeURIComponent(vCategory) + "'&" + markdownHeaderId(vCategory), 'var=') + ')')
 endfunction
 
 
@@ -30,8 +30,8 @@ function recipeHeader(author, servings)
     scale = recipeScale()
     halfScale = 0.5 * scale
     doubleScale = 2 * scale
-    if(author != null, markdownPrint('', 'Author: ' + markdownEscapeText(author)))
-    category = if(vCategory != null, "var.vCategory='" + markdownEscapeURLComponent(vCategory) + "'&", '')
+    if(author != null, markdownPrint('', 'Author: ' + markdownEscape(author)))
+    category = if(vCategory != null, "var.vCategory='" + encodeURIComponent(vCategory) + "'&", '')
     markdownPrint( \
         '', 'Scale: ' + mathRound(scale, 3) + stringFromCharCode(160, 160) + \
         if(halfScale >= recipeMinScale, '([Halve](#' + category + 'var.vScale=' + mathRound(halfScale, 3) + ') | ', '(Halve | '), \
