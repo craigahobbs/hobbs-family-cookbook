@@ -17,7 +17,6 @@ function renderTitlePage()
     titleLineSpacing = height / 8
     maxTitleFontSizePx = titleLineSpacing
     titleFontSizePx = mathMin(maxTitleFontSizePx, getTextHeight(title1, 0.9 * width))
-    titleTextWidth = getTextWidth(title1, titleFontSizePx)
     subtitleFontSizePx = 0.7 * titleFontSizePx
     imageHeight = 2 * titleFontSizePx
     imageWidth = 4 * imageHeight
