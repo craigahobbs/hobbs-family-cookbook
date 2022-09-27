@@ -240,3 +240,84 @@ function recipeIngredientText(ingredient, scale)
     return stringFromCharCode(160, 160, 160) + amountStr + if(unitStr != '', stringFromCharCode(160, 160) + unitStr, '') + \
         stringFromCharCode(160, 160) + ingredientName
 endfunction
+
+
+function recipeTitlePage(model)
+    # Set the recipe title page global model
+    setGlobal(recipeTitlePageGlobal, schemaValidate(recipeTitlePageTypes, 'RecipeTitlePage', model))
+
+    # Render the title page
+    recipeTitlePageRender()
+
+    # Set the title page resize handler
+    setWindowResize(recipeTitlePageRender)
+endfunction
+
+
+recipeTitlePageGlobal = 'recipeTitlePageModel'
+
+
+recipeTitlePageTypes = schemaParse( \
+    'struct RecipeTitlePage', \
+    '    string title', \
+    '    optional string title2', \
+    '    optional string subtitle', \
+    '    optional string imageURL', \
+    '    optional string imageClickURL', \
+    '    optional string sourceURL', \
+    '    optional string color' \
+)
+
+
+function recipeTitlePageRender()
+    model = getGlobal(recipeTitlePageGlobal)
+    title = objectGet(model, 'title')
+    title2 = objectGet(model, 'title2')
+    subtitle = objectGet(model, 'subtitle')
+    imageURL = objectGet(model, 'imageURL')
+    imageClickURL = objectGet(model, 'imageClickURL')
+    sourceURL = objectGet(model, 'sourceURL')
+    color = objectGet(model, 'color')
+
+    # Determine the title image size
+    fontSizePx = getDocumentFontSize()
+    margin = 1.5 * fontSizePx
+    width = getWindowWidth() - 2 * margin
+    height = getWindowHeight() - 2 * margin - 4 * fontSizePx
+
+    # Compute the title text size
+    titleLineSpacing = height / (8 - if(title2 == null, 1, 0) - if(subtitle == null, 1.5, 0) - if(imageURL == null, 2, 0))
+    maxTitleFontSizePx = titleLineSpacing
+    maxTitleLine = if(stringLength(title) > stringLength(title2), title, title2)
+    titleFontSizePx = mathMin(maxTitleFontSizePx, getTextHeight(maxTitleLine, 0.9 * width))
+    subtitleFontSizePx = 0.7 * titleFontSizePx
+    imageHeight = 2 * titleFontSizePx
+    imageWidth = 4 * imageHeight
+    titleY = 1.5 * titleLineSpacing
+    titleY2 = titleY + if(title2 != null, titleLineSpacing, 0)
+    subtitleY = titleY2 + if(subtitle != null, 1.5 * titleLineSpacing, 0)
+    imageY = subtitleY + if(imageURL != null, 2 * titleLineSpacing - 0.5 * imageHeight, 0)
+
+    # Render the title page
+    setDocumentTitle(if(title2 != null, ' ' + title2))
+    documentReset()
+    recipeMenu()
+    setDrawingSize(width, height)
+    drawStyle('none', 1, if(color != null, color, 'lightblue'))
+    drawRect(0, 0, width, height)
+    drawTextStyle(titleFontSizePx, 'black', true)
+    drawText(title, 0.5 * width, titleY)
+    if(title2 != null, drawText(title2, 0.5 * width, titleY2))
+    drawTextStyle(subtitleFontSizePx, 'black', true, true)
+    if(subtitle != null, drawText(subtitle, 0.5 * width, subtitleY))
+    if(imageURL != null, drawImage(0.5 * width - 0.5 * imageWidth, imageY, imageWidth, imageHeight, imageURL))
+    if(imageURL != null && imageClickURL != null, drawOnClick(recipeTitleOnImageClick))
+    if(sourceURL != null, markdownPrint('[Source Code](' + sourceURL + ')'))
+endfunction
+
+
+function recipeTitleOnImageClick()
+    model = getGlobal(recipeTitlePageGlobal)
+    imageClickURL = objectGet(model, 'imageClickURL')
+    setWindowLocation(imageClickURL)
+endfunction
