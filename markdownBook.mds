@@ -23,7 +23,7 @@ endfunction
 # Render the Markdown Book file format documentation
 function markdownBookDoc()
     setDocumentTitle('MarkdownBook')
-    schemaPrint(bookTypes, 'MarkdownBook')
+    elementModelRender(schemaElements(bookTypes, 'MarkdownBook'))
 endfunction
 
 
