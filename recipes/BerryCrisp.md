@@ -6,7 +6,9 @@ recipeMenu()
 # Berry Crisp
 
 ~~~ markdown-script
-recipeHeader('Shannon Childs')
+recipeHeader(objectNew( \
+    'author', 'Shannon Childs' \
+))
 ~~~
 
 ![Berry Crisp](../images/BerryCrisp.jpg "Berry Crisp")
@@ -16,30 +18,30 @@ recipeHeader('Shannon Childs')
 Gently toss together in a buttered 9 X 13" baking dish:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '8 C frozen* or fresh berries (blackberries, raspberries, blueberries, or marian berries or a mixture)', \
     '1/4 C flour', \
     '2/3 C sugar (depending on the sweetness of the berries)' \
-)
+))
 ~~~
 
 Crust topping; mix together in a medium bowl:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 C flour', \
     '1 C sugar', \
     '1 tsp baking powder', \
     '1 beaten egg' \
-)
+))
 ~~~
 
 Mixture will look crumbly. Spread evenly over the berries
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1/2 C butter' \
-)
+))
 ~~~
 
 Melt the butter and pour evenly over the whole mixture.

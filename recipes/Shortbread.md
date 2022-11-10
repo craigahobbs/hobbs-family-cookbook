@@ -6,33 +6,35 @@ recipeMenu()
 # Shortbread
 
 ~~~ markdown-script
-recipeHeader('Kimble Hobbs')
+recipeHeader(objectNew( \
+    'author', 'Kimble Hobbs' \
+))
 ~~~
 
 In a large mixing bowl, soften by massaging and working with your hands and fingers until no hard
 lumps remain:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 lb cold butter (4 sticks)' \
-)
+))
 ~~~
 
 Add and mix in with a spoon until totally incorporated:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 C sugar' \
-)
+))
 ~~~
 
 Add and mix with a spoon or hands if needed:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '4 C flour', \
     '1/2 tsp salt' \
-)
+))
 ~~~
 
 Form the dough into a ball. Press the dough onto a baking sheet so it is about 1/2" thick, and cut

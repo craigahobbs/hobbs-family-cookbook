@@ -25,8 +25,10 @@ function recipeMenu()
 endfunction
 
 
-# Render the recipe page's header
-function recipeHeader(author, servings)
+# Render the recipe page's header. Options: author, servings.
+function recipeHeader(options)
+    author = if(options != null, objectGet(options, 'author'))
+    servings = if(options != null, objectGet(options, 'servings'))
     scale = recipeScale()
     halfScale = 0.5 * scale
     doubleScale = 2 * scale
@@ -42,9 +44,7 @@ endfunction
 
 
 # Parse, scale, and render the recipe ingredient text
-function recipeIngredients(i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16, i17, i18, i19, i20)
-    # Render the ingredients
-    ingredients = arrayNew(i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16, i17, i18, i19, i20)
+function recipeIngredients(ingredients)
     scale = recipeScale()
     ixIngredient = 0
     ingredientLoop:

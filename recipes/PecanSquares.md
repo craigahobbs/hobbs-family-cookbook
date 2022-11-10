@@ -12,11 +12,11 @@ recipeHeader()
 Using a Cuisinart blend together until moist clumps form:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '2 C Flour', \
     '1/2 C powdered sugar', \
     '1 C chilled butter cut into 16 pieces' \
-)
+))
 ~~~
 
 Press the mixture into a 9 X 13" baking pan lined with heavy foil, buttered. (foil should extend up
@@ -28,12 +28,12 @@ Bake in a 350 degree oven for 20 minutes until golden brown.
 Mix together in a medium saucepan:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '2 C chopped pecans', \
     '3/4 C packed light brown sugar', \
     '3/4 C honey', \
     '6 Tbsp heavy cream' \
-)
+))
 ~~~
 
 Bring to a boil over medium heat and cook for 2 minutes. Pour mixture over the hot crust and return

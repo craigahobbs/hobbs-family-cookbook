@@ -12,11 +12,11 @@ recipeHeader()
 Mix together in a medium saucepan:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 C corn starch', \
     '2 C baking soda', \
     '1 1/4 C water*' \
-)
+))
 ~~~
 
 Heat over medium burner stirring constantly until mixture reaches the consistency of moist mashed

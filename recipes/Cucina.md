@@ -13,9 +13,9 @@ Cook the chicken breasts either by poaching or baking. Cool chicken and cut into
 aside, or refrigerate until ready to use.
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '2 skin on, bone in, chicken breasts' \
-)
+))
 ~~~
 
 
@@ -24,7 +24,7 @@ recipeIngredients( \
 Whisk together, or make in a blender. Refrigerate until ready to use:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 egg yolk', \
     '1 Tbsp water', \
     '1 Tbsp Dijon', \
@@ -37,13 +37,13 @@ recipeIngredients( \
     '1/3 C red wine vinegar', \
     '2 Tbsp lemon juice', \
     '1 C olive oil' \
-)
+))
 ~~~
 
 Place in a large mixing bowl and toss:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1/2 large head of iceberg lettuce chopped', \
     '1/2 large head romaine lettuce cleaned and chopped', \
     '1 C fresh basil leaves coarsely chopped', \
@@ -53,7 +53,7 @@ recipeIngredients( \
     '3 sliced green onions', \
     '8 oz dry salami diced 1/4"', \
     '4 oz chopped drained chick peas (garbanzo beans)' \
-)
+))
 ~~~
 
 Add the diced, cooked chicken and toss. Add the dressing just before serving. Since this is a large

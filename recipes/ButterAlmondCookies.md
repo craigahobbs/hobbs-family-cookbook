@@ -6,26 +6,28 @@ recipeMenu()
 # Butter Almond Cookies
 
 ~~~ markdown-script
-recipeHeader('Karen Sandberg')
+recipeHeader(objectNew( \
+    'author', 'Karen Sandberg' \
+))
 ~~~
 
 Cream together:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 C butter', \
     '1/2 C sugar' \
-)
+))
 ~~~
 
 Add and mix in:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '2 C flour', \
     '3/4 C slivered blanched almonds', \
     '1 tsp vanilla' \
-)
+))
 ~~~
 
 Roll the dough into large walnut sized balls and chill for 20 minutes. Remove dough from frig and

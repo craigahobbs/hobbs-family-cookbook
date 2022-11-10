@@ -28,48 +28,48 @@ of toppings and a dusting of powdered sugar.
 ### 2 to 3 qt Pan
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1/3 C butter', \
     '3 eggs', \
     '3/4 C milk', \
     '3/4 C flour' \
-)
+))
 ~~~
 
 
 ### 3 to 4 qt Pan
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1/3 C butter', \
     '4 eggs', \
     '1 C milk', \
     '1 C flour' \
-)
+))
 ~~~
 
 
 ### 4 to 4 1/2 qt Pan
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1/3 C butter', \
     '5 eggs', \
     '1 1/4 C milk', \
     '1 1/4 C flour' \
-)
+))
 ~~~
 
 
 ### 4 1/2 to 5 qt Pan
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1/3 C butter', \
     '6 eggs', \
     '1 1/2 C milk', \
     '1 1/2 C flour' \
-)
+))
 ~~~
 
 Smaller babies seam to work best for me.

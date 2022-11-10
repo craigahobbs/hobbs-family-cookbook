@@ -12,7 +12,7 @@ recipeHeader()
 ### Ingredients
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '6 ounces bittersweet chocolate, chopped fine', \
     '7 large egg yolks', \
     '1/3 cup sugar', \
@@ -20,7 +20,7 @@ recipeIngredients( \
     '1 1/2 cup heavy cream', \
     '1/2 cup whole milk', \
     '1 teaspoon vanilla extract' \
-)
+))
 ~~~
 
 
@@ -44,9 +44,9 @@ recipeIngredients( \
 ### Variation:  Mocha Pots De Creme
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '2 teaspoons instant espresso powder' \
-)
+))
 ~~~
 
 Heat the instant espresso powder with the cream and milk mixture in step 2.

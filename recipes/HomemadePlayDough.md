@@ -10,20 +10,20 @@ recipeHeader()
 ~~~
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1/2 C table salt', \
     '1 C flour', \
     '1 tsp alum', \
     '1 Tbsp canola oil' \
-)
+))
 ~~~
 
 Stir together and add the boiling water and knead until smooth.\*
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 C boiling water' \
-)
+))
 ~~~
 
 \* Add food coloring to the water before adding to the dry ingredients. The more coloring added, the

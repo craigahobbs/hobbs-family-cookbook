@@ -12,28 +12,28 @@ recipeHeader()
 Dice and chill:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '2 sticks of butter' \
-)
+))
 ~~~
 
 Add to Cuisinart bowl and process. Then add the chilled butter and pulse until butter forms pea size lumps:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '2 1/4 C flour', \
     '1 tsp salt', \
     '2 sticks cold butter' \
-)
+))
 ~~~
 
 Gradually add the ice water and process until dough just forms clumps on the top of the blades (the
 amount of water depends on how "dry" the flour is, this varies with the seasons).
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '8 Tbsp ice water or more' \
-)
+))
 ~~~
 
 Remove the dough from the bowl, divide into two pieces. Place each piece into a zip sandwich bag and
@@ -52,8 +52,8 @@ Double crust pies may be brushed with and egg wash, the egg yolk whisked with th
 on the crust before baking.
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 egg yolk', \
     '1 1/2 tbsp of water' \
-)
+))
 ~~~

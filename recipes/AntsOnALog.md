@@ -6,7 +6,9 @@ recipeMenu()
 # Ants On A Log
 
 ~~~ markdown-script
-recipeHeader('Cooper Campbell when in Kindergarten')
+recipeHeader(objectNew( \
+    'author', 'Cooper Campbell when in Kindergarten' \
+))
 ~~~
 
 Fill a clean and dry celery rib with peanut butter and place chocolate chips in a row on the top of

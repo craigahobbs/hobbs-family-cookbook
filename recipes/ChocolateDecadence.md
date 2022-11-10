@@ -14,11 +14,11 @@ recipeHeader()
 Melt the dark sweet chocolate (or use semi-sweet), sugar, and butter in a double boiler.
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 1/4 lb dark sweet chocolate', \
     '1 Tbsp of sugar (if using semi-sweet chocolate)', \
     '10 Tbsp butter' \
-)
+))
 ~~~
 
 Using a wire whisk beat the eggs and sugar together in a medium bowl over boiling water until the
@@ -26,18 +26,18 @@ sugar is dissolved and the mixture is warm to the touch. Now use an electric mix
 until triple in volume (about 5 to 10 minutes).
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '5 eggs', \
     '1 Tbsp sugar' \
-)
+))
 ~~~
 
 Fold in the flour and the melted chocolate into the egg mixture.
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 Tbsp flour' \
-)
+))
 ~~~
 
 Pour the batter into an 8" round cake pan that has been buttered and lined with parchment (bottom
@@ -49,12 +49,12 @@ plate and glaze.
 ### Chocolate Glaze
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '3 Tbsp butter', \
     '2 oz bittersweet chocolate', \
     '1 C confectioners sugar', \
     '3 Tbsp hot water' \
-)
+))
 ~~~
 
 Melt the butter and bittersweet chocolate in a saucepan on low heat. Whisk in the confectioners

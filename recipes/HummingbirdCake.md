@@ -6,7 +6,9 @@ recipeMenu()
 # Hummingbird Cake
 
 ~~~ markdown-script
-recipeHeader('Vicki Bessa')
+recipeHeader(objectNew( \
+    'author', 'Vicki Bessa' \
+))
 ~~~
 
 ![Hummingbird Cake](../images/HummingbirdCake.jpg "Hummingbird Cake")
@@ -14,34 +16,34 @@ recipeHeader('Vicki Bessa')
 Mix together in a large bowl:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '3 C flour', \
     '1 tsp baking soda', \
     '1 tsp salt', \
     '2 C sugar', \
     '1 C chopped pecans', \
     '3/4 tsp ground cinnamon' \
-)
+))
 ~~~
 
 Mix together in a quart measuring cup:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 1/2 C vegetable oil', \
     '3 large eggs', \
     '1 8 oz can crushed pineapple in its own juice (undrained)', \
     '1 Tbsp very soft butter' \
-)
+))
 ~~~
 
 Add the wet ingredients all at once to the dry ingredients, blend together BY HAND just until mixed.
 Fold in chopped ripe bananas lightly.
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '2 small ripe bananas, chopped' \
-)
+))
 ~~~
 
 Turn batter into a tube (angel food cake pan) or bundt pan which has been greased and dusted with

@@ -16,11 +16,11 @@ In The Secret Recipes Collection
 In a medium saucepan over low heat, melt together:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 8 oz milk chocolate bar', \
     '1/2 C peanut butter', \
     '1/4  C butter' \
-)
+))
 ~~~
 
 Using a paper lined muffin tin, place a tablespoon of the chocolate mixture in each paper cup. Next

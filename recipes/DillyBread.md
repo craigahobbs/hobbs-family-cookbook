@@ -6,7 +6,9 @@ recipeMenu()
 # Dilly Bread
 
 ~~~ markdown-script
-recipeHeader('Helen Minkiewitz (Nonny)')
+recipeHeader(objectNew( \
+    'author', 'Helen Minkiewitz (Nonny)' \
+))
 ~~~
 
 ![Dilly Bread](../images/DillyBread.jpg "Dilly Bread")
@@ -14,33 +16,33 @@ recipeHeader('Helen Minkiewitz (Nonny)')
 Soften and mix together and let stand for 10 minutes:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 Tbsp dry yeast', \
     '1/4 C lukewarm water', \
     '2 Tbsp  sugar' \
-)
+))
 ~~~
 
 Add and stir in:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 C warmed small curd cottage cheese (whole fat cottage cheese is best)', \
     '2 Tbsp minced yellow onion (or 1 Tbsp dehydrated onion)', \
     '1 Tbsp softened butter', \
     '2 tsp dill seed', \
     '1 tsp salt', \
     '1 beaten egg' \
-)
+))
 ~~~
 
 Mix in to form a sticky dough:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '2 1/4 C flour', \
     '1/4 tsp baking soda' \
-)
+))
 ~~~
 
 Turn dough into a greased bowl and allow to rise until double in volume. Stir dough down, place in a

@@ -10,7 +10,7 @@ recipeHeader()
 ~~~
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '2 tbsp good olive oil, plus extra to cook the pasta', \
     '1 lb mild Italian sausage or lean ground sirloin', \
     '4 tsp minced garlic (4 cloves)', \
@@ -24,7 +24,7 @@ recipeIngredients( \
     '1/4 C chopped fresh basil leaves, lightly packed', \
     '1/2 C heavy cream', \
     '1/2 C freshly grated Parmesan cheese, plus extra for serving' \
-)
+))
 ~~~
 
 Kosher salt and freshly ground pepper to taste.

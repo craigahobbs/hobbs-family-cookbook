@@ -6,7 +6,9 @@ recipeMenu()
 # Butter Dips
 
 ~~~ markdown-script
-recipeHeader('Pearl Salter')
+recipeHeader(objectNew( \
+    'author', 'Pearl Salter' \
+))
 ~~~
 
 Heat oven to 450 degrees.
@@ -14,13 +16,13 @@ Heat oven to 450 degrees.
 Stir together by hand to form a moist dough:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 1/4 C flour', \
     '2 tsp sugar', \
     '2 tsp baking powder', \
     '1 tsp salt', \
     '2/3 C milk' \
-)
+))
 ~~~
 
 Melt 1/4 C butter in a 9 X 9" pan (do not brown). Remove the butter quickly from the oven. Roll the

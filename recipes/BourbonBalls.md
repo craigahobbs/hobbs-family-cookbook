@@ -6,7 +6,9 @@ recipeMenu()
 # Bourbon Balls
 
 ~~~ markdown-script
-recipeHeader('Wendy Newton')
+recipeHeader(objectNew( \
+    'Wendy Newton' \
+))
 ~~~
 
 With a Cuisinart, process vanilla wafers to form crumbs.
@@ -14,14 +16,14 @@ With a Cuisinart, process vanilla wafers to form crumbs.
 Combine:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '2 C vanilla wafer crumbs', \
     '2 C finely chopped pecans', \
     '2 C confectioners sugar', \
     '4 tbsp cocoa', \
     '1/2 C bourbon', \
     '3 Tbsp light corn syrup' \
-)
+))
 ~~~
 
 Mix to form a stiff dough. Form the dough into 1" balls and roll in powdered sugar. Refrigerate and

@@ -6,17 +6,19 @@ recipeMenu()
 # Cheese and Sausage Rounds
 
 ~~~ markdown-script
-recipeHeader('Nancy Thomas')
+recipeHeader(objectNew( \
+    'author', 'Nancy Thomas' \
+))
 ~~~
 
 Combine and mix together with hands:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '3 C Bisquick', \
     '1 lb shredded cheddar cheese', \
     '1 lb Jimmy Deans hot sausage warmed to room temperature' \
-)
+))
 ~~~
 
 Shape the dough into balls about the size of ping pong balls. Bake on a greased cookie sheet at 350

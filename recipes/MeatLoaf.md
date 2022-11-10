@@ -6,11 +6,13 @@ recipeMenu()
 # Meat Loaf
 
 ~~~ markdown-script
-recipeHeader(null, 4)
+recipeHeader(objectNew( \
+    'servings', 4 \
+))
 ~~~
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 tbsp good olive oil', \
     '1 onion, medium, finely chopped', \
     '1/2 tsp dried thyme', \
@@ -23,7 +25,7 @@ recipeIngredients( \
     '1/4 C plain panko bread crumbs(Progresso recommended)', \
     '1 extra-large egg, beaten', \
     '1/4 C ketchup (Heinz recommended)' \
-)
+))
 ~~~
 
 Preheat oven to 350 degrees.

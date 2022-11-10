@@ -12,7 +12,7 @@ recipeHeader()
 Using a food processor, process until chunky:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '3 cloves of garlic', \
     '3 serrano peppers', \
     '1 habanero pepper (optional)', \
@@ -21,7 +21,7 @@ recipeIngredients( \
     '1/4 tsp salt', \
     '1/4 tsp dried cilantro', \
     '1/2 tsp lemon juice' \
-)
+))
 ~~~
 
 Serve with crisp tortilla chips.

@@ -16,22 +16,22 @@ Use an electric mixer to beat the eggs until thick and lemon colored. Gradually 
 Now blend in the water and the vanilla.
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '3 large eggs', \
     '1 C sugar', \
     '1/3 C water', \
     '1 tsp vanilla' \
-)
+))
 ~~~
 
 Mix in to form a smooth batter:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 C flour', \
     '1/4 tsp salt', \
     '1 tsp baking powder' \
-)
+))
 ~~~
 
 Pour the batter evenly into the prepared pan and bake at 375 degrees for 12 to 15 minutes, until
@@ -48,9 +48,9 @@ When the cake is cool, carefully unroll and fill with cream filling leaving the 
 ### Cream Filling
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 C heavy whipping cream' \
-)
+))
 ~~~
 
 Beat the heavy whipping cream until stiff. Sweeten to taste.

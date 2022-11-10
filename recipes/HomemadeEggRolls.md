@@ -12,16 +12,16 @@ recipeHeader()
 Using a large skillet saute and stir:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1/2 lb lean ground pork', \
     '2 Tbsp vegetable oil' \
-)
+))
 ~~~
 
 Add and continue to saute until vegetables are just limp:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 grated carrot', \
     '1 small julienned yellow onion', \
     '4 sliced green onions', \
@@ -29,7 +29,7 @@ recipeIngredients( \
     '1 Tbsp soy sauce', \
     '1/2 tsp ground ginger', \
     '1 tsp sesame oil' \
-)
+))
 ~~~
 
 Stir in soy sauce, ground ginger, and sesame oil. Place about 2 Tbsp meat and vegetable mixture
@@ -48,10 +48,10 @@ until golden brown and crispy on all sides. Drain on paper towels and keep finis
 Stir together:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1/2 to 2/3 C ketchup', \
     '1 Tbsp soy sauce' \
-)
+))
 ~~~
 
 Add 2 to 4 drops tobasco sauce to taste.

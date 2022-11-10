@@ -11,10 +11,10 @@ recipeHeader()
 
 ### Ingredients
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '2 eggs', \
     '2 slices whole wheat bread' \
-)
+))
 ~~~
 
 Heat a skillet with a little oil or butter to medium. Crack the eggs in the skillet and break the

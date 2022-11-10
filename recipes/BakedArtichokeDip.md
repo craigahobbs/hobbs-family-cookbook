@@ -12,7 +12,7 @@ recipeHeader()
 Whisk together:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '5 Tbsp grated parmesan cheese', \
     '3 Tbsp mayo', \
     '3 Tbsp sour cream (or light sour cream)', \
@@ -21,15 +21,15 @@ recipeIngredients( \
     '1/4 tsp pepper', \
     '1/4 tsp onion salt', \
     '1/8 tsp garlic powder' \
-)
+))
 ~~~
 
 Add and stir in:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 14 oz can artichokes (packed in water & drained) chopped in 1/4" dice' \
-)
+))
 ~~~
 
 Turn into a buttered 1 1/2 C ramekin and bake at 375 degrees for 20 minutes.

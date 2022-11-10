@@ -12,27 +12,27 @@ recipeHeader()
 ### Marinade
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1/2 cup soy sauce', \
     '1/2 cup dry sherry', \
     '1/2 tsp MSG (optional)', \
     '2 tsps sugar' \
-)
+))
 ~~~
 
 Add the beef slices and marinate in the refrigerator for 30 minutes or up to two hours.
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '2 1/2 lbs flank steak sliced thinly across the grain' \
-)
+))
 ~~~
 
 
 ### Vegetables
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 1/4 lb bok choy sliced', \
     '2 red bell peppers deveined and sliced', \
     '1 8 oz can sliced water chestnuts drained', \
@@ -41,7 +41,7 @@ recipeIngredients( \
     '2 Tbsp oyster sauce', \
     '6 oz package bean thread noodles (cellophane noodles)', \
     '4 cup peanut oil' \
-)
+))
 ~~~
 
 Heat the oil to 400 degrees in a wok for deep frying pan. Cook noodles in two batches in the oil

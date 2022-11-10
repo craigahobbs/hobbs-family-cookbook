@@ -10,10 +10,10 @@ recipeHeader()
 ~~~
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 egg', \
     '1 slice of bread' \
-)
+))
 ~~~
 
 Place the bread on a cutting board and use a cookie or biscuit cutter to cut a hole in the center of

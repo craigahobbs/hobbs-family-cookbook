@@ -12,14 +12,14 @@ recipeHeader()
 Prepare batter by whisking together:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1/2 C flour', \
     '1/2 C cornstarch', \
     '1/2 tsp salt', \
     '1 1/2 tsp baking powder', \
     '2 egg whites', \
     '1 C water' \
-)
+))
 ~~~
 
 Batter will be thin.
@@ -36,12 +36,12 @@ Serve warm with Colonial Dressing or Tartar Sauce.
 ### Colonial Dressing
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1/2 C Mayo', \
     '1 Tbsp ketchup', \
     '1 clove crushed garlic', \
     '1 tsp champagne vinegar' \
-)
+))
 ~~~
 
 Salt and freshly ground pepper to taste.
@@ -52,13 +52,13 @@ Whisk together and serve.
 ### Tartar Sauce
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1/2 C Mayo', \
     '1 Tbsp minced white onion', \
     '1/2 tsp dried dill weed', \
     '1 tsp Worcestershire', \
     '1 tsp fresh lemon juice' \
-)
+))
 ~~~
 
 Salt and freshly ground pepper to taste.

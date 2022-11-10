@@ -13,10 +13,10 @@ When we were younger, fondues were all the rage and they became one of the Hobbs
 celebration meals.
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 lb lean beef sirloin or tenderloin cut into 1 inch chunks', \
     '1 lb white mushrooms cleaned and cut in half to make about 1 inch chunks or whole if mushrooms are small' \
-)
+))
 ~~~
 
 Fill a metal (mine is stainless) fondue pot about 1/2 way with corn or canola oil. Light the sterno

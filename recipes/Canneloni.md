@@ -6,7 +6,10 @@ recipeMenu()
 # Canneloni
 
 ~~~ markdown-script
-recipeHeader('Marilin Pasbrig (Aunt Marilin)', 16)
+recipeHeader(objectNew( \
+    'author', 'Marilin Pasbrig (Aunt Marilin)', \
+    'servings', 16 \
+))
 ~~~
 
 ### Pasta Dough\**
@@ -14,20 +17,20 @@ recipeHeader('Marilin Pasbrig (Aunt Marilin)', 16)
 In a large mixing bowl (or on the counter\*) mix together:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '3 C flour', \
     '2 tsp salt' \
-)
+))
 ~~~
 
 Stir together in a measuring cup:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1/4 C warm water', \
     '2 Tbsp olive oil', \
     '3 large eggs' \
-)
+))
 ~~~
 
 Add liquid mixture to dry ingredients and stir and knead together to form a stiff dough. Knead the
@@ -48,16 +51,16 @@ center, and stir the two together from the center to incorporate the dry ingredi
 In a large sauce pan saute just until transparent:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1/4 C olive oil', \
     '1 large diced onion' \
-)
+))
 ~~~
 
 Add, simmer and stir uncovered for 45 minutes:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '2 cloves minced garlic', \
     '2 2 lb cans crushed roma tomatoes', \
     '2 6 oz cans tomato paste', \
@@ -65,15 +68,15 @@ recipeIngredients( \
     '1 Tbsp salt', \
     '1/2 tsp pepper', \
     '2 Tbsp sugar' \
-)
+))
 ~~~
 
 Remove sauce from the heat, stir in the parmesan cheese, and cool.
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1/4 C parmesan cheese' \
-)
+))
 ~~~
 
 
@@ -83,10 +86,10 @@ Scald the light cream (half & half) with the bay leaf. Let stand for 5 minutes a
 leaf.
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '3 C light cream', \
     '1 bay leaf' \
-)
+))
 ~~~
 
 In a large saucepan melt the butter. Add the flour and stir and cook until bubbly. Whisk in the hot
@@ -94,13 +97,13 @@ cream and add the chicken boullion, salt, and pepper and cook for 3 minutes unti
 thickened.
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1/3 C butter', \
     '1/3 C flour', \
     '2 tsp chicken boullion', \
     '1 tsp salt', \
     '1/4 tsp pepper' \
-)
+))
 ~~~
 
 
@@ -109,14 +112,14 @@ recipeIngredients( \
 Mix together in a large bowl:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 lb ricotta cheese', \
     '1 lb grated mozzarella cheese', \
     '1/4 lb finely chopped procuitto', \
     '3 egg yolks', \
     '1 tsp salt', \
     '1/2 tsp pepper' \
-)
+))
 ~~~
 
 

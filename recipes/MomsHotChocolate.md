@@ -12,20 +12,20 @@ recipeHeader()
 In a large saucepan whisk together:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1/4 C cocoa powder', \
     '1/2 C sugar', \
     '1/4 tsp salt' \
-)
+))
 ~~~
 
 Add and heat, whisking, on a medium burner until piping hot:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '4 C fresh milk', \
     '1 12 oz can evaporated milk' \
-)
+))
 ~~~
 
 Adjust sweetness to your taste by adding more fresh milk or sugar.

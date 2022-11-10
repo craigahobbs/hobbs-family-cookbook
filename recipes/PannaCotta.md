@@ -6,26 +6,28 @@ recipeMenu()
 # Panna Cotta
 
 ~~~ markdown-script
-recipeHeader('Matt Kramer*')
+recipeHeader(objectNew( \
+    'author', 'Matt Kramer*' \
+))
 ~~~
 
 This recipe is not heart healthy, but it is really delicious and easy to make. It looks and tastes
 like you spent hours in the kitchen making it.
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 envelope unflavored gelatin', \
     '1/4 Cup cold water' \
-)
+))
 ~~~
 
 Sprinkle gelatin over the water in a small bowl and let sit for 5 minutes.
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 quart heavy cream', \
     '1 1/4  cups sugar' \
-)
+))
 ~~~
 
 Place cream in a heavy saucepan bring it to a NEAR boil over medium heat. Gently whisk in the

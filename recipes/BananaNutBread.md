@@ -6,7 +6,9 @@ recipeMenu()
 # Banana Nut Bread
 
 ~~~ markdown-script
-recipeHeader('Merlin Salter')
+recipeHeader(objectNew( \
+    'author', 'Merlin Salter' \
+))
 ~~~
 
 ![Banana Nut Bread](../images/BananaNutBread.jpg "Banana Nut Bread")
@@ -14,30 +16,30 @@ recipeHeader('Merlin Salter')
 Cream together:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1/2 C butter', \
     '1 C sugar' \
-)
+))
 ~~~
 
 Add and beat in:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '2 eggs', \
     '4 Tbsp sour milk*', \
     '3 mashed ripe bananas' \
-)
+))
 ~~~
 
 Add and stir in:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '2 C flour', \
     '1 tsp baking soda', \
     '1/2 C chopped pecans' \
-)
+))
 ~~~
 
 Turn the batter into a buttered glass loaf pan and bake in a 350 degree for 1 hour or until a
@@ -49,10 +51,10 @@ slice and serve.
 so great. Use vinegar, not lemon juice.)
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '4 Tbsp milk', \
     '2 tsp white vinegar' \
-)
+))
 ~~~
 
 I sometimes double the recipe and freeze the second loaf.

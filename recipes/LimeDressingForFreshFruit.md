@@ -6,28 +6,30 @@ recipeMenu()
 # Lime Dressing For Fresh Fruit
 
 ~~~ markdown-script
-recipeHeader('Ann McLean')
+recipeHeader(objectNew( \
+    'author', 'Ann McLean' \
+))
 ~~~
 
 Whisk together in a small saucepan and stir over medium heat until thickened:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 egg', \
     '1/4 cup fresh lime juice', \
     '1/2 cup honey' \
-)
+))
 ~~~
 
 Blend in:
 
 ~~~ markdown-script
-recipeIngredients( \
+recipeIngredients(arrayNew( \
     '1 cup sour cream', \
     '1 pinch of salt', \
     '1 pinch of ground mace', \
     '1 tsp poppy seeds' \
-)
+))
 ~~~
 
 Place mixture in serving bowl and refrigerate until ready to use. I usually pass this dressing to be
