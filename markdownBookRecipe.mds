@@ -300,7 +300,6 @@ function recipeTitlePageRender()
 
     # Render the title page
     setDocumentTitle(if(title2 != null, ' ' + title2))
-    documentReset()
     recipeMenu()
     setDrawingSize(width, height)
     drawStyle('none', 1, if(color != null, color, 'lightblue'))
