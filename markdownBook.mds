@@ -71,9 +71,8 @@ endfunction
 
 # Render the Markdown Book search page
 async function markdownBookSearch(book)
-    title = objectGet(book, 'title')
-
     # Set the page title
+    title = objectGet(book, 'title')
     setDocumentTitle(title)
     markdownPrint( \
         '[Index](#var=)', \
