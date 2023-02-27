@@ -14,55 +14,51 @@ async function markdownBook(bookURL)
     book = schemaValidate(bookTypes, 'MarkdownBook', fetch(bookURL))
 
     # Render the page
-    if(vDoc, markdownBookDoc(), \
-    if(vSearch != null, markdownBookSearch(book), \
-    markdownBookIndex(book)))
+    if vDoc then
+        markdownBookDoc()
+    else if vSearch != null then
+        markdownBookSearch(book)
+    else then
+        markdownBookIndex(book)
+    endif
 endfunction
 
 
 # Render the Markdown Book index
 async function markdownBookIndex(book)
+    # Set the page title
     title = objectGet(book, 'title')
     titleURL = objectGet(book, 'titleURL')
-    categories = objectGet(book, 'categories')
-
-    # Set the page title
     setDocumentTitle(title)
     markdownPrint( \
         '[Title](#url=' + encodeURIComponent(titleURL) + '&var=)', \
         " | [Search](#var.vSearch='')", \
+        '', \
         '# ' + markdownEscape(title) \
     )
 
     # Render the category links
-    ixCategory = 0
-    categoryLoop:
-        category = arrayGet(categories, ixCategory)
+    foreach category in objectGet(book, 'categories') do
         categoryTitle = objectGet(category, 'title')
         isSelected = (vCategory == categoryTitle)
-        categoryTitleURL = if(isSelected, '#var=', "#var.vCategory='" + encodeURIComponent(categoryTitle) + "'")
 
         # Render the category title link
+        categoryTitleURL = if(isSelected, '#var=', "#var.vCategory='" + encodeURIComponent(categoryTitle) + "'")
         markdownPrint('', '## [' + markdownEscape(categoryTitle) + '](' + categoryTitleURL + ')')
 
         # If this is the selected category, fetch the category files and render the file links
-        jumpif (!isSelected) categoryDone
-            categoryFiles = objectGet(category, 'files')
-            categoryTexts = fetch(categoryFiles, null, true)
-            ixFile = 0
-            fileLoop:
-                categoryFile = arrayGet(categoryFiles, ixFile)
+        if isSelected then
+            categoryURLs = objectGet(category, 'files')
+            categoryTexts = fetch(categoryURLs, null, true)
+            foreach categoryURL, ixFile in categoryURLs do
                 categoryText = arrayGet(categoryTexts, ixFile)
                 fileTitle = markdownTitle(markdownParse(categoryText))
-                linkTitle = if(fileTitle != null, fileTitle, categoryFile)
-                markdownPrint('', stringFromCharCode(160) + '[' + markdownEscape(linkTitle) + '](#url=' + \
-                    encodeURIComponent(categoryFile) + "&var.vCategory='" + encodeURIComponent(categoryTitle) + "')")
-                ixFile = ixFile + 1
-            jumpif (ixFile < arrayLength(categoryFiles)) fileLoop
-        categoryDone:
-
-        ixCategory = ixCategory + 1
-    jumpif (ixCategory < arrayLength(categories)) categoryLoop
+                linkTitle = if(fileTitle != null, fileTitle, categoryURL)
+                markdownPrint('', '&nbsp;[' + markdownEscape(linkTitle) + '](#url=' + \
+                    encodeURIComponent(categoryURL) + "&var.vCategory='" + encodeURIComponent(categoryTitle) + "')")
+            endforeach
+        endif
+    endforeach
 endfunction
 
 
@@ -108,24 +104,21 @@ async function markdownBookSearch(book)
     setDocumentFocus('search-text')
 
     # Compute the search results and render
-    jumpif (vSearch == '') resultsDone
-    markdownPrint('## Results')
-    results = markdownBookSearchResults(book, vSearch)
-    jumpif (arrayLength(results) == 0) resultsNone
-        ixResult = 0
-        resultLoop:
-            result = arrayGet(results, ixResult)
-            resultURL = objectGet(result, 'url')
-            resultCategory = objectGet(result, 'category')
-            resultTitle = objectGet(result, 'title')
-            markdownPrint('', '[' + markdownEscape(resultTitle) + \
-                '](#url=' + encodeURIComponent(resultURL) + "&var.vCategory='" + encodeURIComponent(resultCategory) + "')")
-            ixResult = ixResult + 1
-        jumpif (ixResult < arrayLength(results)) resultLoop
-        jump resultsDone
-    resultsNone:
-        markdownPrint('No matching pages found')
-    resultsDone:
+    if vSearch != '' then
+        markdownPrint('## Results')
+        results = markdownBookSearchResults(book, vSearch)
+        if arrayLength(results) != 0 then
+            foreach result in results do
+                resultURL = objectGet(result, 'url')
+                resultCategory = objectGet(result, 'category')
+                resultTitle = objectGet(result, 'title')
+                markdownPrint('', '[' + markdownEscape(resultTitle) + \
+                    '](#url=' + encodeURIComponent(resultURL) + "&var.vCategory='" + encodeURIComponent(resultCategory) + "')")
+            endforeach
+        else then
+            markdownPrint('No matching pages found')
+        endif
+    endif
 endfunction
 
 
@@ -136,67 +129,58 @@ endfunction
 
 
 function markdownBookSearchOnKeyup(keyCode)
-    if(keyCode == 13, markdownBookSearchOnClick())
+    if keyCode == 13 then
+        markdownBookSearchOnClick()
+    endif
 endfunction
 
 
 async function markdownBookSearchResults(book, text)
-    results = arrayNew()
-
-    # Compute the list of pages (url, category)
-    pages = arrayNew()
-    pageURLs = arrayNew()
-    categories = objectGet(book, 'categories')
-    ixCategory = 0
-    categoryLoop:
-        category = arrayGet(categories, ixCategory)
-        files = objectGet(category, 'files')
-        ixFile = 0
-        fileLoop:
-            fileURL = arrayGet(files, ixFile)
-            arrayPush(pages, objectNew('url', fileURL, 'category', objectGet(category, 'title')))
-            arrayPush(pageURLs, fileURL)
-            ixFile = ixFile + 1
-        jumpif (ixFile < arrayLength(files)) fileLoop
-        ixCategory = ixCategory + 1
-    jumpif (ixCategory < arrayLength(categories)) categoryLoop
-
     # Create the search text regex
     words = stringSplit(text, regexNew('\s+'))
     wordsEscaped = arrayNew()
     minSearchWordLength = 3
-    ixWord = 0
-    wordLoop:
-        word = arrayGet(words, ixWord)
-        if(stringLength(word) >= minSearchWordLength, arrayPush(wordsEscaped, regexEscape(word)))
-        ixWord = ixWord + 1
-    jumpif (ixWord < arrayLength(words)) wordLoop
-    jumpif (arrayLength(wordsEscaped) == 0) done
+    foreach word in words do
+        if stringLength(word) >= minSearchWordLength then
+            arrayPush(wordsEscaped, regexEscape(word))
+        endif
+    endforeach
+    if arrayLength(wordsEscaped) == 0 then
+        return arrayNew()
+    endif
     reSearch = regexNew('\b(?:' + arrayJoin(wordsEscaped, '|') + ')', 'ig')
 
+    # Compute the list of pages (url, category)
+    pages = arrayNew()
+    pageURLs = arrayNew()
+    foreach category in objectGet(book, 'categories') do
+        foreach fileURL in objectGet(category, 'files') do
+            arrayPush(pages, objectNew('url', fileURL, 'category', objectGet(category, 'title')))
+            arrayPush(pageURLs, fileURL)
+        endforeach
+    endforeach
+
     # Load all pages and search each page's text
+    results = arrayNew()
     pageTexts = fetch(pageURLs, null, true)
-    ixPage = 0
-    pageLoop:
-        page = arrayGet(pages, ixPage)
+    foreach page, ixPage in pages do
         pageText = arrayGet(pageTexts, ixPage)
+        if pageText != null then
+            # Add the result page title
+            pageTitle = markdownTitle(markdownParse(pageText))
+            objectSet(page, 'title', pageTitle)
 
-        # Add the result page title
-        pageTitle = markdownTitle(markdownParse(pageText))
-        objectSet(page, 'title', pageTitle)
-
-        # Add the result page match count
-        matches = regexMatchAll(reSearch, pageText)
-        objectSet(page, 'matches', arrayLength(matches))
-
-        # If a match, add to the results
-        if(arrayLength(matches) > 0, arrayPush(results, page))
-
-        ixPage = ixPage + 1
-    jumpif (ixPage < arrayLength(pages)) pageLoop
+            # Add the page match
+            matches = regexMatchAll(reSearch, pageText)
+            matchCount = arrayLength(matches)
+            if matchCount then
+                objectSet(page, 'matches', matchCount)
+                arrayPush(results, page)
+            endif
+        endif
+    endforeach
 
     # Return sorted list of matching pages (url, title, category, matches)
-    done:
     return arraySort(results, markdownBookSearchSort)
 endfunction
 
@@ -205,9 +189,9 @@ function markdownBookSearchSort(a, b)
     aMatches = -objectGet(a, 'matches')
     bMatches = -objectGet(b, 'matches')
     compareMatches = if(aMatches < bMatches, -1, if(aMatches == bMatches, 0, 1))
-    jumpif (compareMatches == 0) matchesIdentical
+    if compareMatches != 0 then
         return compareMatches
-    matchesIdentical:
+    endif
 
     aTitle = objectGet(a, 'title')
     bTitle = objectGet(b, 'title')

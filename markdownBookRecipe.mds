@@ -32,46 +32,57 @@ function recipeHeader(options)
     scale = recipeScale()
     halfScale = 0.5 * scale
     doubleScale = 2 * scale
-    if(author != null, markdownPrint('', 'Author: ' + markdownEscape(author)))
+    if author != null then
+        markdownPrint('', 'Author: ' + markdownEscape(author))
+    endif
     category = if(vCategory != null, "var.vCategory='" + encodeURIComponent(vCategory) + "'&", '')
     markdownPrint( \
-        '', 'Scale: ' + mathRound(scale, 3) + stringFromCharCode(160, 160) + \
+        '', 'Scale: ' + mathRound(scale, 3) + '&nbsp;&nbsp;' + \
         if(halfScale >= recipeMinScale, '([Halve](#' + category + 'var.vScale=' + mathRound(halfScale, 3) + ') | ', '(Halve | '), \
         if(doubleScale <= recipeMaxScale, '[Double](#' + category + 'var.vScale=' + mathRound(doubleScale, 3) + '))', 'Double)') \
     )
-    if(servings != null, markdownPrint('', 'Servings: ' + scale * servings))
+    if servings != null then
+        markdownPrint('', 'Servings: ' + scale * servings)
+    endif
 endfunction
 
 
 # Parse, scale, and render the recipe ingredient text
 function recipeIngredients(ingredients)
     scale = recipeScale()
-    ixIngredient = 0
-    ingredientLoop:
-        ingredient = arrayGet(ingredients, ixIngredient)
-        jumpif (ingredient == null) ingredientSkip
+    foreach ingredient in ingredients do
+        if ingredient != null then
             ingredientModel = recipeParseIngredient(ingredient)
-            if(ingredientModel == null, debugLog('Invalid ingredient text "' + ingredient + '"'))
-            if(ingredientModel != null, markdownPrint('', recipeIngredientText(ingredientModel, scale)))
-        ingredientSkip:
-        ixIngredient = ixIngredient + 1
-    jumpif (ixIngredient < arrayLength(ingredients)) ingredientLoop
+            if ingredientModel != null then
+                markdownPrint('', recipeIngredientText(ingredientModel, scale))
+            else then
+                debugLog('Invalid ingredient text "' + ingredient + '"')
+            endif
+        endif
+    endforeach
 endfunction
 
 
 # Parse ingredient text to an ingredient model
 function recipeParseIngredient(ingredient)
     match = regexMatch(recipeIngredientRegex, ingredient)
-    groups = if(match != null, objectGet(match, 'groups', null), null)
-    whole = if(match != null && objectGet(groups, 'whole') != null,  numberParseFloat(objectGet(groups, 'whole')), 0)
+    groups = if(match != null, objectGet(match, 'groups'), null)
+    whole = if(match != null && objectGet(groups, 'whole') != null, numberParseFloat(objectGet(groups, 'whole')), 0)
     numer = if(match != null && objectGet(groups, 'numer') != null, numberParseInt(objectGet(groups, 'numer')), 0)
     denom = if(match != null && objectGet(groups, 'denom') != null, numberParseInt(objectGet(groups, 'denom')), 1)
     unit = if(match != null && objectGet(groups, 'unit') != null, objectGet(groups, 'unit'), null)
-    unit = if(unit == null, 'count', if(objectGet(recipeAlternateUnits, unit) != null, objectGet(recipeAlternateUnits, unit), unit))
     name = if(match != null, objectGet(groups, 'name'), null)
-    jumpif ((whole != 0 || numer != 0) && name != null) isIngredient
+    if name == null || (whole == 0 && numer == 0) then
         return null
-    isIngredient:
+    endif
+
+    # Normalize the unit
+    if unit == null then
+        unit = 'count'
+    else if objectHas(recipeAlternateUnits, unit) then
+        unit = objectGet(recipeAlternateUnits, unit)
+    endif
+
     return objectNew( \
         'amount', whole + numer / denom, \
         'unit', unit, \
@@ -130,21 +141,15 @@ recipeUnits = objectKeys(recipeUnitInfo)
 
 # Alternate ingredient unit map
 recipeAlternateUnits = objectNew()
-recipeIxInfo = 0
-recipeInfoLoop:
-    recipeInfoUnit = arrayGet(recipeUnits, recipeIxInfo)
+foreach recipeInfoUnit in recipeUnits do
     recipeInfo = objectGet(recipeUnitInfo, recipeInfoUnit)
     recipeInfoAlternates = objectGet(recipeInfo, 'alternates')
-    jumpif (recipeInfoAlternates == null) recipeUnitNoAlternates
-        recipeIxInfoAlternate = 0
-        recipeInfoAlternateLoop:
-            recipeAlternateUnit = arrayGet(recipeInfoAlternates, recipeIxInfoAlternate)
+    if recipeInfoAlternates != null then
+        foreach recipeAlternateUnit in recipeInfoAlternates do
             objectSet(recipeAlternateUnits, recipeAlternateUnit, recipeInfoUnit)
-            recipeIxInfoAlternate = recipeIxInfoAlternate + 1
-        jumpif (recipeIxInfoAlternate < arrayLength(recipeInfoAlternates)) recipeInfoAlternateLoop
-    recipeUnitNoAlternates:
-    recipeIxInfo = recipeIxInfo + 1
-jumpif (recipeIxInfo < arrayLength(recipeUnits)) recipeInfoLoop
+        endforeach
+    endif
+endforeach
 
 
 # Ingredient text regular expression
@@ -175,70 +180,64 @@ function recipeIngredientText(ingredient, scale)
     bestIngredientAmount = ingredientAmount * scale
     bestIngredientAmountNumerator = 0
     bestIngredientDiff = null
-    ixUnit = 0
-    unitLoop:
-        unit = arrayGet(recipeUnits, ixUnit)
+    foreach unit in recipeUnits do
         info = objectGet(recipeUnitInfo, unit)
 
         # Skip if not the same base unit
-        jumpif (objectGet(info, 'baseUnit') != ingredientBaseUnit) unitDone
+        if objectGet(info, 'baseUnit') != ingredientBaseUnit then
+            continue
+        endif
 
         # If scale is 1, skip unless these are the given units
-        jumpif (scale == 1 && unit != ingredientUnit) unitDone
+        if scale == 1 && unit != ingredientUnit then
+            continue
+        endif
 
         # Match a unit fraction
         amountUnit = amountBase / objectGet(info, 'baseRatio')
         amountUnitInteger = mathFloor(amountUnit)
         amountUnitFraction = amountUnit - amountUnitInteger
         denominators = objectGet(info, 'fractions')
-        ixDenominator = 0
-        denominatorLoop:
-            denominator = arrayGet(denominators, ixDenominator)
-
+        foreach denominator in denominators do
             # Compute the closest numerator
             numerator = mathRound(amountUnitFraction * denominator)
             amountFractionInteger = if(numerator != denominator, amountUnitInteger, amountUnitInteger + 1)
             amountFractionNumerator = if(numerator != denominator, numerator, 0)
             amountFraction = amountFractionInteger + (amountFractionNumerator / denominator)
-            jumpif (amountFraction == 0) denominatorDone
+            if (amountFraction == 0) then
+                continue
+            endif
 
             # Is the fraction close enough (in base units)?
             diff = mathAbs(amountFraction - amountUnit) * ingredientBaseRatio
-            jumpif (diff / amountBase > unitFuzz) denominatorDone
+            if diff / amountBase > unitFuzz then
+                continue
+            endif
 
             # Best conversion?
-            jumpif (bestIngredientDiff != null && diff >= bestIngredientDiff) denominatorDone
+            if bestIngredientDiff != null && diff >= bestIngredientDiff then
+                continue
+            endif
 
             bestIngredientUnit = unit
             bestIngredientAmount = amountFractionInteger
             bestIngredientAmountNumerator = amountFractionNumerator
             bestIngredientAmountDenominator = denominator
             bestIngredientDiff = diff
-
-            denominatorDone:
-            ixDenominator = ixDenominator + 1
-        jumpif (ixDenominator < arrayLength(denominators)) denominatorLoop
-
-        unitDone:
-        ixUnit = ixUnit + 1
-    jumpif (ixUnit < arrayLength(recipeUnits)) unitLoop
+        endforeach
+    endforeach
 
     # Create the ingredient text
     bestIngredientInfo = objectGet(recipeUnitInfo, bestIngredientUnit)
-    unitStr = if(objectGet(bestIngredientInfo, 'display') != null, objectGet(bestIngredientInfo, 'display'), bestIngredientUnit)
-    jumpif (bestIngredientAmountNumerator != 0) nonZeroNumerator
+    unitStr = if(objectHas(bestIngredientInfo, 'display'), objectGet(bestIngredientInfo, 'display'), bestIngredientUnit)
+    if bestIngredientAmountNumerator == 0 then
         amountStr = numberToFixed(bestIngredientAmount, 2, true)
-        jump ingredientDone
-    nonZeroNumerator:
-    jumpif (bestIngredientAmount != 0) nonZeroAmount
+    else if bestIngredientAmount == 0 then
         amountStr = bestIngredientAmountNumerator + '/' + bestIngredientAmountDenominator
-        jump ingredientDone
-    nonZeroAmount:
+    else then
         amountStr = bestIngredientAmount + ' ' + bestIngredientAmountNumerator + '/' + bestIngredientAmountDenominator
-    ingredientDone:
-
-    return stringFromCharCode(160, 160, 160) + amountStr + if(unitStr != '', stringFromCharCode(160, 160) + unitStr, '') + \
-        stringFromCharCode(160, 160) + ingredientName
+    endif
+    return '&nbsp;&nbsp;&nbsp;' + amountStr + if(unitStr != '', '&nbsp;&nbsp;' + unitStr, '') + '&nbsp;&nbsp;' + ingredientName
 endfunction
 
 
@@ -299,19 +298,29 @@ function recipeTitlePageRender()
     imageY = subtitleY + if(imageURL != null, 2 * titleLineSpacing - 0.5 * imageHeight, 0)
 
     # Render the title page
-    setDocumentTitle(if(title2 != null, ' ' + title2))
+    setDocumentTitle(if(title2 != null, title + ' ' + title2, title))
     recipeMenu()
     setDrawingSize(width, height)
     drawStyle('none', 1, if(color != null, color, 'lightblue'))
     drawRect(0, 0, width, height)
     drawTextStyle(titleFontSizePx, 'black', true)
     drawText(title, 0.5 * width, titleY)
-    if(title2 != null, drawText(title2, 0.5 * width, titleY2))
+    if title2 != null then
+        drawText(title2, 0.5 * width, titleY2)
+    endif
     drawTextStyle(subtitleFontSizePx, 'black', true, true)
-    if(subtitle != null, drawText(subtitle, 0.5 * width, subtitleY))
-    if(imageURL != null, drawImage(0.5 * width - 0.5 * imageWidth, imageY, imageWidth, imageHeight, imageURL))
-    if(imageURL != null && imageClickURL != null, drawOnClick(recipeTitleOnImageClick))
-    if(sourceURL != null, markdownPrint('[Source Code](' + sourceURL + ')'))
+    if subtitle != null then
+        drawText(subtitle, 0.5 * width, subtitleY)
+    endif
+    if imageURL != null then
+        drawImage(0.5 * width - 0.5 * imageWidth, imageY, imageWidth, imageHeight, imageURL)
+        if imageClickURL != null then
+            drawOnClick(recipeTitleOnImageClick)
+        endif
+    endif
+    if sourceURL != null then
+        markdownPrint('[Source Code](' + sourceURL + ')')
+    endif
 endfunction
 
 
