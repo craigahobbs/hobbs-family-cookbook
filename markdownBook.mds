@@ -83,7 +83,7 @@ async function markdownBookSearch(book)
 
     # Render the search form
     elementModelRender(arrayNew( \
-        formsTextElements('search-text', vSearch, 30, markdownBookSearchOnClick), \
+        formsTextElements('search-text', vSearch, 25, markdownBookSearchOnClick), \
         objectNew('text', stringFromCharCode(160, 160)), \
         formsLinkButtonElements('Search', markdownBookSearchOnClick) \
     ))
