@@ -1,6 +1,8 @@
 # Licensed under the MIT License
 # https://github.com/craigahobbs/hobbs-family-cookbook/blob/main/LICENSE
 
+include 'https://craigahobbs.github.io/markdown-up/include/forms.mds'
+
 
 #
 # The Markdown Book application
@@ -81,24 +83,9 @@ async function markdownBookSearch(book)
 
     # Render the search form
     elementModelRender(arrayNew( \
-        objectNew( \
-            'html', 'input', \
-            'attr', objectNew( \
-                'autocomplete', 'off', \
-                'id', 'search-text', \
-                'style', 'font-size: inherit; border: thin solid black; padding: 0.4em;', \
-                'type', 'text', \
-                'value', vSearch \
-            ), \
-            'callback', objectNew('keyup', markdownBookSearchOnKeyup) \
-        ), \
+        formsTextElements('search-text', vSearch, 30, markdownBookSearchOnClick), \
         objectNew('text', stringFromCharCode(160, 160)), \
-        objectNew( \
-            'html', 'a', \
-            'attr', objectNew('style', 'cursor: pointer; user-select: none;'), \
-            'elem', objectNew('text', 'Search'), \
-            'callback', objectNew('click', markdownBookSearchOnClick) \
-        ) \
+        formsLinkButtonElements('Search', markdownBookSearchOnClick) \
     ))
     setDocumentFocus('search-text')
 
@@ -124,13 +111,6 @@ endfunction
 function markdownBookSearchOnClick()
     searchText = getDocumentInputValue('search-text')
     setWindowLocation("#var.vSearch='" + encodeURIComponent(searchText) + "'")
-endfunction
-
-
-function markdownBookSearchOnKeyup(keyCode)
-    if keyCode == 13 then
-        markdownBookSearchOnClick()
-    endif
 endfunction
 
 
