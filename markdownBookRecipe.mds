@@ -21,7 +21,7 @@ endfunction
 # Render the recipe page's top-menu
 function recipeMenu()
     markdownPrint('[Index](#url=&' + \
-        if(vCategory != null, "var.vCategory='" + encodeURIComponent(vCategory) + "'&" + markdownHeaderId(vCategory), 'var=') + ')')
+        if(vCategory != null, "var.vCategory='" + urlEncodeComponent(vCategory) + "'&" + markdownHeaderId(vCategory), 'var=') + ')')
 endfunction
 
 
@@ -32,16 +32,16 @@ function recipeHeader(options)
     scale = recipeScale()
     halfScale = 0.5 * scale
     doubleScale = 2 * scale
-    if author != null then
+    if author != null:
         markdownPrint('', 'Author: ' + markdownEscape(author))
     endif
-    category = if(vCategory != null, "var.vCategory='" + encodeURIComponent(vCategory) + "'&", '')
+    category = if(vCategory != null, "var.vCategory='" + urlEncodeComponent(vCategory) + "'&", '')
     markdownPrint( \
         '', 'Scale: ' + mathRound(scale, 3) + '&nbsp;&nbsp;' + \
         if(halfScale >= recipeMinScale, '([Halve](#' + category + 'var.vScale=' + mathRound(halfScale, 3) + ') | ', '(Halve | '), \
         if(doubleScale <= recipeMaxScale, '[Double](#' + category + 'var.vScale=' + mathRound(doubleScale, 3) + '))', 'Double)') \
     )
-    if servings != null then
+    if servings != null:
         markdownPrint('', 'Servings: ' + scale * servings)
     endif
 endfunction
@@ -50,16 +50,16 @@ endfunction
 # Parse, scale, and render the recipe ingredient text
 function recipeIngredients(ingredients)
     scale = recipeScale()
-    foreach ingredient in ingredients do
-        if ingredient != null then
+    for ingredient in ingredients:
+        if ingredient != null:
             ingredientModel = recipeParseIngredient(ingredient)
-            if ingredientModel != null then
+            if ingredientModel != null:
                 markdownPrint('', recipeIngredientText(ingredientModel, scale))
-            else then
-                debugLog('Invalid ingredient text "' + ingredient + '"')
+            else:
+                consoleLogDebug('Invalid ingredient text "' + ingredient + '"')
             endif
         endif
-    endforeach
+    endfor
 endfunction
 
 
@@ -72,14 +72,14 @@ function recipeParseIngredient(ingredient)
     denom = if(match != null && objectGet(groups, 'denom') != null, numberParseInt(objectGet(groups, 'denom')), 1)
     unit = if(match != null && objectGet(groups, 'unit') != null, objectGet(groups, 'unit'), null)
     name = if(match != null, objectGet(groups, 'name'), null)
-    if name == null || (whole == 0 && numer == 0) then
+    if name == null || (whole == 0 && numer == 0):
         return null
     endif
 
     # Normalize the unit
-    if unit == null then
+    if unit == null:
         unit = 'count'
-    else if objectHas(recipeAlternateUnits, unit) then
+    elif objectHas(recipeAlternateUnits, unit):
         unit = objectGet(recipeAlternateUnits, unit)
     endif
 
@@ -141,15 +141,15 @@ recipeUnits = objectKeys(recipeUnitInfo)
 
 # Alternate ingredient unit map
 recipeAlternateUnits = objectNew()
-foreach recipeInfoUnit in recipeUnits do
+for recipeInfoUnit in recipeUnits:
     recipeInfo = objectGet(recipeUnitInfo, recipeInfoUnit)
     recipeInfoAlternates = objectGet(recipeInfo, 'alternates')
-    if recipeInfoAlternates != null then
-        foreach recipeAlternateUnit in recipeInfoAlternates do
+    if recipeInfoAlternates != null:
+        for recipeAlternateUnit in recipeInfoAlternates:
             objectSet(recipeAlternateUnits, recipeAlternateUnit, recipeInfoUnit)
-        endforeach
+        endfor
     endif
-endforeach
+endfor
 
 
 # Ingredient text regular expression
@@ -180,16 +180,16 @@ function recipeIngredientText(ingredient, scale)
     bestIngredientAmount = ingredientAmount * scale
     bestIngredientAmountNumerator = 0
     bestIngredientDiff = null
-    foreach unit in recipeUnits do
+    for unit in recipeUnits:
         info = objectGet(recipeUnitInfo, unit)
 
         # Skip if not the same base unit
-        if objectGet(info, 'baseUnit') != ingredientBaseUnit then
+        if objectGet(info, 'baseUnit') != ingredientBaseUnit:
             continue
         endif
 
         # If scale is 1, skip unless these are the given units
-        if scale == 1 && unit != ingredientUnit then
+        if scale == 1 && unit != ingredientUnit:
             continue
         endif
 
@@ -198,24 +198,24 @@ function recipeIngredientText(ingredient, scale)
         amountUnitInteger = mathFloor(amountUnit)
         amountUnitFraction = amountUnit - amountUnitInteger
         denominators = objectGet(info, 'fractions')
-        foreach denominator in denominators do
+        for denominator in denominators:
             # Compute the closest numerator
             numerator = mathRound(amountUnitFraction * denominator)
             amountFractionInteger = if(numerator != denominator, amountUnitInteger, amountUnitInteger + 1)
             amountFractionNumerator = if(numerator != denominator, numerator, 0)
             amountFraction = amountFractionInteger + (amountFractionNumerator / denominator)
-            if (amountFraction == 0) then
+            if (amountFraction == 0):
                 continue
             endif
 
             # Is the fraction close enough (in base units)?
             diff = mathAbs(amountFraction - amountUnit) * ingredientBaseRatio
-            if diff / amountBase > unitFuzz then
+            if diff / amountBase > unitFuzz:
                 continue
             endif
 
             # Best conversion?
-            if bestIngredientDiff != null && diff >= bestIngredientDiff then
+            if bestIngredientDiff != null && diff >= bestIngredientDiff:
                 continue
             endif
 
@@ -224,17 +224,17 @@ function recipeIngredientText(ingredient, scale)
             bestIngredientAmountNumerator = amountFractionNumerator
             bestIngredientAmountDenominator = denominator
             bestIngredientDiff = diff
-        endforeach
-    endforeach
+        endfor
+    endfor
 
     # Create the ingredient text
     bestIngredientInfo = objectGet(recipeUnitInfo, bestIngredientUnit)
     unitStr = if(objectHas(bestIngredientInfo, 'display'), objectGet(bestIngredientInfo, 'display'), bestIngredientUnit)
-    if bestIngredientAmountNumerator == 0 then
+    if bestIngredientAmountNumerator == 0:
         amountStr = numberToFixed(bestIngredientAmount, 2, true)
-    else if bestIngredientAmount == 0 then
+    elif bestIngredientAmount == 0:
         amountStr = bestIngredientAmountNumerator + '/' + bestIngredientAmountDenominator
-    else then
+    else:
         amountStr = bestIngredientAmount + ' ' + bestIngredientAmountNumerator + '/' + bestIngredientAmountDenominator
     endif
     return '&nbsp;&nbsp;&nbsp;' + amountStr + if(unitStr != '', '&nbsp;&nbsp;' + unitStr, '') + '&nbsp;&nbsp;' + ingredientName
@@ -243,13 +243,13 @@ endfunction
 
 function recipeTitlePage(model)
     # Set the recipe title page global model
-    setGlobal(recipeTitlePageGlobal, schemaValidate(recipeTitlePageTypes, 'RecipeTitlePage', model))
+    runtimeSetGlobal(recipeTitlePageGlobal, schemaValidate(recipeTitlePageTypes, 'RecipeTitlePage', model))
 
     # Render the title page
     recipeTitlePageRender()
 
     # Set the title page resize handler
-    setWindowResize(recipeTitlePageRender)
+    windowSetResize(recipeTitlePageRender)
 endfunction
 
 
@@ -269,7 +269,7 @@ recipeTitlePageTypes = schemaParse( \
 
 
 function recipeTitlePageRender()
-    model = getGlobal(recipeTitlePageGlobal)
+    model = runtimeGetGlobal(recipeTitlePageGlobal)
     title = objectGet(model, 'title')
     title2 = objectGet(model, 'title2')
     subtitle = objectGet(model, 'subtitle')
@@ -279,16 +279,16 @@ function recipeTitlePageRender()
     color = objectGet(model, 'color')
 
     # Determine the title image size
-    fontSizePx = getDocumentFontSize()
+    fontSizePx = documentFontSize()
     margin = 1.5 * fontSizePx
-    width = getWindowWidth() - 2 * margin
-    height = getWindowHeight() - 2 * margin - 4 * fontSizePx
+    width = windowWidth() - 2 * margin
+    height = windowHeight() - 2 * margin - 4 * fontSizePx
 
     # Compute the title text size
     titleLineSpacing = height / (8 - if(title2 == null, 1, 0) - if(subtitle == null, 1.5, 0) - if(imageURL == null, 2, 0))
     maxTitleFontSizePx = titleLineSpacing
     maxTitleLine = if(stringLength(title) > stringLength(title2), title, title2)
-    titleFontSizePx = mathMin(maxTitleFontSizePx, getTextHeight(maxTitleLine, 0.9 * width))
+    titleFontSizePx = mathMin(maxTitleFontSizePx, drawTextHeight(maxTitleLine, 0.9 * width))
     subtitleFontSizePx = 0.7 * titleFontSizePx
     imageHeight = 2 * titleFontSizePx
     imageWidth = 4 * imageHeight
@@ -298,34 +298,34 @@ function recipeTitlePageRender()
     imageY = subtitleY + if(imageURL != null, 2 * titleLineSpacing - 0.5 * imageHeight, 0)
 
     # Render the title page
-    setDocumentTitle(if(title2 != null, title + ' ' + title2, title))
+    documentSetTitle(if(title2 != null, title + ' ' + title2, title))
     recipeMenu()
-    setDrawingSize(width, height)
+    drawNew(width, height)
     drawStyle('none', 1, if(color != null, color, 'lightblue'))
     drawRect(0, 0, width, height)
     drawTextStyle(titleFontSizePx, 'black', true)
     drawText(title, 0.5 * width, titleY)
-    if title2 != null then
+    if title2 != null:
         drawText(title2, 0.5 * width, titleY2)
     endif
     drawTextStyle(subtitleFontSizePx, 'black', true, true)
-    if subtitle != null then
+    if subtitle != null:
         drawText(subtitle, 0.5 * width, subtitleY)
     endif
-    if imageURL != null then
+    if imageURL != null:
         drawImage(0.5 * width - 0.5 * imageWidth, imageY, imageWidth, imageHeight, imageURL)
-        if imageClickURL != null then
+        if imageClickURL != null:
             drawOnClick(recipeTitleOnImageClick)
         endif
     endif
-    if sourceURL != null then
+    if sourceURL != null:
         markdownPrint('[Source Code](' + sourceURL + ')')
     endif
 endfunction
 
 
 function recipeTitleOnImageClick()
-    model = getGlobal(recipeTitlePageGlobal)
+    model = runtimeGetGlobal(recipeTitlePageGlobal)
     imageClickURL = objectGet(model, 'imageClickURL')
-    setWindowLocation(imageClickURL)
+    windowSetLocation(imageClickURL)
 endfunction
