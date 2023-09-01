@@ -56,7 +56,7 @@ function recipeIngredients(ingredients)
             if ingredientModel != null:
                 markdownPrint('', recipeIngredientText(ingredientModel, scale))
             else:
-                consoleLogDebug('Invalid ingredient text "' + ingredient + '"')
+                systemLogDebug('Invalid ingredient text "' + ingredient + '"')
             endif
         endif
     endfor
@@ -243,7 +243,7 @@ endfunction
 
 function recipeTitlePage(model)
     # Set the recipe title page global model
-    runtimeSetGlobal(recipeTitlePageGlobal, schemaValidate(recipeTitlePageTypes, 'RecipeTitlePage', model))
+    systemGlobalSet(recipeTitlePageGlobal, schemaValidate(recipeTitlePageTypes, 'RecipeTitlePage', model))
 
     # Render the title page
     recipeTitlePageRender()
@@ -269,7 +269,7 @@ recipeTitlePageTypes = schemaParse( \
 
 
 function recipeTitlePageRender()
-    model = runtimeGetGlobal(recipeTitlePageGlobal)
+    model = systemGlobalGet(recipeTitlePageGlobal)
     title = objectGet(model, 'title')
     title2 = objectGet(model, 'title2')
     subtitle = objectGet(model, 'subtitle')
@@ -325,7 +325,7 @@ endfunction
 
 
 function recipeTitleOnImageClick()
-    model = runtimeGetGlobal(recipeTitlePageGlobal)
+    model = systemGlobalGet(recipeTitlePageGlobal)
     imageClickURL = objectGet(model, 'imageClickURL')
     windowSetLocation(imageClickURL)
 endfunction

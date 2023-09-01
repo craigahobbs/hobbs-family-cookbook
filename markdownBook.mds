@@ -13,7 +13,7 @@ include <forms.mds>
 async function markdownBook(bookURL)
     # Load and validate the Markdown Book file
     bookURL = if(bookURL != null, bookURL, 'book.json')
-    book = schemaValidate(bookTypes, 'MarkdownBook', httpFetch(bookURL))
+    book = schemaValidate(bookTypes, 'MarkdownBook', systemFetch(bookURL))
 
     # Render the page
     if vDoc:
@@ -51,7 +51,7 @@ async function markdownBookIndex(book)
         # If this is the selected category, fetch the category files and render the file links
         if isSelected:
             categoryURLs = objectGet(category, 'files')
-            categoryTexts = httpFetch(categoryURLs, null, true)
+            categoryTexts = systemFetch(categoryURLs, null, true)
             for categoryURL, ixFile in categoryURLs:
                 categoryText = arrayGet(categoryTexts, ixFile)
                 fileTitle = markdownTitle(markdownParse(categoryText))
@@ -140,7 +140,7 @@ async function markdownBookSearchResults(book, text)
 
     # Load all pages and search each page's text
     results = arrayNew()
-    pageTexts = httpFetch(pageURLs, null, true)
+    pageTexts = systemFetch(pageURLs, null, true)
     for page, ixPage in pages:
         pageText = arrayGet(pageTexts, ixPage)
         if pageText != null:
