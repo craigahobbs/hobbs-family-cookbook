@@ -10,7 +10,7 @@ include <forms.mds>
 
 
 # The Markdown Book application main entry point
-async function markdownBook(bookURL)
+async function markdownBook(bookURL):
     # Load and validate the Markdown Book file
     bookURL = if(bookURL != null, bookURL, 'book.json')
     book = schemaValidate(bookTypes, 'MarkdownBook', systemFetch(bookURL))
@@ -27,7 +27,7 @@ endfunction
 
 
 # Render the Markdown Book index
-async function markdownBookIndex(book)
+async function markdownBookIndex(book):
     # Set the page title
     title = objectGet(book, 'title')
     titleURL = objectGet(book, 'titleURL')
@@ -65,14 +65,14 @@ endfunction
 
 
 # Render the Markdown Book file format documentation
-function markdownBookDoc()
+function markdownBookDoc():
     documentSetTitle('MarkdownBook')
     elementModelRender(schemaElements(bookTypes, 'MarkdownBook'))
 endfunction
 
 
 # Render the Markdown Book search page
-async function markdownBookSearch(book)
+async function markdownBookSearch(book):
     # Set the page title
     title = objectGet(book, 'title')
     documentSetTitle(title)
@@ -107,13 +107,13 @@ async function markdownBookSearch(book)
 endfunction
 
 
-function markdownBookSearchOnClick()
+function markdownBookSearchOnClick():
     searchText = documentInputValue('search-text')
     windowSetLocation("#var.vSearch='" + urlEncodeComponent(searchText) + "'")
 endfunction
 
 
-async function markdownBookSearchResults(book, text)
+async function markdownBookSearchResults(book, text):
     # Create the search text regex
     words = stringSplit(text, regexNew('\s+'))
     wordsEscaped = arrayNew()
@@ -163,7 +163,7 @@ async function markdownBookSearchResults(book, text)
 endfunction
 
 
-function markdownBookSearchSort(a, b)
+function markdownBookSearchSort(a, b):
     aMatches = -objectGet(a, 'matches')
     bMatches = -objectGet(b, 'matches')
     compareMatches = if(aMatches < bMatches, -1, if(aMatches == bMatches, 0, 1))

@@ -13,20 +13,20 @@ recipeMaxScale = 8
 
 
 # Get the recipe scale factor (default is 1)
-function recipeScale()
+function recipeScale():
     return if(vScale != null, mathMax(recipeMinScale, mathMin(recipeMaxScale, vScale)), 1)
 endfunction
 
 
 # Render the recipe page's top-menu
-function recipeMenu()
+function recipeMenu():
     markdownPrint('[Index](#url=&' + \
         if(vCategory != null, "var.vCategory='" + urlEncodeComponent(vCategory) + "'&" + markdownHeaderId(vCategory), 'var=') + ')')
 endfunction
 
 
 # Render the recipe page's header. Options: author, servings.
-function recipeHeader(options)
+function recipeHeader(options):
     author = if(options != null, objectGet(options, 'author'))
     servings = if(options != null, objectGet(options, 'servings'))
     scale = recipeScale()
@@ -48,7 +48,7 @@ endfunction
 
 
 # Parse, scale, and render the recipe ingredient text
-function recipeIngredients(ingredients)
+function recipeIngredients(ingredients):
     scale = recipeScale()
     for ingredient in ingredients:
         if ingredient != null:
@@ -64,7 +64,7 @@ endfunction
 
 
 # Parse ingredient text to an ingredient model
-function recipeParseIngredient(ingredient)
+function recipeParseIngredient(ingredient):
     match = regexMatch(recipeIngredientRegex, ingredient)
     groups = if(match != null, objectGet(match, 'groups'), null)
     whole = if(match != null && objectGet(groups, 'whole') != null, numberParseFloat(objectGet(groups, 'whole')), 0)
@@ -161,7 +161,7 @@ recipeIngredientRegex = regexNew( \
 
 
 # Scale and render an ingredient model to Markdown text
-function recipeIngredientText(ingredient, scale)
+function recipeIngredientText(ingredient, scale):
     ingredientName = objectGet(ingredient, 'name')
     ingredientAmount = objectGet(ingredient, 'amount')
     ingredientUnit = objectGet(ingredient, 'unit')
@@ -241,7 +241,7 @@ function recipeIngredientText(ingredient, scale)
 endfunction
 
 
-function recipeTitlePage(model)
+function recipeTitlePage(model):
     # Set the recipe title page global model
     systemGlobalSet(recipeTitlePageGlobal, schemaValidate(recipeTitlePageTypes, 'RecipeTitlePage', model))
 
@@ -268,7 +268,7 @@ recipeTitlePageTypes = schemaParse( \
 )
 
 
-function recipeTitlePageRender()
+function recipeTitlePageRender():
     model = systemGlobalGet(recipeTitlePageGlobal)
     title = objectGet(model, 'title')
     title2 = objectGet(model, 'title2')
@@ -324,7 +324,7 @@ function recipeTitlePageRender()
 endfunction
 
 
-function recipeTitleOnImageClick()
+function recipeTitleOnImageClick():
     model = systemGlobalGet(recipeTitlePageGlobal)
     imageClickURL = objectGet(model, 'imageClickURL')
     windowSetLocation(imageClickURL)
