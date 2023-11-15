@@ -2,6 +2,7 @@
 # https://github.com/craigahobbs/hobbs-family-cookbook/blob/main/LICENSE
 
 include <forms.mds>
+include 'markdownBookArgs.mds'
 
 
 #
@@ -16,37 +17,39 @@ async function markdownBook(bookURL):
     book = schemaValidate(bookTypes, 'MarkdownBook', systemFetch(bookURL))
 
     # Render the page
-    if vDoc:
+    args = argsParse(markdownBookArguments)
+    if objectGet(args, 'doc'):
         markdownBookDoc()
-    elif vSearch != null:
-        markdownBookSearch(book)
+    elif objectHas(args, 'search'):
+        markdownBookSearch(args, book)
     else:
-        markdownBookIndex(book)
+        markdownBookIndex(args, book)
     endif
 endfunction
 
 
 # Render the Markdown Book index
-async function markdownBookIndex(book):
+async function markdownBookIndex(args, book):
     # Set the page title
     title = objectGet(book, 'title')
-    titleURL = objectGet(book, 'titleURL')
+    titleURL = '#url=' + urlEncodeComponent(objectGet(book, 'titleURL')) + '&' + \
+        stringSlice(argsURL(markdownBookArguments), 1)
     documentSetTitle(title)
     markdownPrint( \
-        '[Title](#url=' + urlEncodeComponent(titleURL) + '&var=)', \
-        " | [Search](#var.vSearch='')", \
+        '[Title](' + titleURL + ') | ', \
+        argsLink(markdownBookArguments, 'Search', objectNew('search', '')), \
         '', \
         '# ' + markdownEscape(title) \
     )
 
     # Render the category links
+    selectedCategory = objectGet(args, 'category')
     for category in objectGet(book, 'categories'):
         categoryTitle = objectGet(category, 'title')
-        isSelected = (vCategory == categoryTitle)
+        isSelected = (selectedCategory == categoryTitle)
 
         # Render the category title link
-        categoryTitleURL = if(isSelected, '#var=', "#var.vCategory='" + urlEncodeComponent(categoryTitle) + "'")
-        markdownPrint('', '## [' + markdownEscape(categoryTitle) + '](' + categoryTitleURL + ')')
+        markdownPrint('', '## ' + argsLink(markdownBookArguments, categoryTitle, objectNew('category', if(isSelected, null, categoryTitle))))
 
         # If this is the selected category, fetch the category files and render the file links
         if isSelected:
@@ -56,8 +59,9 @@ async function markdownBookIndex(book):
                 categoryText = arrayGet(categoryTexts, ixFile)
                 fileTitle = markdownTitle(markdownParse(categoryText))
                 linkTitle = if(fileTitle != null, fileTitle, categoryURL)
-                markdownPrint('', '&nbsp;[' + markdownEscape(linkTitle) + '](#url=' + \
-                    urlEncodeComponent(categoryURL) + "&var.vCategory='" + urlEncodeComponent(categoryTitle) + "')")
+                linkURL = '#url=' + urlEncodeComponent(categoryURL) + '&' + \
+                    stringSlice(argsURL(markdownBookArguments, objectNew('category', categoryTitle)), 1)
+                markdownPrint('', '&nbsp;[' + markdownEscape(linkTitle) + '](' + linkURL + ')')
             endfor
         endif
     endfor
@@ -72,33 +76,37 @@ endfunction
 
 
 # Render the Markdown Book search page
-async function markdownBookSearch(book):
+async function markdownBookSearch(args, book):
+    searchText = objectGet(args, 'search')
+
     # Set the page title
     title = objectGet(book, 'title')
     documentSetTitle(title)
     markdownPrint( \
-        '[Index](#var=)', \
+        argsLink(markdownBookArguments, 'Index'), \
+        '', \
         '# Search' \
     )
 
     # Render the search form
     elementModelRender(arrayNew( \
-        objectNew('html', 'p', 'elem', formsTextElements('search-text', vSearch, 30, markdownBookSearchOnClick)), \
+        objectNew('html', 'p', 'elem', formsTextElements('search-text', searchText, 30, markdownBookSearchOnClick)), \
         objectNew('html', 'p', 'elem', formsLinkButtonElements('Search', markdownBookSearchOnClick)) \
     ))
     documentSetFocus('search-text')
 
     # Compute the search results and render
-    if vSearch != '':
+    if searchText != '':
         markdownPrint('## Results')
-        results = markdownBookSearchResults(book, vSearch)
+        results = markdownBookSearchResults(book, searchText)
         if arrayLength(results) != 0:
             for result in results:
                 resultURL = objectGet(result, 'url')
                 resultCategory = objectGet(result, 'category')
                 resultTitle = objectGet(result, 'title')
-                markdownPrint('', '[' + markdownEscape(resultTitle) + \
-                    '](#url=' + urlEncodeComponent(resultURL) + "&var.vCategory='" + urlEncodeComponent(resultCategory) + "')")
+                resultTitleURL = '#url=' + urlEncodeComponent(resultURL) + '&' + \
+                    stringSlice(argsURL(markdownBookArguments, objectNew('category', resultCategory)), 1)
+                markdownPrint('', '[' + markdownEscape(resultTitle) + '](' + resultTitleURL + ')')
             endfor
         else:
             markdownPrint('No matching pages found')
@@ -109,7 +117,7 @@ endfunction
 
 function markdownBookSearchOnClick():
     searchText = documentInputValue('search-text')
-    windowSetLocation("#var.vSearch='" + urlEncodeComponent(searchText) + "'")
+    windowSetLocation(argsURL(markdownBookArguments, objectNew('search', searchText)))
 endfunction
 
 

@@ -1,6 +1,8 @@
 # Licensed under the MIT License
 # https://github.com/craigahobbs/hobbs-family-cookbook/blob/main/LICENSE
 
+include 'markdownBookArgs.mds'
+
 
 #
 # Markdown Book scalable recipe library
@@ -12,34 +14,38 @@ recipeMinScale = 0.125
 recipeMaxScale = 8
 
 
-# Get the recipe scale factor (default is 1)
-function recipeScale():
-    return if(vScale != null, mathMax(recipeMinScale, mathMin(recipeMaxScale, vScale)), 1)
-endfunction
+# Parse the Markdown Book application arguments
+recipeArgs = argsParse(markdownBookArguments)
 
 
 # Render the recipe page's top-menu
 function recipeMenu():
-    markdownPrint('[Index](#url=&' + \
-        if(vCategory != null, "var.vCategory='" + urlEncodeComponent(vCategory) + "'&" + markdownHeaderId(vCategory), 'var=') + ')')
+    category = objectGet(recipeArgs, 'category')
+    indexURL = '#url=&' + \
+        stringSlice(argsURL(markdownBookArguments, objectNew('category', category), false, category), 1)
+    markdownPrint('[Index](' + indexURL + ')')
 endfunction
 
 
 # Render the recipe page's header. Options: author, servings.
 function recipeHeader(options):
+    category = objectGet(recipeArgs, 'category')
+    scale = objectGet(recipeArgs, 'scale')
     author = if(options != null, objectGet(options, 'author'))
     servings = if(options != null, objectGet(options, 'servings'))
-    scale = recipeScale()
     halfScale = 0.5 * scale
     doubleScale = 2 * scale
     if author != null:
         markdownPrint('', 'Author: ' + markdownEscape(author))
     endif
-    category = if(vCategory != null, "var.vCategory='" + urlEncodeComponent(vCategory) + "'&", '')
     markdownPrint( \
-        '', 'Scale: ' + mathRound(scale, 3) + '&nbsp;&nbsp;' + \
-        if(halfScale >= recipeMinScale, '([Halve](#' + category + 'var.vScale=' + mathRound(halfScale, 3) + ') | ', '(Halve | '), \
-        if(doubleScale <= recipeMaxScale, '[Double](#' + category + 'var.vScale=' + mathRound(doubleScale, 3) + '))', 'Double)') \
+        '', 'Scale: ' + mathRound(scale, 3) + '&nbsp;&nbsp; ( ' + \
+        if(halfScale < recipeMinScale, 'Halve', \
+            argsLink(markdownBookArguments, 'Halve', objectNew('category', category, 'scale', mathRound(halfScale, 3)))), \
+        ' | ', \
+        if(doubleScale > recipeMaxScale, 'Double', \
+            argsLink(markdownBookArguments, 'Double', objectNew('category', category, 'scale', mathRound(doubleScale, 3)))), \
+        ')' \
     )
     if servings != null:
         markdownPrint('', 'Servings: ' + scale * servings)
@@ -49,7 +55,7 @@ endfunction
 
 # Parse, scale, and render the recipe ingredient text
 function recipeIngredients(ingredients):
-    scale = recipeScale()
+    scale = objectGet(recipeArgs, 'scale')
     for ingredient in ingredients:
         if ingredient != null:
             ingredientModel = recipeParseIngredient(ingredient)

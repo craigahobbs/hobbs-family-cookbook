@@ -1,0 +1,13 @@
+# Licensed under the MIT License
+# https://github.com/craigahobbs/hobbs-family-cookbook/blob/main/LICENSE
+
+include <args.mds>
+
+
+# The Markdown Book application argumetns
+markdownBookArguments = argsValidate(arrayNew( \
+    objectNew('name', 'category', 'explicit', true), \
+    objectNew('name', 'doc', 'type', 'bool', 'default', false, 'explicit', true), \
+    objectNew('name', 'scale', 'type', 'float', 'default', 1, 'explicit', true), \
+    objectNew('name', 'search', 'explicit', true) \
+))
