@@ -33,11 +33,10 @@ endfunction
 async function markdownBookIndex(args, book):
     # Set the page title
     title = objectGet(book, 'title')
-    titleURL = '#url=' + urlEncodeComponent(objectGet(book, 'titleURL')) + '&' + \
-        stringSlice(argsURL(markdownBookArguments), 1)
     documentSetTitle(title)
     markdownPrint( \
-        '[Title](' + titleURL + ') | ', \
+        argsLink(markdownBookArguments, 'Title', null, false, null, objectGet(book, 'titleURL')), \
+        ' | ', \
         argsLink(markdownBookArguments, 'Search', objectNew('search', '')), \
         '', \
         '# ' + markdownEscape(title) \
@@ -60,9 +59,10 @@ async function markdownBookIndex(args, book):
                 categoryText = arrayGet(categoryTexts, ixFile)
                 fileTitle = markdownTitle(markdownParse(categoryText))
                 linkTitle = if(fileTitle != null, fileTitle, categoryURL)
-                linkURL = '#url=' + urlEncodeComponent(categoryURL) + '&' + \
-                    stringSlice(argsURL(markdownBookArguments, objectNew('category', categoryTitle)), 1)
-                markdownPrint('', '&nbsp;[' + markdownEscape(linkTitle) + '](' + linkURL + ')')
+                markdownPrint( \
+                    '', \
+                    '&nbsp;' + argsLink(markdownBookArguments, linkTitle, objectNew('category', categoryTitle), false, null, categoryURL) \
+                )
             endfor
         endif
     endfor
@@ -105,9 +105,10 @@ async function markdownBookSearch(args, book):
                 resultURL = objectGet(result, 'url')
                 resultCategory = objectGet(result, 'category')
                 resultTitle = objectGet(result, 'title')
-                resultTitleURL = '#url=' + urlEncodeComponent(resultURL) + '&' + \
-                    stringSlice(argsURL(markdownBookArguments, objectNew('category', resultCategory)), 1)
-                markdownPrint('', '[' + markdownEscape(resultTitle) + '](' + resultTitleURL + ')')
+                markdownPrint( \
+                    '', \
+                    argsLink(markdownBookArguments, resultTitle, objectNew('category', resultCategory), false, null, resultURL) \
+                )
             endfor
         else:
             markdownPrint('No matching pages found')
