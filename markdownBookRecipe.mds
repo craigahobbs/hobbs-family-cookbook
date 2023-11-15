@@ -22,9 +22,7 @@ recipeArgs = argsParse(markdownBookArguments)
 # Render the recipe page's top-menu
 function recipeMenu():
     category = objectGet(recipeArgs, 'category')
-    indexURL = '#url=&' + \
-        stringSlice(argsURL(markdownBookArguments, objectNew('category', category), false, category), 1)
-    markdownPrint('[Index](' + indexURL + ')')
+    markdownPrint(argsLink(markdownBookArguments, 'Index', objectNew('category', category), false, null, ''))
 endfunction
 
 
