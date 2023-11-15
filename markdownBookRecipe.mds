@@ -1,6 +1,7 @@
 # Licensed under the MIT License
 # https://github.com/craigahobbs/hobbs-family-cookbook/blob/main/LICENSE
 
+include <args.mds>
 include 'markdownBookArgs.mds'
 
 
