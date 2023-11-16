@@ -247,18 +247,12 @@ endfunction
 
 
 function recipeTitlePage(model):
-    # Set the recipe title page global model
-    systemGlobalSet(recipeTitlePageGlobal, schemaValidate(recipeTitlePageTypes, 'RecipeTitlePage', model))
-
     # Render the title page
-    recipeTitlePageRender()
+    recipeTitlePageRender(model)
 
     # Set the title page resize handler
-    windowSetResize(recipeTitlePageRender)
+    windowSetResize(systemPartial(recipeTitlePageRender, model))
 endfunction
-
-
-recipeTitlePageGlobal = 'recipeTitlePageModel'
 
 
 recipeTitlePageTypes = schemaParse( \
@@ -273,8 +267,7 @@ recipeTitlePageTypes = schemaParse( \
 )
 
 
-function recipeTitlePageRender():
-    model = systemGlobalGet(recipeTitlePageGlobal)
+function recipeTitlePageRender(model):
     title = objectGet(model, 'title')
     title2 = objectGet(model, 'title2')
     subtitle = objectGet(model, 'subtitle')
@@ -320,7 +313,7 @@ function recipeTitlePageRender():
     if imageURL != null:
         drawImage(0.5 * width - 0.5 * imageWidth, imageY, imageWidth, imageHeight, imageURL)
         if imageClickURL != null:
-            drawOnClick(recipeTitleOnImageClick)
+            drawOnClick(systemPartial(recipeTitleOnImageClick, model))
         endif
     endif
     if sourceURL != null:
@@ -329,8 +322,7 @@ function recipeTitlePageRender():
 endfunction
 
 
-function recipeTitleOnImageClick():
-    model = systemGlobalGet(recipeTitlePageGlobal)
+function recipeTitleOnImageClick(model):
     imageClickURL = objectGet(model, 'imageClickURL')
     windowSetLocation(imageClickURL)
 endfunction
