@@ -59,10 +59,8 @@ async function markdownBookIndex(args, book):
                 categoryText = arrayGet(categoryTexts, ixFile)
                 fileTitle = markdownTitle(markdownParse(categoryText))
                 linkTitle = if(fileTitle != null, fileTitle, categoryURL)
-                markdownPrint( \
-                    '', \
-                    '&nbsp;' + argsLink(markdownBookArguments, linkTitle, objectNew('category', categoryTitle), false, null, categoryURL) \
-                )
+                linkMarkdown = argsLink(markdownBookArguments, linkTitle, objectNew('category', categoryTitle), false, argsTopHeaderId, categoryURL)
+                markdownPrint('', '&nbsp;' + linkMarkdown)
             endfor
         endif
     endfor
