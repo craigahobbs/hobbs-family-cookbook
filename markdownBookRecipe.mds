@@ -159,7 +159,7 @@ endfor
 
 # Ingredient text regular expression
 recipeIngredientRegex = regexNew( \
-    '^(?:\s*(?<whole>[1-9][0-9]*(?:\\.[0-9]*)?))?(?:\s*(?<numer>[1-9][0-9]*)\s*/\s*(?<denom>[1-9][0-9]*))?' + \
+    '^(?:\s*(?<whole>(0|[1-9]\\d*)(?:\\.\\d+)?))?(?:\s*(?<numer>[1-9][0-9]*)\s*/\s*(?<denom>[1-9][0-9]*))?' + \
     '(?:\s*(?<unit>' + arrayJoin(recipeUnits, '|') + '|' + arrayJoin(objectKeys(recipeAlternateUnits), '|') + '))?' + \
     '\s+(?!/)(?<name>.+?)\s*$' \
 )
