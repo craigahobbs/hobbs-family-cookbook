@@ -7,7 +7,7 @@ recipeMenu()
 
 ~~~ markdown-script
 recipeHeader(objectNew( \
-    'Wendy Newton' \
+    'author', 'Wendy Newton' \
 ))
 ~~~
 
