@@ -15,7 +15,7 @@ include 'markdownBookArgs.mds'
 async function markdownBook(bookURL):
     # Load and validate the Markdown Book file
     bookURL = if(bookURL != null, bookURL, 'book.json')
-    book = schemaValidate(bookTypes, 'MarkdownBook', systemFetch(bookURL))
+    book = schemaValidate(bookTypes, 'MarkdownBook', jsonParse(systemFetch(bookURL)))
 
     # Render the page
     args = argsParse(markdownBookArguments)
@@ -54,7 +54,7 @@ async function markdownBookIndex(args, book):
         # If this is the selected category, fetch the category files and render the file links
         if isSelected:
             categoryURLs = objectGet(category, 'files')
-            categoryTexts = systemFetch(categoryURLs, null, true)
+            categoryTexts = systemFetch(categoryURLs)
             for categoryURL, ixFile in categoryURLs:
                 categoryText = arrayGet(categoryTexts, ixFile)
                 fileTitle = markdownTitle(markdownParse(categoryText))
@@ -123,7 +123,7 @@ endfunction
 
 async function markdownBookSearchResults(book, text):
     # Create the search text regex
-    words = stringSplit(text, regexNew('\s+'))
+    words = regexSplit(regexNew('\s+'), text)
     wordsEscaped = arrayNew()
     minSearchWordLength = 3
     for word in words:
@@ -134,7 +134,7 @@ async function markdownBookSearchResults(book, text):
     if arrayLength(wordsEscaped) == 0:
         return arrayNew()
     endif
-    reSearch = regexNew('\b(?:' + arrayJoin(wordsEscaped, '|') + ')', 'ig')
+    reSearch = regexNew('\b(?:' + arrayJoin(wordsEscaped, '|') + ')', 'i')
 
     # Compute the list of pages (url, category)
     pages = arrayNew()
@@ -148,7 +148,7 @@ async function markdownBookSearchResults(book, text):
 
     # Load all pages and search each page's text
     results = arrayNew()
-    pageTexts = systemFetch(pageURLs, null, true)
+    pageTexts = systemFetch(pageURLs)
     for page, ixPage in pages:
         pageText = arrayGet(pageTexts, ixPage)
         if pageText != null:
