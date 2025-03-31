@@ -1,5 +1,5 @@
 ~~~ markdown-script
-include '../markdownBookRecipe.mds'
+include '../markdownBookRecipe.bare'
 
 recipeTitlePage(objectNew( \
     'title', 'The Hobbs Family', \
