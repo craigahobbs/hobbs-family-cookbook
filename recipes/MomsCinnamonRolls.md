@@ -17,24 +17,24 @@ Dissolve yeast in a large mixing bowl and let proof for 10 minutes:
 (Use a stand mixer with a paddle attachment)
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1/2 C  water at 110 degrees', \
     '2 Tbsp dry active yeast', \
     '2 tsp sugar' \
-))
+])
 ~~~
 
 Add and mix in:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1/2 C butter', \
     '1/2 C sugar', \
     '2 beaten eggs', \
     '2 tsp salt', \
     '1 1/2 C lukewarm milk', \
     '4 C flour' \
-))
+])
 ~~~
 
 When mixture forms a smooth "batter" mix in and continue to beat until a smooth dough forms:
@@ -42,9 +42,9 @@ When mixture forms a smooth "batter" mix in and continue to beat until a smooth 
 (Change beater attachment to a dough hook) and add and beat in:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '3 C flour' \
-))
+])
 ~~~
 
 Turn dough out onto a floured surface and knead until completely smooth and elastic. Round the dough
@@ -54,37 +54,37 @@ dough down and let rise a second time until doubled again.
 For the **stickey pecan topping**, in baking pan, mix together into a thick paste in pan bottom:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1/2 C butter softened', \
     '1 C packed brown sugar', \
     '3 Tbsp dark corn syrup' \
-))
+])
 ~~~
 
 Sprinkle with pecan halves:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1 1/2 C pecan halves' \
-))
+])
 ~~~
 
 Form the rolls by punching down the dough and turning it out on a floured surface. Roll the dough
 into a large rectangle (20 X 15" or 15 X 9" respectively). Spread rectangle with soft butter:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1/2 C soft butter' \
-))
+])
 ~~~
 
 Sprinkle with sugar and cinnamon mixture:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1 C sugar', \
     '1 tsp cinnamon' \
-))
+])
 ~~~
 
 Smooth mixture with hands and roll the dough beginning with the long side into a log. Pinch the

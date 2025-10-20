@@ -12,7 +12,7 @@ recipeHeader()
 In a blender combine and process until smooth and thickened:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '2 cloves chopped garlic', \
     '3/4 tsp salt', \
     '1/2 tsp Dijon mustard', \
@@ -21,26 +21,26 @@ recipeIngredients(arrayNew( \
     '2 Tbsp fresh lemon juice', \
     '1 inch anchovy paste', \
     '2 Tbsp shredded parmesan cheese' \
-))
+])
 ~~~
 
 Slowly blend in the olive oil or salad oil.
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1/2 cup olive oil or salad oil' \
-))
+])
 ~~~
 
 Toss dressing with the chopped romaine lettuce, croutons, shredded parmesan cheese, and lots of
 freshly ground black pepper.
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1 large head romaine lettuce, chopped', \
     '1 C croutons', \
     '1/3 C shredded parmesan cheese' \
-))
+])
 ~~~
 
 Dressing can be refrigerated up to 3 days.

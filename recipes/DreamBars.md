@@ -12,18 +12,18 @@ recipeHeader()
 Cream together:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1/2 C butter', \
     '1/2 C brown sugar packed' \
-))
+])
 ~~~
 
 Stir in:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1 C flour' \
-))
+])
 ~~~
 
 Turn into a 9 X 13" buttered pan pat out evenly and bake at 350 degrees for 10 minutes.
@@ -31,7 +31,7 @@ Turn into a 9 X 13" buttered pan pat out evenly and bake at 350 degrees for 10 m
 Mix together:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '2 eggs beaten', \
     '1 C brown sugar packed', \
     '1 tsp vanilla', \
@@ -40,7 +40,7 @@ recipeIngredients(arrayNew( \
     '1/2 tsp salt', \
     '1 C flaked coconut', \
     '1 C chopped pecans' \
-))
+])
 ~~~
 
 Spread the topping on the baked crust and return to the oven for 25 minutes more.

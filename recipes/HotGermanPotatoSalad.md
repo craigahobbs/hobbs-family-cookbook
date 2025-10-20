@@ -6,13 +6,13 @@ recipeMenu()
 # Hot German Potato Salad
 
 ~~~ markdown-script
-recipeHeader(objectNew( \
-    'author', 'Betty Artus' \
-))
+recipeHeader({ \
+    'author': 'Betty Artus' \
+})
 ~~~
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '3 lbs of white or yellow potatoes', \
     '6 slices of thick sliced bacon cut in 1/3" piece', \
     '3 cup diced white or yellow onion', \
@@ -23,7 +23,7 @@ recipeIngredients(arrayNew( \
     '1 pinch of pepper', \
     '3/4 cup water', \
     '1/3 cup cider vinegar' \
-))
+])
 ~~~
 
 Peel the potatoes and boil in a large covered pot of salted water until tender. Drain and set aside

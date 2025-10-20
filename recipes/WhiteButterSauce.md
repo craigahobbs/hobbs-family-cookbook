@@ -12,14 +12,14 @@ recipeHeader()
 The only sauce to serve with baked salmon.
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1/4 C white wine (champagne) vinegar', \
     '2 Tbsp fresh lemon juice', \
     '2 Tbsp dry vermouth', \
     '1 Tbsp finely minced shallots', \
     '1/2 tsp salt', \
     '1 C butter' \
-))
+])
 ~~~
 
 Add the first 5 ingredients to a heavy saucepan and bring to a boil. Cook until reduced to 1 1/2

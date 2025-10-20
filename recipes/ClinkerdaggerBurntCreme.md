@@ -6,18 +6,18 @@ recipeMenu()
 # Clinkerdagger Burnt Creme
 
 ~~~ markdown-script
-recipeHeader(objectNew( \
-    'servings', 6 \
-))
+recipeHeader({ \
+    'servings': 6 \
+})
 ~~~
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '2 C whipping cream', \
     '4 egg yolks', \
     '1/2 C sugar', \
     '1 Tbsp good vanilla' \
-))
+])
 ~~~
 
 Heat the whipping cream in a medium saucepan over low heat until bubbles form around the edges of

@@ -17,9 +17,9 @@ Prepare three 9" cake pans by buttering them and lining the bottoms with parchme
 buttered.
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1 pound of carrots' \
-))
+])
 ~~~
 
 Peel and slice the carrots and then cook in sauce pan with about an inch of salted water until
@@ -29,18 +29,18 @@ Turn the pureed carrots into a large bowl to cool.
 When cool add and whisk in:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '4 beaten eggs', \
     '1 Tbsp vanilla extract', \
     '1 8 oz can of crushed unsweetened pineapple, drained', \
     '1 C vegetable oil' \
-))
+])
 ~~~
 
 Add to the above and stir in by hand:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '3 C flour', \
     '2 1/2 C sugar', \
     '1 Tbsp cinnamon', \
@@ -48,30 +48,30 @@ recipeIngredients(arrayNew( \
     '1 tsp salt', \
     '1 1/2 C chopped pecans', \
     '3/4 C chopped raisins' \
-))
+])
 ~~~
 
-Turn the batter evenly into the three greased, parchment lined 9” cake pans and bake at 350 degrees
+Turn the batter evenly into the three greased, parchment lined 9" cake pans and bake at 350 degrees
 for 35 minutes until a toothpick inserted into the center comes out clean. Cool the cakes in the
 pans on a rack.
 
 Frost with:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1 lb cream cheese at room temperature', \
     '2 1/2 sticks of butter at room temperature', \
     '1 Tbsp lemon Juice', \
     '2 tsp vanilla extract', \
     '5 2/3 C sifted confectioners sugar' \
-))
+])
 ~~~
 
 Beat until light and fluffy, then chill until firm but spreadable (about an hour). Frost the cake
 and then coat the sides with toasted sliced almonds. Refrigerate until 1 hour before serving.
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '2 C toasted sliced almonds' \
-))
+])
 ~~~

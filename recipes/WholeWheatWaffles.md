@@ -6,32 +6,32 @@ recipeMenu()
 # Whole Wheat Waffles
 
 ~~~ markdown-script
-recipeHeader(objectNew( \
-    'servings', 8 \
-))
+recipeHeader({ \
+    'servings': 8 \
+})
 ~~~
 
 Combine:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1 C flour', \
     '1 C whole wheat flour', \
     '1/2 tsp baking soda', \
     '1 tsp baking powder', \
     '1 tsp salt', \
     '3 Tbsp sugar' \
-))
+])
 ~~~
 
 Whisk together in a large measuring cup:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '2 C of buttermilk (at room temperature)', \
     '3 eggs', \
     '2 Tbsp melted butter' \
-))
+])
 ~~~
 
 Whisk the wet ingredients into the dry until combined, then allow to rest for 5 minutes.

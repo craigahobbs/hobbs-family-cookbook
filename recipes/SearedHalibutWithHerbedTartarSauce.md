@@ -12,14 +12,14 @@ recipeHeader()
 Prepare the sauce by mixing together:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1/2 C Mayonnaise', \
     '3 Tbsp freshly squeezed lemon juice', \
     '1 Tbsp chopped fresh parsley', \
     '1 large thinly sliced green onion', \
     '1 Tbsp chopped fresh thyme', \
     '1/2 tsp salt' \
-))
+])
 ~~~
 
 Freshly ground pepper to taste.
@@ -27,9 +27,9 @@ Freshly ground pepper to taste.
 Cover and refrigerate until ready to use.
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '4 8 oz skinless halibut fillets' \
-))
+])
 ~~~
 
 Clean and pat dry the halibut fillets, sprinkle with salt and pepper, and dust with flour. Heat 1 to

@@ -6,35 +6,35 @@ recipeMenu()
 # Cream Puffs
 
 ~~~ markdown-script
-recipeHeader(objectNew( \
-    'author', 'Laura Ferguson (Aunt Laura)', \
-    'servigs', 8 \
-))
+recipeHeader({ \
+    'author': 'Laura Ferguson (Aunt Laura)', \
+    'servigs': 8 \
+})
 ~~~
 
 Heat to a rolling boil in a large saucepan:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1 C water', \
     '1/2 C butter' \
-))
+])
 ~~~
 
 Add and stir in over low heat until a ball forms:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1 C flour' \
-))
+])
 ~~~
 
 Remove from heat and beat in the eggs, one at a time until smooth.
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '4 eggs' \
-))
+])
 ~~~
 
 Drop the batter by spoon onto an ungreased baking sheet, 3" apart. Bake 45 to 50 minutes in a 400
@@ -48,12 +48,12 @@ following, dust with powdered sugar.
 ### Cream Filling
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1 large pkg (4.6 oz) Jello cook & serve vanilla pudding (see preparation below)', \
     '1 C whipping cream beaten firmly', \
     '1/2 tsp rum extract', \
     '2 1/2 C milk' \
-))
+])
 ~~~
 
 Prepare the pudding according to package directions, except use the above milk quantity (I always

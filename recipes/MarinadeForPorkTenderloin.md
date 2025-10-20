@@ -12,7 +12,7 @@ recipeHeader()
 Add together in a large zip food storage bag
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1/4 C olive oil', \
     '3 Tbsp soy sauce', \
     '1 Tbsp Worcestershire sauce', \
@@ -21,7 +21,7 @@ recipeIngredients(arrayNew( \
     '1/4 C brown sugar', \
     '3 Tbsp Dijon mustard', \
     '1/4 C Jack Daniels whiskey' \
-))
+])
 ~~~
 
 Close the bag and swish around until mixed. Place two trimmed pork tenderloins in the bag, close,

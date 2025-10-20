@@ -22,7 +22,7 @@ recipeArgs = argsParse(markdownBookArguments)
 # Render the recipe page's top-menu
 function recipeMenu():
     category = objectGet(recipeArgs, 'category')
-    markdownPrint(argsLink(markdownBookArguments, 'Index', objectNew('category', category), false, null, ''))
+    markdownPrint(argsLink(markdownBookArguments, 'Index', {'category': category}, false, null, ''))
 endfunction
 
 
@@ -40,10 +40,10 @@ function recipeHeader(options):
     markdownPrint( \
         '', 'Scale: ' + mathRound(scale, 3) + '&nbsp;&nbsp; ( ' + \
         if(halfScale < recipeMinScale, 'Halve', \
-            argsLink(markdownBookArguments, 'Halve', objectNew('category', category, 'scale', mathRound(halfScale, 3)))), \
+            argsLink(markdownBookArguments, 'Halve', {'category': category, 'scale': mathRound(halfScale, 3)})), \
         ' | ', \
         if(doubleScale > recipeMaxScale, 'Double', \
-            argsLink(markdownBookArguments, 'Double', objectNew('category', category, 'scale', mathRound(doubleScale, 3)))), \
+            argsLink(markdownBookArguments, 'Double', {'category': category, 'scale': mathRound(doubleScale, 3)})), \
         ')' \
     )
     if servings != null:
@@ -88,64 +88,64 @@ function recipeParseIngredient(ingredient):
         unit = objectGet(recipeAlternateUnits, unit)
     endif
 
-    return objectNew( \
-        'amount', whole + numer / denom, \
-        'unit', unit, \
-        'name', name \
-    )
+    return { \
+        'amount': whole + numer / denom, \
+        'unit': unit, \
+        'name': name \
+    }
 endfunction
 
 
 # Ingredient unit info map
-recipeUnitInfo = objectNew( \
-    'count', objectNew( \
-        'baseUnit', 'count', \
-        'display', '', \
-        'baseRatio', 1, \
-        'fractions', arrayNew(2, 4, 8) \
-    ), \
-    'cup', objectNew( \
-        'alternates', arrayNew('C', 'Cup', 'Cups', 'c', 'cups'), \
-        'display', 'C', \
-        'baseUnit', 'tsp', \
-        'baseRatio', 48, \
-        'fractions', arrayNew(2, 3, 4, 8) \
-    ), \
-    'lb', objectNew( \
-        'alternates', arrayNew('Lb', 'Lbs', 'Pound', 'Pounds', 'lbs', 'pound', 'pounds'), \
-        'baseUnit', 'oz', \
-        'baseRatio', 16, \
-        'fractions', arrayNew(2, 4, 8) \
-    ), \
-    'oz', objectNew( \
-        'alternates', arrayNew('Oz', 'Ounce', 'Ounces', 'ounce', 'ounces'), \
-        'baseUnit', 'oz', \
-        'baseRatio', 1, \
-        'fractions', arrayNew(2, 4, 8) \
-    ), \
-    'pinch', objectNew( \
-        'baseUnit', 'pinch', \
-        'baseRatio', 1, \
-        'fractions', arrayNew(1) \
-    ), \
-    'tbsp', objectNew( \
-        'alternates', arrayNew('T', 'Tbsp', 'Tablespoon', 'Tablespoons', 'tablespoon', 'tablespoons'), \
-        'baseUnit', 'tsp', \
-        'baseRatio', 3, \
-        'fractions', arrayNew(1, 2) \
-    ), \
-    'tsp', objectNew( \
-        'alternates', arrayNew('Tsp', 'Teaspoon', 'Teaspoons', 'teaspoon', 'teaspoons'), \
-        'baseUnit', 'tsp', \
-        'baseRatio', 1, \
-        'fractions', arrayNew(2, 4, 8) \
-    ) \
-)
+recipeUnitInfo = { \
+    'count': { \
+        'baseUnit': 'count', \
+        'display': '', \
+        'baseRatio': 1, \
+        'fractions': [2, 4, 8] \
+    }, \
+    'cup': { \
+        'alternates': ['C', 'Cup', 'Cups', 'c', 'cups'], \
+        'display': 'C', \
+        'baseUnit': 'tsp', \
+        'baseRatio': 48, \
+        'fractions': [2, 3, 4, 8] \
+    }, \
+    'lb': { \
+        'alternates': ['Lb', 'Lbs', 'Pound', 'Pounds', 'lbs', 'pound', 'pounds'], \
+        'baseUnit': 'oz', \
+        'baseRatio': 16, \
+        'fractions': [2, 4, 8] \
+    }, \
+    'oz': { \
+        'alternates': ['Oz', 'Ounce', 'Ounces', 'ounce', 'ounces'], \
+        'baseUnit': 'oz', \
+        'baseRatio': 1, \
+        'fractions': [2, 4, 8] \
+    }, \
+    'pinch': { \
+        'baseUnit': 'pinch', \
+        'baseRatio': 1, \
+        'fractions': [1] \
+    }, \
+    'tbsp': { \
+        'alternates': ['T', 'Tbsp', 'Tablespoon', 'Tablespoons', 'tablespoon', 'tablespoons'], \
+        'baseUnit': 'tsp', \
+        'baseRatio': 3, \
+        'fractions': [1, 2] \
+    }, \
+    'tsp': { \
+        'alternates': ['Tsp', 'Teaspoon', 'Teaspoons', 'teaspoon', 'teaspoons'], \
+        'baseUnit': 'tsp', \
+        'baseRatio': 1, \
+        'fractions': [2, 4, 8] \
+    } \
+}
 recipeUnits = objectKeys(recipeUnitInfo)
 
 
 # Alternate ingredient unit map
-recipeAlternateUnits = objectNew()
+recipeAlternateUnits = {}
 for recipeInfoUnit in recipeUnits:
     recipeInfo = objectGet(recipeUnitInfo, recipeInfoUnit)
     recipeInfoAlternates = objectGet(recipeInfo, 'alternates')

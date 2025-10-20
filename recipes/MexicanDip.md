@@ -14,7 +14,7 @@ recipeHeader()
 Stir together:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '3 large diced ripe tomatoes', \
     '1 small can chopped black olives', \
     '2 bunches cleaned and sliced green onions', \
@@ -22,7 +22,7 @@ recipeIngredients(arrayNew( \
     '1/4 C salad oil', \
     '2 Tbsp red wine vinegar', \
     "1 tsp (or to taste) Lawry's seasoned salt" \
-))
+])
 ~~~
 
 Refrigerate until ready for use. Serve with fresh tortilla chips.

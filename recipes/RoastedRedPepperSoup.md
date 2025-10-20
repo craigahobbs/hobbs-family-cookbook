@@ -6,13 +6,13 @@ recipeMenu()
 # Roasted Red Pepper Soup
 
 ~~~ markdown-script
-recipeHeader(objectNew( \
-    'servings', 10 \
-))
+recipeHeader({ \
+    'servings': 10 \
+})
 ~~~
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '3 red bell peppers cleaned and rinsed', \
     '1 large onion, peeled and finely chopped', \
     '1/4 C butter', \
@@ -22,7 +22,7 @@ recipeIngredients(arrayNew( \
     '2 C half-and-half (light cream)', \
     '1 can (15 oz) to tomato sauce', \
     '1/4 tsp hot chili flakes (or to taste)' \
-))
+])
 ~~~
 
 Salt and pepper to taste.

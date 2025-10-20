@@ -12,31 +12,31 @@ recipeHeader()
 Stir together and dissolve:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '3/4 C warm water (110 degrees)', \
     '2 Tbsp active dry yeast (two pkgs)', \
     '1 tsp sugar' \
-))
+])
 ~~~
 
 Let yeast mixture sit for about ten minutes. Then add and stir in:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1/2 C butter softened', \
     '2 beaten eggs', \
     '1/2 C sugar', \
     '1 tsp salt', \
     '2 C flour' \
-))
+])
 ~~~
 
 Then add and stir in:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '2 C additional flour' \
-))
+])
 ~~~
 
 Scrape down the sides of the bowl, cover with saran wrap, and let rise until double in a warm place

@@ -12,7 +12,7 @@ recipeHeader()
 Cream together:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1/2 C butter', \
     '1/2 C chunky peanut butter (recommend Jif peanut butter otherwise add about 2 Tbsp extra brown sugar)', \
     '2 eggs', \
@@ -20,25 +20,25 @@ recipeIngredients(arrayNew( \
     '1/2 C  brown sugar packed', \
     '1 tsp vanilla', \
     '1 Tbsp water' \
-))
+])
 ~~~
 
 Add and stir in:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '2 C flour', \
     '1 tsp baking soda', \
     '1/2 tsp salt' \
-))
+])
 ~~~
 
 Stir in:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '2 C chocolate chips' \
-))
+])
 ~~~
 
 Drop dough by large teaspoons onto a lightly greased baking sheet. Bake at 350 degrees for 12 to 14

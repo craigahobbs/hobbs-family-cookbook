@@ -12,14 +12,14 @@ recipeHeader()
 Mix together in a 1 qt buttered baking dish:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1 lb cleaned, trimmed, halved fresh mushroom caps', \
     '2 Tbsp melted butter', \
     '1 Tbsp fresh lemon juice', \
     '1 tsp dried dill weed', \
     '1/2 tsp onion powder', \
     '1/2 tsp salt' \
-))
+])
 ~~~
 
 Freshly ground pepper to taste.

@@ -12,13 +12,13 @@ recipeHeader()
 Combine and process in a Cuisinart until mixture resembles course meal:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '2 C flour', \
     '1 C butter', \
     '1/2 C sugar', \
     '1/8 tsp salt', \
     '1 beaten egg yolk' \
-))
+])
 ~~~
 
 Turn dough out the mixing bowl and work into a ball. Form the ball into a long cylinder and wrap in
@@ -30,10 +30,10 @@ Remove dough from frig, unwrap, and slice 1/4" thick and place rounds on an ungr
 Mix together:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1/2 C raspberry jam', \
     '1/2 tsp vanilla extract' \
-))
+])
 ~~~
 
 Make a thumbprint "well" in each dough round, and add a scant 1/2 tsp of raspberry mixture to it,
@@ -41,9 +41,9 @@ sprinkle with a few almond slices and bake in a 350 degree oven for 12 to 13 min
 should be only slightly brown on the bottoms.
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1/2 C almond slices' \
-))
+])
 ~~~
 
 This is actually Teresa's and my favorite Christmas cookie, but would be good any time of the year

@@ -10,7 +10,7 @@ recipeHeader()
 ~~~
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1 C butter', \
     '2 C sugar', \
     '2 eggs', \
@@ -19,7 +19,7 @@ recipeIngredients(arrayNew( \
     '1 1/2 tsp cinnamon', \
     '1 1/2 tsp ground ginger', \
     '1/2 tsp cloves' \
-))
+])
 ~~~
 
 Cream the butter until fluffy then add the rest of the ingredients and beat well.
@@ -27,10 +27,10 @@ Cream the butter until fluffy then add the rest of the ingredients and beat well
 Slowly add and mix in:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '3 1/3 C flour plus 1 tbsp (Exactly this amount)', \
     '1 tbsp baking soda' \
-))
+])
 ~~~
 
 Beat well until combined. Drop by large spoonfuls (1 1/2 tbsp) each amount dipped in turbinado sugar

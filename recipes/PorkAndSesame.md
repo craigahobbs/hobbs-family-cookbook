@@ -12,14 +12,14 @@ recipeHeader()
 Whisk together:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '2 pork tenderloins, trimmed', \
     '1 C ketchup', \
     '1/3 C sugar', \
     '3 Tbsp soy sauce', \
     '3 to 4 cloves minced garlic', \
     '1/2 tsp dried ginger powder' \
-))
+])
 ~~~
 
 Marinate the pork tenderloins in the above for 20 to 30 minutes. Prepare a cookie sheet or roasting

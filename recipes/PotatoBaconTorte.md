@@ -12,9 +12,9 @@ recipeHeader()
 Saute until crisp and drain:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '10 oz lean thick sliced bacon' \
-))
+])
 ~~~
 
 Set the drained bacon aside and refrigerate until ready to use.
@@ -22,26 +22,26 @@ Set the drained bacon aside and refrigerate until ready to use.
 Grate and refrigerate until ready to use:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '8 oz Gruyere cheese' \
-))
+])
 ~~~
 
 Peel and soak in cold water:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '3 medium or two large baking potatoes' \
-))
+])
 ~~~
 
 Bring heavy cream to almost a simmer with the fresh thyme. Let cool for 5 minutes.
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1 C heavy cream', \
     '3 sprigs of fresh thyme' \
-))
+])
 ~~~
 
 Assemble the pie using a 9" glass pie pan. Roll one disc of the pastry out on a lightly floured
@@ -51,9 +51,9 @@ Sprinkle the bottom of the pie crust with the grated parmesan cheese. Drain the 
 towel and slice into 1/8" rounds.
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '2 Tbsp grated parmesan cheese' \
-))
+])
 ~~~
 
 Use the

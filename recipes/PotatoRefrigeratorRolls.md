@@ -12,31 +12,31 @@ recipeHeader()
 Stir together to dissolve:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1 1/2 C warm water (110 degrees)', \
     '1 Tbsp active dry yeast (1 pkg)', \
     '1 tsp sugar' \
-))
+])
 ~~~
 
 Let mixture sit for 10 minutes, then add and mix in:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '2/3 C sugar', \
     '1 1/2 tsp salt', \
     '2/3 C soft butter', \
     '2 beaten eggs', \
     '1 C lukewarm mashed potatoes (or leftover mashed potatoes at room temperature)' \
-))
+])
 ~~~
 
 Add and mix by hand:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '7 to 7 1/2 C flour' \
-))
+])
 ~~~
 
 Turn dough onto a floured board and knead until smooth and elastic. Place dough in a greased bowl

@@ -12,11 +12,11 @@ recipeHeader()
 Cook together in a 6 qt covered soup pot for 2 1/2 hours:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '2 C raw lentils', \
     '8 C beef stock', \
     '1 tsp salt' \
-))
+])
 ~~~
 
 As you cook more liquid will be needed. Add water and return to a boil each time.
@@ -24,16 +24,16 @@ As you cook more liquid will be needed. Add water and return to a boil each time
 Saute the bacon in a large skillet until crisp.
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '8 slices of thick sliced bacon, diced' \
-))
+])
 ~~~
 
 Drain and set aside. Drain all but the necessary amount of bacon drippings, then add the olive oil
 to the skillet and saute the following until softened (about 7 to 10 minutes):
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1 Tbsp bacon drippings', \
     '2 Tbsp olive oil', \
     '1 Tbsp minced garlic', \
@@ -43,18 +43,18 @@ recipeIngredients(arrayNew( \
     '2 large shallots minced', \
     '2 sprigs of fresh thyme', \
     '1 bay leaves' \
-))
+])
 ~~~
 
 Add to the cooked lentils and simmer covered for 1/2 hour more. Then add:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1 diced peeled russet potato', \
     '2 Tbsp molasses', \
     '1/2 C red wine', \
     '1 Tbsp worcestershire sauce' \
-))
+])
 ~~~
 
 Salt and freshly ground pepper to taste.

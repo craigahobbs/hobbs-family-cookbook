@@ -37,7 +37,7 @@ async function markdownBookIndex(args, book):
     markdownPrint( \
         argsLink(markdownBookArguments, 'Title', null, false, null, objectGet(book, 'titleURL')), \
         ' | ', \
-        argsLink(markdownBookArguments, 'Search', objectNew('search', '')), \
+        argsLink(markdownBookArguments, 'Search', {'search': ''}), \
         '', \
         '# ' + markdownEscape(title) \
     )
@@ -49,7 +49,7 @@ async function markdownBookIndex(args, book):
         isSelected = (selectedCategory == categoryTitle)
 
         # Render the category title link
-        markdownPrint('', '## ' + argsLink(markdownBookArguments, categoryTitle, objectNew('category', if(isSelected, null, categoryTitle))))
+        markdownPrint('', '## ' + argsLink(markdownBookArguments, categoryTitle, {'category': if(isSelected, null, categoryTitle)}))
 
         # If this is the selected category, fetch the category files and render the file links
         if isSelected:
@@ -59,7 +59,7 @@ async function markdownBookIndex(args, book):
                 categoryText = arrayGet(categoryTexts, ixFile)
                 fileTitle = markdownTitle(markdownParse(categoryText))
                 linkTitle = if(fileTitle != null, fileTitle, categoryURL)
-                linkMarkdown = argsLink(markdownBookArguments, linkTitle, objectNew('category', categoryTitle), false, argsTopHeaderId, categoryURL)
+                linkMarkdown = argsLink(markdownBookArguments, linkTitle, {'category': categoryTitle}, false, argsTopHeaderId, categoryURL)
                 markdownPrint('', '&nbsp;' + linkMarkdown)
             endfor
         endif
@@ -88,10 +88,10 @@ async function markdownBookSearch(args, book):
     )
 
     # Render the search form
-    elementModelRender(arrayNew( \
-        objectNew('html', 'p', 'elem', formsTextElements('search-text', searchText, 30, markdownBookSearchOnClick)), \
-        objectNew('html', 'p', 'elem', formsLinkButtonElements('Search', markdownBookSearchOnClick)) \
-    ))
+    elementModelRender([ \
+        {'html': 'p', 'elem': formsTextElements('search-text', searchText, 30, markdownBookSearchOnClick)}, \
+        {'html': 'p', 'elem': formsLinkButtonElements('Search', markdownBookSearchOnClick)} \
+    ])
     documentSetFocus('search-text')
 
     # Compute the search results and render
@@ -105,7 +105,7 @@ async function markdownBookSearch(args, book):
                 resultTitle = objectGet(result, 'title')
                 markdownPrint( \
                     '', \
-                    argsLink(markdownBookArguments, resultTitle, objectNew('category', resultCategory), false, null, resultURL) \
+                    argsLink(markdownBookArguments, resultTitle, {'category': resultCategory}, false, null, resultURL) \
                 )
             endfor
         else:
@@ -117,14 +117,14 @@ endfunction
 
 function markdownBookSearchOnClick():
     searchText = documentInputValue('search-text')
-    windowSetLocation(argsURL(markdownBookArguments, objectNew('search', searchText)))
+    windowSetLocation(argsURL(markdownBookArguments, {'search': searchText}))
 endfunction
 
 
 async function markdownBookSearchResults(book, text):
     # Create the search text regex
     words = regexSplit(regexNew('\s+'), text)
-    wordsEscaped = arrayNew()
+    wordsEscaped = []
     minSearchWordLength = 3
     for word in words:
         if stringLength(word) >= minSearchWordLength:
@@ -132,22 +132,22 @@ async function markdownBookSearchResults(book, text):
         endif
     endfor
     if arrayLength(wordsEscaped) == 0:
-        return arrayNew()
+        return []
     endif
-    reSearch = regexNew('\b(?:' + arrayJoin(wordsEscaped, '|') + ')', 'i')
+    reSearch = regexNew('\\b(?:' + arrayJoin(wordsEscaped, '|') + ')', 'i')
 
     # Compute the list of pages (url, category)
-    pages = arrayNew()
-    pageURLs = arrayNew()
+    pages = []
+    pageURLs = []
     for category in objectGet(book, 'categories'):
         for fileURL in objectGet(category, 'files'):
-            arrayPush(pages, objectNew('url', fileURL, 'category', objectGet(category, 'title')))
+            arrayPush(pages, {'url': fileURL, 'category': objectGet(category, 'title')})
             arrayPush(pageURLs, fileURL)
         endfor
     endfor
 
     # Load all pages and search each page's text
-    results = arrayNew()
+    results = []
     pageTexts = systemFetch(pageURLs)
     for page, ixPage in pages:
         pageText = arrayGet(pageTexts, ixPage)

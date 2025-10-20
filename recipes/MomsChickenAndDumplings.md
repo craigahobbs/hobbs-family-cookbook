@@ -10,11 +10,11 @@ recipeHeader()
 ~~~
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '2 large, bone in, skin on, chicken breasts', \
     '1 Tbsp olive', \
     '4 C water' \
-))
+])
 ~~~
 
 Salt and pepper the chicken breasts. Sear the chicken in the olive oil in a 6 qt dutch oven. When
@@ -25,13 +25,13 @@ pieces. Refrigerate the chicken until ready to add back.
 Dice:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '2 large stalks celery', \
     '1 large onion', \
     '1 large shallot', \
     '2 large carrots', \
     '2 cloves garlic minced' \
-))
+])
 ~~~
 
 Saute cut vegetables in a large skillet in olive oil just until vegetables are softened. Add one
@@ -41,14 +41,14 @@ additional chicken broth and the bay leaf. Simmer covered until all the vegetabl
 butter mixed with the flour. Bring back to a boil to thicken before adding the dumpling dough.
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1 Tbsp olive oil', \
     '1 potato, peeled and cubed', \
     '2 C additional chicken broth', \
     '1 bay leaf', \
     '3 Tbsp butter, softened', \
     '2 Tbsp flour' \
-))
+])
 ~~~
 
 
@@ -57,13 +57,13 @@ recipeIngredients(arrayNew( \
 Mix together:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1 1/2 C flour', \
     '2 tsp baking powder', \
     '3/4 tsp salt', \
     '3 Tbsp shortening', \
     '3/4 C milk' \
-))
+])
 ~~~
 
 Cut in the shortening. Stir in the milk.
@@ -73,7 +73,7 @@ heat for 10 minutes. Lower the heat, add the frozen peas, and cover and cook ten
 hot.
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '3/4 C frozen peas' \
-))
+])
 ~~~

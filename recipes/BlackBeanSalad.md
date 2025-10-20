@@ -10,14 +10,14 @@ recipeHeader()
 ~~~
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '2 cups frozen corn', \
     '1 can black beans drained and rinsed', \
     '1 red bell pepper diced', \
     '1 small red onion diced', \
     '4 green onions cleaned and sliced', \
     '1 large clove pressed garlic' \
-))
+])
 ~~~
 
 Place the above ingredients in a large serving bowl.
@@ -26,7 +26,7 @@ Place the above ingredients in a large serving bowl.
 ### Dressing
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1 lime, juiced', \
     '1 lemon, juiced', \
     '1 Tbsp orange juice concentrate', \
@@ -35,7 +35,7 @@ recipeIngredients(arrayNew( \
     '1/2 tsp ground chili powder', \
     '1 tsp salt', \
     '2 Tbsp good olive oil' \
-))
+])
 ~~~
 
 Freshly ground pepper to taste.

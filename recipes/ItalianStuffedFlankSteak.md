@@ -6,17 +6,17 @@ recipeMenu()
 # Italian Stuffed Flank Steak
 
 ~~~ markdown-script
-recipeHeader(objectNew( \
-    'author', 'Geoff Ball' \
-))
+recipeHeader({ \
+    "author": "Geoff Ball" \
+})
 ~~~
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
-    '3 sweet red peppers', \
-    '1 Tbsp fresh lemon juice', \
-    '1/2 tsp coarsely ground black pepper' \
-))
+recipeIngredients([ \
+    "3 sweet red peppers", \
+    "1 Tbsp fresh lemon juice", \
+    "1/2 tsp coarsely ground black pepper" \
+])
 ~~~
 
 Place the red peppers, halved lengthwise and seeded skin side up on a foil lined cookie sheet. Bake
@@ -26,9 +26,9 @@ the skins off, and cut each in half again. Place quartered peppers in a bowl and
 fresh lemon juice and black pepper.
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
-    '8 oz of fresh spinach' \
-))
+recipeIngredients([ \
+    "8 oz of fresh spinach" \
+])
 ~~~
 
 Rinse, trim, and drain the spinach. Place the spinach in a large saute pan with just the water that
@@ -39,22 +39,22 @@ Using a Cuisinart, combine the cooked spinach with the following and process unt
 thick puree:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
-    '2 cloves of chopped garlic', \
-    '1/2 C freshly grated Parmesan cheese', \
-    '1/4 C olive oil', \
-    '1/2 C bread crumbs' \
-))
+recipeIngredients([ \
+    "2 cloves of chopped garlic", \
+    "1/2 C freshly grated Parmesan cheese", \
+    "1/4 C olive oil", \
+    "1/2 C bread crumbs" \
+])
 ~~~
 
 Butterfly the flank steak along the length on a steady work surface.
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
-    '1 1/2 lb flank steak', \
-    '4 oz thinly sliced prosciutto', \
-    '1 fresh hot cherry pepper, cored, seeded, and minced' \
-))
+recipeIngredients([ \
+    "1 1/2 lb flank steak", \
+    "4 oz thinly sliced prosciutto", \
+    "1 fresh hot cherry pepper, cored, seeded, and minced" \
+])
 ~~~
 
 Cover lengthwise surface of the steak with the prosciutto, top with the quartered roasted peppers,

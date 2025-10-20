@@ -6,15 +6,15 @@ recipeMenu()
 # Easy Baked Beans
 
 ~~~ markdown-script
-recipeHeader(objectNew( \
-    'author', 'Shannon Childs' \
-))
+recipeHeader({ \
+    'author': 'Shannon Childs' \
+})
 ~~~
 
 Combine in a buttered deep 9" X 13" baking pan\*:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '2 cups diced onions', \
     '2 31 oz cans of B & M baked beans', \
     '1 15 oz can kidney beans', \
@@ -26,7 +26,7 @@ recipeIngredients(arrayNew( \
     '3 T cider vinegar', \
     '1 tsp salt', \
     '1/2 tsp pepper' \
-))
+])
 ~~~
 
 Bake at 350 degrees for one hour uncovered.

@@ -15,13 +15,13 @@ each of eight popover cups.
 Blend together until the mixture is the consistency of thick cream:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1 1/4 C flour', \
     '1/4 tsp salt', \
     '3 large eggs at room temperature', \
     '1 1/4 C milk at room temperature', \
     '2 Tbsp melted butter' \
-))
+])
 ~~~
 
 Heat the oven to 400 degrees. When oven is up to temp, heat the prepared pans until butter is

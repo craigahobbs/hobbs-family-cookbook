@@ -12,7 +12,7 @@ recipeHeader()
 A Hobbs family favorite
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1 loaf of freshly baked French bread', \
     '1/2 head of shredded iceberg lettuce', \
     '2 large tomatoes sliced thinly', \
@@ -22,7 +22,7 @@ recipeIngredients(arrayNew( \
     '1/2 lb swiss or havarti cheese', \
     '1/4 C mayonnaise', \
     '2 tbsp Dijon mustard' \
-))
+])
 ~~~
 
 Slice the French loaf in half lengthwise, if the loaf is really thick, scoop out some of the bread

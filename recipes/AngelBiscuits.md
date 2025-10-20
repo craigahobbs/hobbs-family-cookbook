@@ -1,19 +1,19 @@
 ~~~ markdown-script
-include '../markdownBookRecipe.bare
+include '../markdownBookRecipe.bare'
 recipeMenu()
 ~~~
 
 # Angel Biscuits
 
 ~~~ markdown-script
-recipeHeader(objectNew( \
-    'author', 'Dennis Artus', \
-    'servings', 20 \
-))
+recipeHeader({ \
+    'author': 'Dennis Artus', \
+    'servings': 20 \
+})
 ~~~
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '4 1/2 tsp (2 packages) active dry yeast', \
     '3 tbsp warm water (110 to 155 degrees)', \
     '5 C all-purpose flour (aerate flour before measuring)', \
@@ -24,15 +24,15 @@ recipeIngredients(arrayNew( \
     '1/2 C butter, cold', \
     '1/2 C shortening, cold', \
     '2 C buttermilk' \
-))
+])
 ~~~
 
 To finish:  Extra flour for forming and cutting biscuits plus:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '3 tbsp melted butter' \
-))
+])
 ~~~
 
 Place yeast and warm water in a small bowl and stir to dissolve to form a thick paste.

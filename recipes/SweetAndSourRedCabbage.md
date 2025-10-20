@@ -10,12 +10,12 @@ recipeHeader()
 ~~~
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '2 1/4 lb red cabbage', \
     '1/2 C butter', \
     '6 Tbsp granulated sugar', \
     '2/3 cup balsamic vinegar' \
-))
+])
 ~~~
 
 Thinly slice the red cabbage in a Cuisinart using a number two slicing disc. Melt the butter in a

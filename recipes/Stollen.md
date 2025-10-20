@@ -6,53 +6,53 @@ recipeMenu()
 # Stollen
 
 ~~~ markdown-script
-recipeHeader(objectNew( \
-    'author', 'Geoff Ball' \
-))
+recipeHeader({ \
+    'author': 'Geoff Ball' \
+})
 ~~~
 
 Place warm water (110 degrees) into the bowl of a stand mixer with the paddle attachment. Add the
 active dry yeast and stir to dissolve. Allow to stand for 5 to 10 minutes.
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1/2 C warm water', \
     '2 Tbsp active dry yeast' \
-))
+])
 ~~~
 
 Add and mix in:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1 1/2 C warm milk', \
     '1/2 C sugar', \
     '2 tsp salt', \
     '2 eggs beaten', \
     '1/2 C Crisco', \
     '3 1/2 C flour' \
-))
+])
 ~~~
 
 When the above mixture is combined add and mix in:
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1 C slivered almonds', \
     '1/2 C chopped dried pineapple', \
     '1/2  C  chopped candied cherries', \
     '1 C raisins', \
     '1 C dried cranberries', \
     '2 tsp fresh lemon zest' \
-))
+])
 ~~~
 
 Turn the dough into a large mixing bowl and add and stir in more flour.
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '3 1/2 C more flour' \
-))
+])
 ~~~
 
 Turn dough out onto a floured surface and knead until smooth and elastic, adding more flour as
@@ -67,10 +67,10 @@ degrees 30 to 35 minutes until loaf is golden brown. Remove from oven and cool c
 ### Glaze
 
 ~~~ markdown-script
-recipeIngredients(arrayNew( \
+recipeIngredients([ \
     '1 C confectioners sugar, sifted', \
     '1 Tbsp milk' \
-))
+])
 ~~~
 
 Mix together the sifted confectioners sugar with the milk. Spread glaze over cooled loaf and
