@@ -3,6 +3,8 @@
 
 include <args.bare>
 include <forms.bare>
+include <schemaDoc.bare>
+
 include 'markdownBookArgs.bare'
 
 
@@ -70,7 +72,7 @@ endfunction
 # Render the Markdown Book file format documentation
 function markdownBookDoc():
     documentSetTitle('MarkdownBook')
-    elementModelRender(schemaElements(bookTypes, 'MarkdownBook'))
+    markdownPrint(schemaDocMarkdown(bookTypes, 'MarkdownBook'))
 endfunction
 
 
