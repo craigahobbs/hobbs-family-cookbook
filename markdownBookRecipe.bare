@@ -2,6 +2,7 @@
 # https://github.com/craigahobbs/hobbs-family-cookbook/blob/main/LICENSE
 
 include <args.bare>
+include <draw.bare>
 include 'markdownBookArgs.bare'
 
 
@@ -316,6 +317,9 @@ function recipeTitlePageRender(model):
             drawOnClick(systemPartial(recipeTitleOnImageClick, model))
         endif
     endif
+    drawRender()
+
+    # Source code link
     if sourceURL != null:
         markdownPrint('[Source Code](' + sourceURL + ')')
     endif
