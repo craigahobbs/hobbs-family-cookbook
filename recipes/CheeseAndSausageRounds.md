@@ -6,18 +6,18 @@ recipeMenu()
 # Cheese and Sausage Rounds
 
 ~~~ markdown-script
-recipeHeader({
-    'author': 'Nancy Thomas'
+recipeHeader({ \
+    'author': 'Nancy Thomas' \
 })
 ~~~
 
 Combine and mix together with hands:
 
 ~~~ markdown-script
-recipeIngredients([
-    '3 C Bisquick',
-    '1 lb shredded cheddar cheese',
-    '1 lb Jimmy Deans hot sausage warmed to room temperature'
+recipeIngredients([ \
+    '3 C Bisquick', \
+    '1 lb shredded cheddar cheese', \
+    '1 lb Jimmy Deans hot sausage warmed to room temperature' \
 ])
 ~~~
 
