@@ -3,7 +3,11 @@
 
 include <args.bare>
 include <forms.bare>
+include <markdown.bare>
+include <markdownParser.bare>
+include <schema.bare>
 include <schemaDoc.bare>
+include <schemaParser.bare>
 
 include 'markdownBookArgs.bare'
 
